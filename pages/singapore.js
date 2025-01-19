@@ -1,4 +1,5 @@
 '======== READ ME BEFORE EDITING ========'
+/* ashfelloff - revist email when given
 /*
 Hello! This is the template for the city pages.
 
@@ -25,19 +26,19 @@ import dynamic from 'next/dynamic'
 
 // TODO: Change this schedule to your own!
 const schedule = [
-  { time: '11:00 AM', event: 'Doors open' },
-  { time: '12:00 PM', event: 'Opening ceremony' },
-  { time: '12:30 PM', event: 'Lunch' },
-  { time: '1:00 PM', event: 'Start working on your project!' },
-  { time: '2:00 PM', event: 'Workshop 1' },
-  { time: '4:00 PM', event: 'Activity 1' },
-  { time: '4:00 PM', event: 'Workshop 2' },
-  { time: '6:00 PM', event: 'Dinner' },
-  { time: '8:00 PM', event: 'Lightning talks' },
-  { time: '12:00 AM', event: 'Midnight surprise' },
-  { time: '8:00 AM', event: 'Breakfast' },
-  { time: '10:30 AM', event: 'Demos!' },
-  { time: '12:00 PM', event: 'Closing ceremony' }
+  { time: '2:00 PM', event: 'Doors open' },
+  { time: '2:35 PM', event: 'Opening ceremony' },
+  { time: '4:30 PM', event: 'Snack' },
+  { time: '7:00 PM', event: 'Dinner' },
+  { time: '8:00 PM', event: 'Workshop 1' },
+  { time: '10:00 PM', event: 'End of Day One' },
+  { time: '8:30 AM', event: 'Start of Day Two' },
+  { time: '9:00 AM', event: 'Breakfast' },
+  { time: '11:00 AM', event: 'Snack' },
+  { time: '1:00 PM', event: 'Lunch' },
+  { time: '2:30 PM', event: 'Project Submission' },
+  { time: '3:30 PM', event: 'Demos!' },
+  { time: '4:15 PM', event: 'Closing ceremony' }
 ]
 
 const Map = dynamic(() => import('../components/Map'), { ssr: false })
@@ -79,7 +80,7 @@ export default function ExampleCity() {
     >
       <Head>
         {/* TODO: Change [EXAMPLECITY] to your event's city */}
-        <title>Scrapyard [EXAMPLECITY]</title>
+        <title>Scrapyard Singapore</title>
       </Head>
       <Flag />
       <Box
@@ -175,7 +176,7 @@ export default function ExampleCity() {
               }}
             >
               {/* TODO: Change [EXAMPLECITY] to your event's city */}
-              [EXAMPLECITY] - March&nbsp;15-16
+              Singapore - March&nbsp;15-16
             </Heading>
           </Box>
         </Box>
@@ -226,7 +227,7 @@ export default function ExampleCity() {
         </Box>
         <Link
           // TODO: Change [EVENTID] to your event's ID (see https://airtable.com/appigKiF7GbVISAlg/shrK3OiCJs4BRBIRG)
-          href="https://forms.hackclub.com/scrapyard-signup?event_id=[EVENTID]"
+          href="https://forms.hackclub.com/scrapyard-signup?event_id=rec7xdy4IMSG0GU0J"
           target="_blank"
         >
           <Box
@@ -333,7 +334,7 @@ export default function ExampleCity() {
               }}
             >
               {/* TODO: Change [EXAMPLECITY] to your event's city */}
-              What's Scrapyard [EXAMPLECITY]?
+              What's Scrapyard Singapore?
             </Heading>
             <p
               style={{
@@ -341,9 +342,9 @@ export default function ExampleCity() {
               }}
             >
               {/* TODO: Change [EXAMPLECITY] to your event's city */}
-              Scrapyard [EXAMPLECITY] is a hackathon for high schoolers
+              Scrapyard Singapore is a hackathon for high schoolers
               {/* TODO: Change [EXAMPLECITY] to your event's city */}
-              happening in [EXAMPLECITY], where you can make the stupidest
+              happening in Singapore, where you can make the stupidest
               things you can think of! Anything, from a{' '}
               <Link href="https://www.youtube.com/watch?v=PnK4gzO6S3Q">
                 lamp that flashes faster the slower you type
@@ -351,7 +352,7 @@ export default function ExampleCity() {
               , to those ideas that you wouldn't dare to consider to be useful,
               goes at Scrapyard. No matter your experience, Scrapyard
               {/* TODO: Change [EXAMPLECITY] to your event's city */}
-              [EXAMPLECITY] needs you and your scrappy ideas!
+              Singapore needs you and your scrappy ideas!
             </p>
           </Box>
         </Box>
@@ -450,7 +451,7 @@ export default function ExampleCity() {
             }}
           >
             {/* TODO: Change [EXAMPLECITY] to your event's city */}
-            WHAT'S HAPPENING AT SCRAPYARD [EXAMPLECITY]?
+            WHAT'S HAPPENING AT SCRAPYARD SINGAPORE?
           </Heading>
         </Box>
         <Heading
@@ -464,7 +465,7 @@ export default function ExampleCity() {
         >
           {/* TODO: Change [EXAMPLECITY] to your event's city */}
           {/* TODO: Change [DURATION] to your event's duration (12hour, 24hour, 2-day) */}
-          Scrapyard [EXAMPLECITY] is a [DURATION] event - HERE'S THE ROUGH
+          Scrapyard Singapore is a 2-day event - HERE'S THE ROUGH
           SCHEDULE!
         </Heading>
         <Box
@@ -557,7 +558,7 @@ export default function ExampleCity() {
             }}
           >
             {/* TODO: Change [EXAMPLECITY] to your event's city */}
-            CAN'T MAKE IT TO [EXAMPLECITY]?
+            CAN'T MAKE IT TO SINGAPORE?
           </Heading>
         </Box>
         <Heading
@@ -694,9 +695,9 @@ export default function ExampleCity() {
                 We’re here to help! Our parents guide will be released soon, but
                 they can reach out to us at{' '}
                 {/* TODO: Change this email to your event's email */}
-                <Link href="mailto:scrapyard@hackclub.com">
+                <Link href="mailto:scrapyardsingapore@hackclub.com">
                   {/* TODO: Change this email to your event's email */}
-                  scrapyard@hackclub.com
+                  scrapyardsingapore@hackclub.com
                 </Link>{' '}
                 for questions.
               </>
@@ -704,12 +705,12 @@ export default function ExampleCity() {
             'What if I have more questions?': (
               <>
                 {/* TODO: Change [SLACKCHANNEL] to the name of your event's Slack channel */}
-                Contact us! Feel free to reach out to us in the [SLACKCHANNEL]
+                Contact us! Feel free to reach out to us in the #scrapyardsingapore
                 channel on the Hack Club slack or email us at{' '}
                 {/* TODO: Change this email to your event's email */}
-                <Link href="mailto:scrapyard@hackclub.com">
+                <Link href="mailto:scrapyardsingapore@hackclub.com">
                   {/* TODO: Change this email to your event's email */}
-                  scrapyard@hackclub.com
+                  scrapyardsingapore@hackclub.com
                 </Link>
                 .
               </>
@@ -762,7 +763,7 @@ export default function ExampleCity() {
         </Grid>
         <Link
           // TODO: Change [EVENTID] to your event's ID (see https://airtable.com/appigKiF7GbVISAlg/shrK3OiCJs4BRBIRG)
-          href="https://forms.hackclub.com/scrapyard-signup?event_id=[EVENTID]"
+          href="https://forms.hackclub.com/scrapyard-signup?event_id=rec7xdy4IMSG0GU0J"
           target="_blank"
         >
           <Box
@@ -792,7 +793,7 @@ export default function ExampleCity() {
               }}
             >
               {/* TODO: Change [EXAMPLECITY] to your event's city */}
-              SIGN UP FOR SCRAPYARD [EXAMPLECITY]
+              SIGN UP FOR SCRAPYARD SINGAPORE
             </Heading>
           </Box>
         </Link>
