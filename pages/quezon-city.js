@@ -202,7 +202,7 @@ export default function QuezonCity() {
           />
         </Box>
         <Link
-          href="https://forms.hackclub.com/scrapyard-signup?event_id=recfKR3GeLkWdxzaB"
+          href="https://forms.hackclub.com/scrapyard-signup?event=recfKR3GeLkWdxzaB"
           target="_blank"
         >
           <Box
@@ -725,7 +725,7 @@ export default function QuezonCity() {
           })}
         </Grid>
         <Link
-          href="https://forms.hackclub.com/scrapyard-signup?event_id=recfKR3GeLkWdxzaB"
+          href="https://forms.hackclub.com/scrapyard-signup?event=recfKR3GeLkWdxzaB"
           target="_blank"
         >
           <Box
