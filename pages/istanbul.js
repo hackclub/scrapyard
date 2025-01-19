@@ -1,43 +1,23 @@
-'======== READ ME BEFORE EDITING ========'
-/*
-Hello! This is the template for the city pages.
 
-To create a new page, make a copy of this file in the same directory (pages) and rename it for your city.
-E.g. if your city is Tampa, rename the copy of this file to tampa.js
-
-Replace all placeholder info, indicated by "TODO" comments (you can use Ctrl+F) in this file
-You do not need to use this template exactly, feel free to customize it as much as you see fit.
-
-If you want to include additional assets, please add them under public/city/your-city-name.
-
-Make a PR and we'll review it as soon as we can!
-
-If you have any questions, send a message to the #scrapyard channel on the Hack Club Slack and we'll try to help.
-
-P.S. Feel free to delete this comment block when you're done! 
-
-Note: To test your changes locally, use `yarn install` and `yarn dev`.
-*/
 
 import Head from 'next/head'
 import { Box, Card, Grid, Heading, Image, Link, Text } from 'theme-ui'
 import dynamic from 'next/dynamic'
 
-// TODO: Change this schedule to your own!
 const schedule = [
-  { time: '11:00 AM', event: 'Doors open' },
-  { time: '12:00 PM', event: 'Opening ceremony' },
-  { time: '12:30 PM', event: 'Lunch' },
-  { time: '1:00 PM', event: 'Start working on your project!' },
-  { time: '2:00 PM', event: 'Workshop 1' },
-  { time: '4:00 PM', event: 'Activity 1' },
-  { time: '4:00 PM', event: 'Workshop 2' },
-  { time: '6:00 PM', event: 'Dinner' },
-  { time: '8:00 PM', event: 'Lightning talks' },
-  { time: '12:00 AM', event: 'Midnight surprise' },
-  { time: '8:00 AM', event: 'Breakfast' },
-  { time: '10:30 AM', event: 'Demos!' },
-  { time: '12:00 PM', event: 'Closing ceremony' }
+  { time: '🐧', event: 'Açiklanacak' },
+  { time: '🐧', event: 'Açiklanacak' },
+  { time: '🐧', event: 'Açiklanacak' },
+  { time: '🐧', event: 'Açiklanacak' },
+  { time: '🐧', event: 'Açiklanacak' },
+  { time: '🐧', event: 'Açiklanacak' },
+  { time: '🐧', event: 'Açiklanacak' },
+  { time: '🐧', event: 'Açiklanacak' },
+  { time: '🐧', event: 'Açiklanacak' },
+  { time: '🐧', event: 'Açiklanacak' },
+  { time: '🐧', event: 'Açiklanacak' },
+  { time: '🐧', event: 'Açiklanacak' },
+  { time: '🐧', event: 'Açiklanacak' },
 ]
 
 const Map = dynamic(() => import('../components/Map'), { ssr: false })
@@ -64,7 +44,7 @@ const Flag = () => (
   </Link>
 )
 
-export default function ExampleCity() {
+export default function istanbul() {
   return (
     <Box
       sx={{
@@ -78,8 +58,7 @@ export default function ExampleCity() {
       }}
     >
       <Head>
-        {/* TODO: Change [EXAMPLECITY] to your event's city */}
-        <title>Scrapyard [EXAMPLECITY]</title>
+        <title>Scrapyard İstanbul</title>
       </Head>
       <Flag />
       <Box
@@ -141,7 +120,7 @@ export default function ExampleCity() {
                 margin: '8%'
               }}
             >
-              Build stupid s#!t, get stupid prizes.
+              Gençler için gençler tarafından!
             </Heading>
           </Box>
           <Box
@@ -175,7 +154,7 @@ export default function ExampleCity() {
               }}
             >
               {/* TODO: Change [EXAMPLECITY] to your event's city */}
-              [EXAMPLECITY] - March&nbsp;15-16
+              İstanbul - 15-16&nbsp;Mart
             </Heading>
           </Box>
         </Box>
@@ -226,7 +205,7 @@ export default function ExampleCity() {
         </Box>
         <Link
           // TODO: Change [EVENTID] to your event's ID (see https://airtable.com/appigKiF7GbVISAlg/shrK3OiCJs4BRBIRG)
-          href="https://forms.hackclub.com/scrapyard-signup?event_id=[EVENTID]"
+          href="https://forms.hackclub.com/scrapyard-signup?event_id=rec5ESbCxcgx43hMh"
           target="_blank"
         >
           <Box
@@ -258,7 +237,7 @@ export default function ExampleCity() {
                 width: '100%'
               }}
             >
-              SIGN&nbsp;UP
+              Kayıt ol!
             </Heading>
           </Box>
         </Link>
@@ -332,26 +311,17 @@ export default function ExampleCity() {
                 textDecoration: 'underline'
               }}
             >
-              {/* TODO: Change [EXAMPLECITY] to your event's city */}
-              What's Scrapyard [EXAMPLECITY]?
+              Scrapyard İstanbul nedir?
             </Heading>
             <p
               style={{
                 fontSize: '1.5em'
               }}
             >
-              {/* TODO: Change [EXAMPLECITY] to your event's city */}
-              Scrapyard [EXAMPLECITY] is a hackathon for high schoolers
-              {/* TODO: Change [EXAMPLECITY] to your event's city */}
-              happening in [EXAMPLECITY], where you can make the stupidest
-              things you can think of! Anything, from a{' '}
-              <Link href="https://www.youtube.com/watch?v=PnK4gzO6S3Q">
-                lamp that flashes faster the slower you type
-              </Link>
-              , to those ideas that you wouldn't dare to consider to be useful,
-              goes at Scrapyard. No matter your experience, Scrapyard
-              {/* TODO: Change [EXAMPLECITY] to your event's city */}
-              [EXAMPLECITY] needs you and your scrappy ideas!
+              Scrapyard global bir şekilde 100+ şehirde 15-16 Mart tarihleri arasında aynanda düzenlenecek olan ve eğlenceli projeler oluşturmaya yönelik bir hackathondur.Bu etkinlik {''}
+              Hack Club
+              önderliğinde gerçekleştirelecektir. Hack Club dünya genelinde 40.000+ liseliye ulaşan bir kar amacı gütmeyen kuruluştur.
+
             </p>
           </Box>
         </Box>
@@ -449,8 +419,7 @@ export default function ExampleCity() {
               textAlign: 'center'
             }}
           >
-            {/* TODO: Change [EXAMPLECITY] to your event's city */}
-            WHAT'S HAPPENING AT SCRAPYARD [EXAMPLECITY]?
+            SCRAPYARD İSTANBUL ETKİNLİK TAKVİMİ
           </Heading>
         </Box>
         <Heading
@@ -462,10 +431,7 @@ export default function ExampleCity() {
             textAlign: 'center'
           }}
         >
-          {/* TODO: Change [EXAMPLECITY] to your event's city */}
-          {/* TODO: Change [DURATION] to your event's duration (12hour, 24hour, 2-day) */}
-          Scrapyard [EXAMPLECITY] is a [DURATION] event - HERE'S THE ROUGH
-          SCHEDULE!
+          48 Saatlik Hackathon Etkinliğimizde Neler Olacak? İşte takvimimiz!
         </Heading>
         <Box
           sx={{
@@ -556,8 +522,7 @@ export default function ExampleCity() {
               textAlign: 'center'
             }}
           >
-            {/* TODO: Change [EXAMPLECITY] to your event's city */}
-            CAN'T MAKE IT TO [EXAMPLECITY]?
+            Ben yurtdisinda yasiyorum.Katilamayacak miyim?
           </Heading>
         </Box>
         <Heading
@@ -570,7 +535,7 @@ export default function ExampleCity() {
             mx: '5vw'
           }}
         >
-          THERE ARE 100+ OTHER SCRAPYARD EVENTS HAPPENING AROUND THE WORLD!
+          HAYIR! Dünya genelinde düzenlenen 100+ etkinlikte yer alabilirsiniz!
         </Heading>
         <Box
           sx={{
@@ -609,7 +574,7 @@ export default function ExampleCity() {
             position: 'relative'
           }}
         >
-          Frequently Asked Questions
+          Sık Sorulan Sorular
           <Image
             src="/elements/doodles/blue-underline.svg"
             sx={{
@@ -628,90 +593,62 @@ export default function ExampleCity() {
           }}
         >
           {Object.entries({
-            'Who can participate in Scrapyard?': (
+            'Scrapyard nedir?': (
               <>
-                All high-school & upper-middle-school aged students are welcome
-                to come! You don't have to be a member of the Hack Club
-                community or be a Hack Club leader.
+              Scrapyard global bir şekilde 100+ şehirde 15-16 Mart tarihleri arasında aynanda düzenlenecek olan ve eğlenceli projeler oluşturmaya yönelik bir hackathondur. Bu etkinlik {''} 
+              <Link href='https://hackclub.com' target='_blank'>Hack Club </Link> {''}önderliğinde gerçekleştirelecektir. Hack Club dünya genelinde 40.000+ liseliye ulaşan bir kar amacı gütmeyen kuruluştur
               </>
             ),
-            'All this, for free?': (
+
+            'Scrapyard İstanbul nerede olacak?': (
               <>
-                Yep! Food, swag and good vibes are all included. Plus, if you’re
-                joining us from afar,{' '}
-                <Link href="https://gas.hackclub.com/">
-                  we’ll cover the cost of gas or a bus / train ticket
-                </Link>
-                .
+              Bu bilgiyi çok yakında paylaşacağız.Takipte kalın! Etkinliğimize ev sahipliği mi yapmak istiyorsunuz? {''}
+              <Link href='mailto:berke.istanbul@hackclub.com'> 
+              Bizle iletişime geçin!
+              </Link>
+
               </>
             ),
-            'What do I need?': (
+            "Scrapyard İstanbul'a kimler katılabilir?": (
               <>
-                Your laptop, chargers, and an open mind! If you're going to an
-                overnight event, bring toiletries and sleeping bagstoo.
-                Additionally, if you plan to work on a hardware project, bring
-                the tools you'll need.
+              İstanbulda yaşayan ve 18 yaşından küçük(maksimum lise 4.sınıf olmak şartıyla) herkes katılabilir!
               </>
             ),
-            'I’m not good at coding. Can I still participate?': (
+            'Harika peki ya ücretli mi?': (
               <>
-                This hackathon is for creatives of all skill levels! We'll have
-                workshops and other events so join us and let's learn together.
-                If you'd like to start exploring some introductory projects,
-                check out Hack Club Workshops.
+                Hayır! Yemek,hediye ve eğlence dahil etkinliğimiz tamamen ücretsizdir!
               </>
             ),
-            'What can I make at Scrapyard?': (
+            'Peki ya neler getirmeliyim?': (
               <>
-                The scrappiest thing you can imagine –- jank is encouraged.
-                Games? Apps? Websites? Programming languages? <em>Hardware?</em>{' '}
-                You name it! We’ll have a bunch of resources and mentors to help
-                you out.
+              Bilgisayarın,Şarj cihazı,Uyku tulumun ve yaratıcı zekan! Eğer bir donanım projesi yapmayı planlıyorsanız lütfen kendi malzemelerinizi getirin.
+
               </>
             ),
-            'What has Hack Club done before?': (
+            'Tüm bunlar harika fakat yazılıma yönelik bir tecrübem yok.Yine de katılabilir miyim?': (
               <>
-                Hack Club has run an{' '}
-                <Link href="https://youtu.be/PnK4gzO6S3Q" target="_blank">
-                  overnight hackathon
-                </Link>{' '}
-                in San Francisco, a{' '}
-                <Link
-                  href="https://www.youtube.com/watch?v=H5RPsCMl3uM"
-                  target="_blank"
-                >
-                  Game Jam
-                </Link>{' '}
-                across 50 cities, a hackathon on a{' '}
-                <Link href="https://youtu.be/2BID8_pGuqA" target="_blank">
-                  Train
-                </Link>{' '}
-                from Vermont to Los Angeles, and much more!
+              Evet! Etkinliğimiz her seviyeden ve her alandan katılımcıya açıktır (sadece yazılım değil donanım ve tasarım gibi alanlarda da katılım sağlayabiilirsiniz).Her seviyeden katılımcılara yönelik workshop ve etkinler düzenleyeceğiz.En önemli noktanın eğlenmek olduğunu unutmayın :)
               </>
             ),
-            'What if my parents are concerned?': (
+            'Bu etkinlikte neler yapabilirim?': (
               <>
-                We’re here to help! Our parents guide will be released soon, but
-                they can reach out to us at{' '}
-                {/* TODO: Change this email to your event's email */}
-                <Link href="mailto:scrapyard@hackclub.com">
-                  {/* TODO: Change this email to your event's email */}
-                  scrapyard@hackclub.com
-                </Link>{' '}
-                for questions.
+              Oyun,Web sitesi veya belki de bir programlama dili? Karar senin.Herşeyi yapabilirsin - tek sınır senin hayal gücün!
               </>
             ),
-            'What if I have more questions?': (
+            'Ailem izin vermiyor/ daha fazla bilgi istiyorlar :(': (
               <>
-                {/* TODO: Change [SLACKCHANNEL] to the name of your event's Slack channel */}
-                Contact us! Feel free to reach out to us in the [SLACKCHANNEL]
-                channel on the Hack Club slack or email us at{' '}
-                {/* TODO: Change this email to your event's email */}
-                <Link href="mailto:scrapyard@hackclub.com">
-                  {/* TODO: Change this email to your event's email */}
-                  scrapyard@hackclub.com
-                </Link>
-                .
+              Hiç merak etme! Yakında aile rehberimizi yayınlayacağız fakat o zamana kadar {''}
+              <Link href='mailto:istanbul@scrapyard.hackclub.com'>
+              istanbul@scrapyard.hackclub.com
+              </Link> {''} adresimize mail atmanız yeterli! Tüm sorularınızı cevaplayıp ailenizin teredütlerini gidermek için buradayız.
+
+              </>
+            ),
+            'Sponsor olmak istiyorum!': (
+              <>
+              <Link href='mailto:berke.istanbul@scrapyard.hackclub.com'>berke.istanbul@scrapyard.hackclub.com {''}</Link>
+              Adresimize mail atarak bizimle iletişime geçebilirsiniz.
+
               </>
             )
           }).map(([question, answer], i) => {
@@ -761,8 +698,7 @@ export default function ExampleCity() {
           })}
         </Grid>
         <Link
-          // TODO: Change [EVENTID] to your event's ID (see https://airtable.com/appigKiF7GbVISAlg/shrK3OiCJs4BRBIRG)
-          href="https://forms.hackclub.com/scrapyard-signup?event_id=[EVENTID]"
+          href="https://forms.hackclub.com/scrapyard-signup?event_id=rec5ESbCxcgx43hMh"
           target="_blank"
         >
           <Box
@@ -791,8 +727,7 @@ export default function ExampleCity() {
                 paddingY: ['15px', '0px']
               }}
             >
-              {/* TODO: Change [EXAMPLECITY] to your event's city */}
-              SIGN UP FOR SCRAPYARD [EXAMPLECITY]
+              Scrapyard İstanbul'a katil!
             </Heading>
           </Box>
         </Link>
