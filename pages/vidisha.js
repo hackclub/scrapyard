@@ -688,9 +688,14 @@ export default function ExampleCity() {
                 We’re here to help! Our parents guide will be released soon, but
                 they can reach out to us at{' '}
                 {/* TODO: Change this email to your event's email */}
+                <Link href="mailto:arjav@scrapyard.hackclub.com">
+                arjav@scrapyard.hackclub.com
+                </Link> {' or '}
+
                 <Link href="mailto:vidisha@scrapyard.hackclub.com">
                   {/* TODO: Change this email to your event's email */}
                   vidisha@scrapyard.hackclub.com
+                  
                 </Link>{' '}
                 for questions.
               </>
@@ -701,11 +706,15 @@ export default function ExampleCity() {
                 Contact us! Feel free to reach out to us in the
                 #scrapyard-vidisha channel on the Hack Club slack or email us at{' '}
                 {/* TODO: Change this email to your event's email */}
+                <Link href="mailto:arjav@scrapyard.hackclub.com">
+                arjav@scrapyard.hackclub.com
+                </Link> {' or '}
                 <Link href="mailto:vidisha@scrapyard.hackclub.com">
-                  {/* TODO: Change this email to your event's email */}
                   vidisha@scrapyard.hackclub.com
-                </Link>
-                .
+                  </Link>
+                
+
+                
               </>
             )
           }).map(([question, answer], i) => {
