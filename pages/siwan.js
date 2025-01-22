@@ -1,16 +1,4 @@
-'======== READ ME BEFORE EDITING ========'
-/*
-Hello! This is the template for the city pages.
-To create a new page, make a copy of this file in the same directory (pages) and rename it for your city.
-E.g. if your city is Tampa, rename the copy of this file to tampa.js
-Replace all placeholder info, indicated by "TODO" comments (you can use Ctrl+F) in this file
-You do not need to use this template exactly, feel free to customize it as much as you see fit.
-If you want to include additional assets, please add them under public/city/your-city-name.
-Make a PR and we'll review it as soon as we can!
-If you have any questions, send a message to the #scrapyard channel on the Hack Club Slack and we'll try to help.
-P.S. Feel free to delete this comment block when you're done! 
-Note: To test your changes locally, use `yarn install` and `yarn dev`.
-*/
+
 
 import Head from 'next/head'
 import { Box, Card, Grid, Heading, Image, Link, Text } from 'theme-ui'
@@ -97,7 +85,7 @@ export default function ExampleCity() {
 
               objectFit: 'contain'
             }}
-            src="https://ibb.co/nDXjskV"
+            src="https://ibb.co/41yLvdz"
             alt="Scrapyard"
           />
         </Box>
