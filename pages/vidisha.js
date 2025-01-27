@@ -633,10 +633,10 @@ export default function ExampleCity() {
                 community or be a Hack Club leader.
               </>
             ),
-            'All this, for free?': (
+            'Is there a registration fee?': (
               <>
                 {/* I removed Gas fund as it is not available in India */}
-                Yep! Food, swag and good vibes are all included.
+                No! Food, swag and good vibes are all included. We are also giving away free t-shirts and .xyz Domains!
               </>
             ),
             'What do I need?': (
@@ -651,8 +651,6 @@ export default function ExampleCity() {
               <>
                 This hackathon is for creatives of all skill levels! We'll have
                 workshops and other events so join us and let's learn together.
-                If you'd like to start exploring some introductory projects,
-                check out Hack Club Workshops.
               </>
             ),
             'What can I make at Scrapyard?': (
