@@ -660,24 +660,12 @@ export default function ExampleCity() {
                 you out.
               </>
             ),
-            'What has Hack Club done before?': (
+            'What has Hack Club Vidisha done before?': (
               <>
-                Hack Club has run an{' '}
-                <Link href="https://youtu.be/PnK4gzO6S3Q" target="_blank">
-                  overnight hackathon
-                </Link>{' '}
-                in San Francisco, a{' '}
-                <Link
-                  href="https://www.youtube.com/watch?v=H5RPsCMl3uM"
-                  target="_blank"
-                >
-                  Game Jam
-                </Link>{' '}
-                across 50 cities, a hackathon on a{' '}
-                <Link href="https://youtu.be/2BID8_pGuqA" target="_blank">
-                  Train
-                </Link>{' '}
-                from Vermont to Los Angeles, and much more!
+                Hack Club  Vidisha has run {' '}
+                <Link href="https://www.instagram.com/p/DEuPpHiNHrN/" target="_blank">
+                  Counterspell-vidisha
+                </Link>, a 24-hour hackathon for teenagers.
               </>
             ),
             'What if my parents are concerned?': (
