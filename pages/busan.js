@@ -65,7 +65,7 @@ export default function ExampleCity() {
           justifyContent: 'center',
           alignItems: 'center',
           flexDirection: 'column',
-          gap: '20px'
+          gap: '10px'
         }}
       >
         <Box
@@ -653,6 +653,34 @@ export default function ExampleCity() {
             <Link href="https://www.tkbend.co.kr/eng/main/main.php">
               <Image
                 src="/city/busan/sponsors/tk.png"
+                sx={{
+                  maxHeight: '150px'
+                }}
+              />
+            </Link>
+          </Box>
+          <Box
+            sx={{
+              textAlign: 'center'
+            }}
+          >
+            <Link href="https://www.instagram.com/bfshsstuco/">
+              <Image
+                src="/city/busan/sponsors/stuco.png"
+                sx={{
+                  maxHeight: '150px'
+                }}
+              />
+            </Link>
+          </Box>
+          <Box
+            sx={{
+              textAlign: 'center'
+            }}
+          >
+            <Link href="https://csteachers.org/cshs/">
+              <Image
+                src="/city/busan/sponsors/cshs.png"
                 sx={{
                   maxHeight: '150px'
                 }}

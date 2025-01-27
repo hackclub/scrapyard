@@ -23,7 +23,7 @@ import Head from 'next/head'
 import { Box, Card, Grid, Heading, Image, Link, Text } from 'theme-ui'
 import dynamic from 'next/dynamic'
 
-// TODO: Change this schedule to your own!
+// TODO: Update Schedule when finalized
 const schedule = [
   { time: '11:00 AM', event: 'Doors open' },
   { time: '12:00 PM', event: 'Opening ceremony' },
@@ -105,9 +105,11 @@ export default function ExampleCity() {
 
               maxWidth: '70vw',
 
-              objectFit: 'contain'
+              height: '300px',
+
+              objectFit: 'cover'
             }}
-            src="/elements/wordmark.svg"
+            src="https://cloud-rk0phyv7a-hack-club-bot.vercel.app/0scrapyardhamiltonlogo.svg"
             alt="Scrapyard"
           />
         </Box>
@@ -339,17 +341,14 @@ export default function ExampleCity() {
                 fontSize: '1.5em'
               }}
             >
-              {/* TODO: Change [EXAMPLECITY] to your event's city */}
-              Scrapyard Hamilton is a hackathon for high schoolers
-              {/* TODO: Change [EXAMPLECITY] to your event's city */}
-              happening in Hamilton, where you can make the stupidest things you
+              Scrapyard Hamilton is a hackathon for high schoolers happening in Hamilton,
+               where you can make the stupidest things you
               can think of! Anything, from a{' '}
               <Link href="https://www.youtube.com/watch?v=PnK4gzO6S3Q">
                 lamp that flashes faster the slower you type
               </Link>
               , to those ideas that you wouldn't dare to consider to be useful,
               goes at Scrapyard. No matter your experience, Scrapyard
-              {/* TODO: Change [EXAMPLECITY] to your event's city */}
               Hamilton needs you and your scrappy ideas!
             </p>
           </Box>

@@ -26,19 +26,19 @@ import dynamic from 'next/dynamic'
 
 // TODO: Change this schedule to your own!
 const schedule = [
-  { time: '2:00 PM', event: 'Doors open' },
-  { time: '2:35 PM', event: 'Opening ceremony' },
-  { time: '4:30 PM', event: 'Snack' },
-  { time: '7:00 PM', event: 'Dinner' },
-  { time: '8:00 PM', event: 'Workshop 1' },
-  { time: '10:00 PM', event: 'End of Day One' },
-  { time: '8:30 AM', event: 'Start of Day Two' },
-  { time: '9:00 AM', event: 'Breakfast' },
+  { time: '02:00 PM', event: 'Doors open' },
+  { time: '02:35 PM', event: 'Opening ceremony' },
+  { time: '04:30 PM', event: 'Snack' },
+  { time: '07:00 PM', event: 'Dinner' },
+  { time: '08:00 PM', event: 'Workshop 1' },
+  { time: '09:00 PM', event: 'End of Day One' },
+  { time: '08:30 AM', event: 'Start of Day Two' },
+  { time: '09:00 AM', event: 'Breakfast' },
   { time: '11:00 AM', event: 'Snack' },
-  { time: '1:00 PM', event: 'Lunch' },
-  { time: '2:30 PM', event: 'Project Submission' },
-  { time: '3:30 PM', event: 'Demos!' },
-  { time: '4:15 PM', event: 'Closing ceremony' }
+  { time: '01:00 PM', event: 'Lunch' },
+  { time: '02:30 PM', event: 'Project Submission' },
+  { time: '03:30 PM', event: 'Demos!' },
+  { time: '04:15 PM', event: 'Closing ceremony' }
 ]
 
 const Map = dynamic(() => import('../components/Map'), { ssr: false })
@@ -142,7 +142,7 @@ export default function ExampleCity() {
                 margin: '8%'
               }}
             >
-              Build stupid s#!t, get stupid prizes.
+              Build scrappy stuff, get scrappy prizes.
             </Heading>
           </Box>
           <Box
@@ -343,7 +343,7 @@ export default function ExampleCity() {
               {/* TODO: Change [EXAMPLECITY] to your event's city */}
               Scrapyard Singapore is a hackathon for high schoolers
               {/* TODO: Change [EXAMPLECITY] to your event's city */}
-              happening in Singapore, where you can make the stupidest things
+               happening in Singapore, where you can make the stupidest things
               you can think of! Anything, from a{' '}
               <Link href="https://www.youtube.com/watch?v=PnK4gzO6S3Q">
                 lamp that flashes faster the slower you type
@@ -351,7 +351,7 @@ export default function ExampleCity() {
               , to those ideas that you wouldn't dare to consider to be useful,
               goes at Scrapyard. No matter your experience, Scrapyard
               {/* TODO: Change [EXAMPLECITY] to your event's city */}
-              Singapore needs you and your scrappy ideas!
+               Singapore needs you and your scrappy ideas!
             </p>
           </Box>
         </Box>

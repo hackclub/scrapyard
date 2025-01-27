@@ -224,6 +224,7 @@ export default function ExampleCity() {
           />
         </Box>
         <Link
+          // TODO: Change [EVENTID] to your event's ID (see https://airtable.com/appigKiF7GbVISAlg/shrK3OiCJs4BRBIRG)
           href="https://forms.hackclub.com/scrapyard-signup?event=delhi"
           target="_blank"
         >
@@ -690,9 +691,9 @@ export default function ExampleCity() {
                 We’re here to help! Our parents guide will be released soon, but
                 they can reach out to us at{' '}
                 {/* TODO: Change this email to your event's email */}
-                <Link href="mailto:anoushka.delhi@scrapyard.hackclub.com">
+                <Link href="mailto:delhi@scrapyard.hackclub.com">
                   {/* TODO: Change this email to your event's email */}
-                  anoushka.delhi@scrapyard.hackclub.com
+                  delhi@scrapyard.hackclub.com
                 </Link>{' '}
                 for questions.
               </>
@@ -700,12 +701,12 @@ export default function ExampleCity() {
             'What if I have more questions?': (
               <>
                 {/* TODO: Change [SLACKCHANNEL] to the name of your event's Slack channel */}
-                Contact us! Feel free to reach out to us in the [SLACKCHANNEL]
+                Contact us! Feel free to reach out to us in the #scrapyard-delhi
                 channel on the Hack Club slack or email us at{' '}
                 {/* TODO: Change this email to your event's email */}
-                <Link href="mailto:anoushka.delhi@scrapyard.hackclub.com">
+                <Link href="mailto:delhi@scrapyard.hackclub.com">
                   {/* TODO: Change this email to your event's email */}
-                  anoushka.delhi@scrapyard.hackclub.com
+                  delhi@scrapyard.hackclub.com
                 </Link>
                 .
               </>

@@ -1,29 +1,7 @@
-'======== READ ME BEFORE EDITING ========'
-/*
-Hello! This is the template for the city pages.
-
-To create a new page, make a copy of this file in the same directory (pages) and rename it for your city.
-E.g. if your city is Tampa, rename the copy of this file to tampa.js
-
-Replace all placeholder info, indicated by "TODO" comments (you can use Ctrl+F) in this file
-You do not need to use this template exactly, feel free to customize it as much as you see fit.
-
-If you want to include additional assets, please add them under public/city/your-city-name.
-
-Make a PR and we'll review it as soon as we can!
-
-If you have any questions, send a message to the #scrapyard channel on the Hack Club Slack and we'll try to help.
-
-P.S. Feel free to delete this comment block when you're done! 
-
-Note: To test your changes locally, use `npm install` and `npm run dev`.
-*/
-
 import Head from 'next/head'
 import { Box, Card, Grid, Heading, Image, Link, Text } from 'theme-ui'
 import dynamic from 'next/dynamic'
 
-// TODO: Change this schedule to your own!
 const schedule = [
   { time: '11:00 AM', event: 'Doors open' },
   { time: '12:00 PM', event: 'Opening ceremony' },
@@ -78,8 +56,7 @@ export default function ExampleCity() {
       }}
     >
       <Head>
-        {/* TODO: Change [EXAMPLECITY] to your event's city */}
-        <title>Scrapyard [EXAMPLECITY]</title>
+        <title>Scrapyard Hyderabad</title>
       </Head>
       <Flag />
       <Box
@@ -174,8 +151,7 @@ export default function ExampleCity() {
                 fontSize: ['1.2em', '1.4em']
               }}
             >
-              {/* TODO: Change [EXAMPLECITY] to your event's city */}
-              [EXAMPLECITY] - March&nbsp;15-16
+              Hyderabad - March&nbsp;15-16
             </Heading>
           </Box>
         </Box>
@@ -225,8 +201,7 @@ export default function ExampleCity() {
           />
         </Box>
         <Link
-          // TODO: Change [SLUG] to your event's slug (lowercase, dashed version of your event name), such as san-francisco for Scrapyard San Francisco
-          href="https://forms.hackclub.com/scrapyard-signup?event=[SLUG]"
+          href="https://forms.hackclub.com/scrapyard-signup?event=hyderabad"
           target="_blank"
         >
           <Box
@@ -332,26 +307,22 @@ export default function ExampleCity() {
                 textDecoration: 'underline'
               }}
             >
-              {/* TODO: Change [EXAMPLECITY] to your event's city */}
-              What's Scrapyard [EXAMPLECITY]?
+              What's Scrapyard Hyderabad?
             </Heading>
             <p
               style={{
                 fontSize: '1.5em'
               }}
             >
-              {/* TODO: Change [EXAMPLECITY] to your event's city */}
-              Scrapyard [EXAMPLECITY] is a hackathon for high schoolers
-              {/* TODO: Change [EXAMPLECITY] to your event's city */}
-              happening in [EXAMPLECITY], where you can make the stupidest
-              things you can think of! Anything, from a{' '}
+              Scrapyard Hyderabad is a hackathon for high schoolers happening in
+              Hyderabad, where you can make the stupidest things you can think
+              of! Anything, from a{' '}
               <Link href="https://www.youtube.com/watch?v=PnK4gzO6S3Q">
                 lamp that flashes faster the slower you type
               </Link>
               , to those ideas that you wouldn't dare to consider to be useful,
-              goes at Scrapyard. No matter your experience, Scrapyard
-              {/* TODO: Change [EXAMPLECITY] to your event's city */}
-              [EXAMPLECITY] needs you and your scrappy ideas!
+              goes at Scrapyard. No matter your experience, Scrapyard Hyderabad
+              needs you and your scrappy ideas!
             </p>
           </Box>
         </Box>
@@ -449,8 +420,7 @@ export default function ExampleCity() {
               textAlign: 'center'
             }}
           >
-            {/* TODO: Change [EXAMPLECITY] to your event's city */}
-            WHAT'S HAPPENING AT SCRAPYARD [EXAMPLECITY]?
+            WHAT'S HAPPENING AT SCRAPYARD Hyderabad?
           </Heading>
         </Box>
         <Heading
@@ -462,10 +432,7 @@ export default function ExampleCity() {
             textAlign: 'center'
           }}
         >
-          {/* TODO: Change [EXAMPLECITY] to your event's city */}
-          {/* TODO: Change [DURATION] to your event's duration (12hour, 24hour, 2-day) */}
-          Scrapyard [EXAMPLECITY] is a [DURATION] event - HERE'S THE ROUGH
-          SCHEDULE!
+          Scrapyard Hyderabad is a 24hour event - HERE'S THE ROUGH SCHEDULE!
         </Heading>
         <Box
           sx={{
@@ -556,8 +523,7 @@ export default function ExampleCity() {
               textAlign: 'center'
             }}
           >
-            {/* TODO: Change [EXAMPLECITY] to your event's city */}
-            CAN'T MAKE IT TO [EXAMPLECITY]?
+            CAN'T MAKE IT TO Hyderabad?
           </Heading>
         </Box>
         <Heading
@@ -693,23 +659,19 @@ export default function ExampleCity() {
               <>
                 We’re here to help! Our parents guide will be released soon, but
                 they can reach out to us at{' '}
-                {/* TODO: Change this email to your event's email */}
-                <Link href="mailto:scrapyard@hackclub.com">
-                  {/* TODO: Change this email to your event's email */}
-                  scrapyard@hackclub.com
+                <Link href="mailto:sannihith.hyderabad@scrapyard.hackclub.com">
+                  sannihith.hyderabad@scrapyard.hackclub.com
                 </Link>{' '}
                 for questions.
               </>
             ),
             'What if I have more questions?': (
               <>
-                {/* TODO: Change [SLACKCHANNEL] to the name of your event's Slack channel */}
-                Contact us! Feel free to reach out to us in the [SLACKCHANNEL]
-                channel on the Hack Club slack or email us at{' '}
-                {/* TODO: Change this email to your event's email */}
-                <Link href="mailto:scrapyard@hackclub.com">
-                  {/* TODO: Change this email to your event's email */}
-                  scrapyard@hackclub.com
+                Contact us! Feel free to reach out to us in the
+                #scrapyard-hyderabad channel on the Hack Club slack or email us
+                at{' '}
+                <Link href="mailto:sannihith.hyderabad@scrapyard.hackclub.com">
+                  sannihith.hyderabad@scrapyard.hackclub.com
                 </Link>
                 .
               </>
@@ -761,8 +723,7 @@ export default function ExampleCity() {
           })}
         </Grid>
         <Link
-          // TODO: Change [SLUG] to your event's slug (lowercase, dashed version of your event name), such as san-francisco for Scrapyard San Francisco
-          href="https://forms.hackclub.com/scrapyard-signup?event=[SLUG]"
+          href="https://forms.hackclub.com/scrapyard-signup?event=hyderabad"
           target="_blank"
         >
           <Box
@@ -791,8 +752,7 @@ export default function ExampleCity() {
                 paddingY: ['15px', '0px']
               }}
             >
-              {/* TODO: Change [EXAMPLECITY] to your event's city */}
-              SIGN UP FOR SCRAPYARD [EXAMPLECITY]
+              SIGN UP FOR SCRAPYARD Hyderabad
             </Heading>
           </Box>
         </Link>

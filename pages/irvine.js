@@ -1,43 +1,12 @@
-'======== READ ME BEFORE EDITING ========'
-/*
-Hello! This is the template for the city pages.
-
-To create a new page, make a copy of this file in the same directory (pages) and rename it for your city.
-E.g. if your city is Tampa, rename the copy of this file to tampa.js
-
-Replace all placeholder info, indicated by "TODO" comments (you can use Ctrl+F) in this file
-You do not need to use this template exactly, feel free to customize it as much as you see fit.
-
-If you want to include additional assets, please add them under public/city/your-city-name.
-
-Make a PR and we'll review it as soon as we can!
-
-If you have any questions, send a message to the #scrapyard channel on the Hack Club Slack and we'll try to help.
-
-P.S. Feel free to delete this comment block when you're done! 
-
-Note: To test your changes locally, use `npm install` and `npm run dev`.
-*/
 
 import Head from 'next/head'
 import { Box, Card, Grid, Heading, Image, Link, Text } from 'theme-ui'
 import dynamic from 'next/dynamic'
+import Script from 'next/script' // Added Script import
 
 // TODO: Change this schedule to your own!
 const schedule = [
-  { time: '11:00 AM', event: 'Doors open' },
-  { time: '12:00 PM', event: 'Opening ceremony' },
-  { time: '12:30 PM', event: 'Lunch' },
-  { time: '1:00 PM', event: 'Start working on your project!' },
-  { time: '2:00 PM', event: 'Workshop 1' },
-  { time: '4:00 PM', event: 'Activity 1' },
-  { time: '4:00 PM', event: 'Workshop 2' },
-  { time: '6:00 PM', event: 'Dinner' },
-  { time: '8:00 PM', event: 'Lightning talks' },
-  { time: '12:00 AM', event: 'Midnight surprise' },
-  { time: '8:00 AM', event: 'Breakfast' },
-  { time: '10:30 AM', event: 'Demos!' },
-  { time: '12:00 PM', event: 'Closing ceremony' }
+  { time: 'IDK', event: 'Schedule Coming Soon!' },
 ]
 
 const Map = dynamic(() => import('../components/Map'), { ssr: false })
@@ -79,8 +48,9 @@ export default function ExampleCity() {
     >
       <Head>
         {/* TODO: Change [EXAMPLECITY] to your event's city */}
-        <title>Scrapyard [EXAMPLECITY]</title>
+        <title>Scrapyard IRVINE</title>
       </Head>
+      <Script src="https://plausible.io/js/script.outbound-links.js" strategy="lazyOnload" /> {/* Added Script component */}
       <Flag />
       <Box
         sx={{
@@ -107,7 +77,7 @@ export default function ExampleCity() {
 
               objectFit: 'contain'
             }}
-            src="/elements/wordmark.svg"
+            src="/city/Irvine/IrvineLogo.svg"
             alt="Scrapyard"
           />
         </Box>
@@ -175,7 +145,7 @@ export default function ExampleCity() {
               }}
             >
               {/* TODO: Change [EXAMPLECITY] to your event's city */}
-              [EXAMPLECITY] - March&nbsp;15-16
+              IRVINE - March&nbsp;15-16
             </Heading>
           </Box>
         </Box>
@@ -225,8 +195,8 @@ export default function ExampleCity() {
           />
         </Box>
         <Link
-          // TODO: Change [SLUG] to your event's slug (lowercase, dashed version of your event name), such as san-francisco for Scrapyard San Francisco
-          href="https://forms.hackclub.com/scrapyard-signup?event=[SLUG]"
+          // TODO: Change [EVENTID] to your event's ID (see https://airtable.com/appigKiF7GbVISAlg/shrK3OiCJs4BRBIRG)
+          href="https://forms.hackclub.com/scrapyard-signup?event_id=[EVENTID]"
           target="_blank"
         >
           <Box
@@ -333,7 +303,7 @@ export default function ExampleCity() {
               }}
             >
               {/* TODO: Change [EXAMPLECITY] to your event's city */}
-              What's Scrapyard [EXAMPLECITY]?
+              What's Scrapyard IRVINE?
             </Heading>
             <p
               style={{
@@ -341,17 +311,16 @@ export default function ExampleCity() {
               }}
             >
               {/* TODO: Change [EXAMPLECITY] to your event's city */}
-              Scrapyard [EXAMPLECITY] is a hackathon for high schoolers
+              Scrapyard IRVINE is a hackathon for high schoolers
               {/* TODO: Change [EXAMPLECITY] to your event's city */}
-              happening in [EXAMPLECITY], where you can make the stupidest
+              happening in IRVINE, where you can make the stupidest
               things you can think of! Anything, from a{' '}
               <Link href="https://www.youtube.com/watch?v=PnK4gzO6S3Q">
                 lamp that flashes faster the slower you type
               </Link>
               , to those ideas that you wouldn't dare to consider to be useful,
               goes at Scrapyard. No matter your experience, Scrapyard
-              {/* TODO: Change [EXAMPLECITY] to your event's city */}
-              [EXAMPLECITY] needs you and your scrappy ideas!
+              IRVINE needs you and your scrappy ideas!
             </p>
           </Box>
         </Box>
@@ -450,7 +419,7 @@ export default function ExampleCity() {
             }}
           >
             {/* TODO: Change [EXAMPLECITY] to your event's city */}
-            WHAT'S HAPPENING AT SCRAPYARD [EXAMPLECITY]?
+            WHAT'S HAPPENING AT SCRAPYARD IRVINE?
           </Heading>
         </Box>
         <Heading
@@ -464,7 +433,7 @@ export default function ExampleCity() {
         >
           {/* TODO: Change [EXAMPLECITY] to your event's city */}
           {/* TODO: Change [DURATION] to your event's duration (12hour, 24hour, 2-day) */}
-          Scrapyard [EXAMPLECITY] is a [DURATION] event - HERE'S THE ROUGH
+          Scrapyard IRVINE is a 24hour event - HERE'S THE ROUGH
           SCHEDULE!
         </Heading>
         <Box
@@ -522,6 +491,198 @@ export default function ExampleCity() {
         </Box>
       </Box>
 
+      {/* Hosts Section */}
+      <Box
+        sx={{
+          padding: '40px',
+          background: '#337D77', // Changed from paper background to #337D77
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: '20px'
+        }}
+      >
+        <Box
+          sx={{
+            backgroundImage: 'url(/elements/ripped-paper-strip.svg)',
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover',
+            width: ['90vw', '70vw', '46.8vw'],
+            height: '30vh',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            mt: '5vh'
+          }}
+        >
+          <Heading as="h1" sx={{ textAlign: 'center', mx: '5vw' }}>
+            Hosts
+          </Heading>
+        </Box>
+        <Grid columns={[1, 2]} gap={4} sx={{ maxWidth: '800px' }}>
+          {/* Host Member 1 */}
+          <Box
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              background: '#ffffff', // Changed to white background for better contrast
+              padding: '20px',
+              borderRadius: '8px',
+              boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'
+            }}
+          >
+            <Image
+              src="https://media.licdn.com/dms/image/v2/D4D03AQGvYPhl6DJdWw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1693342121333?e=1742428800&v=beta&t=DF1D8pvecjkaBPVAqXCAAQzli4u2o0p7yt0fohUtBoo"
+              alt="Aryan Wadhera"
+              sx={{
+                width: '80px',
+                height: '80px',
+                borderRadius: '50%',
+                objectFit: 'cover',
+                mr: '20px'
+              }}
+            />
+            <Box
+              sx={{
+                display: 'flex', // Added display flex
+                flexDirection: 'column' // Stack items vertically
+              }}
+            >
+              <Text sx={{ fontWeight: 'bold', fontSize: '1.2em' }}>Aryan Wadhera</Text>
+              <Link
+                href="mailto:Aryan@wadheras.com"
+                sx={{
+                  color: 'inherit', // Remove blue color
+                  textDecoration: 'none' // Remove underline
+                }}
+              >
+                Aryan@wadheras.com
+              </Link>
+            </Box>
+          </Box>
+          {/* Host Member 2 */}
+          <Box
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              background: '#ffffff', // Changed to white background for better contrast
+              padding: '20px',
+              borderRadius: '8px',
+              boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'
+            }}
+          >
+            <Image
+              src="https://i.ibb.co/mTyVmKB/Wind-Power-Solo.jpg"
+              alt="Rishihabh Garg"
+              sx={{
+                width: '80px',
+                height: '80px',
+                borderRadius: '50%',
+                objectFit: 'cover',
+                mr: '20px'
+              }}
+            />
+            <Box
+              sx={{
+                display: 'flex', // Added display flex
+                flexDirection: 'column' // Stack items vertically
+              }}
+            >
+              <Text sx={{ fontWeight: 'bold', fontSize: '1.2em' }}>Rishabh Garg</Text>
+              <Link
+                href="mailto:rishabh.irvine@scrapyard.hackclub.com"
+                sx={{
+                  color: 'inherit', // Remove blue color
+                  textDecoration: 'none' // Remove underline
+                }}
+              >
+                rishabh.irvine@scrapyard.hackclub.com
+              </Link>
+            </Box>
+          </Box>
+          {/* Host Member 3 */}
+          <Box
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              background: '#ffffff', // Changed to white background for better contrast
+              padding: '20px',
+              borderRadius: '8px',
+              boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'
+            }}
+          >
+            <Image
+              src="https://media.licdn.com/dms/image/v2/D5603AQGrljSVTDNMog/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1705641214230?e=1743033600&v=beta&t=-BfX0rG-oh_Kjz1bo7E_UMN544Bdw0GsGVP183iBobA"
+              alt="Devom Brahmbhatt"
+              sx={{
+                width: '80px',
+                height: '80px',
+                borderRadius: '50%',
+                objectFit: 'cover',
+                mr: '20px'
+              }}
+            />
+            <Box
+              sx={{
+                display: 'flex', // Added display flex
+                flexDirection: 'column' // Stack items vertically
+              }}
+            >
+              <Text sx={{ fontWeight: 'bold', fontSize: '1.2em' }}>Devom Brahmbhatt</Text>
+              <Link
+                href="mailto:devom@example.com"
+                sx={{
+                  color: 'inherit', // Remove blue color
+                  textDecoration: 'none' // Remove underline
+                }}
+              >
+                Coming Soon
+              </Link>
+            </Box>
+          </Box>
+          {/* Host Member 4 */}
+          <Box
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              background: '#ffffff', // Changed to white background for better contrast
+              padding: '20px',
+              borderRadius: '8px',
+              boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'
+            }}
+          >
+            <Image
+              src="https://i.ibb.co/MPwkQd9/Screenshot-2025-01-17-at-8-30-24-PM.png"
+              alt="Olivia Skeete"
+              sx={{
+                width: '80px',
+                height: '80px',
+                borderRadius: '50%',
+                objectFit: 'cover',
+                mr: '20px'
+              }}
+            />
+            <Box
+              sx={{
+                display: 'flex', // Added display flex
+                flexDirection: 'column' // Stack items vertically
+              }}
+            >
+              <Text sx={{ fontWeight: 'bold', fontSize: '1.2em' }}>Olivia Skeete</Text>
+              <Link
+                href="mailto:olivia@example.com"
+                sx={{
+                  color: 'inherit', // Remove blue color
+                  textDecoration: 'none' // Remove underline
+                }}
+              >
+                Coming Soon
+              </Link>
+            </Box>
+          </Box>
+        </Grid>
+      </Box>
+
       <Box
         sx={{
           // backgroundImage: "url(/backgrounds/confetti.png)",
@@ -533,57 +694,67 @@ export default function ExampleCity() {
         <Box
           sx={{
             backgroundImage: 'url(/elements/ripped-paper-strip.svg)',
-            // backgroundSize: "cover!important",
-            // display: "block",
-            // width: "30vw",
-            height: '30vh',
-            width: ['90vw', '70vw', '46.8vw'],
-            alignItems: 'center',
-            justifyContent: 'center',
-            margin: '0vh',
             backgroundRepeat: 'no-repeat',
             backgroundSize: 'cover',
+            width: ['90vw', '70vw', '46.8vw'],
+            height: '30vh',
             display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center'
+            alignItems: 'center',
+            justifyContent: 'center',
+            mt: '5vh'
           }}
         >
-          <Heading
-            as="h1"
-            sx={{
-              mx: '1vw',
-              fontWeight: 'lighter',
-              textAlign: 'center'
-            }}
-          >
-            {/* TODO: Change [EXAMPLECITY] to your event's city */}
-            CAN'T MAKE IT TO [EXAMPLECITY]?
+          <Heading as="h1" sx={{ textAlign: 'center', mx: '5vw' }}>
+            Sponsors
           </Heading>
         </Box>
-        <Heading
-          as="h2"
-          sx={{
-            fontSize: '1.5em',
-            fontFamily: 'moonblossom',
-            color: 'white',
-            textAlign: 'center',
-            mx: '5vw'
-          }}
-        >
-          THERE ARE 100+ OTHER SCRAPYARD EVENTS HAPPENING AROUND THE WORLD!
-        </Heading>
         <Box
           sx={{
-            width: ['100%', '80%'],
-            height: '75vh',
-            alignItems: 'center',
+            mt: 4,
+            mb: '70px', // Added more spacing below sponsor logos
             display: 'flex',
-            flexDirection: 'column',
-            mb: '10vh',
-            mt: 5
+            flexWrap: 'nowrap',
+            overflowX: 'scroll',
+            gap: '20px'
           }}
         >
-          <Map />
+          <Image
+            src="https://assets.hackclub.com/flag-standalone.svg"
+            alt="Hack Club Sponsor"
+            sx={{
+              width: '150px',
+              height: '100px',
+              objectFit: 'contain'
+            }}
+          />
+          <Image
+            src="https://assets.hackclub.com/flag-standalone.svg"
+            alt="Hack Club Sponsor"
+            sx={{
+              width: '150px',
+              height: '100px',
+              objectFit: 'contain'
+            }}
+          />
+          <Image
+            src="https://assets.hackclub.com/flag-standalone.svg"
+            alt="Hack Club Sponsor"
+            sx={{
+              width: '150px',
+              height: '100px',
+              objectFit: 'contain'
+            }}
+          />
+          <Image
+            src="https://assets.hackclub.com/flag-standalone.svg"
+            alt="Hack Club Sponsor"
+            sx={{
+              width: '150px',
+              height: '100px',
+              objectFit: 'contain'
+            }}
+          />
+          {/* Add more sponsor logos as needed */}
         </Box>
       </Box>
 
@@ -648,7 +819,7 @@ export default function ExampleCity() {
             'What do I need?': (
               <>
                 Your laptop, chargers, and an open mind! If you're going to an
-                overnight event, bring toiletries and sleeping bagstoo.
+                overnight event, bring toiletries and sleeping bags too.
                 Additionally, if you plan to work on a hardware project, bring
                 the tools you'll need.
               </>
@@ -664,7 +835,7 @@ export default function ExampleCity() {
             'What can I make at Scrapyard?': (
               <>
                 The scrappiest thing you can imagine –- jank is encouraged.
-                Games? Apps? Websites? Programming languages? <em>Hardware?</em>{' '}
+                Games? Apps? Websites? Programming languages? Hardware? 
                 You name it! We’ll have a bunch of resources and mentors to help
                 you out.
               </>
@@ -695,7 +866,6 @@ export default function ExampleCity() {
                 they can reach out to us at{' '}
                 {/* TODO: Change this email to your event's email */}
                 <Link href="mailto:scrapyard@hackclub.com">
-                  {/* TODO: Change this email to your event's email */}
                   scrapyard@hackclub.com
                 </Link>{' '}
                 for questions.
@@ -703,12 +873,10 @@ export default function ExampleCity() {
             ),
             'What if I have more questions?': (
               <>
-                {/* TODO: Change [SLACKCHANNEL] to the name of your event's Slack channel */}
-                Contact us! Feel free to reach out to us in the [SLACKCHANNEL]
+                Contact us! Feel free to reach out to us in the #scrapyard
                 channel on the Hack Club slack or email us at{' '}
                 {/* TODO: Change this email to your event's email */}
                 <Link href="mailto:scrapyard@hackclub.com">
-                  {/* TODO: Change this email to your event's email */}
                   scrapyard@hackclub.com
                 </Link>
                 .
@@ -717,52 +885,49 @@ export default function ExampleCity() {
           }).map(([question, answer], i) => {
             return (
               <Card
-                key={question}
+              key={question}
+              sx={{
+                background: 'transparent', // Changed to 'transparent'
+                backgroundSize: [null, '100% 100%'],
+                backgroundRepeat: 'no-repeat',
+                boxShadow: 'none',
+                padding: '48px!important',
+                border: ['2px solid black', 'none']
+              }}
+              >
+              <Heading
+                as="h2"
+                mb={4}
                 sx={{
-                  background: [
-                    'transparent',
-                    `url('/elements/doodles/boxes/${(i % 6) + 1}.svg')`
-                  ],
-                  backgroundSize: [null, '100% 100%'],
-                  backgroundRepeat: 'no-repeat',
-                  boxShadow: 'none',
-                  padding: '48px!important',
-                  border: ['2px solid black', 'none']
+                position: 'relative'
                 }}
               >
-                <Heading
-                  as="h2"
-                  mb={4}
-                  sx={{
-                    position: 'relative'
-                  }}
-                >
-                  {question}
-                  <Image
-                    src="/elements/doodles/yellow-underline.svg"
-                    sx={{
-                      position: 'absolute',
-                      bottom: '0',
-                      left: '50%',
-                      transform: 'translateX(-50%) translateY(75%)'
-                    }}
-                  />
-                </Heading>
-                <Text
-                  sx={{
-                    fontSize: 3,
-                    fontWeight: 'bold'
-                  }}
-                >
-                  {answer}
-                </Text>
+                {question}
+                <Image
+                src="/elements/doodles/yellow-underline.svg"
+                sx={{
+                  position: 'absolute',
+                  bottom: '0',
+                  left: '50%',
+                  transform: 'translateX(-50%) translateY(75%)'
+                }}
+                />
+              </Heading>
+              <Text
+                sx={{
+                fontSize: 3,
+                fontWeight: 'bold'
+                }}
+              >
+                {answer}
+              </Text>
               </Card>
             )
           })}
         </Grid>
         <Link
-          // TODO: Change [SLUG] to your event's slug (lowercase, dashed version of your event name), such as san-francisco for Scrapyard San Francisco
-          href="https://forms.hackclub.com/scrapyard-signup?event=[SLUG]"
+          // TODO: Change [EVENTID] to your event's ID (see https://airtable.com/appigKiF7GbVISAlg/shrK3OiCJs4BRBIRG)
+          href="https://forms.hackclub.com/scrapyard-signup?event_id=recTfQjfDHweq5U8D"
           target="_blank"
         >
           <Box
@@ -792,7 +957,7 @@ export default function ExampleCity() {
               }}
             >
               {/* TODO: Change [EXAMPLECITY] to your event's city */}
-              SIGN UP FOR SCRAPYARD [EXAMPLECITY]
+              SIGN UP FOR SCRAPYARD IRVINE
             </Heading>
           </Box>
         </Link>

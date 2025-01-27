@@ -24,6 +24,11 @@ import { Box, Card, Grid, Heading, Image, Link, Text } from 'theme-ui'
 import dynamic from 'next/dynamic'
 import React, { useEffect, useState } from 'react'
 
+// TODO: Change this schedule to your own!
+const schedule = [
+  { time: 'determined!', event: 'To be' },
+]
+
 const Map = dynamic(() => import('../components/Map'), { ssr: false })
 
 const Flag = () => (
@@ -48,34 +53,17 @@ const Flag = () => (
   </Link>
 )
 
-export default function SiliconValley() {
-  const [schedule, setSchedule] = useState([])
+export default function Casablanca() {
   const [bronzeSponsors, setBronzeSponsors] = useState([])
   const [silverSponsors, setSilverSponsors] = useState([])
   const [goldSponsors, setGoldSponsors] = useState([])
   const [partnerSponsors, setPartnerSponsors] = useState([])
 
   useEffect(() => {
-    async function fetchSchedule() {
-      try {
-        const response = await fetch(
-          'https://adamxu.net/scrapyard/schedule.json?t=' + Date.now()
-        )
-        const data = await response.json()
-        setSchedule(data)
-      } catch (error) {
-        setSchedule([])
-      }
-    }
-
-    fetchSchedule()
-  }, [])
-
-  useEffect(() => {
     async function fetchBronzeSponsors() {
       try {
         const response = await fetch(
-          'https://adamxu.net/scrapyard/bronze.json?t=' + Date.now()
+          'https://slippyishappy.github.io/scrapyard-data/bronze.json?t=' + Date.now()
         )
         const data = await response.json()
         setBronzeSponsors(data)
@@ -91,7 +79,7 @@ export default function SiliconValley() {
     async function fetchSilverSponsors() {
       try {
         const response = await fetch(
-          'https://adamxu.net/scrapyard/silver.json?t=' + Date.now()
+          'https://slippyishappy.github.io/scrapyard-data/silver.json?t=' + Date.now()
         )
         const data = await response.json()
         setSilverSponsors(data)
@@ -107,7 +95,7 @@ export default function SiliconValley() {
     async function fetchGoldSponsors() {
       try {
         const response = await fetch(
-          'https://adamxu.net/scrapyard/gold.json?t=' + Date.now()
+          'https://slippyishappy.github.io/scrapyard-data/gold.json?t=' + Date.now()
         )
         const data = await response.json()
         setGoldSponsors(data)
@@ -123,7 +111,7 @@ export default function SiliconValley() {
     async function fetchPartnerSponsors() {
       try {
         const response = await fetch(
-          'https://adamxu.net/scrapyard/partner.json?t=' + Date.now()
+          'https://slippyishappy.github.io/scrapyard-data/partner.json?t=' + Date.now()
         )
         const data = await response.json()
         setPartnerSponsors(data)
@@ -148,7 +136,7 @@ export default function SiliconValley() {
       }}
     >
       <Head>
-        <title>Scrapyard Silicon Valley</title>
+        <title>Scrapyard Casablanca</title>
       </Head>
       <Flag />
       <Box
@@ -176,7 +164,7 @@ export default function SiliconValley() {
 
               objectFit: 'contain'
             }}
-            src="/city/silicon-valley/scrapyard-title.png"
+            src="/elements/wordmark.svg"
             alt="Scrapyard"
           />
         </Box>
@@ -196,7 +184,7 @@ export default function SiliconValley() {
               // paddingLeft: "7%",
               display: 'block',
 
-              width: 'min(520px, calc(100vw - 10px))',
+              width: 'min(500px, calc(100vw - 30px))',
               filter: 'drop-shadow(5px 5px 5px #000000AA)',
               position: 'relative',
               zIndex: 20
@@ -210,7 +198,7 @@ export default function SiliconValley() {
                 margin: '8%'
               }}
             >
-              Build crazy things, get crazy prizes.
+              Build crazy things, get amazing prizes.
             </Heading>
           </Box>
           <Box
@@ -220,7 +208,7 @@ export default function SiliconValley() {
               backgroundImage: "url('/elements/yellow-strip@stretch.svg')",
               backgroundRepeat: 'no-repeat',
               backgroundSize: '100% 100%',
-              width: '75%',
+              width: '82%',
               position: 'relative',
               zIndex: 30,
               top: '-15%',
@@ -243,7 +231,8 @@ export default function SiliconValley() {
                 fontSize: ['1.2em', '1.4em']
               }}
             >
-              Location TBA - March&nbsp;15-16
+              <Link href="https://maps.app.goo.gl/RZMKvbTkUagiZMQu7"
+          target="_blank">College De Paris</Link>, Casablanca - March&nbsp;15-16
             </Heading>
           </Box>
         </Box>
@@ -292,8 +281,10 @@ export default function SiliconValley() {
             alt="Pink paper star"
           />
         </Box>
-        {/* TODO: INTEREST FORM */}
-        <Link href="https://forms.hackclub.com/scrapyardsv" target="_blank">
+        <Link
+          href="https://forms.hackclub.com/scrapyard-signup?event=casablanca"
+          target="_blank"
+        >
           <Box
             sx={{
               backgroundImage: "url('/elements/yellow-strip@stretch.svg')",
@@ -323,7 +314,7 @@ export default function SiliconValley() {
                 width: '100%'
               }}
             >
-              Sign&nbsp;Up
+              SIGN&nbsp;UP
             </Heading>
           </Box>
         </Link>
@@ -397,22 +388,22 @@ export default function SiliconValley() {
                 textDecoration: 'underline'
               }}
             >
-              What's Scrapyard Silicon Valley?
+              What's Scrapyard Casablanca?
             </Heading>
             <p
               style={{
                 fontSize: '1.5em'
               }}
             >
-              Scrapyard Silicon Valley is a hackathon for high schoolers
-              happening in Silicon Valley, where you can make the craziest
+              Scrapyard Casablanca is a hackathon for high schoolers
+              happening in Casablanca, where you can make the weirdest
               things you can think of! Anything, from a{' '}
               <Link href="https://www.youtube.com/watch?v=PnK4gzO6S3Q">
                 lamp that flashes faster the slower you type
               </Link>
               , to those ideas that you wouldn't dare to consider to be useful,
-              goes at Scrapyard. No matter your experience, Scrapyard Silicon
-              Valley needs you and your scrappy ideas!
+              goes at Scrapyard. No matter your experience, Scrapyard
+              Casablanca needs you and your scrappy ideas!
             </p>
           </Box>
         </Box>
@@ -510,7 +501,7 @@ export default function SiliconValley() {
               textAlign: 'center'
             }}
           >
-            WHAT'S HAPPENING AT SCRAPYARD SILICON VALLEY?
+            WHAT'S HAPPENING AT SCRAPYARD Casablanca?
           </Heading>
         </Box>
         <Heading
@@ -522,7 +513,7 @@ export default function SiliconValley() {
             textAlign: 'center'
           }}
         >
-          Scrapyard Silicon Valley is a two-day event - HERE'S THE ROUGH
+          Scrapyard Casablanca is a 2-day event - HERE'S THE ROUGH
           SCHEDULE!
         </Heading>
         <Box
@@ -542,59 +533,40 @@ export default function SiliconValley() {
             boxShadow: '10px 10px 5px rgba(0, 0, 0, 0.3)'
           }}
         >
-          {schedule.map((day, dayIndex) => (
-            <Box
-              key={dayIndex}
-              sx={{ width: '100%', mb: dayIndex < schedule.length - 1 ? 6 : 0 }}
+          {schedule.map((item, i) => (
+            <div
+              style={{
+                display: 'flex',
+                width: '100%',
+                alignItems: 'center'
+              }}
+              key={i}
             >
               <Heading
-                as="h1"
+                as="p"
                 sx={{
-                  fontSize: '1.5em',
-                  fontFamily: 'moonblossom',
-                  color: 'black',
-                  textAlign: 'center',
-                  mb: 4
+                  display: 'inline',
+                  width: ['min-content', 'max-content'],
+                  fontSize: '2rem',
+                  fontFamily: 'p22-stanyan'
                 }}
               >
-                {day.day}
+                {item.event}
               </Heading>
-              {day.events.map((item, i) => (
-                <div
-                  style={{
-                    display: 'flex',
-                    width: '100%',
-                    alignItems: 'center'
-                  }}
-                  key={i}
-                >
-                  <Heading
-                    as="p"
-                    sx={{
-                      display: 'inline',
-                      width: ['min-content', 'max-content'],
-                      fontSize: '2rem',
-                      fontFamily: 'p22-stanyan'
-                    }}
-                  >
-                    {item.event}
-                  </Heading>
-                  <Box
-                    sx={{
-                      mx: 2,
-                      transform: 'translateY(0.75rem)',
-                      borderWidth: 0,
-                      borderBottomWidth: '0.35rem',
-                      borderStyle: 'dotted',
-                      flexGrow: '1',
-                      display: 'inline',
-                      height: 1
-                    }}
-                  />
-                  <p style={{ display: 'inline', margin: 0 }}>{item.time}</p>
-                </div>
-              ))}
-            </Box>
+              <Box
+                sx={{
+                  mx: 2,
+                  transform: 'translateY(0.75rem)',
+                  borderWidth: 0,
+                  borderBottomWidth: '0.35rem',
+                  borderStyle: 'dotted',
+                  flexGrow: '1',
+                  display: 'inline',
+                  height: 1
+                }}
+              ></Box>
+              <p style={{ display: 'inline', margin: 0 }}>{item.time}</p>
+            </div>
           ))}
         </Box>
       </Box>
@@ -901,279 +873,215 @@ export default function SiliconValley() {
                 </Heading>
               </Box>
               <div
-                style={{
-                  display: 'flex',
-                  flexWrap: 'wrap',
-                  gap: '20px',
-                  // height: '200px',
-                  transform: 'scale(0.9)',
-                  justifyContent: 'center'
-                }}
-              >
-                {silverSponsors.map((sponsor, i) => (
-                  <Link
-                    href={sponsor.url}
-                    target="_blank"
-                    sx={{
-                      backgroundColor: '#c9c9c9',
-                      display: 'flex',
-                      flexDirection: 'column',
-                      width: '200px',
-                      alignItems: 'center',
-                      padding: '20px',
-                      transform: `rotate(${(Math.random() - 0.5) * 10}deg)`,
-                      outline: 'solid 2px white',
-                      transition: 'transform 0.2s',
-                      ':hover': {
-                        transform: `rotate(${(Math.random() - 0.5) * 10}deg) scale(1.02)`,
-                        zIndex: 1
-                      }
-                    }}
-                  >
-                    <Image
-                      key={i}
-                      src={sponsor.image}
-                      alt={sponsor.name}
-                      style={{
-                        width: '100px',
-                        height: '100px',
-                        objectFit: 'contain'
-                      }}
-                    />
-                    <Text
-                      sx={{
-                        textAlign: 'center',
-                        fontSize: '1.5em',
-                        fontFamily: 'moonblossom',
-                        color: 'white',
-                        mt: 2,
-                        wordWrap: 'break-word'
-                      }}
-                    >
-                      {sponsor.name}
-                    </Text>
-                  </Link>
-                ))}
-              </div>
-            </div>
-            <div style={{ marginBottom: '-130px' }}>
-              <Box
-                sx={{
-                  backgroundColor: '#c78f16',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  width: '100%',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  padding: '20px',
-                  transform: `rotate(${(Math.random() - 0.5) * 10}deg)`,
-                  outline: 'solid 2px white',
-                  marginTop: '-50px',
-                  transition: 'transform 0.2s',
-                  ':hover': {
-                    transform: `rotate(${(Math.random() - 0.5) * 10}deg) scale(1.02)`,
-                    zIndex: 1
-                  }
-                }}
-              >
-                <Heading
-                  as="h2"
+              style={{
+                display: 'flex',
+                flexWrap: 'wrap',
+                gap: '20px',
+                // height: '200px',
+                transform: 'scale(0.9)',
+                justifyContent: 'center'
+              }}
+            >
+              {silverSponsors.map((sponsor, i) => (
+                <Link
+                  href={sponsor.url}
+                  target="_blank"
                   sx={{
-                    textAlign: 'center',
-                    fontSize: '1.5em',
-                    fontFamily: 'moonblossom',
-                    color: 'white',
-                    mt: 2
+                    backgroundColor: '#c9c9c9',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    width: '200px',
+                    alignItems: 'center',
+                    padding: '20px',
+                    transform: `rotate(${(Math.random() - 0.5) * 10}deg)`,
+                    outline: 'solid 2px white',
+                    transition: 'transform 0.2s',
+                    ':hover': {
+                      transform: `rotate(${(Math.random() - 0.5) * 10}deg) scale(1.02)`,
+                      zIndex: 1
+                    }
                   }}
                 >
-                  BRONZE SPONSORS
-                </Heading>
-              </Box>
-              <div
-                style={{
-                  display: 'flex',
-                  flexWrap: 'wrap',
-                  gap: '20px',
-                  // height: '200px',
-                  transform: 'scale(0.8)',
-                  justifyContent: 'center'
-                }}
-              >
-                {bronzeSponsors.map((sponsor, i) => (
-                  <Link
-                    href={sponsor.url}
-                    target="_blank"
+                  <Image
+                    key={i}
+                    src={sponsor.image}
+                    alt={sponsor.name}
+                    style={{
+                      width: '100px',
+                      height: '100px',
+                      objectFit: 'contain'
+                    }}
+                  />
+                  <Text
                     sx={{
-                      backgroundColor: '#c78f16',
-                      display: 'flex',
-                      flexDirection: 'column',
-                      width: '200px',
-                      alignItems: 'center',
-                      padding: '20px',
-                      transform: `rotate(${(Math.random() - 0.5) * 10}deg)`,
-                      outline: 'solid 2px white',
-                      transition: 'transform 0.2s',
-                      ':hover': {
-                        transform: `rotate(${(Math.random() - 0.5) * 10}deg) scale(1.02)`,
-                        zIndex: 1
-                      }
+                      textAlign: 'center',
+                      fontSize: '1.5em',
+                      fontFamily: 'moonblossom',
+                      color: 'white',
+                      mt: 2,
+                      wordWrap: 'break-word'
                     }}
                   >
-                    <Image
-                      key={i}
-                      src={sponsor.image}
-                      alt={sponsor.name}
-                      style={{
-                        width: '100px',
-                        height: '100px',
-                        objectFit: 'contain'
-                      }}
-                    />
-                    <Text
-                      sx={{
-                        textAlign: 'center',
-                        fontSize: '1.5em',
-                        fontFamily: 'moonblossom',
-                        color: 'white',
-                        mt: 2,
-                        wordWrap: 'break-word'
-                      }}
-                    >
-                      {sponsor.name}
-                    </Text>
-                  </Link>
-                ))}
-              </div>
+                    {sponsor.name}
+                  </Text>
+                </Link>
+              ))}
             </div>
           </div>
-        </Box>
-      </Box>
-
-      <Box
-        sx={{
-          width: '100%',
-          background: [
-            "url('/backgrounds/bulletin@vertical.svg')",
-            "url('/backgrounds/bulletin@vertical.svg')",
-            "url('/backgrounds/bulletin.svg')"
-          ],
-          backgroundSize: 'cover!important',
-          display: 'block',
-          justifyContent: 'center',
-          alignItems: 'center',
-          flexDirection: 'column',
-          overflow: 'visible',
-          gap: '20px',
-          height: ['151.37794951vw', '151.37794951vw', '64.45447188vw'],
-          position: 'relative'
-        }}
-      >
-        <Box
-          sx={{
-            display: 'flex',
-            width: '100%',
-            height: '100%',
-            flexWrap: 'wrap',
-            p: '4vw',
-            position: 'relative',
-            overflow: 'visible',
-            justifyContent: ['space-around', 'space-around', null],
-            pb: '12vw'
-          }}
-        >
-          <Box
-            sx={{
-              width: '100%',
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'start',
-              height: 'min-content'
-            }}
-          >
+          <div style={{ marginBottom: '-130px' }}>
             <Box
               sx={{
-                background: "url('/elements/stapled-paper.png')",
-                backgroundSize: 'contain',
-                backgroundRepeat: 'no-repeat',
+                backgroundColor: '#c78f16',
                 display: 'flex',
-                justifyContent: 'center',
+                flexDirection: 'column',
+                width: '100%',
                 alignItems: 'center',
-                height: '100px',
-                width: '400px'
+                justifyContent: 'center',
+                padding: '20px',
+                transform: `rotate(${(Math.random() - 0.5) * 10}deg)`,
+                outline: 'solid 2px white',
+                marginTop: '-50px',
+                transition: 'transform 0.2s',
+                ':hover': {
+                  transform: `rotate(${(Math.random() - 0.5) * 10}deg) scale(1.02)`,
+                  zIndex: 1
+                }
               }}
             >
               <Heading
                 as="h2"
                 sx={{
-                  textAlign: 'center'
+                  textAlign: 'center',
+                  fontSize: '1.5em',
+                  fontFamily: 'moonblossom',
+                  color: 'white',
+                  mt: 2
                 }}
               >
-                Our last event: Counterspell
+                BRONZE SPONSORS
               </Heading>
             </Box>
-          </Box>
-          <Box
-            as="a"
-            href="https://counterspell.hackclub.com/silicon-valley"
-            target="_blank"
+            <div
+              style={{
+                display: 'flex',
+                flexWrap: 'wrap',
+                gap: '20px',
+                // height: '200px',
+                transform: 'scale(0.8)',
+                justifyContent: 'center'
+              }}
+            >
+              {bronzeSponsors.map((sponsor, i) => (
+                <Link
+                  href={sponsor.url}
+                  target="_blank"
+                  sx={{
+                    backgroundColor: '#c78f16',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    width: '200px',
+                    alignItems: 'center',
+                    padding: '20px',
+                    transform: `rotate(${(Math.random() - 0.5) * 10}deg)`,
+                    outline: 'solid 2px white',
+                    transition: 'transform 0.2s',
+                    ':hover': {
+                      transform: `rotate(${(Math.random() - 0.5) * 10}deg) scale(1.02)`,
+                      zIndex: 1
+                    }
+                  }}
+                >
+                  <Image
+                    key={i}
+                    src={sponsor.image}
+                    alt={sponsor.name}
+                    style={{
+                      width: '100px',
+                      height: '100px',
+                      objectFit: 'contain'
+                    }}
+                  />
+                  <Text
+                    sx={{
+                      textAlign: 'center',
+                      fontSize: '1.5em',
+                      fontFamily: 'moonblossom',
+                      color: 'white',
+                      mt: 2,
+                      wordWrap: 'break-word'
+                    }}
+                  >
+                    {sponsor.name}
+                  </Text>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </Box>
+    </Box>
+
+      <Box
+        sx={{
+          // backgroundImage: "url(/backgrounds/confetti.png)",
+          alignItems: 'center',
+          display: 'flex',
+          flexDirection: 'column'
+        }}
+      >
+        <Box
+          sx={{
+            backgroundImage: 'url(/elements/ripped-paper-strip.svg)',
+            // backgroundSize: "cover!important",
+            // display: "block",
+            // width: "30vw",
+            height: '30vh',
+            width: ['90vw', '70vw', '46.8vw'],
+            alignItems: 'center',
+            justifyContent: 'center',
+            margin: '0vh',
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center'
+          }}
+        >
+          <Heading
+            as="h1"
             sx={{
-              background:
-                "url('https://cloud-j7u7wk2yt-hack-club-bot.vercel.app/3polaroid1.png')",
-              width: ['35.5vw', '35.5vw', '22.5vw'],
-              height: ['35.5vw', '35.5vw', '22.5vw'],
-              transform: ['scale(1.4)', 'scale(1.4)', 'scale(1.2)'],
-              backgroundSize: 'contain',
-              backgroundRepeat: 'no-repeat',
-              display: 'block'
+              mx: '1vw',
+              fontWeight: 'lighter',
+              textAlign: 'center'
             }}
-          ></Box>
-          <Box
-            as="a"
-            href="https://counterspell.hackclub.com/silicon-valley"
-            target="_blank"
-            sx={{
-              background:
-                "url('https://cloud-j7u7wk2yt-hack-club-bot.vercel.app/2polaroid2.png')",
-              width: ['35.5vw', '35.5vw', '22.5vw'],
-              height: ['35.5vw', '35.5vw', '22.5vw'],
-              transform: ['scale(1.4)', 'scale(1.4)', 'scale(1.2)'],
-              backgroundSize: 'contain',
-              backgroundRepeat: 'no-repeat',
-              display: 'block',
-              marginTop: '7vw'
-            }}
-          ></Box>
-          <Box
-            as="a"
-            href="https://counterspell.hackclub.com/silicon-valley"
-            target="_blank"
-            sx={{
-              background:
-                "url('https://cloud-j7u7wk2yt-hack-club-bot.vercel.app/1polaroid3.png')",
-              width: ['35.5vw', '35.5vw', '22.5vw'],
-              height: ['35.5vw', '35.5vw', '22.5vw'],
-              transform: ['scale(1.4)', 'scale(1.4)', 'scale(1.2)'],
-              backgroundSize: 'contain',
-              backgroundRepeat: 'no-repeat',
-              display: 'block'
-            }}
-          ></Box>
-          <Box
-            as="a"
-            href="https://counterspell.hackclub.com/silicon-valley"
-            target="_blank"
-            sx={{
-              background:
-                "url('https://cloud-j7u7wk2yt-hack-club-bot.vercel.app/0polaroid4.png')",
-              width: ['35.5vw', '35.5vw', '22.5vw'],
-              height: ['35.5vw', '35.5vw', '22.5vw'],
-              transform: ['scale(1.4)', 'scale(1.4)', 'scale(1.2)'],
-              backgroundSize: 'contain',
-              backgroundRepeat: 'no-repeat',
-              display: 'block',
-              marginTop: '7vw'
-            }}
-          ></Box>
+          >
+            CAN'T MAKE IT TO Casablanca?
+          </Heading>
+        </Box>
+        <Heading
+          as="h2"
+          sx={{
+            fontSize: '1.5em',
+            fontFamily: 'moonblossom',
+            color: 'white',
+            textAlign: 'center',
+            mx: '5vw'
+          }}
+        >
+          THERE ARE 100+ OTHER SCRAPYARD EVENTS HAPPENING AROUND THE WORLD!
+        </Heading>
+        <Box
+          sx={{
+            width: ['100%', '80%'],
+            height: '75vh',
+            alignItems: 'center',
+            display: 'flex',
+            flexDirection: 'column',
+            mb: '10vh',
+            mt: 5
+          }}
+        >
+          <Map />
         </Box>
       </Box>
 
@@ -1283,18 +1191,18 @@ export default function SiliconValley() {
               <>
                 We’re here to help! Our parents guide will be released soon, but
                 they can reach out to us at{' '}
-                <Link href="mailto:silicon-valley@scrapyard.hackclub.com">
-                  silicon-valley@scrapyard.hackclub.com
+                <Link href="mailto:casablanca@scrapyard.hackclub.com">
+                  casablanca@scrapyard.hackclub.com
                 </Link>{' '}
                 for questions.
               </>
             ),
             'What if I have more questions?': (
               <>
-                Contact us! Feel free to reach out to us in the #scrapyard
+                Contact us! Feel free to reach out to us in the #scrapyard-casablanca
                 channel on the Hack Club slack or email us at{' '}
-                <Link href="mailto:silicon-valley@scrapyard.hackclub.com">
-                  silicon-valley@scrapyard.hackclub.com
+                <Link href="mailto:casablanca@scrapyard.hackclub.com">
+                  casablanca@scrapyard.hackclub.com
                 </Link>
                 .
               </>
@@ -1346,8 +1254,7 @@ export default function SiliconValley() {
           })}
         </Grid>
         <Link
-          // TODO: Interest form
-          href="https://forms.hackclub.com/scrapyardsv"
+          href="https://forms.hackclub.com/scrapyard-signup?event=casablanca"
           target="_blank"
         >
           <Box
@@ -1362,8 +1269,7 @@ export default function SiliconValley() {
               },
               zIndex: 20,
               padding: 1,
-              my: 3,
-              width: '24rem'
+              my: 3
             }}
           >
             <Heading
@@ -1374,12 +1280,10 @@ export default function SiliconValley() {
                 margin: '8%',
                 fontSize: ['1.2em', '1.4em'],
                 textTransform: 'inherit!important',
-                paddingY: ['15px', '0px'],
-                width: '100%',
-                marginLeft: '0'
+                paddingY: ['15px', '0px']
               }}
             >
-              SIGN UP FOR SCRAPYARD TODAY!
+              SIGN UP FOR SCRAPYARD Casablanca
             </Heading>
           </Box>
         </Link>
