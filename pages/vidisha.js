@@ -700,6 +700,17 @@ export default function ExampleCity() {
                 for questions.
               </>
             ),
+            'How can I get updated about the happenings?': (
+              <>
+                We constantly keep posting on our Instagram account. Check it out{' '}
+                {/* TODO: Change this email to your event's email */}
+                <Link href="https://www.instagram.com/hackclubvidisha/">
+                here.
+                </Link>
+
+
+              </>
+            ),
             'What if I have more questions?': (
               <>
                 {/* TODO: Change [SLACKCHANNEL] to the name of your event's Slack channel */}
