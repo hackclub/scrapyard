@@ -628,9 +628,9 @@ export default function ExampleCity() {
           {Object.entries({
             'Who can participate in Scrapyard?': (
               <>
-                All high-school & upper-middle-school aged students are welcome
+                All high-school students under 18 years of age are welcome
                 to come! You don't have to be a member of the Hack Club
-                community or be a Hack Club leader.
+                community.
               </>
             ),
             'Is there a registration fee?': (
