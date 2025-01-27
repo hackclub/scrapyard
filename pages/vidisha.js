@@ -628,21 +628,20 @@ export default function ExampleCity() {
           {Object.entries({
             'Who can participate in Scrapyard?': (
               <>
-                All high-school & upper-middle-school aged students are welcome
+                All high-school students under 18 years of age are welcome
                 to come! You don't have to be a member of the Hack Club
-                community or be a Hack Club leader.
+                community.
               </>
             ),
-            'All this, for free?': (
+            'Is there a registration fee?': (
               <>
                 {/* I removed Gas fund as it is not available in India */}
-                Yep! Food, swag and good vibes are all included.
+                No! Food, swag and good vibes are all included. We are also giving away free t-shirts and .xyz Domains!
               </>
             ),
-            'What do I need?': (
+            'What do I need to bring?': (
               <>
-                Your laptop, chargers, and an open mind! If you're going to an
-                overnight event, bring toiletries and sleeping bagstoo.
+                Your laptop, chargers, and an open mind! also bring toiletries and sleeping bags too.
                 Additionally, if you plan to work on a hardware project, bring
                 the tools you'll need.
               </>
@@ -651,8 +650,6 @@ export default function ExampleCity() {
               <>
                 This hackathon is for creatives of all skill levels! We'll have
                 workshops and other events so join us and let's learn together.
-                If you'd like to start exploring some introductory projects,
-                check out Hack Club Workshops.
               </>
             ),
             'What can I make at Scrapyard?': (
@@ -663,24 +660,12 @@ export default function ExampleCity() {
                 you out.
               </>
             ),
-            'What has Hack Club done before?': (
+            'What has Hack Club Vidisha done before?': (
               <>
-                Hack Club has run an{' '}
-                <Link href="https://youtu.be/PnK4gzO6S3Q" target="_blank">
-                  overnight hackathon
-                </Link>{' '}
-                in San Francisco, a{' '}
-                <Link
-                  href="https://www.youtube.com/watch?v=H5RPsCMl3uM"
-                  target="_blank"
-                >
-                  Game Jam
-                </Link>{' '}
-                across 50 cities, a hackathon on a{' '}
-                <Link href="https://youtu.be/2BID8_pGuqA" target="_blank">
-                  Train
-                </Link>{' '}
-                from Vermont to Los Angeles, and much more!
+                Hack Club  Vidisha has run {' '}
+                <Link href="https://www.instagram.com/p/DEuPpHiNHrN/" target="_blank">
+                  Counterspell-vidisha
+                </Link>, a 24-hour hackathon for teenagers.
               </>
             ),
             'What if my parents are concerned?': (
@@ -698,6 +683,17 @@ export default function ExampleCity() {
                   
                 </Link>{' '}
                 for questions.
+              </>
+            ),
+            'How can I get updated about the happenings?': (
+              <>
+                We constantly keep posting on our Instagram account. Check it out{' '}
+                {/* TODO: Change this email to your event's email */}
+                <Link href="https://www.instagram.com/hackclubvidisha/">
+                here.
+                </Link>
+
+
               </>
             ),
             'What if I have more questions?': (
