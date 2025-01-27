@@ -639,10 +639,9 @@ export default function ExampleCity() {
                 No! Food, swag and good vibes are all included. We are also giving away free t-shirts and .xyz Domains!
               </>
             ),
-            'What do I need?': (
+            'What do I need to bring?': (
               <>
-                Your laptop, chargers, and an open mind! If you're going to an
-                overnight event, bring toiletries and sleeping bagstoo.
+                Your laptop, chargers, and an open mind! also bring toiletries and sleeping bags too.
                 Additionally, if you plan to work on a hardware project, bring
                 the tools you'll need.
               </>
