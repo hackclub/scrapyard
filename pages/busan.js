@@ -2,19 +2,19 @@ import Head from 'next/head'
 import { Box, Card, Grid, Heading, Image, Link, Text } from 'theme-ui'
 
 const schedule = [
-  { time: 'March 15 - 11:00 AM', event: 'Doors open' },
-  { time: 'March 15 - 12:00 PM', event: 'Opening ceremony' },
-  { time: 'March 15 - 12:30 PM', event: 'Lunch' },
-  { time: 'March 15 - 01:00 PM', event: 'Start working on your project!' },
-  { time: 'March 15 - 02:00 PM', event: 'Workshop 1' },
-  { time: 'March 15 - 04:00 PM', event: 'Activity 1' },
-  { time: 'March 15 - 04:00 PM', event: 'Workshop 2' },
-  { time: 'March 15 - 06:00 PM', event: 'Dinner' },
-  { time: 'March 15 - 08:00 PM', event: 'Lightning talks' },
-  { time: 'March 15 - 12:00 AM', event: 'Midnight surprise' },
-  { time: 'March 16 - 08:00 AM', event: 'Breakfast' },
-  { time: 'March 16 - 10:30 AM', event: 'Demos!' },
-  { time: 'March 16 - 12:00 PM', event: 'Closing ceremony' }
+  { time: '11:00 AM', event: 'Doors open' },
+  { time: '12:00 PM', event: 'Opening ceremony' },
+  { time: '12:30 PM', event: 'Lunch' },
+  { time: '01:00 PM', event: 'Start working on your project!' },
+  { time: '02:00 PM', event: 'Workshop 1' },
+  { time: '04:00 PM', event: 'Activity 1' },
+  { time: '04:00 PM', event: 'Workshop 2' },
+  { time: '06:00 PM', event: 'Dinner' },
+  { time: '08:00 PM', event: 'Lightning talks' },
+  { time: '12:00 AM', event: 'Midnight surprise' },
+  { time: '08:00 AM', event: 'Breakfast' },
+  { time: '10:30 AM', event: 'Demos!' },
+  { time: '12:00 PM', event: 'Closing ceremony' }
 ]
 
 const Flag = () => (

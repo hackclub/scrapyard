@@ -33,11 +33,9 @@ const schedule = [
   { time: '4:00 PM', event: 'Activity 1' },
   { time: '4:00 PM', event: 'Workshop 2' },
   { time: '6:00 PM', event: 'Dinner' },
-  { time: '8:00 PM', event: 'Lightning talks' },
-  { time: '12:00 AM', event: 'Midnight surprise' },
-  { time: '8:00 AM', event: 'Breakfast' },
-  { time: '10:30 AM', event: 'Demos!' },
-  { time: '12:00 PM', event: 'Closing ceremony' }
+  { time: '7:15 PM', event: 'Lightning talks' },
+  { time: '9:30 PM', event: 'Demos & Closing Ceremony!' },
+  { time: '11:00 PM', event: 'Midnight surprise' }
 ]
 
 const Map = dynamic(() => import('../components/Map'), { ssr: false })
@@ -141,7 +139,7 @@ export default function ExampleCity() {
                 margin: '8%'
               }}
             >
-              Build stupid s#!t, get stupid prizes.
+              Build scrappy stuff, get silly prizes.
             </Heading>
           </Box>
           <Box

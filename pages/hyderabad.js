@@ -1,21 +1,25 @@
 import Head from 'next/head'
 import { Box, Card, Grid, Heading, Image, Link, Text } from 'theme-ui'
 import dynamic from 'next/dynamic'
+import { useEffect, useState } from 'react'
 
 const schedule = [
   { time: '11:00 AM', event: 'Doors open' },
   { time: '12:00 PM', event: 'Opening ceremony' },
-  { time: '12:30 PM', event: 'Lunch' },
-  { time: '1:00 PM', event: 'Start working on your project!' },
-  { time: '2:00 PM', event: 'Workshop 1' },
-  { time: '4:00 PM', event: 'Activity 1' },
-  { time: '4:00 PM', event: 'Workshop 2' },
-  { time: '6:00 PM', event: 'Dinner' },
-  { time: '8:00 PM', event: 'Lightning talks' },
+  { time: '12:30 PM', event: 'Team formation' },
+  { time: '1:30 PM', event: 'Lunch' },
+  { time: '2:15 PM', event: 'Work Session 1' },
+  { time: '3:15 PM', event: 'Workshop 1' },
+  { time: '4:15 PM', event: 'Work Session 2' },
+  { time: '7:30 PM', event: 'Workshop 2' },
+  { time: '8:30 PM', event: 'Dinner' },
+  { time: '9:15 PM', event: 'Workshop 3' },
+  { time: '10:15 PM', event: 'Work Session 3' },
   { time: '12:00 AM', event: 'Midnight surprise' },
-  { time: '8:00 AM', event: 'Breakfast' },
-  { time: '10:30 AM', event: 'Demos!' },
-  { time: '12:00 PM', event: 'Closing ceremony' }
+  { time: '1:00 AM', event: 'Work Session 4' },
+  { time: '8:30 AM', event: 'Submission' },
+  { time: '9:30 AM', event: 'Judging' },
+  { time: '10:30 AM', event: 'Awards Ceremony & Closing Ceremony' }
 ]
 
 const Map = dynamic(() => import('../components/Map'), { ssr: false })
@@ -42,7 +46,116 @@ const Flag = () => (
   </Link>
 )
 
-export default function ExampleCity() {
+const goldSponsors = [
+  {
+    href: '#',
+    imgSrc: '/city/hyderabad/sponsors/placeholder.png',
+    alt: 'Place Holder Sponsorship Image',
+    name: 'This Could Be You!'
+  }
+]
+
+const silverSponsors = [
+  {
+    href: '#',
+    imgSrc: '/city/hyderabad/sponsors/placeholder.png',
+    alt: 'Place Holder Sponsorship Image',
+    name: 'This Could Be You!'
+  }
+]
+
+const bronzeSponsors = [
+  {
+    href: '#',
+    imgSrc: '/city/hyderabad/sponsors/placeholder.png',
+    alt: 'Place Holder Sponsorship Image',
+    name: 'This Could Be You!'
+  }
+]
+
+const inKindSponsors = [
+  {
+    href: 'https://gen.xyz/',
+    imgSrc: '/city/hyderabad/sponsors/gen-xyz.png',
+    alt: '.xyz Domains',
+    name: '.xyz Domains'
+  }
+]
+
+const ourTeam = [
+  {
+    name: 'Sannihith Madasu',
+    email: 'sannihithmadasu@gmail.com',
+    linkedInUsername: '@sannihithmadasu',
+    linkedInProfile: 'https://www.linkedin.com/in/sannihithmadasu/',
+    designation: 'Lead Organizer',
+    imgSrc: '/city/hyderabad/team-pictures/sannihith-madasu.jpeg'
+  },
+  {
+    name: 'Atharv Kopparthi',
+    email: 'atharv.kopp@gmail.com',
+    linkedInUsername: 'N/A',
+    linkedInProfile: '#',
+    designation: 'Co-Organizer',
+    imgSrc: '/city/hyderabad/team-pictures/atharv-kopparthi.jpg'
+  },
+  {
+    name: 'Katta Hima Vamsi',
+    email: 'hvkatta@gmail.com',
+    linkedInUsername: '@hima-vamsi-katta',
+    linkedInProfile: 'https://www.linkedin.com/in/hima-vamsi-katta/',
+    designation: 'Co-Organizer',
+    imgSrc: '/city/hyderabad/team-pictures/hima-vamsi-katta.jpg'
+  },
+  {
+    name: 'Daksh Kaza',
+    email: 'dakshcane@gmail.com',
+    linkedInUsername: 'N/A',
+    linkedInProfile: '#',
+    designation: 'Organizing Committee Head',
+    imgSrc: '/city/hyderabad/team-pictures/daksh-kaza.jpg'
+  },
+  {
+    name: 'Amay Bhattacharya',
+    email: 'amay.bhattacharya@gmail.com',
+    linkedInUsername: '@amay-bhattacharya',
+    linkedInProfile: 'https://www.linkedin.com/in/amay-bhattacharya/',
+    designation: 'Design Lead',
+    imgSrc: '/city/hyderabad/team-pictures/amay-bhattacharya.jpeg'
+  },
+  {
+    name: 'Arvesh Borkar',
+    email: 'arvesh.borkar@gmail.com',
+    linkedInUsername: '@arveshborkar',
+    linkedInProfile: 'https://www.linkedin.com/in/arveshborkar/',
+    designation: 'Marketing Lead',
+    imgSrc: '/city/hyderabad/team-pictures/arvesh-borkar.jpeg'
+  },
+  {
+    name: 'D.S.S. Prajwal Sarma',
+    email: 'saiprajwal2509@gmail.com',
+    linkedInUsername: '@prajwaldoranala',
+    linkedInProfile: 'https://www.linkedin.com/in/prajwaldoranala/',
+    designation: 'Sponsorship Liaison',
+    imgSrc: '/city/hyderabad/team-pictures/prajwal-doranala.jpg'
+  }
+]
+
+export default function Hyderabad() {
+  const [text, setText] = useState('')
+  const fullText = 'Build stupid s#!t, get stupid prizes.'
+  const [index, setIndex] = useState(0)
+
+  useEffect(() => {
+    if (index < fullText.length) {
+      const timeout = setTimeout(() => {
+        setText(prev => prev + fullText[index])
+        setIndex(prev => prev + 1)
+      }, 100) // Adjust typing speed here
+      return () => clearTimeout(timeout)
+    }
+  }, [index])
+
   return (
     <Box
       sx={{
@@ -57,6 +170,36 @@ export default function ExampleCity() {
     >
       <Head>
         <title>Scrapyard Hyderabad</title>
+        <style>
+          {`
+            @keyframes spin {
+              from {
+                transform: rotate(0deg);
+              }
+              to {
+                transform: rotate(360deg);
+              }
+            }
+
+            ::-webkit-scrollbar {
+              width: 12px;
+            }
+
+            ::-webkit-scrollbar-track {
+              background: #ffffff; 
+            }
+
+            ::-webkit-scrollbar-thumb {
+              background: #FFD700; 
+              border-radius: 10px; 
+              border: 2px solid #f1f1f1; 
+            }
+
+            ::-webkit-scrollbar-thumb:hover {
+              background: #C0C0C0; 
+            }
+          `}
+        </style>
       </Head>
       <Flag />
       <Box
@@ -79,12 +222,10 @@ export default function ExampleCity() {
           <Image
             sx={{
               width: '600px',
-
               maxWidth: '70vw',
-
               objectFit: 'contain'
             }}
-            src="/elements/wordmark.svg"
+            src="/city/hyderabad/hyderabadLogo.svg"
             alt="Scrapyard"
           />
         </Box>
@@ -99,11 +240,6 @@ export default function ExampleCity() {
             sx={{
               background: "url('/elements/ripped-paper.png')",
               backgroundSize: 'cover',
-              // aspectRatio: "1080/338.4",
-              // padding: "8%",
-              // paddingLeft: "7%",
-              display: 'block',
-
               width: 'min(500px, calc(100vw - 30px))',
               filter: 'drop-shadow(5px 5px 5px #000000AA)',
               position: 'relative',
@@ -118,7 +254,7 @@ export default function ExampleCity() {
                 margin: '8%'
               }}
             >
-              Build stupid s#!t, get stupid prizes.
+              {text}
             </Heading>
           </Box>
           <Box
@@ -169,7 +305,8 @@ export default function ExampleCity() {
               zIndex: 2,
               position: 'absolute',
               top: '50%',
-              left: '10%'
+              left: '10%',
+              animation: 'spin 5s linear infinite'
             }}
             src="/elements/stars/blue.png"
             alt="Blue paper star"
@@ -181,7 +318,8 @@ export default function ExampleCity() {
               zIndex: 2,
               position: 'absolute',
               top: '55%',
-              right: '15%'
+              right: '15%',
+              animation: 'spin 5s linear infinite'
             }}
             src="/elements/stars/yellow.png"
             alt="Yellow paper star"
@@ -194,7 +332,8 @@ export default function ExampleCity() {
               position: 'absolute',
               top: '70%',
               left: '20%',
-              transform: 'rotate(180deg)'
+              transform: 'rotate(180deg)',
+              animation: 'spin 5s linear infinite'
             }}
             src="/elements/stars/pink.png"
             alt="Pink paper star"
@@ -420,6 +559,480 @@ export default function ExampleCity() {
               textAlign: 'center'
             }}
           >
+            SPONSORS
+          </Heading>
+        </Box>
+        {/* Gold Sponsors */}
+        <div style={{ marginBottom: '10px' }}>
+          <Heading
+            as="h1"
+            sx={{
+              mb: 3,
+              position: 'relative',
+              color: '#FFD700',
+              textAlign: 'center'
+            }}
+          >
+            Gold Sponsors
+            <Image
+              src="/elements/doodles/yellow-underline.svg"
+              sx={{
+                position: 'absolute',
+                bottom: '-10px',
+                left: '50%',
+                transform: 'translateX(-50%)',
+                width: '250px',
+                height: 'auto'
+              }}
+            />
+          </Heading>
+          <div
+            style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              gap: '20px',
+              transform: 'scale(0.9)',
+              justifyContent: 'center'
+            }}
+          >
+            {goldSponsors.map((sponsor, index) => (
+              <Link
+                key={index}
+                href={sponsor.href}
+                target="_blank"
+                sx={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  width: '400px',
+                  alignItems: 'center',
+                  transition: 'transform 0.2s',
+                  ':hover': {
+                    transform: `rotate(${(Math.random() - 0.5) * 10}deg) scale(1.02)`,
+                    zIndex: 3
+                  }
+                }}
+              >
+                <Image
+                  src={sponsor.imgSrc}
+                  alt={sponsor.alt}
+                  style={{
+                    width: '200px',
+                    height: '200px',
+                    objectFit: 'contain'
+                  }}
+                />
+                <Text
+                  sx={{
+                    textAlign: 'center',
+                    fontSize: '1.5em',
+                    fontFamily: 'moonblossom',
+                    color: 'white',
+                    mt: 2,
+                    wordWrap: 'break-word'
+                  }}
+                >
+                  {sponsor.name}
+                </Text>
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        {/* Silver Sponsors */}
+        <div style={{ marginBottom: '10px' }}>
+          <Heading
+            as="h1"
+            sx={{
+              mb: 3,
+              position: 'relative',
+              color: '#C0C0C0',
+              textAlign: 'center'
+            }}
+          >
+            Silver Sponsors
+            <Image
+              src="/city/hyderabad/elements/silver-underline.svg"
+              sx={{
+                position: 'absolute',
+                bottom: '-10px',
+                left: '50%',
+                transform: 'translateX(-50%)',
+                width: '250px',
+                height: 'auto'
+              }}
+            />
+          </Heading>
+          <div
+            style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              gap: '20px',
+              transform: 'scale(0.9)',
+              justifyContent: 'center'
+            }}
+          >
+            {silverSponsors.map((sponsor, index) => (
+              <Link
+                key={index}
+                href={sponsor.href}
+                target="_blank"
+                sx={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  width: '400px',
+                  alignItems: 'center',
+                  transition: 'transform 0.2s',
+                  ':hover': {
+                    transform: `rotate(${(Math.random() - 0.5) * 10}deg) scale(1.02)`,
+                    zIndex: 2
+                  }
+                }}
+              >
+                <Image
+                  src={sponsor.imgSrc}
+                  alt={sponsor.alt}
+                  style={{
+                    width: '200px',
+                    height: '200px',
+                    objectFit: 'contain'
+                  }}
+                />
+                <Text
+                  sx={{
+                    textAlign: 'center',
+                    fontSize: '1.5em',
+                    fontFamily: 'moonblossom',
+                    color: 'white',
+                    mt: 2,
+                    wordWrap: 'break-word'
+                  }}
+                >
+                  {sponsor.name}
+                </Text>
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        {/* Bronze Sponsors */}
+        <div style={{ marginBottom: '20px' }}>
+          <Heading
+            as="h1"
+            sx={{
+              mb: 3,
+              position: 'relative',
+              color: '#F98971',
+              textAlign: 'center'
+            }}
+          >
+            Bronze Sponsors
+            <Image
+              src="/city/hyderabad/elements/bronze-underline.svg"
+              sx={{
+                position: 'absolute',
+                bottom: '-10px',
+                left: '50%',
+                transform: 'translateX(-50%)',
+                width: '250px',
+                height: 'auto'
+              }}
+            />
+          </Heading>
+          <div
+            style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              gap: '20px',
+              transform: 'scale(0.9)',
+              justifyContent: 'center'
+            }}
+          >
+            {bronzeSponsors.map((sponsor, index) => (
+              <Link
+                key={index}
+                href={sponsor.href}
+                target="_blank"
+                sx={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  width: '400px',
+                  alignItems: 'center',
+                  transition: 'transform 0.2s',
+                  ':hover': {
+                    transform: `rotate(${(Math.random() - 0.5) * 10}deg) scale(1.02)`,
+                    zIndex: 1
+                  }
+                }}
+              >
+                <Image
+                  src={sponsor.imgSrc}
+                  alt={sponsor.alt}
+                  style={{
+                    width: '200px',
+                    height: '200px',
+                    objectFit: 'contain'
+                  }}
+                />
+                <Text
+                  sx={{
+                    textAlign: 'center',
+                    fontSize: '1.5em',
+                    fontFamily: 'moonblossom',
+                    color: 'white',
+                    mt: 2,
+                    wordWrap: 'break-word'
+                  }}
+                >
+                  {sponsor.name}
+                </Text>
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        {/* In-Kind Sponsors */}
+        <div style={{ marginBottom: '10px' }}>
+          <Heading
+            as="h1"
+            sx={{
+              mb: 3,
+              position: 'relative',
+              color: 'white',
+              textAlign: 'center'
+            }}
+          >
+            In-Kind Sponsors
+            <Image
+              src="/elements/doodles/blue-underline.svg"
+              sx={{
+                position: 'absolute',
+                bottom: '-10px',
+                left: '50%',
+                transform: 'translateX(-50%)',
+                width: '250px',
+                height: 'auto'
+              }}
+            />
+          </Heading>
+          <div
+            style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              gap: '20px',
+              transform: 'scale(0.9)',
+              justifyContent: 'center'
+            }}
+          >
+            {inKindSponsors.map((sponsor, index) => (
+              <Link
+                key={index}
+                href={sponsor.href}
+                target="_blank"
+                sx={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  width: '400px',
+                  alignItems: 'center',
+                  transition: 'transform 0.2s',
+                  ':hover': {
+                    transform: `rotate(${(Math.random() - 0.5) * 10}deg) scale(1.02)`,
+                    zIndex: 1
+                  }
+                }}
+              >
+                <Image
+                  src={sponsor.imgSrc}
+                  alt={sponsor.alt}
+                  style={{
+                    width: '200px',
+                    height: '200px',
+                    objectFit: 'contain'
+                  }}
+                />
+                <Text
+                  sx={{
+                    textAlign: 'center',
+                    fontSize: '1.5em',
+                    fontFamily: 'moonblossom',
+                    color: 'white',
+                    mt: 2,
+                    wordWrap: 'break-word'
+                  }}
+                >
+                  {sponsor.name}
+                </Text>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </Box>
+
+      <Image src="/elements/doodles/yellow-underline.svg" width="100%" />
+
+      <Box
+        sx={{
+          paddingBottom: '40px',
+          background: '#337D77',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: '20px'
+        }}
+      >
+        <Box
+          sx={{
+            backgroundImage: 'url(/elements/ripped-paper-strip.svg)',
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover',
+            width: ['90vw', '70vw', '46.8vw'],
+            height: '30vh',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
+          }}
+        >
+          <Heading
+            as="h1"
+            sx={{
+              textAlign: 'center',
+              mx: '5vw',
+              fontWeight: 'lighter'
+            }}
+          >
+            Our Team
+          </Heading>
+        </Box>
+
+        <Grid columns={[1, 3]} gap="25px" sx={{ maxWidth: '1600px' }}>
+          {ourTeam.map((member, index) => (
+            <Box
+              key={index}
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                background:
+                  'url(/city/hyderabad/elements/crumpled-paper-background.jpg)',
+                padding: '20px',
+                borderRadius: '8px',
+                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'
+              }}
+            >
+              <Image
+                src={member.imgSrc}
+                alt={member.name}
+                sx={{
+                  width: '160px',
+                  height: '160px',
+                  borderRadius: '50%',
+                  objectFit: 'cover',
+                  mr: '20px'
+                }}
+              />
+              <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+                <Text sx={{ fontWeight: 'bold', fontSize: '1.2em' }}>
+                  {member.name}
+                </Text>
+                <div
+                  style={{
+                    display: 'flex',
+                    rowGap: '7px',
+                    flexDirection: 'column'
+                  }}
+                >
+                  <div
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center'
+                    }}
+                  >
+                    <Image
+                      src="/city/hyderabad/elements/briefcase.svg"
+                      style={{ paddingRight: '5px' }}
+                    />
+                    {member.designation}
+                  </div>
+                  <div
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center'
+                    }}
+                  >
+                    <Image
+                      src="/city/hyderabad/elements/email.svg"
+                      style={{ paddingRight: '5px' }}
+                    />
+                    <Link
+                      href={`mailto:${member.email}`}
+                      sx={{
+                        color: 'inherit',
+                        textDecoration: 'none'
+                      }}
+                    >
+                      {member.email}
+                    </Link>
+                  </div>
+                  <div
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center'
+                    }}
+                  >
+                    <Image
+                      src="/city/hyderabad/elements/linkedIn.svg"
+                      style={{ paddingRight: '5px' }}
+                    />
+                    <Link
+                      href={member.linkedInProfile}
+                      target="_blank"
+                      sx={{
+                        color: 'inherit',
+                        textDecoration: 'none'
+                      }}
+                    >
+                      {member.linkedInUsername}
+                    </Link>
+                  </div>
+                </div>
+              </Box>
+            </Box>
+          ))}
+        </Grid>
+      </Box>
+
+      <Box
+        sx={{
+          // backgroundImage: "url(/backgrounds/confetti.png)",
+          alignItems: 'center',
+          display: 'flex',
+          flexDirection: 'column'
+        }}
+      >
+        <Box
+          sx={{
+            backgroundImage: 'url(/elements/ripped-paper-strip.svg)',
+            // backgroundSize: "cover!important",
+            // display: "block",
+            // width: "30vw",
+            height: '30vh',
+            width: ['90vw', '70vw', '46.8vw'],
+            alignItems: 'center',
+            justifyContent: 'center',
+            margin: '0vh',
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center'
+          }}
+        >
+          <Heading
+            as="h1"
+            sx={{
+              mx: '1vw',
+              fontWeight: 'lighter',
+              textAlign: 'center'
+            }}
+          >
             WHAT'S HAPPENING AT SCRAPYARD Hyderabad?
           </Heading>
         </Box>
@@ -602,14 +1215,7 @@ export default function ExampleCity() {
               </>
             ),
             'All this, for free?': (
-              <>
-                Yep! Food, swag and good vibes are all included. Plus, if you’re
-                joining us from afar,{' '}
-                <Link href="https://gas.hackclub.com/">
-                  we’ll cover the cost of gas or a bus / train ticket
-                </Link>
-                .
-              </>
+              <>Yep! Food, swag and good vibes are all included.</>
             ),
             'What do I need?': (
               <>
@@ -749,7 +1355,8 @@ export default function ExampleCity() {
                 margin: '8%',
                 fontSize: ['1.2em', '1.4em'],
                 textTransform: 'inherit!important',
-                paddingY: ['15px', '0px']
+                paddingY: ['15px', '0px'],
+                lineHeight: '1.5em'
               }}
             >
               SIGN UP FOR SCRAPYARD Hyderabad
