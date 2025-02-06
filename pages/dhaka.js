@@ -27,7 +27,7 @@ import styles from '../components/city/dhaka/css/Floating.module.css'
 
 
 // TODO: Change this schedule to your own!
-const schedule = [
+const DefaultSchedule = [
   { time: '08:00 AM', event: 'Doors open & Registration' },
   { time: '08:30 AM', event: 'Opening ceremony' },
   { time: '09:30 AM', event: 'Introductions & Team Formation' },
@@ -74,10 +74,11 @@ const Flag = () => (
 )
 
 export default function Dhaka() {
-  const [bronzeSponsors, setBronzeSponsors] = useState([])
+  const [schedule, setSchedule] = useState([])
   const [silverSponsors, setSilverSponsors] = useState([])
   const [goldSponsors, setGoldSponsors] = useState([])
   const [partnerSponsors, setPartnerSponsors] = useState([])
+  const [bronzeSponsors, setBronzeSponsors] = useState([])
 
   const defaultSchedule = [
     {
@@ -88,10 +89,26 @@ export default function Dhaka() {
   ];
 
   useEffect(() => {
+    async function fetchScheduleData() {
+      try {
+        const response = await fetch(
+          'http://localhost:3000/schedule'
+        )
+        const data = await response.json()
+        setSchedule(data)
+      } catch (error) {
+        console.log(error)
+        setSchedule(DefaultSchedule)
+      }
+    }
+
+    fetchScheduleData()
+  }, [])
+  useEffect(() => {
     async function fetchBronzeSponsors() {
       try {
         const response = await fetch(
-          'https://scrapyard.shayaand.hackclub.app/bronze'
+          'http://localhost:3000/bronze'
         )
         const data = await response.json()
         setBronzeSponsors(data)
@@ -108,7 +125,7 @@ export default function Dhaka() {
     async function fetchSilverSponsors() {
       try {
         const response = await fetch(
-          'https://scrapyard.shayaand.hackclub.app/silver'
+          'http://localhost:3000/silver'
         )
         const data = await response.json()
         setSilverSponsors(data)
@@ -125,7 +142,7 @@ export default function Dhaka() {
     async function fetchGoldSponsors() {
       try {
         const response = await fetch(
-          'https://scrapyard.shayaand.hackclub.app/gold'
+          'http://localhost:3000/gold'
         )
         const data = await response.json()
         setGoldSponsors(data)
@@ -142,7 +159,7 @@ export default function Dhaka() {
     async function fetchPartnerSponsors() {
       try {
         const response = await fetch(
-          'https://scrapyard.shayaand.hackclub.app/partner'
+          'http://localhost:3000/partner'
         )
         const data = await response.json()
         setPartnerSponsors(data)
@@ -420,7 +437,7 @@ export default function Dhaka() {
         </Box>
         <Link
           // TODO: Change [EVENTID] to your event's ID (see https://airtable.com/appigKiF7GbVISAlg/shrK3OiCJs4BRBIRG)
-          href="https://forms.hackclub.com/scrapyard-signup?event=dhaka"
+          href="https://forms.gle/ThT6q3bzp34V38wu7"
           target="_blank"
 
         >
@@ -971,465 +988,465 @@ export default function Dhaka() {
 
 
         <Box
+          sx={{
+            width: '100vw',
+            // background: [
+            //   "url('/backgrounds/bulletin@vertical.svg')",
+            //   "url('/backgrounds/bulletin@vertical.svg')",
+            //   "url('/backgrounds/bulletin.svg')"
+            // ],
+            // background: "url('/backgrounds/bulletin@vertical.svg')",
+            background: "url('/backgrounds/lined-paper.png')",
+            filter: "sepia(25%) brightness(95%) contrast(90%)",
+            // background: '#efefef',
+            backgroundSize: 'cover!important',
+            backgroundPosition: 'center center',
+            display: 'block',
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'column',
+            overflow: 'visible',
+            gap: '20px',
+            height: ['auto'],
+            position: 'relative'
+          }}
+          id="sponsors"
+        >
+          <Box
+            sx={{
+              display: 'flex',
+              width: '100%',
+              height: '100%',
+              flexWrap: 'wrap',
+              p: '4vw',
+              position: 'relative',
+              overflow: 'visible',
+              justifyContent: ['space-around', 'space-around', null],
+              pb: '12vw'
+            }}
+          >
+            <Box
+              sx={{
+                width: '100%',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'start',
+                height: 'min-content'
+              }}
+            >
+              <Box
                 sx={{
-                  width: '100vw',
-                  // background: [
-                  //   "url('/backgrounds/bulletin@vertical.svg')",
-                  //   "url('/backgrounds/bulletin@vertical.svg')",
-                  //   "url('/backgrounds/bulletin.svg')"
-                  // ],
-                  // background: "url('/backgrounds/bulletin@vertical.svg')",
-                  background: "url('/backgrounds/lined-paper.png')",
-                  filter: "sepia(25%) brightness(95%) contrast(90%)",
-                  // background: '#efefef',
-                  backgroundSize: 'cover!important',
-                  backgroundPosition: 'center center',
-                  display: 'block',
+                  background: "url('/elements/stapled-paper.png')",
+                  backgroundSize: 'contain',
+                  backgroundRepeat: 'no-repeat',
+                  display: 'flex',
                   justifyContent: 'center',
                   alignItems: 'center',
-                  flexDirection: 'column',
-                  overflow: 'visible',
-                  gap: '20px',
-                  height: ['auto'],
-                  position: 'relative'
+                  height: '100px',
+                  width: '400px'
                 }}
-                id="sponsors"
+                data-aos="fade-left"
               >
-                <Box
+                <Heading
+                  as="h2"
                   sx={{
-                    display: 'flex',
-                    width: '100%',
-                    height: '100%',
-                    flexWrap: 'wrap',
-                    p: '4vw',
-                    position: 'relative',
-                    overflow: 'visible',
-                    justifyContent: ['space-around', 'space-around', null],
-                    pb: '12vw'
+                    textAlign: 'center',
+                    fontSize: '3em',
+                    marginTop: '-10px'
                   }}
                 >
-                  <Box
+                  Sponsors
+                </Heading>
+              </Box>
+            </Box>
+            <div
+              style={{
+                width: '100%',
+                display: 'flex',
+                flexWrap: 'wrap',
+                flexDirection: 'column',
+                alignItems: 'center',
+                gap: '100px',
+                marginTop: '50px',
+                transform: 'scale(1.1)'
+              }}
+            >
+              <div>
+                <Box
+                  sx={{
+                    backgroundColor: '#69c5f1',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    width: '100%',
+                    alignItems: 'center',
+                    padding: '20px',
+                    transform: `rotate(${(Math.random() - 0.5) * 10}deg)`,
+                    outline: 'solid 2px white',
+                    transition: 'transform 0.2s',
+                    zIndex: 2,
+                    ':hover': {
+                      transform: `rotate(${(Math.random() - 0.5) * 10}deg) scale(1.02)`
+                    }
+                  }}
+                  data-aos="fade-left"
+                >
+                  <Heading
+                    as="h2"
                     sx={{
-                      width: '100%',
-                      display: 'flex',
-                      justifyContent: 'center',
-                      alignItems: 'start',
-                      height: 'min-content'
+                      textAlign: 'center',
+                      fontSize: '1.5em',
+                      fontFamily: 'moonblossom',
+                      color: 'white',
+                      mt: 2
                     }}
                   >
-                    <Box
+                    PARTNER SPONSORS
+                  </Heading>
+                </Box>
+                <div
+                  style={{
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    gap: '20px',
+                    // height: '200px',
+                    transform: 'scale(0.9)',
+                    justifyContent: 'center'
+                  }}
+                >
+                  {partnerSponsors.map((sponsor, i) => (
+                    <Link
+                      href={sponsor.url}
+                      target="_blank"
                       sx={{
-                        background: "url('/elements/stapled-paper.png')",
-                        backgroundSize: 'contain',
-                        backgroundRepeat: 'no-repeat',
+                        backgroundColor: '#69c5f1',
                         display: 'flex',
-                        justifyContent: 'center',
+                        flexDirection: 'column',
+                        width: '200px',
                         alignItems: 'center',
-                        height: '100px',
-                        width: '400px'
+                        padding: '20px',
+                        transform: `rotate(${(Math.random() - 0.5) * 10}deg)`,
+                        outline: 'solid 2px white',
+                        transition: 'transform 0.2s',
+                        ':hover': {
+                          transform: `rotate(${(Math.random() - 0.5) * 10}deg) scale(1.02)`,
+                          zIndex: 1
+                        }
                       }}
-                      data-aos="fade-left"
+
                     >
-                      <Heading
-                        as="h2"
+                      <Image
+                        data-aos="fade-up"
+                        key={i}
+                        src={sponsor.image}
+                        alt={sponsor.name}
+                        style={{
+                          width: '100px',
+                          height: '100px',
+                          objectFit: 'contain'
+                        }}
+                      />
+                      <Text
                         sx={{
                           textAlign: 'center',
-                          fontSize: '3em',
-                          marginTop: '-10px'
+                          fontSize: '1.5em',
+                          fontFamily: 'moonblossom',
+                          color: 'white',
+                          mt: 2,
+                          wordWrap: 'break-word'
                         }}
                       >
-                        Sponsors
-                      </Heading>
-                    </Box>
-                  </Box>
-                  <div
-                    style={{
-                      width: '100%',
-                      display: 'flex',
-                      flexWrap: 'wrap',
-                      flexDirection: 'column',
-                      alignItems: 'center',
-                      gap: '100px',
-                      marginTop: '50px',
-                      transform: 'scale(1.1)'
+                        {sponsor.name}
+                      </Text>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div
+              style={{
+                width: '100%',
+                display: 'flex',
+                flexWrap: 'wrap',
+                flexDirection: 'column',
+                alignItems: 'center',
+                gap: '100px',
+                marginTop: '50px'
+              }}
+            >
+              <div>
+                <Box
+                  sx={{
+                    backgroundColor: '#c9ae53',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    width: '100%',
+                    alignItems: 'center',
+                    padding: '20px',
+                    transform: `rotate(${(Math.random() - 0.5) * 10}deg)`,
+                    outline: 'solid 2px white',
+                    transition: 'transform 0.2s',
+                    zIndex: 2,
+                    ':hover': {
+                      transform: `rotate(${(Math.random() - 0.5) * 10}deg) scale(1.02)`
+                    }
+                  }}
+                  data-aos="fade-up"
+                >
+                  <Heading
+                    as="h2"
+                    sx={{
+                      textAlign: 'center',
+                      fontSize: '1.5em',
+                      fontFamily: 'moonblossom',
+                      color: 'white',
+                      mt: 2
                     }}
                   >
-                    <div>
-                      <Box
-                        sx={{
-                          backgroundColor: '#69c5f1',
-                          display: 'flex',
-                          flexDirection: 'column',
-                          width: '100%',
-                          alignItems: 'center',
-                          padding: '20px',
-                          transform: `rotate(${(Math.random() - 0.5) * 10}deg)`,
-                          outline: 'solid 2px white',
-                          transition: 'transform 0.2s',
-                          zIndex: 2,
-                          ':hover': {
-                            transform: `rotate(${(Math.random() - 0.5) * 10}deg) scale(1.02)`
-                          }
-                        }}
-                        data-aos="fade-left"
-                      >
-                        <Heading
-                          as="h2"
-                          sx={{
-                            textAlign: 'center',
-                            fontSize: '1.5em',
-                            fontFamily: 'moonblossom',
-                            color: 'white',
-                            mt: 2
-                          }}
-                        >
-                          PARTNER SPONSORS
-                        </Heading>
-                      </Box>
-                      <div
-                        style={{
-                          display: 'flex',
-                          flexWrap: 'wrap',
-                          gap: '20px',
-                          // height: '200px',
-                          transform: 'scale(0.9)',
-                          justifyContent: 'center'
-                        }}
-                      >
-                        {partnerSponsors.map((sponsor, i) => (
-                          <Link
-                            href={sponsor.url}
-                            target="_blank"
-                            sx={{
-                              backgroundColor: '#69c5f1',
-                              display: 'flex',
-                              flexDirection: 'column',
-                              width: '200px',
-                              alignItems: 'center',
-                              padding: '20px',
-                              transform: `rotate(${(Math.random() - 0.5) * 10}deg)`,
-                              outline: 'solid 2px white',
-                              transition: 'transform 0.2s',
-                              ':hover': {
-                                transform: `rotate(${(Math.random() - 0.5) * 10}deg) scale(1.02)`,
-                                zIndex: 1
-                              }
-                            }}
-                            
-                          >
-                            <Image
-                            data-aos="fade-up"
-                              key={i}
-                              src={sponsor.image}
-                              alt={sponsor.name}
-                              style={{
-                                width: '100px',
-                                height: '100px',
-                                objectFit: 'contain'
-                              }}
-                            />
-                            <Text
-                              sx={{
-                                textAlign: 'center',
-                                fontSize: '1.5em',
-                                fontFamily: 'moonblossom',
-                                color: 'white',
-                                mt: 2,
-                                wordWrap: 'break-word'
-                              }}
-                            >
-                              {sponsor.name}
-                            </Text>
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    style={{
-                      width: '100%',
-                      display: 'flex',
-                      flexWrap: 'wrap',
-                      flexDirection: 'column',
-                      alignItems: 'center',
-                      gap: '100px',
-                      marginTop: '50px'
-                    }}
-                  >
-                    <div>
-                      <Box
-                        sx={{
-                          backgroundColor: '#c9ae53',
-                          display: 'flex',
-                          flexDirection: 'column',
-                          width: '100%',
-                          alignItems: 'center',
-                          padding: '20px',
-                          transform: `rotate(${(Math.random() - 0.5) * 10}deg)`,
-                          outline: 'solid 2px white',
-                          transition: 'transform 0.2s',
-                          zIndex: 2,
-                          ':hover': {
-                            transform: `rotate(${(Math.random() - 0.5) * 10}deg) scale(1.02)`
-                          }
-                        }}
-                        data-aos="fade-up"
-                      >
-                        <Heading
-                          as="h2"
-                          sx={{
-                            textAlign: 'center',
-                            fontSize: '1.5em',
-                            fontFamily: 'moonblossom',
-                            color: 'white',
-                            mt: 2
-                          }}
-                        >
-                          GOLD SPONSORS
-                        </Heading>
-                      </Box>
-                      <div
-                        style={{
-                          display: 'flex',
-                          flexWrap: 'wrap',
-                          gap: '20px',
-                          // height: '200px',
-                          transform: 'scale(0.9)',
-                          justifyContent: 'center'
-                        }}
-                      >
-                        {goldSponsors.map((sponsor, i) => (
-                          <Link
-                            href={sponsor.url}
-                            target="_blank"
-                            sx={{
-                              backgroundColor: '#c9ae53',
-                              display: 'flex',
-                              flexDirection: 'column',
-                              width: '200px',
-                              alignItems: 'center',
-                              padding: '20px',
-                              transform: `rotate(${(Math.random() - 0.5) * 10}deg)`,
-                              outline: 'solid 2px white',
-                              transition: 'transform 0.2s',
-                              ':hover': {
-                                transform: `rotate(${(Math.random() - 0.5) * 10}deg) scale(1.02)`,
-                                zIndex: 1
-                              }
-                            }}
-                          >
-                            <Image
-                            data-aos="fade-down"
-                              key={i}
-                              src={sponsor.image}
-                              alt={sponsor.name}
-                              style={{
-                                width: '100px',
-                                height: '100px',
-                                objectFit: 'contain'
-                              }}
-                            />
-                            <Text
-                              sx={{
-                                textAlign: 'center',
-                                fontSize: '1.5em',
-                                fontFamily: 'moonblossom',
-                                color: 'white',
-                                mt: 2,
-                                wordWrap: 'break-word'
-                              }}
-                            >
-                              {sponsor.name}
-                            </Text>
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-                    <div>
-                      <Box
-                        sx={{
-                          backgroundColor: '#c9c9c9',
-                          display: 'flex',
-                          flexDirection: 'column',
-                          width: '100%',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          padding: '20px',
-                          transform: `rotate(${(Math.random() - 0.5) * 10}deg)`,
-                          outline: 'solid 2px white',
-                          marginTop: '-50px',
-                          transition: 'transform 0.2s',
-                          zIndex: 2,
-                          ':hover': {
-                            transform: `rotate(${(Math.random() - 0.5) * 10}deg) scale(1.02)`
-                          }
-                        }}
-                        data-aos="fade-up"
-                      >
-                        <Heading
-                          as="h2"
-                          sx={{
-                            textAlign: 'center',
-                            fontSize: '1.5em',
-                            fontFamily: 'moonblossom',
-                            color: 'white',
-                            mt: 2
-                          }}
-                        >
-                          SILVER SPONSORS
-                        </Heading>
-                      </Box>
-                      <div
-                        style={{
-                          display: 'flex',
-                          flexWrap: 'wrap',
-                          gap: '20px',
-                          // height: '200px',
-                          transform: 'scale(0.9)',
-                          justifyContent: 'center'
-                        }}
-                      >
-                        {silverSponsors.map((sponsor, i) => (
-                          <Link
-                            href={sponsor.url}
-                            target="_blank"
-                            sx={{
-                              backgroundColor: '#c9c9c9',
-                              display: 'flex',
-                              flexDirection: 'column',
-                              width: '200px',
-                              alignItems: 'center',
-                              padding: '20px',
-                              transform: `rotate(${(Math.random() - 0.5) * 10}deg)`,
-                              outline: 'solid 2px white',
-                              transition: 'transform 0.2s',
-                              ':hover': {
-                                transform: `rotate(${(Math.random() - 0.5) * 10}deg) scale(1.02)`,
-                                zIndex: 1
-                              }
-                            }}
-                          >
-                            <Image
-                            data-aos="fade-down"
-                              key={i}
-                              src={sponsor.image}
-                              alt={sponsor.name}
-                              style={{
-                                width: '100px',
-                                height: '100px',
-                                objectFit: 'contain'
-                              }}
-                            />
-                            <Text
-                              sx={{
-                                textAlign: 'center',
-                                fontSize: '1.5em',
-                                fontFamily: 'moonblossom',
-                                color: 'white',
-                                mt: 2,
-                                wordWrap: 'break-word'
-                              }}
-                            >
-                              {sponsor.name}
-                            </Text>
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-                    <div style={{ marginBottom: '-130px' }}>
-                      <Box
-                        sx={{
-                          backgroundColor: '#c78f16',
-                          display: 'flex',
-                          flexDirection: 'column',
-                          width: '100%',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          padding: '20px',
-                          transform: `rotate(${(Math.random() - 0.5) * 10}deg)`,
-                          outline: 'solid 2px white',
-                          marginTop: '-50px',
-                          transition: 'transform 0.2s',
-                          ':hover': {
-                            transform: `rotate(${(Math.random() - 0.5) * 10}deg) scale(1.02)`,
-                            zIndex: 1
-                          }
-                        }}
-                        data-aos="fade-up"
-                      >
-                        <Heading
-                          as="h2"
-                          sx={{
-                            textAlign: 'center',
-                            fontSize: '1.5em',
-                            fontFamily: 'moonblossom',
-                            color: 'white',
-                            mt: 2
-                          }}
-                        >
-                          BRONZE SPONSORS
-                        </Heading>
-                      </Box>
-                      <div
-                        style={{
-                          display: 'flex',
-                          flexWrap: 'wrap',
-                          gap: '20px',
-                          // height: '200px',
-                          transform: 'scale(0.8)',
-                          justifyContent: 'center'
-                        }}
-                      >
-                        {bronzeSponsors.map((sponsor, i) => (
-                          <Link
-                            href={sponsor.url}
-                            target="_blank"
-                            sx={{
-                              backgroundColor: '#c78f16',
-                              display: 'flex',
-                              flexDirection: 'column',
-                              width: '200px',
-                              alignItems: 'center',
-                              padding: '20px',
-                              transform: `rotate(${(Math.random() - 0.5) * 10}deg)`,
-                              outline: 'solid 2px white',
-                              transition: 'transform 0.2s',
-                              ':hover': {
-                                transform: `rotate(${(Math.random() - 0.5) * 10}deg) scale(1.02)`,
-                                zIndex: 1
-                              }
-                            }}
-                          >
-                            <Image
-                            data-aos="fade-down"
-                              key={i}
-                              src={sponsor.image}
-                              alt={sponsor.name}
-                              style={{
-                                width: '100px',
-                                height: '100px',
-                                objectFit: 'contain'
-                              }}
-                            />
-                            <Text
-                              sx={{
-                                textAlign: 'center',
-                                fontSize: '1.5em',
-                                fontFamily: 'moonblossom',
-                                color: 'white',
-                                mt: 2,
-                                wordWrap: 'break-word'
-                              }}
-                            >
-                              {sponsor.name}
-                            </Text>
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
+                    GOLD SPONSORS
+                  </Heading>
                 </Box>
-              </Box>
+                <div
+                  style={{
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    gap: '20px',
+                    // height: '200px',
+                    transform: 'scale(0.9)',
+                    justifyContent: 'center'
+                  }}
+                >
+                  {goldSponsors.map((sponsor, i) => (
+                    <Link
+                      href={sponsor.url}
+                      target="_blank"
+                      sx={{
+                        backgroundColor: '#c9ae53',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        width: '200px',
+                        alignItems: 'center',
+                        padding: '20px',
+                        transform: `rotate(${(Math.random() - 0.5) * 10}deg)`,
+                        outline: 'solid 2px white',
+                        transition: 'transform 0.2s',
+                        ':hover': {
+                          transform: `rotate(${(Math.random() - 0.5) * 10}deg) scale(1.02)`,
+                          zIndex: 1
+                        }
+                      }}
+                    >
+                      <Image
+                        data-aos="fade-down"
+                        key={i}
+                        src={sponsor.image}
+                        alt={sponsor.name}
+                        style={{
+                          width: '100px',
+                          height: '100px',
+                          objectFit: 'contain'
+                        }}
+                      />
+                      <Text
+                        sx={{
+                          textAlign: 'center',
+                          fontSize: '1.5em',
+                          fontFamily: 'moonblossom',
+                          color: 'white',
+                          mt: 2,
+                          wordWrap: 'break-word'
+                        }}
+                      >
+                        {sponsor.name}
+                      </Text>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <Box
+                  sx={{
+                    backgroundColor: '#c9c9c9',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    width: '100%',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    padding: '20px',
+                    transform: `rotate(${(Math.random() - 0.5) * 10}deg)`,
+                    outline: 'solid 2px white',
+                    marginTop: '-50px',
+                    transition: 'transform 0.2s',
+                    zIndex: 2,
+                    ':hover': {
+                      transform: `rotate(${(Math.random() - 0.5) * 10}deg) scale(1.02)`
+                    }
+                  }}
+                  data-aos="fade-up"
+                >
+                  <Heading
+                    as="h2"
+                    sx={{
+                      textAlign: 'center',
+                      fontSize: '1.5em',
+                      fontFamily: 'moonblossom',
+                      color: 'white',
+                      mt: 2
+                    }}
+                  >
+                    SILVER SPONSORS
+                  </Heading>
+                </Box>
+                <div
+                  style={{
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    gap: '20px',
+                    // height: '200px',
+                    transform: 'scale(0.9)',
+                    justifyContent: 'center'
+                  }}
+                >
+                  {silverSponsors.map((sponsor, i) => (
+                    <Link
+                      href={sponsor.url}
+                      target="_blank"
+                      sx={{
+                        backgroundColor: '#c9c9c9',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        width: '200px',
+                        alignItems: 'center',
+                        padding: '20px',
+                        transform: `rotate(${(Math.random() - 0.5) * 10}deg)`,
+                        outline: 'solid 2px white',
+                        transition: 'transform 0.2s',
+                        ':hover': {
+                          transform: `rotate(${(Math.random() - 0.5) * 10}deg) scale(1.02)`,
+                          zIndex: 1
+                        }
+                      }}
+                    >
+                      <Image
+                        data-aos="fade-down"
+                        key={i}
+                        src={sponsor.image}
+                        alt={sponsor.name}
+                        style={{
+                          width: '100px',
+                          height: '100px',
+                          objectFit: 'contain'
+                        }}
+                      />
+                      <Text
+                        sx={{
+                          textAlign: 'center',
+                          fontSize: '1.5em',
+                          fontFamily: 'moonblossom',
+                          color: 'white',
+                          mt: 2,
+                          wordWrap: 'break-word'
+                        }}
+                      >
+                        {sponsor.name}
+                      </Text>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+              <div style={{ marginBottom: '-130px' }}>
+                <Box
+                  sx={{
+                    backgroundColor: '#c78f16',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    width: '100%',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    padding: '20px',
+                    transform: `rotate(${(Math.random() - 0.5) * 10}deg)`,
+                    outline: 'solid 2px white',
+                    marginTop: '-50px',
+                    transition: 'transform 0.2s',
+                    ':hover': {
+                      transform: `rotate(${(Math.random() - 0.5) * 10}deg) scale(1.02)`,
+                      zIndex: 1
+                    }
+                  }}
+                  data-aos="fade-up"
+                >
+                  <Heading
+                    as="h2"
+                    sx={{
+                      textAlign: 'center',
+                      fontSize: '1.5em',
+                      fontFamily: 'moonblossom',
+                      color: 'white',
+                      mt: 2
+                    }}
+                  >
+                    BRONZE SPONSORS
+                  </Heading>
+                </Box>
+                <div
+                  style={{
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    gap: '20px',
+                    // height: '200px',
+                    transform: 'scale(0.8)',
+                    justifyContent: 'center'
+                  }}
+                >
+                  {bronzeSponsors.map((sponsor, i) => (
+                    <Link
+                      href={sponsor.url}
+                      target="_blank"
+                      sx={{
+                        backgroundColor: '#c78f16',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        width: '200px',
+                        alignItems: 'center',
+                        padding: '20px',
+                        transform: `rotate(${(Math.random() - 0.5) * 10}deg)`,
+                        outline: 'solid 2px white',
+                        transition: 'transform 0.2s',
+                        ':hover': {
+                          transform: `rotate(${(Math.random() - 0.5) * 10}deg) scale(1.02)`,
+                          zIndex: 1
+                        }
+                      }}
+                    >
+                      <Image
+                        data-aos="fade-down"
+                        key={i}
+                        src={sponsor.image}
+                        alt={sponsor.name}
+                        style={{
+                          width: '100px',
+                          height: '100px',
+                          objectFit: 'contain'
+                        }}
+                      />
+                      <Text
+                        sx={{
+                          textAlign: 'center',
+                          fontSize: '1.5em',
+                          fontFamily: 'moonblossom',
+                          color: 'white',
+                          mt: 2,
+                          wordWrap: 'break-word'
+                        }}
+                      >
+                        {sponsor.name}
+                      </Text>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </Box>
+        </Box>
 
         <Box
           sx={{
@@ -1466,7 +1483,7 @@ export default function Dhaka() {
 
         <Link
           // TODO: Change [EVENTID] to your event's ID (see https://airtable.com/appigKiF7GbVISAlg/shrK3OiCJs4BRBIRG)
-          href="https://forms.hackclub.com/scrapyard-signup?event=dhaka"
+          href="https://forms.gle/ThT6q3bzp34V38wu7"
           target="_blank"
         >
           <Box
