@@ -92,9 +92,10 @@ export default function Dhaka() {
     async function fetchScheduleData() {
       try {
         const response = await fetch(
-          'http://localhost:3000/schedule'
+          'https://superioradmin.vercel.app/api/scrapyard?type=schedule'
         )
         const data = await response.json()
+        console.log(data)
         setSchedule(data)
       } catch (error) {
         console.log(error)
@@ -108,7 +109,7 @@ export default function Dhaka() {
     async function fetchBronzeSponsors() {
       try {
         const response = await fetch(
-          'http://localhost:3000/bronze'
+          'https://superioradmin.vercel.app/api/scrapyard?type=bronze'
         )
         const data = await response.json()
         setBronzeSponsors(data)
@@ -125,7 +126,7 @@ export default function Dhaka() {
     async function fetchSilverSponsors() {
       try {
         const response = await fetch(
-          'http://localhost:3000/silver'
+          'https://superioradmin.vercel.app/api/scrapyard?type=silver'
         )
         const data = await response.json()
         setSilverSponsors(data)
@@ -142,7 +143,7 @@ export default function Dhaka() {
     async function fetchGoldSponsors() {
       try {
         const response = await fetch(
-          'http://localhost:3000/gold'
+          'https://superioradmin.vercel.app/api/scrapyard?type=gold'
         )
         const data = await response.json()
         setGoldSponsors(data)
@@ -159,7 +160,7 @@ export default function Dhaka() {
     async function fetchPartnerSponsors() {
       try {
         const response = await fetch(
-          'http://localhost:3000/partner'
+          'https://superioradmin.vercel.app/api/scrapyard?type=partner'
         )
         const data = await response.json()
         setPartnerSponsors(data)
@@ -308,7 +309,7 @@ export default function Dhaka() {
 
               objectFit: 'contain'
             }}
-            src="https://files.edgestore.dev/iz2sept3369gmc0f/publicFiles/_public/f6c6f8bc-dc45-4baf-b3ec-a397a145b9f5.svg"
+            src="https://files.edgestore.dev/iz2sept3369gmc0f/publicFiles/_public/69d389f3-b430-462c-b68e-0ab773028f73.svg"
             alt="Scrapyard"
           />
         </Box>
@@ -380,7 +381,7 @@ export default function Dhaka() {
               }}
             >
               {/* TODO: Change [EXAMPLECITY] to your event's city */}
-              Dhaka - March&nbsp;15
+              Dhaka - March&nbsp;15 - 16
             </Heading>
           </Box>
         </Box>
