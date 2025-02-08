@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import { Box, Card, Grid, Heading, Image, Link, Text } from 'theme-ui'
+import Script from 'next/script';
 
 const schedule = [
   { time: '11:00 AM', event: 'Doors open' },
