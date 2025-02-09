@@ -172,7 +172,7 @@ export default function ExampleCity() {
               }}
             >
               {/* TODO: Change [EXAMPLECITY] to your event's city */}
-              Metro Manila - March&nbsp;15-16
+              Metro Manila - March&nbsp;15,2025
             </Heading>
           </Box>
         </Box>

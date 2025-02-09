@@ -1,28 +1,11 @@
-/*
-Hello! This is the template for the city pages.
-
-To create a new page, make a copy of this file in the same directory (pages) and rename it for your city.
-E.g. if your city is Tampa, rename the copy of this file to tampa.js
-
-Replace all placeholder info, indicated by "TODO" comments (you can use Ctrl+F) in this file
-You do not need to use this template exactly, feel free to customize it as much as you see fit.
-
-If you want to include additional assets, please add them under public/city/your-city-name.
-
-Make a PR and we'll review it as soon as we can!
-
-If you have any questions, send a message to the #scrapyard channel on the Hack Club Slack and we'll try to help.
-
-P.S. Feel free to delete this comment block when you're done! 
-
-Note: To test your changes locally, use `yarn install` and `yarn dev`.
-*/
+// `npm run dev` to start local server
 
 import Head from 'next/head'
 import { Box, Button, Card, Grid, Heading, Image, Link, Text } from 'theme-ui'
 import dynamic from 'next/dynamic'
+import { motion, useInView } from 'motion/react'
+import { useEffect, useRef } from 'react'
 
-// TODO: Change this schedule to your own!
 const schedule = [
   { time: '10:00 AM', event: 'Gates Open and Registration' },
   { time: '11:00 AM', event: 'Opening Ceremony' },
@@ -42,7 +25,7 @@ const schedule = [
   { time: '8:00 AM', event: 'Showers' },
   { time: '9:00 AM', event: 'Breakfast' },
   { time: '10:00 AM', event: 'Workshops' },
-  { time: '11:00 AM', event: 'Working Session`' },
+  { time: '11:00 AM', event: 'Working Session' },
   { time: '12:00 PM', event: 'Side Activity' },
   { time: '1:00 PM', event: 'Lunch' },
   { time: '2:00 PM', event: 'Final Hour of Work' },
@@ -50,7 +33,112 @@ const schedule = [
   { time: '3:30 PM', event: 'Judging' }
 ]
 
+const sponsorLogos = [
+  '/city/sydney/sponsors/polymaker.webp',
+  '/city/sydney/sponsors/littlebirdelectronics.png'
+]
+const NotSoScrollingBanner = () => {
+  return (
+    <div style={{ overflow: 'hidden', whiteSpace: 'nowrap', width: '100%' }}>
+      <motion.div
+        style={{ display: 'inline-block' }}
+        // animate={{ x: ["0%", "-100%"] }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          ease: 'linear'
+        }}
+      >
+        {/* Duplicate the logos to create a seamless loop */}
+        {/*I've disabled duplicating logos, add ", ...sponsorLogos" to the array to enable it*/}
+        {[...sponsorLogos].map((logo, index) => (
+          <img
+            key={index}
+            src={logo}
+            alt={`Sponsor ${index}`}
+            style={{ height: '80px', margin: '0 20px' }}
+          />
+        ))}
+      </motion.div>
+    </div>
+  )
+}
+
 const Map = dynamic(() => import('../components/Map'), { ssr: false })
+
+const Wayfinder = () => {
+  const ref = useRef(null)
+
+  return (
+    <motion.div
+      ref={ref}
+      style={{
+        width: '26px',
+        height: '26px',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: '50%',
+        background: '#F5F5F5',
+        color: 'var(--colour)',
+        boxShadow: '0px 2px 4px 0px'
+      }}
+      initial={{ '--colour': 'rgba(0, 0, 0, 0.25)' }}
+      whileInView={{ '--colour': '#F68887' }}
+      viewport={{ margin: '-30% 0px -30% 0px' }}
+    >
+      <motion.div
+        style={{
+          width: '13px',
+          height: '13px',
+          borderRadius: '50%',
+          background: 'var(--colour)',
+          boxShadow: '0px 0px 1px 0px rgba(0, 0, 0, 0.25) inset'
+        }}
+        initial={{ '--colour': 'rgba(0, 0, 0, 0.25)' }}
+        whileInView={{ '--colour': '#F68887' }}
+        viewport={{ margin: '-30% 0px -30% 0px' }}
+      ></motion.div>
+    </motion.div>
+  )
+}
+
+const Wayfinder1 = () => {
+  const ref1 = useRef(null)
+
+  return (
+    <motion.div
+      ref={ref1}
+      style={{
+        width: '18px',
+        height: '18px',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: '50%',
+        background: '#F5F5F5',
+        color: 'var(--colour)',
+        boxShadow: '0px 2px 4px 0px'
+      }}
+      initial={{ '--colour': 'rgba(0, 0, 0, 0.25)' }}
+      whileInView={{ '--colour': '#F68887' }}
+      viewport={{ margin: '-30% 0px -30% 0px' }}
+    >
+      <motion.div
+        style={{
+          width: '9px',
+          height: '9px',
+          borderRadius: '50%',
+          background: 'var(--colour)',
+          boxShadow: '0px 0px 1px 0px rgba(0, 0, 0, 0.25) inset'
+        }}
+        initial={{ '--colour': 'rgba(0, 0, 0, 0.25)' }}
+        whileInView={{ '--colour': '#F68887' }}
+        viewport={{ margin: '-30% 0px -30% 0px' }}
+      ></motion.div>
+    </motion.div>
+  )
+}
 
 const Flag = () => (
   <Link
@@ -118,7 +206,7 @@ export default function ExampleCity() {
               objectFit: 'contain'
             }}
             src="/city/sydney/wordmark.svg"
-            alt="Scrapyard"
+            alt="Scrapyard Sydney logo"
           />
         </Box>
         <Box
@@ -143,10 +231,11 @@ export default function ExampleCity() {
               paddingBottom: '8%',
               paddingTop: '7%',
               paddingLeft: '7%',
+              paddingRight: '7%',
               display: 'flex',
               flexDirection: 'column',
-              justifyContent: 'space-between',
-              alignItems: 'flex-start',
+              justifyContent: 'center',
+              alignItems: 'center',
               width: 'min(500px, calc(100vw - 30px))',
               filter: 'drop-shadow(5px 5px 5px #000000AA)',
               position: 'relative',
@@ -155,53 +244,17 @@ export default function ExampleCity() {
           >
             <Text
               sx={{
-                fontFamily: 'moonblossom',
-                fontSize: '0.9rem',
+                fontFamily: 'p22-stanyan',
+                fontSize: '2rem',
                 marginLeft: '30px',
                 color: 'black',
-                fontStyle: 'italic'
+                fontStyle: 'italic',
+                alignText: 'center',
+                transform: 'translateY(7px)'
               }}
             >
-              Made Possible By:
+              Building happens here.
             </Text>
-            <Box
-              sx={{
-                display: 'flex',
-                flexDirection: 'row',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                gap: '10px'
-              }}
-            >
-              <Link
-                href="https://www.polymaker.com/"
-                target="_blank"
-                sx={{ zIndex: 2, display: 'flex', justifyContent: 'center' }}
-              >
-                <Image
-                  sx={{
-                    width: '70%',
-                    objectFit: 'contain'
-                  }}
-                  src="/city/sydney/sponsors/polymaker.webp"
-                  alt="Polymaker Logo"
-                />
-              </Link>
-              <Link
-                href="https://www.littlebirdelectronics.com.au/"
-                target="_blank"
-                sx={{ zIndex: 2, display: 'flex', justifyContent: 'center' }}
-              >
-                <Image
-                  sx={{
-                    width: '80%',
-                    objectFit: 'contain'
-                  }}
-                  src="/city/sydney/sponsors/littlebirdelectronics.png"
-                  alt="Little Bird Electronics Logo"
-                />
-              </Link>
-            </Box>
           </Box>
           <Box
             sx={{
@@ -239,53 +292,124 @@ export default function ExampleCity() {
           </Box>
         </Box>
         <Box
+          style={{
+            // background: "url('/elements/ripped-paper.png')",
+            // backgroundSize: 'contain',
+            // backgroundRepeat: 'no-repeat',
+            // height: 'fit-content',
+            // paddingBottom: '3%',
+            // paddingTop: '0%',
+            // paddingLeft: '1%',
+            // paddingRight: '1%',
+            // marginTop: "5px",
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center'
+          }}
+        >
+          <Text
+            style={{
+              textAlign: 'center',
+              marginBottom: '10px',
+              fontFamily: 'moonblossom',
+              fontWeight: '400',
+              color: "#f0f0f0"
+            }}
+          >
+            This event is made possible by our sponsors
+          </Text>
+          <NotSoScrollingBanner />
+        </Box>
+        <Box
           sx={{
             position: 'absolute',
             width: '100%',
             height: '100vw'
           }}
         >
-          <Image
-            sx={{
+          <motion.div
+            style={{
+              position: 'absolute',
+              top: '40%',
+              left: '10%',
+              width: '10%',
+              height: '10%',
+              zIndex: 2
+            }}
+            initial={{ transform: 'translateY(0px)' }}
+            animate={{
+              transform: 'translateY(-40px)'
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              repeatType: 'reverse',
+              ease: 'easeInOut'
+            }}
+          >
+            <Image
+              src="/elements/stars/blue.png"
+              alt="Blue paper star"
+              draggable="false"
+            />
+          </motion.div>
+          <motion.div
+            style={{
               width: '10%',
               height: '10%',
               zIndex: 2,
               position: 'absolute',
               top: '50%',
-              left: '10%'
-            }}
-            src="/elements/stars/blue.png"
-            alt="Blue paper star"
-          />
-          <Image
-            sx={{
-              width: '10%',
-              height: '10%',
-              zIndex: 2,
-              position: 'absolute',
-              top: '55%',
               right: '15%'
             }}
-            src="/elements/stars/yellow.png"
-            alt="Yellow paper star"
-          />
-          <Image
-            sx={{
+            initial={{ transform: 'translateY(0px)' }}
+            animate={{
+              transform: 'translateY(-25px)'
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              repeatType: 'reverse',
+              ease: 'easeInOut'
+            }}
+          >
+            <Image
+              src="/elements/stars/yellow.png"
+              alt="Yellow paper star"
+              draggable="false"
+            />
+          </motion.div>
+          <motion.div
+            style={{
               width: '10%',
               height: '10%',
               zIndex: 2,
               position: 'absolute',
-              top: '70%',
-              left: '20%',
-              transform: 'rotate(180deg)'
+              top: '65%',
+              left: '20%'
             }}
-            src="/elements/stars/pink.png"
-            alt="Pink paper star"
-          />
+            initial={{ transform: 'translateY(0px)' }}
+            animate={{
+              transform: 'translateY(-40px)'
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              repeatType: 'reverse',
+              ease: 'easeInOut'
+            }}
+          >
+            <Image
+              src="/elements/stars/pink.png"
+              alt="Pink paper star"
+              draggable="false"
+            />
+          </motion.div>
         </Box>
         <Link
           href="https://forms.hackclub.com/scrapyard-signup?event=sydney"
           target="_blank"
+          draggable="false"
         >
           <Box
             sx={{
@@ -304,6 +428,7 @@ export default function ExampleCity() {
               minWidth: '8em',
               padding: '15px'
             }}
+            draggable="false"
           >
             <Heading
               as="h2"
@@ -346,6 +471,7 @@ export default function ExampleCity() {
             transform: 'translateY(-40%)',
             zIndex: 7
           }}
+          draggable="false"
         />
       </Box>
       <Box
@@ -374,7 +500,7 @@ export default function ExampleCity() {
             height: '100%'
           }}
         >
-          <Image src="/elements/orpheus-doodle.svg" />
+          <Image src="/elements/orpheus-doodle.svg" draggable="false" />
           <Box
             sx={{
               maxWidth: ['80vw', '60vw', '40vw'],
@@ -418,39 +544,49 @@ export default function ExampleCity() {
             width: '100%',
             height: '100%',
             zIndex: 1,
-            display: ['none', 'none', 'block']
+            display: ['none', 'none', 'block'],
+            pointerEvents: 'none',
+            userSelect: 'none'
           }}
         >
           <Image
             src="/elements/doodles/arrow.svg"
+            draggable="false"
             sx={{ position: 'absolute', left: '5%', top: '0%' }}
           />
           <Image
             src="/elements/doodles/pinkcircle.svg"
+            draggable="false"
             sx={{ position: 'absolute', left: '20%', top: '0%' }}
           />
           <Image
             src="/elements/doodles/yellowcircle.svg"
+            draggable="false"
             sx={{ position: 'absolute', left: '8%', top: '70%' }}
           />
           <Image
             src="/elements/doodles/bluesquiggle.svg"
+            draggable="false"
             sx={{ position: 'absolute', left: '8%', top: '84%' }}
           />
           <Image
             src="/elements/doodles/yellowlines.svg"
+            draggable="false"
             sx={{ position: 'absolute', left: '37%', top: '80%' }}
           />
           <Image
             src="/elements/doodles/bluecircle.svg"
+            draggable="false"
             sx={{ position: 'absolute', right: '30%', top: '78%' }}
           />
           <Image
             src="/elements/doodles/pinksquiggle.svg"
+            draggable="false"
             sx={{ position: 'absolute', right: '10%', top: '80%' }}
           />
           <Image
             src="/elements/doodles/bluedrops.svg"
+            draggable="false"
             sx={{ position: 'absolute', right: '10%', top: '0%' }}
           />
         </Box>
@@ -585,63 +721,7 @@ export default function ExampleCity() {
           display: 'flex',
           flexDirection: 'column'
         }}
-      >
-        <Box
-          sx={{
-            backgroundImage: 'url(/elements/ripped-paper-strip.svg)',
-            // backgroundSize: "cover!important",
-            // display: "block",
-            // width: "30vw",
-            height: '30vh',
-            width: ['90vw', '70vw', '46.8vw'],
-            alignItems: 'center',
-            justifyContent: 'center',
-            margin: '0vh',
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: 'cover',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center'
-          }}
-        >
-          <Heading
-            as="h1"
-            sx={{
-              mx: '1vw',
-              fontWeight: 'lighter',
-              textAlign: 'center'
-            }}
-          >
-            {/* TODO: Change [EXAMPLECITY] to your event's city */}
-            CAN'T MAKE IT TO SYDNEY?
-          </Heading>
-        </Box>
-        <Heading
-          as="h2"
-          sx={{
-            fontSize: '1.5em',
-            fontFamily: 'moonblossom',
-            color: 'white',
-            textAlign: 'center',
-            mx: '5vw'
-          }}
-        >
-          THERE ARE 100+ OTHER SCRAPYARD EVENTS HAPPENING AROUND THE WORLD!
-        </Heading>
-        <Box
-          sx={{
-            width: ['100%', '80%'],
-            height: '75vh',
-            alignItems: 'center',
-            display: 'flex',
-            flexDirection: 'column',
-            mb: '10vh',
-            mt: 5
-          }}
-        >
-          <Map />
-        </Box>
-      </Box>
+      ></Box>
 
       <Box
         sx={{

@@ -147,7 +147,7 @@ export default function Home() {
                 fontSize: ['1.2em', '1.4em']
               }}
             >
-              Los&nbsp;Angeles&nbsp;February&nbsp;15-16
+              Location&nbsp;TBD&nbsp;March&nbsp;1-2
             </Heading>
           </Box>
         </Box>
@@ -311,8 +311,8 @@ export default function Home() {
               }}
             >
               Scrapyard is a global hackathon organized by high schoolers. Our
-              flagship (the largest Scrapyard event) will run in Los Angeles on
-              February 15th-16th. Following the flagship, our distributed events
+              flagship (the largest Scrapyard event) will run in Location TBD on
+              March 1st-2nd. Following the flagship, our distributed events
               will run in 100+ cities worldwide on the weekend of March 15th.
               Scrapyard is a hackathon with a "scrappy" theme of stupid
               inventions! It's organized by Hack Club, a <Nonprofit501c3 />{' '}
@@ -621,7 +621,7 @@ export default function Home() {
                 <Link href="https://hackclub.com/hackathons/" target="_blank">
                   hackathon
                 </Link>{' '}
-                running in Los Angeles and 100+ other cities by high schoolers
+                running in Location TBD and 100+ other cities by high schoolers
                 (like{' '}
                 <Link href="https://counterspell.hackclub.com/" target="_blank">
                   Counterspell
@@ -637,8 +637,8 @@ export default function Home() {
 
             'Where is Scrapyard hosted?': (
               <>
-                The Scrapyard flagship will be hosted in Los Angeles,
-                tentatively on February 15-16 (Location TBD). Find the closest
+                The Scrapyard flagship will be hosted in Location TBD,
+                tentatively on March 1-2 (Location TBD). Find the closest
                 distributed event to you on March 15-16!
               </>
             ),

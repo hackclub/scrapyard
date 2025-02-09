@@ -1,0 +1,48 @@
+@keyframes floatRotate {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    25% {
+        transform: translateY(-8px) rotate(2deg);
+    }
+
+    50% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    75% {
+        transform: translateY(-8px) rotate(-2deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+@keyframes flipRotate {
+    0% {
+        transform: rotateY(0deg) rotate(0deg);
+    }
+
+    50% {
+        transform: rotateY(180deg) rotate(180deg);
+    }
+
+    100% {
+        transform: rotateY(360deg) rotate(360deg);
+    }
+}
+
+.floating {
+    animation: floatRotate 5s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+    width: 150px;
+    height: auto;
+    transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
+    will-change: transform;
+}
+
+.floating:hover {
+    animation: flipRotate 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transform: scale(1.1);
+}

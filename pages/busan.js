@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Script from 'next/script'
 import { Box, Card, Grid, Heading, Image, Link, Text } from 'theme-ui'
 
 const schedule = [
@@ -740,6 +741,11 @@ export default function ExampleCity() {
             ),
             'All this, for free?': (
               <>Yep! Food, swag and good vibes are all included.</>
+            ),
+            'Do I need team to participate?': (
+              <>
+                You don’t need to have a team in advance to participate. Sign-ups are individual, so if you don’t have a team yet, you can form one at the event. Each team can have up to four members. If you already have a team, please make sure each member signs up separately.
+              </>
             ),
             'What do I need?': (
               <>

@@ -1,0 +1,21 @@
+/* Credits to cluj-napoca for the phantom_sans font template */
+
+@font-face {
+    font-family: 'Phantom Sans';
+    src: url('https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Regular.woff')
+        format('woff'),
+      url('https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Regular.woff2')
+        format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+.phantom_sans_regular{
+    font-family: "Phantom Sans" !important;
+}
+
+.phantom_sans_light{
+  font-family: "Phantom Sans" !important;
+  font-weight: 300;
+}
