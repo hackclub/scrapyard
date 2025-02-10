@@ -1,6 +1,6 @@
 import Head from 'next/head'
+import Script from 'next/script'
 import { Box, Card, Grid, Heading, Image, Link, Text } from 'theme-ui'
-import Script from 'next/script';
 
 const schedule = [
   { time: '11:00 AM', event: 'Doors open' },
@@ -55,24 +55,8 @@ export default function ExampleCity() {
     >
       <Head>
         <title>Scrapyard Busan</title>
-        <Script>
-          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-5MBXT6WG');
-`}
-        </Script>
       </Head>
       <Flag />
-      <noscript>
-        <iframe
-          src="https://www.googletagmanager.com/ns.html?id=GTM-5MBXT6WG"
-          height="0"
-          width="0"
-          style={{ display: "none", visibility: "hidden" }}
-        ></iframe>
-      </noscript>
       <Box
         sx={{
           width: '100%',
@@ -757,6 +741,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             ),
             'All this, for free?': (
               <>Yep! Food, swag and good vibes are all included.</>
+            ),
+            'Do I need team to participate?': (
+              <>
+                You don’t need to have a team in advance to participate. Sign-ups are individual, so if you don’t have a team yet, you can form one at the event. Each team can have up to four members. If you already have a team, please make sure each member signs up separately.
+              </>
             ),
             'What do I need?': (
               <>
