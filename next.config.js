@@ -11,6 +11,11 @@ module.exports = withMDX({
       source: '/cleveland',
       destination: 'https://scrapyardcle.org',
       permanent: true
+    },
+    {
+      source: '/vancouver',
+      destination: 'https://scrapyard.bcydc.ca',
+      permanent: true
     }
   ]
 })

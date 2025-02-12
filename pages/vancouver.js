@@ -25,19 +25,15 @@ import dynamic from 'next/dynamic'
 
 // TODO: Change this schedule to your own!
 const schedule = [
-  { time: '11:00 AM', event: 'Doors open' },
-  { time: '12:00 PM', event: 'Opening ceremony' },
-  { time: '12:30 PM', event: 'Lunch' },
-  { time: '1:00 PM', event: 'Start working on your project!' },
-  { time: '2:00 PM', event: 'Workshop 1' },
-  { time: '4:00 PM', event: 'Activity 1' },
-  { time: '4:00 PM', event: 'Workshop 2' },
-  { time: '6:00 PM', event: 'Dinner' },
-  { time: '8:00 PM', event: 'Lightning talks' },
-  { time: '12:00 AM', event: 'Midnight surprise' },
-  { time: '8:00 AM', event: 'Breakfast' },
-  { time: '10:30 AM', event: 'Demos!' },
-  { time: '12:00 PM', event: 'Closing ceremony' }
+  { time: '8:30 AM', event: 'Doors open' },
+  { time: '9:00 AM', event: 'Opening ceremony' },
+  { time: '9:30 AM', event: 'Hacking commences!' },
+  { time: '12:00 PM', event: 'Lunch' },
+  { time: '1:00 PM', event: 'Workshop 1' },
+  { time: '2:00 PM', event: 'Activity 1' },
+  { time: '3:00 PM', event: 'Workshop 2' },
+  { time: '6:45 PM', event: 'Demos!' },
+  { time: '8:30 PM', event: 'Closing ceremony' }
 ]
 
 const Map = dynamic(() => import('../components/Map'), { ssr: false })
@@ -343,7 +339,7 @@ export default function Vancouver() {
               {/* TODO: Change [EXAMPLECITY] to your event's city */}
               Scrapyard Vancouver is a hackathon for high schoolers{' '}
               {/* TODO: Change [EXAMPLECITY] to your event's city */}
-              happening in Vancouver, where you can make the stupidest
+              in the Lower Mainland, where you can make the stupidest
               things you can think of! Anything, from a{' '}
               <Link href="https://www.youtube.com/watch?v=PnK4gzO6S3Q">
                 lamp that flashes faster the slower you type
@@ -351,7 +347,7 @@ export default function Vancouver() {
               , to those ideas that you wouldn't dare to consider to be useful,
               goes at Scrapyard. No matter your experience, Scrapyard
               {/* TODO: Change [EXAMPLECITY] to your event's city */}
-              Vancouver needs you and your scrappy ideas!
+               Vancouver needs you and your scrappy ideas!
             </p>
           </Box>
         </Box>
@@ -630,9 +626,8 @@ export default function Vancouver() {
           {Object.entries({
             'Who can participate in Scrapyard?': (
               <>
-                All high-school & upper-middle-school aged students are welcome
-                to come! You don't have to be a member of the Hack Club
-                community or be a Hack Club leader.
+                All students grades 8-12 are welcome
+                to come!
               </>
             ),
             'All this, for free?': (
@@ -647,15 +642,12 @@ export default function Vancouver() {
             ),
             'What do I need?': (
               <>
-                Your laptop, chargers, and an open mind! If you're going to an
-                overnight event, bring toiletries and sleeping bagstoo.
-                Additionally, if you plan to work on a hardware project, bring
-                the tools you'll need.
+                Your laptop, chargers, and an open mind!
               </>
             ),
             'I’m not good at coding. Can I still participate?': (
               <>
-                This hackathon is for creatives of all skill levels! We'll have
+                Scrapyard is for creatives of all skill levels! We'll have
                 workshops and other events so join us and let's learn together.
                 If you'd like to start exploring some introductory projects,
                 check out Hack Club Workshops.
