@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Script from 'next/script'
+import { useRouter } from 'next/router'
 import { Box, Card, Grid, Heading, Image, Link, Text } from 'theme-ui'
 
 const schedule = [
@@ -40,7 +40,20 @@ const Flag = () => (
   </Link>
 )
 
-export default function ExampleCity() {
+// export async function getStaticProps({ locale }) {
+//   // Load translation data based on the locale.
+//   // For instance, import the correct JSON file dynamically:
+//   const translations = await import(`../public/city/busan/locales/${locale}.json`);
+  
+//   return {
+//     props: {
+//       locale,
+//       translations: translations.default,
+//     },
+//   };
+// }
+
+export default function ExampleCity({  }) {
   return (
     <Box
       sx={{

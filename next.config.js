@@ -3,6 +3,11 @@ module.exports = withMDX({
   pageExtensions: ['js', 'jsx', 'mdx'],
   redirects: () => [
     {
+      source: '/busan',
+      destination: 'https://scrapyard.hackclub.com/busan/kr',
+      permanent: true
+    },
+    {
       source: '/hongkong',
       destination: 'https://scrapyard.hk',
       permanent: true
