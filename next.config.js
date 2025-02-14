@@ -26,6 +26,11 @@ module.exports = withMDX({
       source: '/lisbon',
       destination: 'https://scrapyard.pt',
       permanent: true
+    },
+    {
+      source: '/san-francisco',
+      destination: 'https://scrapyardsf.com',
+      permanent: true
     }
   ]
 })
