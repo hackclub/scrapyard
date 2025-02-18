@@ -19,29 +19,31 @@ P.S. Feel free to delete this comment block when you're done!
 Note: To test your changes locally, use `yarn install` and `yarn dev`.
 */
 
+
+
+// London => Getting to Scrapyard London
+// silicon-valley => FAQs
+
 import Head from 'next/head'
 import { Box, Card, Grid, Heading, Image, Link, Text } from 'theme-ui'
 import dynamic from 'next/dynamic'
 
+
+
 // TODO: Change this schedule to your own!
 const schedule = [
-  /*
-  { time: '11:00 AM', event: 'Doors open' },
-  { time: '12:00 PM', event: 'Opening ceremony' },
-  { time: '12:30 PM', event: 'Lunch' },
-  { time: '1:00 PM', event: 'Start working on your project!' },
-  { time: '2:00 PM', event: 'Workshop 1' },
-  { time: '4:00 PM', event: 'Activity 1' },
-  { time: '4:00 PM', event: 'Workshop 2' },
-  { time: '6:00 PM', event: 'Dinner' },
-  { time: '8:00 PM', event: 'Lightning talks' },
-  { time: '12:00 AM', event: 'Midnight surprise' },
-  { time: '8:00 AM', event: 'Breakfast' },
-  { time: '10:30 AM', event: 'Demos!' },
-  { time: '12:00 PM', event: 'Closing ceremony' }
-  */
-  { time: 'tbc', event: 'tbc' }
+  { time: '08:00 AM', event: 'Doors open' },
+  { time: '09:00 AM', event: 'Gathering and Opening ceremony' },
+  { time: '10:00 AM', event: 'Workshop 1' },
+  { time: '12:00 PM', event: 'Break' },
+  { time: '12:30 PM', event: 'Workshop 2' },
+  { time: '02:30 PM', event: 'Start working on your project!' },
+  { time: '06:00 PM', event: 'Breakfast' },
+  { time: '08:00 PM', event: 'Demos and Evaluation' },
+  { time: '09:00 PM', event: 'Closing ceremony' }
+
 ]
+
 
 const Map = dynamic(() => import('../components/Map'), { ssr: false })
 
@@ -67,7 +69,7 @@ const Flag = () => (
   </Link>
 )
 
-export default function ExampleCity() {
+export default function giza() {
   return (
     <Box
       sx={{
@@ -81,7 +83,7 @@ export default function ExampleCity() {
       }}
     >
       <Head>
-        <title> Scrapyard Cairo </title>
+        <title> Scrapyard Giza </title>
       </Head>
       <Flag />
       <Box
@@ -109,7 +111,7 @@ export default function ExampleCity() {
 
               objectFit: 'contain'
             }}
-            src="/elements/wordmark.svg"
+            src="/elements/Scrapyard Giza.svg"
             alt="Scrapyard"
           />
         </Box>
@@ -176,7 +178,7 @@ export default function ExampleCity() {
                 fontSize: ['1.2em', '1.4em']
               }}
             >
-              Giza - March&nbsp;14-15
+              Giza - March&nbsp;15
             </Heading>
           </Box>
         </Box>
@@ -518,6 +520,605 @@ export default function ExampleCity() {
 
       <Box
         sx={{
+          width: '100%',
+          background: "url('/backgrounds/lined-paper.png')",
+          backgroundSize: ['contain', 'contain', 'cover!important'],
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          flexDirection: 'column',
+          gap: '20px',
+          p: [4, 4, 5],
+          pt: 6,
+          position: 'relative'
+        }}
+      >
+        <Heading
+          as="h1"
+          sx={{
+            mb: 5,
+            position: 'relative'
+          }}
+        >
+          Workshops          <Image
+            src="/elements/doodles/blue-underline.svg"
+            sx={{
+              position: 'absolute',
+              bottom: '0',
+              left: '50%',
+              transform: 'translateX(-50%) translateY(75%)'
+            }}
+          />
+        </Heading>
+        <Grid
+          columns={[1, 1, 1, 2]}
+          gap={4}
+          sx={{
+            maxWidth: '1200px'
+          }}
+        >
+          {Object.entries({
+
+            'Web Devleopment': (
+              <>
+                Make the scrappiest thing you can imagine, Websites?
+                You name it! We'll have a bunch of mentors to help
+                you out. We will tutor you how to make a basic scrapy website
+              </>
+            ),
+            'Game Devleopment': (
+              <>
+                Make the scrappiest thing you can imagine, Games?
+                You name it! We'll have a bunch of mentors to help
+                you out. We will tutor you how to make a basic scrapy Games with Unity
+              </>
+            ),
+            'AI Devleopment': (
+              <>
+                Make the scrappiest thing you can imagine, Machine Learning Models?
+                You name it! We'll have a bunch of mentors to help
+                you out. We will tutor you how to make a basic scrapy AI and ML models
+              </>
+            ),
+            'Robotics': (
+              <>
+                Make the scrappiest thing you can imagine, Hardware?
+                You name it! We'll have a bunch of mentors to help
+                you out. We will tutor you how to make a some scrapy robots with <b>Your Parts</b>.
+              </>
+            )
+          }).map(([question, answer], i) => {
+            return (
+              <Card
+                key={question}
+                sx={{
+                  background: [
+                    'transparent',
+                    `url('/elements/doodles/boxes/${(i % 6) + 1}.svg')`
+                  ],
+                  backgroundSize: [null, '100% 100%'],
+                  backgroundRepeat: 'no-repeat',
+                  boxShadow: 'none',
+                  padding: '48px!important',
+                  border: ['2px solid black', 'none']
+                }}
+              >
+                <Heading
+                  as="h2"
+                  mb={4}
+                  sx={{
+                    position: 'relative'
+                  }}
+                >
+                  {question}
+                  <Image
+                    src="/elements/doodles/yellow-underline.svg"
+                    sx={{
+                      position: 'absolute',
+                      bottom: '0',
+                      left: '50%',
+                      transform: 'translateX(-50%) translateY(75%)'
+                    }}
+                  />
+                </Heading>
+                <Text
+                  sx={{
+                    fontSize: 3,
+                    fontWeight: 'bold'
+                  }}
+                >
+                  {answer}
+                </Text>
+              </Card>
+            )
+          })}
+        </Grid>
+        <Link
+          href="https://forms.hackclub.com/scrapyard-signup?event=giza"
+          target="_blank"
+        >
+          <Box
+            sx={{
+              backgroundImage: "url('/elements/yellow-strip@stretch.svg')",
+              backgroundRepeat: 'no-repeat',
+              backgroundSize: '100% 100%',
+              filter: 'drop-shadow(5px 5px 5px #000)',
+              transition: 'transform 0.2s',
+              ':hover': {
+                transform: 'scale(1.1)'
+              },
+              zIndex: 20,
+              padding: 1,
+              my: 3
+            }}
+          >
+            <Heading
+              as="h2"
+              sx={{
+                fontFamily: 'moonblossom',
+                textAlign: 'center',
+                margin: '8%',
+                fontSize: ['1.2em', '1.4em'],
+                textTransform: 'inherit!important',
+                paddingY: ['15px', '0px']
+              }}
+            >
+              {/* TODO: Change [EXAMPLECITY] to your event's city */}
+              SIGN UP FOR SCRAPYARD GIZA
+            </Heading>
+          </Box>
+        </Link>
+
+      </Box>
+      <Box
+        sx={{
+          width: '100%',
+          // background: [
+          //   "url('/backgrounds/bulletin@vertical.svg')",
+          //   "url('/backgrounds/bulletin@vertical.svg')",
+          //   "url('/backgrounds/bulletin.svg')"
+          // ],
+          // background: "url('/backgrounds/bulletin@vertical.svg')",
+          background: "url('/backgrounds/lined-paper.png')",
+          // background: '#efefef',
+          backgroundSize: 'cover!important',
+          backgroundPosition: 'center center',
+          display: 'block',
+          justifyContent: 'center',
+          alignItems: 'center',
+          flexDirection: 'column',
+          overflow: 'visible',
+          gap: '20px',
+          height: ['auto'],
+          position: 'relative'
+        }}
+        id="sponsors"
+      >
+        <Box
+          sx={{
+            display: 'flex',
+            width: '100%',
+            height: '100%',
+            flexWrap: 'wrap',
+            p: '4vw',
+            position: 'relative',
+            overflow: 'visible',
+            justifyContent: ['space-around', 'space-around', null],
+            pb: '12vw'
+          }}
+        >
+          <Box
+            sx={{
+              width: '100%',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'start',
+              height: 'min-content'
+            }}
+          >
+            <Box
+              sx={{
+                background: "url('/elements/stapled-paper.png')",
+                backgroundSize: 'contain',
+                backgroundRepeat: 'no-repeat',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                height: '100px',
+                width: '400px'
+              }}
+            >
+              <Heading
+                as="h2"
+                sx={{
+                  textAlign: 'center',
+                  fontSize: '3em',
+                  marginTop: '-10px'
+                }}
+              >
+                Sponsors
+              </Heading>
+            </Box>
+          </Box>
+          <div
+            style={{
+              width: '100%',
+              display: 'flex',
+              flexWrap: 'wrap',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: '100px',
+              marginTop: '50px',
+              transform: 'scale(1.1)'
+            }}
+          >
+            <div>
+              <Box
+                sx={{
+                  backgroundColor: '#69c5f1',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  width: '100%',
+                  alignItems: 'center',
+                  padding: '20px',
+                  transform: `rotate(${(Math.random() - 0.5) * 10}deg)`,
+                  outline: 'solid 2px white',
+                  transition: 'transform 0.2s',
+                  zIndex: 2,
+                  ':hover': {
+                    transform: `rotate(${(Math.random() - 0.5) * 10}deg) scale(1.02)`
+                  }
+                }}
+              >
+                <Heading
+                  as="h2"
+                  sx={{
+                    textAlign: 'center',
+                    fontSize: '1.5em',
+                    fontFamily: 'moonblossom',
+                    color: 'white',
+                    mt: 2
+                  }}
+                >
+                  PARTNER SPONSORS
+                </Heading>
+              </Box>
+              <div
+                style={{
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  gap: '20px',
+                  // height: '200px',
+                  transform: 'scale(0.9)',
+                  justifyContent: 'center'
+                }}
+              >
+                <Link
+                  href="https://hackclub.com"
+                  target="_blank"
+                  sx={{
+                    backgroundColor: '#69c5f1',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    width: '200px',
+                    alignItems: 'center',
+                    padding: '20px',
+                    transform: `rotate(${(Math.random() - 0.5) * 10}deg)`,
+                    outline: 'solid 2px white',
+                    transition: 'transform 0.2s',
+                    ':hover': {
+                      transform: `rotate(${(Math.random() - 0.5) * 10}deg) scale(1.02)`,
+                      zIndex: 1
+                    }
+                  }}
+                >
+                  <Image
+                    src="https://adamxu.net/counterspell/hc-logo.png"
+                    alt="Hack Club"
+                    style={{
+                      width: '100px',
+                      height: '100px',
+                      objectFit: 'contain'
+                    }}
+                  />
+                  <Text
+                    sx={{
+                      textAlign: 'center',
+                      fontSize: '1.5em',
+                      fontFamily: 'moonblossom',
+                      color: 'white',
+                      mt: 2,
+                      wordWrap: 'break-word'
+                    }}
+                  >
+
+                    Hack Club                    </Text>
+                </Link>
+              </div>
+            </div>
+          </div>
+          <div
+            style={{
+              width: '100%',
+              display: 'flex',
+              flexWrap: 'wrap',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: '100px',
+              marginTop: '50px'
+            }}
+          >
+            <div>
+              <Box
+                sx={{
+                  backgroundColor: '#c9ae53',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  width: '100%',
+                  alignItems: 'center',
+                  padding: '20px',
+                  transform: `rotate(${(Math.random() - 0.5) * 10}deg)`,
+                  outline: 'solid 2px white',
+                  transition: 'transform 0.2s',
+                  zIndex: 2,
+                  ':hover': {
+                    transform: `rotate(${(Math.random() - 0.5) * 10}deg) scale(1.02)`
+                  }
+                }}
+              >
+                <Heading
+                  as="h2"
+                  sx={{
+                    textAlign: 'center',
+                    fontSize: '1.5em',
+                    fontFamily: 'moonblossom',
+                    color: 'white',
+                    mt: 2
+                  }}
+                >
+                  GOLD SPONSORS
+                </Heading>
+              </Box>
+              <div
+                style={{
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  gap: '20px',
+                  // height: '200px',
+                  transform: 'scale(0.9)',
+                  justifyContent: 'center'
+                }}
+              >
+
+                <Link
+                  href="https://mastersls.com/"
+                  target="_blank"
+                  sx={{
+                    backgroundColor: '#c9ae53',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    width: '200px',
+                    alignItems: 'center',
+                    padding: '20px',
+                    transform: `rotate(${(Math.random() - 0.5) * 10}deg)`,
+                    outline: 'solid 2px white',
+                    transition: 'transform 0.2s',
+                    ':hover': {
+                      transform: `rotate(${(Math.random() - 0.5) * 10}deg) scale(1.02)`,
+                      zIndex: 1
+                    }
+                  }}
+                >
+                  <Image
+                    src="https://mastersls.com/master/images/logo/logo.png"
+                    alt="Masters Language School"
+                    style={{
+                      width: '100px',
+                      height: '100px',
+                      objectFit: 'contain'
+                    }}
+                  />
+                  <Text
+                    sx={{
+                      textAlign: 'center',
+                      fontSize: '1.5em',
+                      fontFamily: 'moonblossom',
+                      color: 'white',
+                      mt: 2,
+                      wordWrap: 'break-word'
+                    }}
+                  >
+                    Masters Language School                    </Text>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </Box>
+      </Box>
+
+      <Box
+        sx={{
+          width: '100%',
+          background: [
+            "url('/backgrounds/bulletin@vertical.svg')",
+            "url('/backgrounds/bulletin@vertical.svg')",
+            "url('/backgrounds/bulletin.svg')"
+          ],
+          backgroundSize: 'cover!important',
+          display: 'block',
+          justifyContent: 'center',
+          alignItems: 'center',
+          flexDirection: 'column',
+          overflow: 'visible',
+          gap: '20px',
+          height: ['151.37794951vw', '151.37794951vw', '64.45447188vw'],
+          position: 'relative'
+        }}
+      >
+        <Box
+          sx={{
+            display: 'flex',
+            width: '100%',
+            height: '100%',
+            flexWrap: 'wrap',
+            p: '4vw',
+            position: 'relative',
+            overflow: 'visible',
+            justifyContent: ['space-around', 'space-around', null],
+            pb: '12vw'
+          }}
+        >
+          <Box
+            sx={{
+              width: '100%',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'start',
+              height: 'min-content'
+            }}
+          >
+            <Box
+              sx={{
+                background: "url('/elements/stapled-paper.png')",
+                backgroundSize: 'contain',
+                backgroundRepeat: 'no-repeat',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                height: '100px',
+                width: '400px'
+              }}
+            >
+              <Heading
+                as="h2"
+                sx={{
+                  textAlign: 'center'
+                }}
+              >
+                Our last events
+              </Heading>
+            </Box>
+          </Box>
+          <Box
+            as="a"
+            href="https://counterspell.hackclub.com/giza"
+            target="_blank"
+            sx={{
+              background:
+                "url('https://stem-hack-club.vercel.app/_next/static/media/Home_page.119773c0.jpg')",
+              width: ['35.5vw', '35.5vw', '22.5vw'],
+              height: ['35.5vw', '35.5vw', '22.5vw'],
+              transform: ['scale(1.4)', 'scale(1.4)', 'scale(1.2)'],
+              backgroundSize: 'contain',
+              backgroundRepeat: 'no-repeat',
+              display: 'block',
+              marginTop: '7vw',
+              borderRadius: "20px"
+            }}
+          ></Box>
+          <Box
+            as="a"
+            href="https://aurahunt.quest"
+            target="_blank"
+            sx={{
+              background:
+                "url('https://cdn.hackclubber.dev/slackcdn/909406d000aa69bc8e8ea5f41b042e88.png')",
+              width: ['35.5vw', '35.5vw', '22.5vw'],
+              height: ['35.5vw', '35.5vw', '22.5vw'],
+              transform: ['scale(1.4)', 'scale(1.4)', 'scale(1.2)'],
+              backgroundSize: 'contain',
+              backgroundRepeat: 'no-repeat',
+              display: 'block',
+              borderRadius: "20px"
+            }}
+          ></Box>
+
+        </Box>
+      </Box>
+
+
+
+
+
+
+
+      <Box
+        sx={{
+          // backgroundImage: "url(/backgrounds/confetti.png)",
+          alignItems: 'center',
+          display: 'flex',
+          flexDirection: 'column'
+        }}
+      >
+
+        <Box
+          sx={{
+            backgroundImage: 'url(/elements/ripped-paper-strip.svg)',
+            // backgroundSize: "cover!important",
+            // display: "block",
+            // width: "30vw",
+            height: '30vh',
+            width: ['90vw', '70vw', '46.8vw'],
+            alignItems: 'center',
+            justifyContent: 'center',
+            margin: '0vh',
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center'
+          }}
+        >
+          <Heading
+            as="h1"
+            sx={{
+              mx: '1vw',
+              fontWeight: 'lighter',
+              textAlign: 'center'
+            }}
+          >
+            Getting to Scrapyard Giza
+          </Heading>
+        </Box>
+
+        <p
+          style={{
+            fontSize: '1.5em',
+            color: 'white',
+            width: '60vw'
+          }}
+
+        >
+          Scrapyard Giza will be taking place at Masters School, who have kindly loaned
+          us use of their space, located at 6th of October Gardens, in Giza! The nearest bus station, October Gardens (Green Bus),
+          <br></br>
+          <br></br>
+          <i>The address is: Fardous City, 6th of October, Giza Egypt          </i>
+        </p>
+
+        <Image
+          sx={{
+            width: '600px',
+
+            maxWidth: '70vw',
+
+            objectFit: 'contain'
+          }}
+          src="/city/london/london_bus.svg"
+          alt="Typical london red bus with an advertiserment consisting of the url of scrapyard"
+        />
+      </Box>
+
+
+
+
+
+
+
+
+
+      <Box
+        sx={{
           // backgroundImage: "url(/backgrounds/confetti.png)",
           alignItems: 'center',
           display: 'flex',
@@ -683,6 +1284,20 @@ export default function ExampleCity() {
                 from Vermont to Los Angeles, and much more!
               </>
             ),
+            'What did us do before?': (
+              <>
+                Our hackathon is organized by STEM students who have hosted
+                other events like {' '}
+                <Link href="https://counterspell.hackclub.com/giza" target="_blank">
+                  Counterspell giza
+                </Link>,
+                {' '}Teen Hack Challenge, CYBERQUEST,
+                {' '}                <Link href="https://aurahunt.quest" target="_blank">
+                  Aura Hunt
+                </Link>
+                , and much more!
+              </>
+            ),
             'What if my parents are concerned?': (
               <>
                 We’re here to help! Our parents guide will be released soon, but
@@ -814,7 +1429,11 @@ export default function ExampleCity() {
             textAlign: 'center'
           }}
         >
-          Made with ♡ by teenagers, for teenagers at Hack Club
+          Made with ♡ by teenagers, for teenagers
+          <br /><br />    <Link
+            href="https://stemegypt.net"
+            target="_blank"
+          >STEM High School for Boys - 6th of October</Link>
         </Text>
         <Text
           sx={{
@@ -832,6 +1451,6 @@ export default function ExampleCity() {
           <Link href="https://hackclub.com/hackathons">Hackathons</Link>
         </Text>
       </Box>
-    </Box>
+    </Box >
   )
 }
