@@ -1,39 +1,19 @@
-'======== READ ME BEFORE EDITING ========'
-/*
-Hello! This is the template for the city pages.
-
-To create a new page, make a copy of this file in the same directory (pages) and rename it for your city.
-E.g. if your city is Tampa, rename the copy of this file to tampa.js
-
-Replace all placeholder info, indicated by "TODO" comments (you can use Ctrl+F) in this file
-You do not need to use this template exactly, feel free to customize it as much as you see fit.
-
-If you want to include additional assets, please add them under public/city/your-city-name.
-
-Make a PR and we'll review it as soon as we can!
-
-If you have any questions, send a message to the #scrapyard channel on the Hack Club Slack and we'll try to help.
-
-P.S. Feel free to delete this comment block when you're done! 
-
-Note: To test your changes locally, use `npm install` and `npm run dev`.
-*/
 
 import Head from 'next/head'
 import { Box, Card, Grid, Heading, Image, Link, Text } from 'theme-ui'
 import dynamic from 'next/dynamic'
 
-// TODO: Change this schedule to your own!
 const schedule = [
-  { time: '08:00 AM-09:00 AM', event: 'Doors open' },
-  { time: '09:00 AM-09:30 AM', event: 'Opening ceremony' },
-  { time: '09:45 AM-11:15 AM', event: 'Workshop 1' },
-  { time: '11:30 AM-12:45 PM', event: 'Workshop 2' },
-  { time: '01:00 PM-01:45 PM', event: 'Lunch' },
-  { time: '02:00 PM-07:00 PM', event: 'Project Work' },
-  { time: '07:00 PM-07:30 PM', event: 'Dinner and Lightning Talks' },
-  { time: '07:30 PM-08:30 PM', event: 'Demos and Judging' },
-  { time: '08:30 PM-09:00 PM', event: 'Closing Ceremony' },
+  { time: '9:00 AM', event: 'Doors open' },
+  { time: '10:00 AM', event: 'Opening ceremony' },
+  { time: '10:40 AM', event: 'Start working on your project!' },
+  { time: '12:00 PM', event: 'Workshop 1' },
+  { time: '2:30 PM', event: 'Activity 1' },
+  { time: '4:00 PM', event: 'Workshop 2' },
+  { time: '6:00 PM', event: 'Iftar' },
+  { time: '7:30 PM', event: 'Midnight surprise' },
+  { time: '8:00 PM', event: 'Demos!' },
+  { time: '9:00 AM', event: 'Closing ceremonny' },
 ]
 
 const Map = dynamic(() => import('../components/Map'), { ssr: false })
@@ -74,8 +54,7 @@ export default function ExampleCity() {
       }}
     >
       <Head>
-        {/* TODO: Change [EXAMPLECITY] to your event's city */}
-        <title>Scrapyard Bristol</title>
+        <title>Scrapyard Qalyubia</title>
       </Head>
       <Flag />
       <Box
@@ -170,8 +149,7 @@ export default function ExampleCity() {
                 fontSize: ['1.2em', '1.4em']
               }}
             >
-              {/* TODO: Change [EXAMPLECITY] to your event's city */}
-              Bristol - March&nbsp;15
+                Qalyubia - March&nbsp;15-16
             </Heading>
           </Box>
         </Box>
@@ -221,8 +199,7 @@ export default function ExampleCity() {
           />
         </Box>
         <Link
-          // TODO: Change [SLUG] to your event's slug (lowercase, dashed version of your event name), such as san-francisco for Scrapyard San Francisco
-          href="https://forms.hackclub.com/scrapyard-signup?event=bristol"
+          href="https://forms.hackclub.com/scrapyard-signup?event=qalyubia"
           target="_blank"
         >
           <Box
@@ -328,26 +305,22 @@ export default function ExampleCity() {
                 textDecoration: 'underline'
               }}
             >
-              {/* TODO: Change [EXAMPLECITY] to your event's city */}
-              What's Scrapyard Bristol?
+              What's Scrapyard Qalyubia?
             </Heading>
             <p
               style={{
                 fontSize: '1.5em'
               }}
             >
-              {/* TODO: Change [EXAMPLECITY] to your event's city */}
-              Scrapyard Bristol is a hackathon for high schoolers
-              {/* TODO: Change [EXAMPLECITY] to your event's city */}
-              happening in Bristol, where you can make the stupidest
+              Scrapyard Qalyubia is a hackathon for high schoolers
+              happening in Qalyubia, where you can make the stupidest
               things you can think of! Anything, from a{' '}
               <Link href="https://www.youtube.com/watch?v=PnK4gzO6S3Q">
                 lamp that flashes faster the slower you type
               </Link>
               , to those ideas that you wouldn't dare to consider to be useful,
               goes at Scrapyard. No matter your experience, Scrapyard
-              {/* TODO: Change [EXAMPLECITY] to your event's city */}
-              Bristol needs you and your scrappy ideas!
+              Qalyubia needs you and your scrappy ideas!
             </p>
           </Box>
         </Box>
@@ -445,8 +418,7 @@ export default function ExampleCity() {
               textAlign: 'center'
             }}
           >
-            {/* TODO: Change [EXAMPLECITY] to your event's city */}
-            WHAT'S HAPPENING AT SCRAPYARD BRISTOL?
+            WHAT'S HAPPENING AT SCRAPYARD QALYUBIA?
           </Heading>
         </Box>
         <Heading
@@ -458,9 +430,7 @@ export default function ExampleCity() {
             textAlign: 'center'
           }}
         >
-          {/* TODO: Change [EXAMPLECITY] to your event's city */}
-          {/* TODO: Change [DURATION] to your event's duration (12hour, 24hour, 2-day) */}
-          Scrapyard Bristol is a 12 Hour event - HERE'S THE ROUGH
+          Scrapyard Qalyubia is a 12hour event - HERE'S THE ROUGH
           SCHEDULE!
         </Heading>
         <Box
@@ -552,8 +522,7 @@ export default function ExampleCity() {
               textAlign: 'center'
             }}
           >
-            {/* TODO: Change [EXAMPLECITY] to your event's city */}
-            CAN'T MAKE IT TO BRISTOL?
+            CAN'T MAKE IT TO Qalyubia?
           </Heading>
         </Box>
         <Heading
@@ -643,7 +612,8 @@ export default function ExampleCity() {
             ),
             'What do I need?': (
               <>
-                Your laptop(Ideally fully charged), chargers, and an open mind!.
+                Your laptop, chargers, and an open mind! If you're going to an
+                overnight event, bring toiletries and sleeping bagstoo.
                 Additionally, if you plan to work on a hardware project, bring
                 the tools you'll need.
               </>
@@ -686,28 +656,23 @@ export default function ExampleCity() {
             ),
             'What if my parents are concerned?': (
               <>
-                We’re here to help! Our parents guide will be released soon, but
+                We’re here to help! Our parents guide can be reached{' '}
+                  <Link href="https://drive.google.com/file/d/1yG1m5fPa2qzdKbVMtxbK7hIXexBk4uY0/view">
+                  here!
+              </Link> and
                 they can reach out to us at{' '}
-                {/* TODO: Change this email to your event's email */}
-                <Link href="mailto:moe-rotimi.bristol@scrapyard.hackclub.com">
-                  {/* TODO: Change this email to your event's email */}
-                  moe-rotimi.bristol@scrapyard.hackclub.com
+                <Link href="qalyubia@scrapyard.hackclub.com">
+                  qalyubia@scrapyard.hackclub.com
                 </Link>{' '}
                 for questions.
               </>
             ),
             'What if I have more questions?': (
               <>
-                {/* TODO: Change [SLACKCHANNEL] to the name of your event's Slack channel */}
-                Contact us! Feel free to reach out to us in the 
-                <Link href="https://hackclub.slack.com/archives/C087ZL8RE7M">
-                  #scrapyard-bristol
-                  </Link>
-                 channel on the Hack Club slack or email us at{' '}
-                {/* TODO: Change this email to your event's email */}
-                <Link href="mailto:moe-rotimi.bristol@scrapyard.hackclub.com">
-                  {/* TODO: Change this email to your event's email */}
-                  moe-rotimi.bristol@scrapyard.hackclub.com
+                Contact us! Feel free to reach out to us in the scrapyard-qalyubia
+                channel on the Hack Club slack or email us at{' '}
+                <Link href="qalyubia@scrapyard.hackclub.com">
+                  qalyubia@scrapyard.hackclub.com
                 </Link>
                 .
               </>
@@ -759,8 +724,7 @@ export default function ExampleCity() {
           })}
         </Grid>
         <Link
-          // TODO: Change [SLUG] to your event's slug (lowercase, dashed version of your event name), such as san-francisco for Scrapyard San Francisco
-          href="https://forms.hackclub.com/scrapyard-signup?event=bristol"
+          href="https://forms.hackclub.com/scrapyard-signup?event=qalyubia"
           target="_blank"
         >
           <Box
@@ -789,8 +753,7 @@ export default function ExampleCity() {
                 paddingY: ['15px', '0px']
               }}
             >
-              {/* TODO: Change [EXAMPLECITY] to your event's city */}
-              SIGN UP FOR SCRAPYARD BRISTOL
+              SIGN UP FOR SCRAPYARD QALYUBIA
             </Heading>
           </Box>
         </Link>

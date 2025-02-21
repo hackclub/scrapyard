@@ -13,6 +13,16 @@ module.exports = withMDX({
       permanent: true
     },
     {
+      source: '/taiwan',
+      destination: 'https://scrapyard.hackit.tw',
+      permanent: true
+    },
+    {
+      source: '/siliconvalley',
+      destination: '/silicon-valley',
+      permanent: true
+    },
+    {
       source: '/cleveland',
       destination: 'https://scrapyardcle.org',
       permanent: true
