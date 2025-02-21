@@ -64,7 +64,7 @@ export default function IndexCard({
           </Link>
           <span sx={{ transform: 'scale(2)' }}>・</span>
           <Link
-            href={`https://forms.hackclub.com/scrapyard-signup?event=${id}`}
+            href={`https://forms.hackclub.com/scrapyard-signup?event=${slug}`}
             sx={{
               textAlign: 'center',
               display: 'block',

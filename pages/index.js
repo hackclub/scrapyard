@@ -61,9 +61,7 @@ export default function Home() {
         <Image
           sx={{
             width: '600px',
-
             maxWidth: '70vw',
-
             objectFit: 'contain'
           }}
           src="/elements/wordmark.svg"
@@ -84,7 +82,6 @@ export default function Home() {
               // padding: "8%",
               // paddingLeft: "7%",
               display: 'block',
-
               width: 'min(500px, calc(100vw - 30px))',
               filter: 'drop-shadow(5px 5px 5px #000000AA)',
               position: 'relative',
@@ -132,7 +129,7 @@ export default function Home() {
                 fontSize: ['1.2em', '1.4em']
               }}
             >
-              100+&nbsp;Cities&nbsp;worldwide&nbsp;March&nbsp;15-16
+              100+&nbsp;Cities&nbsp;worldwide&nbsp;–&nbsp;March&nbsp;15-16
             </Heading>
             <Heading
               as="h2"
@@ -147,7 +144,7 @@ export default function Home() {
                 fontSize: ['1.2em', '1.4em']
               }}
             >
-              Location&nbsp;TBD&nbsp;March&nbsp;1-2
+              Austin,&nbsp;Texas&nbsp;–&nbsp;March&nbsp;1-2
             </Heading>
           </Box>
         </Box>
@@ -197,7 +194,7 @@ export default function Home() {
           />
         </Box>
         <Link
-          href="https://forms.hackclub.com/scrapyard-signup"
+          href="https://forms.hackclub.com/scrapyard-flagship"
           target="_blank"
         >
           <Box
@@ -311,8 +308,8 @@ export default function Home() {
               }}
             >
               Scrapyard is a global hackathon organized by high schoolers. Our
-              flagship (the largest Scrapyard event) will run in Location TBD on
-              March 1st-2nd. Following the flagship, our distributed events
+              flagship (the largest Scrapyard event) will run in Austin, Texas
+              on March 1st-2nd. Following the flagship, our distributed events
               will run in 100+ cities worldwide on the weekend of March 15th.
               Scrapyard is a hackathon with a "scrappy" theme of stupid
               inventions! It's organized by Hack Club, a <Nonprofit501c3 />{' '}
@@ -431,7 +428,6 @@ export default function Home() {
           <Map />
         </Box>
       </Box>
-
       <Box
         sx={{
           width: '100%',
@@ -621,7 +617,7 @@ export default function Home() {
                 <Link href="https://hackclub.com/hackathons/" target="_blank">
                   hackathon
                 </Link>{' '}
-                running in Location TBD and 100+ other cities by high schoolers
+                running in Austin, Texas and 100+ other cities by high schoolers
                 (like{' '}
                 <Link href="https://counterspell.hackclub.com/" target="_blank">
                   Counterspell
@@ -635,11 +631,11 @@ export default function Home() {
               </>
             ),
 
-            'Where is Scrapyard hosted?': (
+            'When & where is Scrapyard hosted?': (
               <>
-                The Scrapyard flagship will be hosted in Location TBD,
-                tentatively on March 1-2 (Location TBD). Find the closest
-                distributed event to you on March 15-16!
+                The Scrapyard flagship will be hosted in Austin, Texas from 12pm
+                on March 1st to 3pm on March 2nd. Find the closest distributed
+                event to you on March 15-16!
               </>
             ),
             'Who can participate in Scrapyard?': (
@@ -653,15 +649,17 @@ export default function Home() {
               <>
                 Yep! Food, swag and good vibes are all included. Plus, if you’re
                 joining us from afar, we’ll cover the cost of gas or a bus /
-                train ticket. Information about travel stipends for our Los
-                Angeles flagship will be released soon.
+                train ticket. Travel stipends for our Austin, Texas flagship are
+                now closed.
               </>
             ),
             'What do I need?': (
               <>
                 Your laptop, chargers, toiletries, sleeping bags, and an open
                 mind! If you plan to work on a hardware project, bring the tools
-                you'll need.
+                you'll need. If you're travelling via plane or internationally,
+                make sure to bring any legal documents (such as a passport) as
+                well.
               </>
             ),
             'I’m not good at coding. Can I still participate?': (
@@ -702,8 +700,11 @@ export default function Home() {
             ),
             'What if my parents are concerned?': (
               <>
-                We’re here to help! Our parents guide will be released soon, but
-                they can reach out to us at{' '}
+                We’re here to help! You can see our{' '}
+                <Link href="https://drive.google.com/file/d/1yG1m5fPa2qzdKbVMtxbK7hIXexBk4uY0/view?usp=sharing">
+                  parent's guide here
+                </Link>
+                , or they can reach out to us at{' '}
                 <Link href="mailto:scrapyard@hackclub.com">
                   scrapyard@hackclub.com
                 </Link>{' '}

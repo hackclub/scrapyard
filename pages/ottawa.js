@@ -1,18 +1,44 @@
+'======== READ ME BEFORE EDITING ========'
+/*
+Hello! This is the template for the city pages.
+
+To create a new page, make a copy of this file in the same directory (pages) and rename it for your city.
+E.g. if your city is Ottawa, rename the copy of this file to Ottawa.js
+
+Replace all placeholder info, indicated by "TODO" comments (you can use Ctrl+F) in this file
+You do not need to use this template exactly, feel free to customize it as much as you see fit.
+
+If you want to include additional assets, please add them under public/city/your-city-name.
+
+Make a PR and we'll review it as soon as we can!
+
+If you have any questions, send a message to the #scrapyard channel on the Hack Club Slack and we'll try to help.
+
+P.S. Feel free to delete this comment block when you're done! 
+
+Note: To test your changes locally, use `npm install` and `npm run dev`.
+*/
+
 import Head from 'next/head'
+
 import { Box, Card, Grid, Heading, Image, Link, Text } from 'theme-ui'
 import dynamic from 'next/dynamic'
 
+// TODO: Change this schedule to your own!
 const schedule = [
-  { time: '7:00 AM', event: 'Abren puertas' },
-  { time: '7:30 AM', event: 'Ceremonia de iniciación' },
-  { time: '8:00 AM', event: '¡Empieza a trabajar en tu projecto!' },
-  { time: '9:00 AM', event: 'Taller 1' },
-  { time: '12:00 PM', event: 'Almuerzo' },
-  { time: '2:00 PM', event: 'Taller 2' },
-  { time: '4:00 PM', event: 'Actividad 1' },
-  { time: '6:15 PM', event: 'Cena' },
-  { time: '7:00 PM', event: '¡Demos!' },
-  { time: '7:30 PM', event: 'Ceremonia de cierre' }
+  { time: '2:00 PM', event: 'Doors open' },
+  { time: '3:00 PM', event: 'Opening ceremony' },
+  { time: '4:00 PM', event: 'Start working on your project!' },
+  { time: '5:00 PM', event: 'Workshop 1' },
+  { time: '5:30 PM', event: 'Workshop 2' },
+  { time: '6:00 PM', event: 'Supper' },
+  { time: '10:00 PM', event: 'Game time!' },
+  { time: '12:00 AM', event: 'Midnight surprise' },
+  { time: '8:00 AM', event: 'Breakfast' },
+  { time: '10:30 AM', event: 'Demos!' },
+  { time: '12:00 PM', event: 'Lunch' },
+  { time: '1:00 PM', event: 'Closing ceremony' },
+  { time: '2:00 PM', event: 'Go Home :(' },
 ]
 
 const Map = dynamic(() => import('../components/Map'), { ssr: false })
@@ -21,12 +47,12 @@ const Flag = () => (
   <Link
     href="https://hackclub.com/"
     target="_blank"
-    aria-label="Sitio Web de Hack Club"
+    aria-label="Hack Club's homepage"
     sx={{ position: 'absolute', top: 4, left: 0, zIndex: 2 }}
   >
     <Image
       src="/elements/orpheus-flag.svg"
-      alt="Bandera de Hack Club"
+      alt="Hack Club flag"
       sx={{
         width: [120, 128, 180],
         transformOrigin: '0% 0%',
@@ -39,7 +65,7 @@ const Flag = () => (
   </Link>
 )
 
-export default function Barranquilla() {
+export default function Ottawa() {
   return (
     <Box
       sx={{
@@ -53,7 +79,8 @@ export default function Barranquilla() {
       }}
     >
       <Head>
-        <title>Scrapyard Barranquilla</title>
+        {/* TODO: Change Ottawa to your event's city */}
+        <title>Scrapyard Ottawa</title>
       </Head>
       <Flag />
       <Box
@@ -81,7 +108,7 @@ export default function Barranquilla() {
 
               objectFit: 'contain'
             }}
-            src="/city/barranquilla/logo.png"
+            src="/city/ottawa/ottawa-woodmark.png"
             alt="Scrapyard"
           />
         </Box>
@@ -115,7 +142,7 @@ export default function Barranquilla() {
                 margin: '8%'
               }}
             >
-              Construye cosas locas, gana premios locos.
+              Build stupid stuff, get stupid prizes.
             </Heading>
           </Box>
           <Box
@@ -128,7 +155,7 @@ export default function Barranquilla() {
               width: '75%',
               position: 'relative',
               zIndex: 30,
-              top: '-8%',
+              top: '-15%',
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
@@ -145,86 +172,26 @@ export default function Barranquilla() {
                 wordBreak: 'keep-all',
                 whiteSpace: 'nowrap',
                 width: 'max-content',
-                fontSize: ['1.2em', '1.4em'],
-                textAlign: 'center'
+                fontSize: ['1.2em', '1.4em']
               }}
             >
-              Barranquilla - Sábado Marzo&nbsp;15
-              <br />
-              Universidad del Norte, Bloque K
+              {/* TODO: Change Ottawa to your event's city */}
+              Ottawa - March&nbsp;15-16
             </Heading>
-          </Box>
-
-          <Box
-            sx={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              gap: ['20px', '32px'],
-              py: '2%',
-              flexDirection: 'row',
-              flexWrap: 'nowrap',
-              position: 'relative',
-              zIndex: 10,
-              backgroundColor: 'white',
-              borderRadius: '15px',
-              boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-              padding: 4,
-              maxWidth: '90%',
-              margin: 'auto'
-            }}
-          >
-            <Image
-              src="/city/barranquilla/uninorte.png"
-              alt="Universidad del Norte"
-              sx={{
-                width: ['160px', '200px'],
-                height: 'auto',
-                objectFit: 'contain'
-              }}
-            />
-            <Image
-              src="/city/barranquilla/aess.jpg"
-              alt="AESS"
-              sx={{
-                width: ['80px', '100px'],
-                height: ['80px', '100px'],
-                objectFit: 'contain'
-              }}
-            />
-            <Image
-              src="/city/barranquilla/pulpoo.png"
-              alt="Pulpoo"
-              sx={{
-                width: ['160px', '200px'],
-                height: ['80px', '100px'],
-                objectFit: 'contain'
-              }}
-            />
-            <Image
-              src="/city/barranquilla/fca.jpg"
-              alt="FCA"
-              sx={{
-                width: ['80px', '100px'],
-                height: ['80px', '100px'],
-                objectFit: 'contain'
-              }}
-            />
           </Box>
         </Box>
         <Box
           sx={{
             position: 'absolute',
             width: '100%',
-            height: '100vw',
-            zIndex: 1
+            height: '100vw'
           }}
         >
           <Image
             sx={{
               width: '10%',
               height: '10%',
-              zIndex: 1,
+              zIndex: 2,
               position: 'absolute',
               top: '50%',
               left: '10%'
@@ -236,7 +203,7 @@ export default function Barranquilla() {
             sx={{
               width: '10%',
               height: '10%',
-              zIndex: 1,
+              zIndex: 2,
               position: 'absolute',
               top: '55%',
               right: '15%'
@@ -248,7 +215,7 @@ export default function Barranquilla() {
             sx={{
               width: '10%',
               height: '10%',
-              zIndex: 1,
+              zIndex: 2,
               position: 'absolute',
               top: '70%',
               left: '20%',
@@ -259,7 +226,8 @@ export default function Barranquilla() {
           />
         </Box>
         <Link
-          href="https://forms.hackclub.com/scrapyard-signup-es?event=barranquilla"
+          // TODO: Change Ottawa to your event's slug (lowercase, dashed version of your event name), such as san-francisco for Scrapyard San Francisco
+          href="https://forms.hackclub.com/scrapyard-signup?event=recPrXR3TEibN0QQz"
           target="_blank"
         >
           <Box
@@ -276,7 +244,7 @@ export default function Barranquilla() {
                 transform: 'scale(1.1)'
               },
               zIndex: 30,
-              minWidth: '10em',
+              minWidth: '8em',
               padding: '15px'
             }}
           >
@@ -291,7 +259,7 @@ export default function Barranquilla() {
                 width: '100%'
               }}
             >
-              REGÍSTRATE
+              SIGN&nbsp;UP
             </Heading>
           </Box>
         </Link>
@@ -349,7 +317,7 @@ export default function Barranquilla() {
             height: '100%'
           }}
         >
-          <Image src="/elements/orpheus-doodle.svg" />
+          <Image src="/city/ottawa/ottawa-cat.png" />
           <Box
             sx={{
               maxWidth: ['80vw', '60vw', '40vw'],
@@ -365,22 +333,25 @@ export default function Barranquilla() {
                 textDecoration: 'underline'
               }}
             >
-              ¿Qué es Scrapyard Barranquilla?
+              {/* TODO: Change Ottawa to your event's city */}
+              What's Scrapyard Ottawa?
             </Heading>
             <p
               style={{
                 fontSize: '1.5em'
               }}
             >
-              Scrapyard Barranquilla es un hackathon para estudiantes de colegio
-              en Barranquilla, ¡donde puedes hacer las cosas más locas que
-              puedas pensar! Cualquier cosa desde una{' '}
+              {/* TODO: Change Ottawa to your event's city */}
+              Scrapyard Ottawa is a hackathon for high schoolers
+              {/* TODO: Change Ottawa to your event's city */}
+              happening in Ottawa, where you can make the stupidest things you
+              can think of! Anything, from a{' '}
               <Link href="https://www.youtube.com/watch?v=PnK4gzO6S3Q">
-                lámpara que parpadea más rápido entre más lento escribas
+                lamp that flashes faster the slower you type
               </Link>
-              , esas ideas que no consideras útiles, van a Scrapyard. Sin
-              importar tu nivel de experiencia, ¡Scrapyard Barranquilla te
-              necesita a ti y a tus ideas "scrappy"!
+              , to those ideas that you wouldn't dare to consider to be useful,
+              goes at Scrapyard. No matter your experience,
+              Scrapyard Ottawa needs you and your scrappy ideas!
             </p>
           </Box>
         </Box>
@@ -451,7 +422,43 @@ export default function Barranquilla() {
           display: 'flex',
           flexDirection: 'column'
         }}
-      >
+      > 
+      <Link
+          // TODO: Change Ottawa to your event's slug (lowercase, dashed version of your event name), such as san-francisco for Scrapyard San Francisco
+          href="https://hcb.hackclub.com/donations/start/ottawa"
+          target="_blank"
+        >
+          <Box
+            sx={{
+              backgroundImage: "url('/elements/yellow-strip@stretch.svg')",
+              backgroundRepeat: 'no-repeat',
+              backgroundSize: '100% 100%',
+              filter: 'drop-shadow(5px 5px 5px #000)',
+              transition: 'transform 0.2s',
+              ':hover': {
+                transform: 'scale(1.1)'
+              },
+              zIndex: 20,
+              padding: 1,
+              my: 3
+            }}
+          >
+            <Heading
+              as="h2"
+              sx={{
+                fontFamily: 'moonblossom',
+                textAlign: 'center',
+                margin: '8%',
+                fontSize: ['1.2em', '1.4em'],
+                textTransform: 'inherit!important',
+                paddingY: ['15px', '0px']
+              }}
+            >
+              {/* TODO: Change Ottawa to your event's city */}
+              WANNA DONATE?
+            </Heading>
+          </Box>
+        </Link>
         <Box
           sx={{
             backgroundImage: 'url(/elements/ripped-paper-strip.svg)',
@@ -478,7 +485,8 @@ export default function Barranquilla() {
               textAlign: 'center'
             }}
           >
-            ¿QUÉ VA A SUCEDER EN SCRAPYARD Barranquilla?
+            {/* TODO: Change Ottawa to your event's city */}
+            WHAT'S HAPPENING AT SCRAPYARD OTTAWA?
           </Heading>
         </Box>
         <Heading
@@ -490,8 +498,9 @@ export default function Barranquilla() {
             textAlign: 'center'
           }}
         >
-          Scrapyard Barranquilla es un evento de 12 horas - ¡AQUÍ ESTÁ EL
-          HORARIO APROXIMADO!
+          {/* TODO: Change Ottawa to your event's city */}
+          {/* TODO: Change [DURATION] to your event's duration (12hour, 24hour, 2-day) */}
+          Scrapyard Ottawa is a 24 hour event - Here's the VERY VERY TENTATIVE schedule, more details to come!
         </Heading>
         <Box
           sx={{
@@ -582,7 +591,8 @@ export default function Barranquilla() {
               textAlign: 'center'
             }}
           >
-            ¿NO PUEDES LLEGAR A Barranquilla?
+            {/* TODO: Change Ottawa to your event's city */}
+            CAN'T MAKE IT TO OTTAWA?
           </Heading>
         </Box>
         <Heading
@@ -595,7 +605,7 @@ export default function Barranquilla() {
             mx: '5vw'
           }}
         >
-          ¡HAY +100 OTROS EVENTOS DE SCRAPYARD SUCEDIENDO ALREDEDOR DEL MUNDO!
+          THERE ARE 100+ OTHER SCRAPYARD EVENTS HAPPENING AROUND THE WORLD!
         </Heading>
         <Box
           sx={{
@@ -627,6 +637,69 @@ export default function Barranquilla() {
           position: 'relative'
         }}
       >
+        <Box
+          sx={{
+            backgroundImage: 'url(/elements/ripped-paper-strip.png)',
+            // backgroundSize: "cover!important",
+            // display: "block",
+            // width: "30vw",
+            height: '30vh',
+            width: ['90vw', '70vw', '46.8vw'],
+            alignItems: 'center',
+            justifyContent: 'center',
+            margin: '0vh',
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center'
+          }}
+        >
+          <Heading
+            as="h1"
+            sx={{
+              mx: '1vw',
+              fontWeight: 'lighter',
+              textAlign: 'center',
+              color: 'white',
+            }}
+          >
+            {/* TODO: Change Ottawa to your event's city */}
+            OUR SPONSORS!!
+          </Heading>
+        </Box>
+          <Box
+            sx={{
+              backgroundImage: "url('/elements/yellow-strip@stretch.svg')",
+              backgroundRepeat: 'no-repeat',
+              backgroundSize: '100% 100%',
+              filter: 'drop-shadow(5px 5px 5px #000)',
+              transition: 'transform 0.2s',
+              ':hover': {
+                transform: 'scale(1.1)'
+              },
+              zIndex: 20,
+              padding: 1,
+              my: 3
+            }}
+          >
+            <Heading
+              as="h2"
+              sx={{
+                fontFamily: 'moonblossom',
+                textAlign: 'center',
+                margin: '8%',
+                fontSize: ['1.2em', '1.4em'],
+                textTransform: 'inherit!important',
+                paddingY: ['15px', '0px']
+              }}
+            >
+              {/* TODO: Change Ottawa to your event's city */}
+              COMING 
+              SOON!!
+            </Heading>
+          </Box>
+        
         <Heading
           as="h1"
           sx={{
@@ -634,7 +707,7 @@ export default function Barranquilla() {
             position: 'relative'
           }}
         >
-          Preguntas frecuentes
+          Frequently Asked Questions
           <Image
             src="/elements/doodles/blue-underline.svg"
             sx={{
@@ -653,80 +726,85 @@ export default function Barranquilla() {
           }}
         >
           {Object.entries({
-            '¿Quién puede participar en Scrapyard?': (
+            'Who can participate in Scrapyard?': (
               <>
-                ¡Todos los estudiantes de colegio de 18 años o menos estan
-                bienvenidos a venir! No tienes que ser miembro de la comunidad
-                de Hack Club o ser un lider de Hack Club.
+                All high-school & upper-middle-school aged students are welcome
+                to come! You don't have to be a member of the Hack Club
+                community or be a Hack Club leader.
               </>
             ),
-            '¿Todo esto, gratis?': (
+            'All this, for free?': (
               <>
-                ¡Si! La comida, merchandising y buenas vibras estan incluidos.
+                Yep! Food, swag and good vibes are all included. Plus, if you’re
+                joining us from afar,{' '}
+                <Link href="https://gas.hackclub.com/">
+                  we’ll cover the cost of gas or a bus / train ticket
+                </Link>
+                .
               </>
             ),
-            '¿Qué necesito?': (
+            'What do I need?': (
               <>
-                ¡Un computador, tu cargador y mucha creatividad! Adicionalmente,
-                si planeas trabajar en un proyecto con hardware, trae las
-                herramientas que necesites.
+                Your laptop, chargers, toiletries, any method of identification (photo preferred), your signed constent form, a refillable water bottle, and an open mind! Since it’s a 24-hour event, you might want to bring a sleeping bag, a pillow, and some deodorant.
               </>
             ),
-            'No soy buen@ programando. ¿Igual puedo participar?': (
+            'I’m not good at coding. Can I still participate?': (
               <>
-                ¡Este hackathon es para creativos de todos los niveles de
-                conocimiento! Tendremos talleres y otros eventos, así que únete
-                y aprendamos juntos. Si quieres empezar a explorar algunos
-                proyectos introductorios, revisa las workshops de Hack Club.
+                This hackathon is for creatives of all skill levels! We'll have
+                workshops and other events so join us and let's learn together.
+                If you'd like to start exploring some introductory projects,
+                check out Hack Club Workshops.
               </>
             ),
-            '¿Que puedo hacer en Scrapyard?': (
+            'What can I make at Scrapyard?': (
               <>
-                Las cosas mas innecesarias que puedas imaginar –- incentivamos
-                lo absurdo. ¿Juegos? ¿Apps? ¿Sitios web? ¿Lenguajes de
-                programación? <em>¿Hardware?</em> ¡Tú decides! Tendremos varios
-                recursos y mentores para ayudarte.
+                The scrappiest thing you can imagine –- jank is encouraged.
+                Games? Apps? Websites? Programming languages? <em>Hardware?</em>{' '}
+                You name it! We’ll have a bunch of resources and mentors to help
+                you out.
               </>
             ),
-            '¿Que ha hecho Hack Club antes?': (
+            'What has Hack Club done before?': (
               <>
-                Hack Club ha organizado un{' '}
+                Hack Club has run an{' '}
                 <Link href="https://youtu.be/PnK4gzO6S3Q" target="_blank">
-                  hackathon nocturno
+                  overnight hackathon
                 </Link>{' '}
-                en San Francisco, un{' '}
+                in San Francisco, a{' '}
                 <Link
                   href="https://www.youtube.com/watch?v=H5RPsCMl3uM"
                   target="_blank"
                 >
                   Game Jam
                 </Link>{' '}
-                en 50 ciudades, un hackathon en un{' '}
+                across 50 cities, a hackathon on a{' '}
                 <Link href="https://youtu.be/2BID8_pGuqA" target="_blank">
-                  tren
+                  Train
                 </Link>{' '}
-                de Vermont a Los Angeles, y mucho más!
+                from Vermont to Los Angeles, and much more!
               </>
             ),
-            '¿Qué pasa si mis padres están preocupados?': (
+            'What if my parents are concerned?': (
               <>
-                ¡Estamos para ayudarte! Nuestro evento se realizará en la
-                Universidad del Norte, en donde tendremos un espacio seguro para
-                todos nuestros participantes. Si tus padres tienen preguntas,
-                mándanos un email a{' '}
-                <Link href="mailto:barranquilla@scrapyard.hackclub.com">
-                  barranquilla@scrapyard.hackclub.com
-                </Link>
-                .
+                We’re here to help! Our parents guide will be released soon, but
+                they can reach out to us at{' '}
+                {/* TODO: Change this email to your event's email */}
+                <Link href="tishya.ottawa@scrapyard.hackclub.com">
+                  {/* TODO: Change this email to your event's email */}
+                  tishya.ottawa@scrapyard.hackclub.com
+                </Link>{' '}
+                for questions.
               </>
             ),
-            '¿Qué pasa si tengo más preguntas?': (
+            'What if I have more questions?': (
               <>
-                ¡Contáctanos! Siéntete libre de contactarnos en el canal
-                #scrapyard-barranquilla en el Slack de Hack Club o mándanos un
-                email a{' '}
-                <Link href="mailto:barranquilla@scrapyard.hackclub.com">
-                  barranquilla@scrapyard.hackclub.com
+                {/* TODO: Change [SLACKCHANNEL] to the name of your event's Slack channel */}
+                Contact us! Feel free to reach out to us in the #scrapyard-ottawa
+                channel on the Hack Club slack or email us at{' '}
+                {/* TODO: Change this email to your event's email */}
+                <Link href="tishya.ottawa@scrapyard.hackclub.com">
+                  {/* TODO: Change this email to your event's email */}
+                  tishya.ottawa@scrapyard.hackclub.com
                 </Link>
                 .
               </>
@@ -778,7 +856,8 @@ export default function Barranquilla() {
           })}
         </Grid>
         <Link
-          href="https://forms.hackclub.com/scrapyard-signup-es?event=barranquilla"
+          // TODO: Change Ottawa to your event's slug (lowercase, dashed version of your event name), such as san-francisco for Scrapyard San Francisco
+          href="https://forms.hackclub.com/scrapyard-signup?event=recPrXR3TEibN0QQz"
           target="_blank"
         >
           <Box
@@ -807,7 +886,8 @@ export default function Barranquilla() {
                 paddingY: ['15px', '0px']
               }}
             >
-              INSCRÍBETE PARA SCRAPYARD Barranquilla
+              {/* TODO: Change Ottawa to your event's city */}
+              SIGN UP FOR SCRAPYARD OTTAWA
             </Heading>
           </Box>
         </Link>
@@ -836,7 +916,7 @@ export default function Barranquilla() {
             textAlign: 'center'
           }}
         >
-          Hecho con ♡ por adolescentes, para adolescentes en Hack Club
+          Made with ♡ by teenagers, for teenagers at Hack Club
         </Text>
         <Text
           sx={{

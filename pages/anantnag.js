@@ -16,7 +16,7 @@ If you have any questions, send a message to the #scrapyard channel on the Hack 
 
 P.S. Feel free to delete this comment block when you're done! 
 
-Note: To test your changes locally, use `npm install` and `npm run dev`.
+Note: To test your changes locally, use `yarn install` and `yarn dev`.
 */
 
 import Head from 'next/head'
@@ -37,6 +37,7 @@ const schedule = [
   { time: '4:30 AM', event: 'Demos!' },
   { time: '5:00 PM', event: 'Closing ceremony' }
 ]
+
 
 const Map = dynamic(() => import('../components/Map'), { ssr: false })
 
@@ -62,7 +63,7 @@ const Flag = () => (
   </Link>
 )
 
-export default function Anantnag() {
+export default function ExampleCity() {
   return (
     <Box
       sx={{
@@ -76,7 +77,7 @@ export default function Anantnag() {
       }}
     >
       <Head>
-        {/* TODO: Change [Anantnag] to your event's city */}
+        {/* TODO: Change [EXAMPLECITY] to your event's city */}
         <title>Scrapyard Anantnag</title>
       </Head>
       <Flag />
@@ -172,8 +173,8 @@ export default function Anantnag() {
                 fontSize: ['1.2em', '1.4em']
               }}
             >
-              {/* TODO: Change [Anantnag] to your event's city */}
-              Anantnag - March&nbsp;15-16
+              {/* TODO: Change [EXAMPLECITY] to your event's city */}
+              Anantnag - March&nbsp;15
             </Heading>
           </Box>
         </Box>
@@ -223,8 +224,7 @@ export default function Anantnag() {
           />
         </Box>
         <Link
-          // TODO: Change [Scrapyard Anantnag] to your event's Scrapyard Anantnag (lowercase, dashed version of your event name), such as san-francisco for Scrapyard San Francisco
-          href="https://forms.hackclub.com/scrapyard-signup?event=anantnag"
+          href="https://forms.hackclub.com/scrapyard-signup?event=new-delhi"
           target="_blank"
         >
           <Box
@@ -330,7 +330,7 @@ export default function Anantnag() {
                 textDecoration: 'underline'
               }}
             >
-              {/* TODO: Change [Anantnag] to your event's city */}
+              {/* TODO: Change [EXAMPLECITY] to your event's city */}
               What's Scrapyard Anantnag?
             </Heading>
             <p
@@ -338,17 +338,17 @@ export default function Anantnag() {
                 fontSize: '1.5em'
               }}
             >
-              {/* TODO: Change [Anantnag] to your event's city */}
+              {/* TODO: Change [EXAMPLECITY] to your event's city */}
               Scrapyard Anantnag is a hackathon for high schoolers
-              {/* TODO: Change [Anantnag] to your event's city */}
-              happening in Anantnag, where you can make the stupidest
-              things you can think of! Anything, from a{' '}
+              {/* TODO: Change [EXAMPLECITY] to your event's city */}
+              happening in Anantnag, where you can make the stupidest things
+              you can think of! Anything, from a{' '}
               <Link href="https://www.youtube.com/watch?v=PnK4gzO6S3Q">
                 lamp that flashes faster the slower you type
               </Link>
               , to those ideas that you wouldn't dare to consider to be useful,
               goes at Scrapyard. No matter your experience, Scrapyard
-              {/* TODO: Change [Anantnag] to your event's city */}
+              {/* TODO: Change [EXAMPLECITY] to your event's city */}
               Anantnag needs you and your scrappy ideas!
             </p>
           </Box>
@@ -447,8 +447,8 @@ export default function Anantnag() {
               textAlign: 'center'
             }}
           >
-            {/* TODO: Change [Anantnag] to your event's city */}
-            WHAT'S HAPPENING AT SCRAPYARD Anantnag?
+            {/* TODO: Change [EXAMPLECITY] to your event's city */}
+            WHAT'S HAPPENING AT SCRAPYARD ANANTNAG?
           </Heading>
         </Box>
         <Heading
@@ -460,10 +460,9 @@ export default function Anantnag() {
             textAlign: 'center'
           }}
         >
-          {/* TODO: Change [Anantnag] to your event's city */}
-          {/* TODO: Change [12] to your event's 12hour (12hour, 24hour, 2-day) */}
-          Scrapyard Anantnag is a 12hour event - HERE'S THE ROUGH
-          SCHEDULE!
+          {/* TODO: Change [EXAMPLECITY] to your event's city */}
+          {/* TODO: Change [DURATION] to your event's duration (12hour, 24hour, 2-day) */}
+          Scrapyard New Delhi is a 8 hour event - HERE'S THE ROUGH SCHEDULE!
         </Heading>
         <Box
           sx={{
@@ -554,8 +553,8 @@ export default function Anantnag() {
               textAlign: 'center'
             }}
           >
-            {/* TODO: Change [Anantnag] to your event's city */}
-            CAN'T MAKE IT TO Anantnag?
+            {/* TODO: Change [EXAMPLECITY] to your event's city */}
+            CAN'T MAKE IT TO ANANTNAG?
           </Heading>
         </Box>
         <Heading
@@ -691,23 +690,23 @@ export default function Anantnag() {
               <>
                 We’re here to help! Our parents guide will be released soon, but
                 they can reach out to us at{' '}
-                {/* TODO: Change this nomanhassansofi.anantnag@scrapyard.hackclub.com to your event's nomanhassansofi.anantnag@scrapyard.hackclub.com */}
-                <Link href="mailto:anantnag@scrapyard.hackclub.com">
-                  {/* TODO: Change this nomanhassansofi.anantnag@scrapyard.hackclub.com to your event's nomanhassansofi.anantnag@scrapyard.hackclub.com */}
-                  anantnag@scrapyard.hackclub.com
+                {/* TODO: Change this email to your event's email */}
+                <Link href="mailto:nomanhassansofi.anantnag@scrapyard.hackclub.com">
+                  {/* TODO: Change this email to your event's email */}
+                  nomanhassansofi.anantnag@scrapyard.hackclub.com
                 </Link>{' '}
                 for questions.
               </>
             ),
             'What if I have more questions?': (
               <>
-                {/* TODO: Change [scrapyard-anantnag] to the name of your event's Slack channel */}
-                Contact us! Feel free to reach out to us in the scrapyard-anantnag
-                channel on the Hack Club slack or anantnag@scrapyard.hackclub.com us at{' '}
-                {/* TODO: Change this nomanhassansofi.anantnag@scrapyard.hackclub.com to your event's nomanhassansofi.anantnag@scrapyard.hackclub.com */}
-                <Link href="mailto:anantnag@scrapyard.hackclub.com">
-                  {/* TODO: Change this nomanhassansofi.anantnag@scrapyard.hackclub.com to your event's nomanhassansofi.anantnag@scrapyard.hackclub.com */}
-                 anantnag@scrapyard.hackclub.com
+                {/* TODO: Change [SLACKCHANNEL] to the name of your event's Slack channel */}
+                Contact us! Feel free to reach out to us in the
+                #scrapyard-anantnag channel on the Hack Club slack or email us
+                at {/* TODO: Change this email to your event's email */}
+                <Link href="nomanhassansofi.anantnag@scrapyard.hackclub.com">
+                  {/* TODO: Change this email to your event's email */}
+                  anomanhassansofi.anantnag@scrapyard.hackclub.com
                 </Link>
                 .
               </>
@@ -759,8 +758,7 @@ export default function Anantnag() {
           })}
         </Grid>
         <Link
-          // TODO: Change [Scrapyard Anantnag] to your event's Scrapyard Anantnag (lowercase, dashed version of your event name), such as san-francisco for Scrapyard San Francisco
-          href="https://forms.hackclub.com/scrapyard-signup?event=anantnag"
+          href="https://forms.hackclub.com/scrapyard-signup?event=new-delhi"
           target="_blank"
         >
           <Box
@@ -789,8 +787,8 @@ export default function Anantnag() {
                 paddingY: ['15px', '0px']
               }}
             >
-              {/* TODO: Change [Anantnag] to your event's city */}
-              SIGN UP FOR SCRAPYARD Anantnag
+              {/* TODO: Change [EXAMPLECITY] to your event's city */}
+              SIGN UP FOR ANANTNAG
             </Heading>
           </Box>
         </Link>

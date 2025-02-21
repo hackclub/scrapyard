@@ -348,7 +348,7 @@ export default function ExampleCity() {
               , to those ideas that you wouldn't dare to consider to be useful,
               goes at Scrapyard. No matter your experience, Scrapyard
               {/* TODO: Change [EXAMPLECITY] to your event's city */}
-              Auckland needs you and your scrappy ideas!
+               Auckland needs you and your scrappy ideas!
             </p>
           </Box>
         </Box>
@@ -702,7 +702,7 @@ export default function ExampleCity() {
               <>
                 {/* TODO: Change [SLACKCHANNEL] to the name of your event's Slack channel */}
                 Contact us! Feel free to reach out to us in the #Scrapyard Auckland
-                channel on the Hack Club slack or email us at{'niko.auckland@scrapyard.hackclub.com'}
+                channel on the Hack Club slack or email us at {'niko.auckland@scrapyard.hackclub.com'}
                 {/* TODO: Change this email to your event's email */}
                 <Link href="mailto:niko.auckland@scrapyard.hackclub.comm">
                   {/* TODO: Change this email to your event's email */}

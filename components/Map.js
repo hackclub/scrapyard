@@ -23,24 +23,24 @@ const starIcon = new L.Icon({
 })
 
 const pinIcon = new L.Icon({
-  iconUrl: `/elements/thumbtack.png`,
+  iconUrl: `/elements/thumbtack2.png`,
   iconAnchor: null,
   popupAnchor: null,
   shadowUrl: null,
   shadowSize: null,
   shadowAnchor: null,
-  iconSize: new L.Point(30, 30),
+  iconSize: new L.Point(20, 20),
   popupAnchor: [0, 0]
 })
 const StyledMapContainer = MapContainer
 
 const flagshipEvent = {
   name: 'Flagship',
-  location: 'Los Angeles',
-  lat: 34.0522,
-  lng: -118.2437,
+  location: 'Austin, TX',
+  lat: 30.2672,
+  lng: -97.7431,
   description: 'yada yada yada',
-  format: '48-hour',
+  format: '24-hour',
   slug: '',
   flagship: true
 }
@@ -76,8 +76,8 @@ export default function Map({ full }) {
         center={center}
         maxBounds={bounds}
         maxBoundsViscosity={1.0}
-        zoom={2.5}
-        minZoom={1}
+        zoom={2}
+        minZoom={1.5}
         style={{
           width: full ? '80vw' : '80%',
           height: full ? '100vh' : '100vh',

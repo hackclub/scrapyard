@@ -34,30 +34,30 @@ const schedule = [
 ]
 
 const sponsorLogos = [
-  '/city/sydney/sponsors/polymaker.webp',
-  '/city/sydney/sponsors/littlebirdelectronics.png'
+  {img:'/city/sydney/sponsors/polymaker.png', link:'https://www.polymaker.com/'},
+  {img:'/city/sydney/sponsors/littlebirdelectronics.png', link:'https://www.littlebird.com.au/'},
+  {img:'/city/sydney/sponsors/matrixedu.png', link:'https://www.matrix.edu.au/'},
+  {img:'/city/sydney/sponsors/engineersaustralia.png', link:'https://www.engineersaustralia.org.au/'},
+  // {img: '/city/sydney/sponsors/scpartners.png', link: 'https://www.sccpasia.com/'},
 ]
 const NotSoScrollingBanner = () => {
   return (
-    <div style={{ overflow: 'hidden', whiteSpace: 'nowrap', width: '100%' }}>
+    <div style={{ overflow: 'hidden', whiteSpace: 'nowrap', width: '80vw', maxWidth: '500px' }}>
       <motion.div
         style={{ display: 'inline-block' }}
-        // animate={{ x: ["0%", "-100%"] }}
-        transition={{
-          duration: 20,
-          repeat: Infinity,
-          ease: 'linear'
-        }}
+        animate={{ x: ["0%", "-50%"] }}
+        transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
       >
         {/* Duplicate the logos to create a seamless loop */}
-        {/*I've disabled duplicating logos, add ", ...sponsorLogos" to the array to enable it*/}
-        {[...sponsorLogos].map((logo, index) => (
+        {[...sponsorLogos,...sponsorLogos].map((logo, index) => (
+          <a href={logo.link} target="_blank" key={index}>
           <img
             key={index}
-            src={logo}
-            alt={`Sponsor ${index}`}
-            style={{ height: '80px', margin: '0 20px' }}
+            src={logo.img}
+            alt={`Sponsor ${logo.link}`}
+            style={{ height: '20vw', maxHeight: '85px', margin: '0 20px' }}
           />
+          </a>
         ))}
       </motion.div>
     </div>
@@ -154,9 +154,7 @@ const Flag = () => (
         width: [120, 128, 180],
         transformOrigin: '0% 0%',
         transition: 'transform 0.1s',
-        ':hover': {
-          transform: 'rotate(0.03turn) scale(1.2) translateY(-4px)'
-        }
+        ':hover': { transform: 'rotate(0.03turn) scale(1.2) translateY(-4px)' }
       }}
     />
   </Link>
@@ -192,11 +190,7 @@ export default function ExampleCity() {
           gap: '20px'
         }}
       >
-        <Box
-          sx={{
-            position: 'relative'
-          }}
-        >
+        <Box sx={{ position: 'relative' }}>
           <Image
             sx={{
               width: '600px',
@@ -210,11 +204,7 @@ export default function ExampleCity() {
           />
         </Box>
         <Box
-          sx={{
-            display: 'flex',
-            flexDirection: 'row',
-            alignItems: 'center'
-          }}
+          sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}
         ></Box>
         <Box
           sx={{
@@ -304,7 +294,8 @@ export default function ExampleCity() {
             // marginTop: "5px",
             display: 'flex',
             flexDirection: 'column',
-            alignItems: 'center'
+            alignItems: 'center',
+            zIndex: 9
           }}
         >
           <Text
@@ -313,20 +304,16 @@ export default function ExampleCity() {
               marginBottom: '10px',
               fontFamily: 'moonblossom',
               fontWeight: '400',
-              color: "#f0f0f0"
+              color: '#f0f0f0',
+
+              maxWidth: '80vw'
             }}
           >
             This event is made possible by our sponsors
           </Text>
-          <NotSoScrollingBanner />
+          <NotSoScrollingBanner style={{ zIndex: 9 }} />
         </Box>
-        <Box
-          sx={{
-            position: 'absolute',
-            width: '100%',
-            height: '100vw'
-          }}
-        >
+        <Box sx={{ position: 'absolute', width: '100%', height: '100vw' }}>
           <motion.div
             style={{
               position: 'absolute',
@@ -337,9 +324,7 @@ export default function ExampleCity() {
               zIndex: 2
             }}
             initial={{ transform: 'translateY(0px)' }}
-            animate={{
-              transform: 'translateY(-40px)'
-            }}
+            animate={{ transform: 'translateY(-40px)' }}
             transition={{
               duration: 2,
               repeat: Infinity,
@@ -363,9 +348,7 @@ export default function ExampleCity() {
               right: '15%'
             }}
             initial={{ transform: 'translateY(0px)' }}
-            animate={{
-              transform: 'translateY(-25px)'
-            }}
+            animate={{ transform: 'translateY(-25px)' }}
             transition={{
               duration: 2,
               repeat: Infinity,
@@ -389,9 +372,7 @@ export default function ExampleCity() {
               left: '20%'
             }}
             initial={{ transform: 'translateY(0px)' }}
-            animate={{
-              transform: 'translateY(-40px)'
-            }}
+            animate={{ transform: 'translateY(-40px)' }}
             transition={{
               duration: 2,
               repeat: Infinity,
@@ -421,9 +402,7 @@ export default function ExampleCity() {
               top: ['4%'],
               filter: 'drop-shadow(5px 5px 5px #000)',
               transition: 'transform 0.2s',
-              ':hover': {
-                transform: 'scale(1.1)'
-              },
+              ':hover': { transform: 'scale(1.1)' },
               zIndex: 30,
               minWidth: '8em',
               padding: '15px'
@@ -511,19 +490,11 @@ export default function ExampleCity() {
               filter: 'drop-shadow(5px 5px 5px #000000AA)'
             }}
           >
-            <Heading
-              sx={{
-                textDecoration: 'underline'
-              }}
-            >
+            <Heading sx={{ textDecoration: 'underline' }}>
               {/* TODO: Change [EXAMPLECITY] to your event's city */}
               What's Scrapyard Sydney?
             </Heading>
-            <p
-              style={{
-                fontSize: '1.5em'
-              }}
-            >
+            <p style={{ fontSize: '1.5em' }}>
               {/* TODO: Change [EXAMPLECITY] to your event's city */}
               Scrapyard Sydney is a hackathon for high schoolers
               {/* TODO: Change [EXAMPLECITY] to your event's city */}
@@ -636,11 +607,7 @@ export default function ExampleCity() {
         >
           <Heading
             as="h1"
-            sx={{
-              mx: '1vw',
-              fontWeight: 'lighter',
-              textAlign: 'center'
-            }}
+            sx={{ mx: '1vw', fontWeight: 'lighter', textAlign: 'center' }}
           >
             {/* TODO: Change [EXAMPLECITY] to your event's city */}
             WHAT'S HAPPENING AT SCRAPYARD SYDNEY?
@@ -678,11 +645,7 @@ export default function ExampleCity() {
         >
           {schedule.map((item, i) => (
             <div
-              style={{
-                display: 'flex',
-                width: '100%',
-                alignItems: 'center'
-              }}
+              style={{ display: 'flex', width: '100%', alignItems: 'center' }}
               key={i}
             >
               <Heading
@@ -738,13 +701,7 @@ export default function ExampleCity() {
           position: 'relative'
         }}
       >
-        <Heading
-          as="h1"
-          sx={{
-            mb: 5,
-            position: 'relative'
-          }}
-        >
+        <Heading as="h1" sx={{ mb: 5, position: 'relative' }}>
           Frequently Asked Questions
           <Image
             src="/elements/doodles/blue-underline.svg"
@@ -756,13 +713,7 @@ export default function ExampleCity() {
             }}
           />
         </Heading>
-        <Grid
-          columns={[1, 1, 1, 2]}
-          gap={4}
-          sx={{
-            maxWidth: '1200px'
-          }}
-        >
+        <Grid columns={[1, 1, 1, 2]} gap={4} sx={{ maxWidth: '1200px' }}>
           {Object.entries({
             'Who can participate in Scrapyard?': (
               <>
@@ -784,7 +735,7 @@ export default function ExampleCity() {
             'What do I need?': (
               <>
                 Your laptop, chargers, and an open mind! If you're going to an
-                overnight event, bring toiletries and sleeping bagstoo.
+                overnight event, bring toiletries and sleeping bags too.
                 Additionally, if you plan to work on a hardware project, bring
                 the tools you'll need.
               </>
@@ -866,13 +817,7 @@ export default function ExampleCity() {
                   border: ['2px solid black', 'none']
                 }}
               >
-                <Heading
-                  as="h2"
-                  mb={4}
-                  sx={{
-                    position: 'relative'
-                  }}
-                >
+                <Heading as="h2" mb={4} sx={{ position: 'relative' }}>
                   {question}
                   <Image
                     src="/elements/doodles/yellow-underline.svg"
@@ -884,14 +829,7 @@ export default function ExampleCity() {
                     }}
                   />
                 </Heading>
-                <Text
-                  sx={{
-                    fontSize: 3,
-                    fontWeight: 'bold'
-                  }}
-                >
-                  {answer}
-                </Text>
+                <Text sx={{ fontSize: 3, fontWeight: 'bold' }}>{answer}</Text>
               </Card>
             )
           })}
@@ -907,9 +845,7 @@ export default function ExampleCity() {
               backgroundSize: '100% 100%',
               filter: 'drop-shadow(5px 5px 5px #000)',
               transition: 'transform 0.2s',
-              ':hover': {
-                transform: 'scale(1.1)'
-              },
+              ':hover': { transform: 'scale(1.1)' },
               zIndex: 20,
               padding: 1,
               my: 3
@@ -932,13 +868,7 @@ export default function ExampleCity() {
             </Heading>
           </Box>
         </Link>
-        <Heading
-          as="h2"
-          sx={{
-            mt: 3,
-            position: 'relative'
-          }}
-        >
+        <Heading as="h2" sx={{ mt: 3, position: 'relative' }}>
           Scrapyard
           <Image
             src="/elements/doodles/pink-underline.svg"
@@ -950,22 +880,10 @@ export default function ExampleCity() {
             }}
           />
         </Heading>
-        <Text
-          sx={{
-            fontFamily: 'moonblossom',
-            mb: -2,
-            textAlign: 'center'
-          }}
-        >
+        <Text sx={{ fontFamily: 'moonblossom', mb: -2, textAlign: 'center' }}>
           Made with ♡ by teenagers, for teenagers at Hack Club
         </Text>
-        <Text
-          sx={{
-            fontFamily: 'moonblossom',
-            mt: 0,
-            textAlign: 'center'
-          }}
-        >
+        <Text sx={{ fontFamily: 'moonblossom', mt: 0, textAlign: 'center' }}>
           <Link href="https://hackclub.com">Hack Club</Link>{' '}
           <span sx={{ transform: 'scale(2)' }}>・</span>{' '}
           <Link href="https://hackclub.com/slack">Slack</Link>{' '}

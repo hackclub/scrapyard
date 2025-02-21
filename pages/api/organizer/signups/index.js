@@ -2,7 +2,8 @@ import AirtablePlus from 'airtable-plus'
 import renderSignup from '../../../../lib/api/renderSignup';
 
 export default async function handler (req, res) {
-    const eventSlug = req.query.event; 
+    let eventSlug = req.query.event; 
+    if (Array.isArray(eventSlug)) eventSlug = eventSlug[0];
 
     if (!process.env.AIRTABLE_API_KEY) {
         return res.status(500).json({
@@ -36,6 +37,9 @@ export default async function handler (req, res) {
     });
 
     const event = events[0];
+
+    console.log({ events, authorization, eventSlug });
+    
 
     if (!event || event?.fields?.['API Password'] != authorization || event?.fields?.['Slug'] != eventSlug) {
         return res.status(401).json({
