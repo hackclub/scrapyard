@@ -16,7 +16,7 @@ If you have any questions, send a message to the #scrapyard channel on the Hack 
 
 P.S. Feel free to delete this comment block when you're done! 
 
-Note: To test your changes locally, use `yarn install` and `yarn dev`.
+Note: To test your changes locally, use `npm install` and `npm run dev`.
 */
 
 import Head from 'next/head'
@@ -24,21 +24,22 @@ import { Box, Card, Grid, Heading, Image, Link, Text } from 'theme-ui'
 import dynamic from 'next/dynamic'
 
 // TODO: Change this schedule to your own!
-// const schedule = [
-//   { time: '11:00 AM', event: 'Doors open' },
-//   { time: '12:00 PM', event: 'Opening ceremony' },
-//   { time: '12:30 PM', event: 'Lunch' },
-//   { time: '1:00 PM', event: 'Start working on your project!' },
-//   { time: '2:00 PM', event: 'Workshop 1' },
-//   { time: '4:00 PM', event: 'Activity 1' },
-//   { time: '4:00 PM', event: 'Workshop 2' },
-//   { time: '6:00 PM', event: 'Dinner' },
-//   { time: '8:00 PM', event: 'Lightning talks' },
-//   { time: '12:00 AM', event: 'Midnight surprise' },
-//   { time: '8:00 AM', event: 'Breakfast' },
-//   { time: '10:30 AM', event: 'Demos!' },
-//   { time: '12:00 PM', event: 'Closing ceremony' }
-// ]
+const schedule = [
+  { time: '11:00 AM', event: 'Doors open' },
+  { time: '12:00 PM', event: 'Opening ceremony' },
+  { time: '12:30 PM', event: 'Lunch' },
+  { time: '1:00 PM', event: 'Start working on your project!' },
+  { time: '2:00 PM', event: 'Workshop 1' },
+  { time: '4:00 PM', event: 'Activity 1' },
+  { time: '4:00 PM', event: 'Workshop 2' },
+  { time: '6:00 PM', event: 'Dinner' },
+  { time: '8:00 PM', event: 'Day 1 Over ' },
+  { time: '9:00 AM', event: 'Continue Working on your project' },
+  { time: '12:30 PM', event: 'Lunch' },
+  { time: '3:30 PM', event: 'Demos!' },
+  { time: '6:30 PM', event: 'Dinner!' },
+  { time: '8:00 PM', event: 'Closing ceremony' }
+]
 
 const Map = dynamic(() => import('../components/Map'), { ssr: false })
 
@@ -78,7 +79,8 @@ export default function ExampleCity() {
       }}
     >
       <Head>
-        <title>Scrapyard BOSTON</title>
+        {/* TODO: Change [EXAMPLECITY] to your event's city */}
+        <title>Scrapyard Abu Dhabi</title>
       </Head>
       <Flag />
       <Box
@@ -173,7 +175,8 @@ export default function ExampleCity() {
                 fontSize: ['1.2em', '1.4em']
               }}
             >
-              BOSTON - March&nbsp;15-16
+              {/* TODO: Change [EXAMPLECITY] to your event's city */}
+              Abu Dhabi - March&nbsp;15-16
             </Heading>
           </Box>
         </Box>
@@ -223,7 +226,8 @@ export default function ExampleCity() {
           />
         </Box>
         <Link
-          href="https://forms.hackclub.com/scrapyard-signup?event=boston"
+          // TODO: Change [SLUG] to your event's slug (lowercase, dashed version of your event name), such as san-francisco for Scrapyard San Francisco
+          href="https://hack.club/scrapyard-signup?event=abu-dhabi"
           target="_blank"
         >
           <Box
@@ -329,22 +333,26 @@ export default function ExampleCity() {
                 textDecoration: 'underline'
               }}
             >
-              What's Scrapyard Boston?
+              {/* TODO: Change [EXAMPLECITY] to your event's city */}
+              What's Scrapyard Abu Dhabi?
             </Heading>
             <p
               style={{
                 fontSize: '1.5em'
               }}
             >
-              Scrapyard Boston is a hackathon for high schoolers
-              happening in Boston, where you can make the stupidest
+              {/* TODO: Change [EXAMPLECITY] to your event's city */}
+              Scrapyard Abu Dhabi is a hackathon for high schoolers
+              {/* TODO: Change [EXAMPLECITY] to your event's city */}
+              happening in Abu Dhabi, where you can make the stupidest
               things you can think of! Anything, from a{' '}
               <Link href="https://www.youtube.com/watch?v=PnK4gzO6S3Q">
                 lamp that flashes faster the slower you type
               </Link>
               , to those ideas that you wouldn't dare to consider to be useful,
               goes at Scrapyard. No matter your experience, Scrapyard
-              Boston needs you and your scrappy ideas!
+              {/* TODO: Change [EXAMPLECITY] to your event's city */}
+              Abu Dhabi needs you and your scrappy ideas!
             </p>
           </Box>
         </Box>
@@ -408,7 +416,7 @@ export default function ExampleCity() {
         }}
       ></Box>
 
-      {/* <Box
+      <Box
         sx={{
           // backgroundImage: "url(/backgrounds/confetti.png)",
           alignItems: 'center',
@@ -442,10 +450,10 @@ export default function ExampleCity() {
               textAlign: 'center'
             }}
           >
-            WHAT'S HAPPENING AT SCRAPYARD BOSTON?
+            {/* TODO: Change [EXAMPLECITY] to your event's city */}
+            WHAT'S HAPPENING AT SCRAPYARD ABU DHABI?
           </Heading>
         </Box>
-
         <Heading
           as="h2"
           sx={{
@@ -455,7 +463,9 @@ export default function ExampleCity() {
             textAlign: 'center'
           }}
         >
-          Scrapyard Boston is a 24 hour event - HERE'S THE ROUGH
+          {/* TODO: Change [EXAMPLECITY] to your event's city */}
+          {/* TODO: Change [DURATION] to your event's duration (12hour, 24hour, 2-day) */}
+          Scrapyard Abu Dhabi is a 2-Day event - HERE'S THE ROUGH
           SCHEDULE!
         </Heading>
         <Box
@@ -511,7 +521,7 @@ export default function ExampleCity() {
             </div>
           ))}
         </Box>
-      </Box> */}
+      </Box>
 
       <Box
         sx={{
@@ -547,7 +557,8 @@ export default function ExampleCity() {
               textAlign: 'center'
             }}
           >
-            CAN'T MAKE IT TO BOSTON?
+            {/* TODO: Change [EXAMPLECITY] to your event's city */}
+            CAN'T MAKE IT TO ABU DHABI?
           </Heading>
         </Box>
         <Heading
@@ -637,8 +648,7 @@ export default function ExampleCity() {
             ),
             'What do I need?': (
               <>
-                Your laptop, chargers, and an open mind! If you're going to an
-                overnight event, bring toiletries and sleeping bagstoo.
+                Your laptop, chargers, and an open mind! 
                 Additionally, if you plan to work on a hardware project, bring
                 the tools you'll need.
               </>
@@ -683,21 +693,23 @@ export default function ExampleCity() {
               <>
                 We’re here to help! Our parents guide will be released soon, but
                 they can reach out to us at{' '}
-                <Link href="mailto:sofia@hackclub.com">
-                  sofia@hackclub.com
+                {/* TODO: Change this email to your event's email */}
+                <Link href="mailto:scrapyard@hackclubae.com">
+                  {/* TODO: Change this email to your event's email */}
+                  scrapyard@hackclubae.com
                 </Link>{' '}
                 for questions.
               </>
             ),
             'What if I have more questions?': (
-              <>=
-                Contact us! Feel free to reach out to us in the 
-                <Link href="https://hackclub.slack.com/archives/C085VB6F0T1">
-                  #scrapyard-boston
-                </Link>
+              <>
+                {/* TODO: Change [SLACKCHANNEL] to the name of your event's Slack channel */}
+                Contact us! Feel free to reach out to us in the #scrapyard-auh
                 channel on the Hack Club slack or email us at{' '}
-                <Link href="mailto:sofia@hackclub.com">
-                  sofia@hackclub.com
+                {/* TODO: Change this email to your event's email */}
+                <Link href="mailto:scrapyard@hackclubae.com">
+                  {/* TODO: Change this email to your event's email */}
+                  scrapyard@hackclubae.com
                 </Link>
                 .
               </>
@@ -749,7 +761,8 @@ export default function ExampleCity() {
           })}
         </Grid>
         <Link
-          href="https://forms.hackclub.com/scrapyard-signup?event=boston"
+          // TODO: Change [SLUG] to your event's slug (lowercase, dashed version of your event name), such as san-francisco for Scrapyard San Francisco
+          href="https://hack.club/scrapyard-signup?event=abu-dhabi"
           target="_blank"
         >
           <Box
@@ -778,7 +791,8 @@ export default function ExampleCity() {
                 paddingY: ['15px', '0px']
               }}
             >
-              SIGN UP FOR SCRAPYARD BOSTOn
+              {/* TODO: Change [EXAMPLECITY] to your event's city */}
+              SIGN UP FOR SCRAPYARD ABU DHABI
             </Heading>
           </Box>
         </Link>

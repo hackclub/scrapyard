@@ -13,6 +13,11 @@ module.exports = withMDX({
       permanent: true
     },
     {
+      source: '/siliconvalley',
+      destination: '/silicon-valley',
+      permanent: true
+    },
+    {
       source: '/cleveland',
       destination: 'https://scrapyardcle.org',
       permanent: true
@@ -25,6 +30,11 @@ module.exports = withMDX({
     {
       source: '/lisbon',
       destination: 'https://scrapyard.pt',
+      permanent: true
+    },
+    {
+      source: '/san-francisco',
+      destination: 'https://scrapyardsf.com',
       permanent: true
     }
   ]

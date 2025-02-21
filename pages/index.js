@@ -194,7 +194,7 @@ export default function Home() {
           />
         </Box>
         <Link
-          href="https://forms.hackclub.com/scrapyard-signup"
+          href="https://forms.hackclub.com/scrapyard-flagship"
           target="_blank"
         >
           <Box
@@ -631,10 +631,11 @@ export default function Home() {
               </>
             ),
 
-            'Where is Scrapyard hosted?': (
+            'When & where is Scrapyard hosted?': (
               <>
-                The Scrapyard flagship will be hosted in Austin, Texas on March
-                1-2. Find the closest distributed event to you on March 15-16!
+                The Scrapyard flagship will be hosted in Austin, Texas from 12pm
+                on March 1st to 3pm on March 2nd. Find the closest distributed
+                event to you on March 15-16!
               </>
             ),
             'Who can participate in Scrapyard?': (
@@ -648,15 +649,17 @@ export default function Home() {
               <>
                 Yep! Food, swag and good vibes are all included. Plus, if you’re
                 joining us from afar, we’ll cover the cost of gas or a bus /
-                train ticket. Information about travel stipends for our Austin,
-                Texas flagship will be released soon.
+                train ticket. Travel stipends for our Austin, Texas flagship are
+                now closed.
               </>
             ),
             'What do I need?': (
               <>
                 Your laptop, chargers, toiletries, sleeping bags, and an open
                 mind! If you plan to work on a hardware project, bring the tools
-                you'll need.
+                you'll need. If you're travelling via plane or internationally,
+                make sure to bring any legal documents (such as a passport) as
+                well.
               </>
             ),
             'I’m not good at coding. Can I still participate?': (
@@ -697,8 +700,11 @@ export default function Home() {
             ),
             'What if my parents are concerned?': (
               <>
-                We’re here to help! Our parents guide will be released soon, but
-                they can reach out to us at{' '}
+                We’re here to help! You can see our{' '}
+                <Link href="https://drive.google.com/file/d/1yG1m5fPa2qzdKbVMtxbK7hIXexBk4uY0/view?usp=sharing">
+                  parent's guide here
+                </Link>
+                , or they can reach out to us at{' '}
                 <Link href="mailto:scrapyard@hackclub.com">
                   scrapyard@hackclub.com
                 </Link>{' '}

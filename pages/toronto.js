@@ -1,4 +1,3 @@
-
 import Head from 'next/head'
 import { Box, Card, Grid, Heading, Image, Link, Text } from 'theme-ui'
 import dynamic from 'next/dynamic'
@@ -36,8 +35,7 @@ export default function Toronto() {
   return (
     <Box
       sx={{
-        background:
-          "url('/backgrounds/cutting-mat.png'), linear-gradient(#337D78, #337D78)",
+        background: "url('/backgrounds/cutting-mat.png'), linear-gradient(#337D78, #337D78)",
         backgroundSize: ['1100px', '1100px', '1100px', 'contain'],
         backgroundPosition: 'top',
         backgroundRepeat: 'no-repeat',
@@ -46,7 +44,7 @@ export default function Toronto() {
       }}
     >
       <Head>
-        {}
+
         <title>Scrapyard Toronto</title>
       </Head>
       <Flag />
@@ -76,8 +74,7 @@ export default function Toronto() {
               objectFit: 'contain'
             }}
             src="/city/toronto/Wordmark.svg"
-            alt="Scrapyard"
-          />
+            alt="Scrapyard" />
         </Box>
         <Box
           sx={{
@@ -142,110 +139,120 @@ export default function Toronto() {
                 fontSize: ['1.2em', '1.4em']
               }}
             >
-              {}
+
               Toronto - March&nbsp;15-16
             </Heading>
-          </Box>
-        </Box>
-        <Box
-          sx={{
-            position: 'absolute',
-            width: '100%',
-            height: '100vw'
-          }}
-        >
-          <Image
-            sx={{
-              width: '10%',
-              height: '10%',
-              zIndex: 2,
-              position: 'absolute',
-              top: '50%',
-              left: '10%'
-            }}
-            src="/elements/stars/blue.png"
-            alt="Blue paper star"
-          />
-          <Image
-            sx={{
-              width: '10%',
-              height: '10%',
-              zIndex: 2,
-              position: 'absolute',
-              top: '55%',
-              right: '15%'
-            }}
-            src="/elements/stars/yellow.png"
-            alt="Yellow paper star"
-          />
-          <Image
-            sx={{
-              width: '10%',
-              height: '10%',
-              zIndex: 2,
-              position: 'absolute',
-              top: '70%',
-              left: '20%',
-              transform: 'rotate(180deg)'
-            }}
-            src="/elements/stars/pink.png"
-            alt="Pink paper star"
-          />
-        </Box>
-        <Link
-          // TODO: Change [SLUG] to your event's slug (lowercase, dashed version of your event name), such as san-francisco for Scrapyard San Francisco
-          href="https://forms.hackclub.com/scrapyard-signup?event=toronto"
-          target="_blank"
-        >
-          <Box
-            sx={{
-              backgroundImage: "url('/elements/yellow-strip@stretch.svg')",
-              backgroundRepeat: 'no-repeat',
-              backgroundSize: '100% 100%',
-              position: 'fixed',
-              right: ['2%'],
-              top: ['4%'],
-              filter: 'drop-shadow(5px 5px 5px #000)',
-              transition: 'transform 0.2s',
-              ':hover': {
-                transform: 'scale(1.1)'
-              },
-              zIndex: 30,
-              minWidth: '8em',
-              padding: '15px'
-            }}
-          >
-            <Heading
-              as="h2"
+            <Text
               sx={{
                 fontFamily: 'moonblossom',
-                textAlign: 'center',
-                padding: ['2%', '8%'],
-                fontSize: ['1.2em', '1.4em'],
-                textTransform: 'inherit!important',
-                width: '100%'
+                mt: 0,
+                textAlign: 'center'
               }}
             >
-              SIGN&nbsp;UP
-            </Heading>
+              <Link href="https://discord.gg/eMzU6vuZwj">Discord</Link>{' '}
+              <span sx={{ transform: 'scale(2)' }}>・</span>{' '}
+              <Link href="https://www.instagram.com/scrapyard_toronto/">Instagram</Link>{' '}
+              <span sx={{ transform: 'scale(2)' }}>・</span>{' '}
+              <Link href="https://hackclub.com/slack">Slack</Link>{' '}
+              </Text>
           </Box>
-        </Link>
+        
       </Box>
 
       <Box
         sx={{
+          position: 'absolute',
           width: '100%',
-          background: "url('/elements/paper-top.png')",
-          backgroundSize: 'contain',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          flexDirection: 'column',
-          gap: '20px',
-          position: 'relative',
-          height: '23vw'
+          height: '100vw'
         }}
       >
+        <Image
+          sx={{
+            width: '10%',
+            height: '10%',
+            zIndex: 2,
+            position: 'absolute',
+            top: '50%',
+            left: '10%'
+          }}
+          src="/elements/stars/blue.png"
+          alt="Blue paper star" />
+        <Image
+          sx={{
+            width: '10%',
+            height: '10%',
+            zIndex: 2,
+            position: 'absolute',
+            top: '55%',
+            right: '15%'
+          }}
+          src="/elements/stars/yellow.png"
+          alt="Yellow paper star" />
+        <Image
+          sx={{
+            width: '10%',
+            height: '10%',
+            zIndex: 2,
+            position: 'absolute',
+            top: '70%',
+            left: '20%',
+            transform: 'rotate(180deg)'
+          }}
+          src="/elements/stars/pink.png"
+          alt="Pink paper star" />
+      </Box>
+      <Link
+        // TODO: Change [SLUG] to your event's slug (lowercase, dashed version of your event name), such as san-francisco for Scrapyard San Francisco
+        href="https://forms.hackclub.com/scrapyard-signup?event=toronto"
+        target="_blank"
+      >
+        <Box
+          sx={{
+            backgroundImage: "url('/elements/yellow-strip@stretch.svg')",
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: '100% 100%',
+            position: 'fixed',
+            right: ['2%'],
+            top: ['4%'],
+            filter: 'drop-shadow(5px 5px 5px #000)',
+            transition: 'transform 0.2s',
+            ':hover': {
+              transform: 'scale(1.1)'
+            },
+            zIndex: 30,
+            minWidth: '8em',
+            padding: '15px'
+          }}
+        >
+          <Heading
+            as="h2"
+            sx={{
+              fontFamily: 'moonblossom',
+              textAlign: 'center',
+              padding: ['2%', '8%'],
+              fontSize: ['1.2em', '1.4em'],
+              textTransform: 'inherit!important',
+              width: '100%'
+            }}
+          >
+            SIGN&nbsp;UP
+          </Heading>
+        </Box>
+      </Link>
+    </Box><Box
+      sx={{
+        width: '100%',
+        background: "url('/elements/paper-top.png')",
+        backgroundSize: 'contain',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'column',
+        gap: '20px',
+        position: 'relative',
+        height: '23vw'
+      }}
+    >
         <img
           src="/elements/trash-can.png"
           style={{
@@ -255,10 +262,8 @@ export default function Toronto() {
             width: '70vw',
             transform: 'translateY(-40%)',
             zIndex: 7
-          }}
-        />
-      </Box>
-      <Box
+          }} />
+      </Box><Box
         sx={{
           width: '100%',
           // background: "linear-gradient(#F5F5F5, #F2F2F2)",
@@ -331,40 +336,30 @@ export default function Toronto() {
         >
           <Image
             src="/elements/doodles/arrow.svg"
-            sx={{ position: 'absolute', left: '5%', top: '0%' }}
-          />
+            sx={{ position: 'absolute', left: '5%', top: '0%' }} />
           <Image
             src="/elements/doodles/pinkcircle.svg"
-            sx={{ position: 'absolute', left: '20%', top: '0%' }}
-          />
+            sx={{ position: 'absolute', left: '20%', top: '0%' }} />
           <Image
             src="/elements/doodles/yellowcircle.svg"
-            sx={{ position: 'absolute', left: '8%', top: '70%' }}
-          />
+            sx={{ position: 'absolute', left: '8%', top: '70%' }} />
           <Image
             src="/elements/doodles/bluesquiggle.svg"
-            sx={{ position: 'absolute', left: '8%', top: '84%' }}
-          />
+            sx={{ position: 'absolute', left: '8%', top: '84%' }} />
           <Image
             src="/elements/doodles/yellowlines.svg"
-            sx={{ position: 'absolute', left: '37%', top: '80%' }}
-          />
+            sx={{ position: 'absolute', left: '37%', top: '80%' }} />
           <Image
             src="/elements/doodles/bluecircle.svg"
-            sx={{ position: 'absolute', right: '30%', top: '78%' }}
-          />
+            sx={{ position: 'absolute', right: '30%', top: '78%' }} />
           <Image
             src="/elements/doodles/pinksquiggle.svg"
-            sx={{ position: 'absolute', right: '10%', top: '80%' }}
-          />
+            sx={{ position: 'absolute', right: '10%', top: '80%' }} />
           <Image
             src="/elements/doodles/bluedrops.svg"
-            sx={{ position: 'absolute', right: '10%', top: '0%' }}
-          />
+            sx={{ position: 'absolute', right: '10%', top: '0%' }} />
         </Box>
-      </Box>
-
-      <Box
+      </Box><Box
         sx={{
           width: '100vw',
           background: "url('/backgrounds/ripped-paper-bottom.png')",
@@ -378,9 +373,7 @@ export default function Toronto() {
           height: '17.03212647vw',
           position: 'relative'
         }}
-      ></Box>
-
-      <Box
+      ></Box><Box
         sx={{
           // backgroundImage: "url(/backgrounds/confetti.png)",
           alignItems: 'center',
@@ -482,9 +475,7 @@ export default function Toronto() {
             </div>
           ))}
         </Box>
-      </Box>
-
-      <Box
+      </Box><Box
         sx={{
           // backgroundImage: "url(/backgrounds/confetti.png)",
           alignItems: 'center',
@@ -546,9 +537,7 @@ export default function Toronto() {
         >
           <Map />
         </Box>
-      </Box>
-
-      <Box
+      </Box><Box
         sx={{
           width: '100%',
           background: "url('/backgrounds/lined-paper.png')",
@@ -578,8 +567,7 @@ export default function Toronto() {
               bottom: '0',
               left: '50%',
               transform: 'translateX(-50%) translateY(75%)'
-            }}
-          />
+            }} />
         </Heading>
         <Grid
           columns={[1, 1, 1, 2]}
@@ -625,7 +613,7 @@ export default function Toronto() {
             'What can I make at Scrapyard?': (
               <>
                 The scrappiest thing you can imagine –- jank is encouraged.
-                Games? Apps? Websites? Programming languages? <em>Hardware?</em>{' '}
+                Games?Apps?Websites?Programming languages?<em>Hardware?</em>{' '}
                 You name it! We’ll have a bunch of resources and mentors to help
                 you out.
               </>
@@ -666,9 +654,7 @@ export default function Toronto() {
               <>
                 Contact us! Feel free to reach out to us in the #scrapyard-toronto
                 channel on the Hack Club slack or email us at{' '}
-                {/* TODO: Change this email to your event's email */}
-                <Link href="mailto:toronto@scrapyardhackclub.com">
-                  {/* TODO: Change this email to your event's email */}
+                <Link href="mailto:toronto@scrapyard.hackclub.com">
                   toronto@scrapyard.hackclub.com
                 </Link>
                 .
@@ -705,8 +691,7 @@ export default function Toronto() {
                       bottom: '0',
                       left: '50%',
                       transform: 'translateX(-50%) translateY(75%)'
-                    }}
-                  />
+                    }} />
                 </Heading>
                 <Text
                   sx={{
@@ -747,7 +732,8 @@ export default function Toronto() {
                 margin: '8%',
                 fontSize: ['1.2em', '1.4em'],
                 textTransform: 'inherit!important',
-                paddingY: ['15px', '0px']
+                paddingY: ['15px', '0px'],
+                lineHeight: 1.5
               }}
             >
               SIGN UP FOR SCRAPYARD TORONTO
@@ -769,8 +755,7 @@ export default function Toronto() {
               bottom: '0',
               left: '50%',
               transform: 'translateX(-50%) translateY(75%)'
-            }}
-          />
+            }} />
         </Heading>
         <Text
           sx={{
@@ -789,6 +774,10 @@ export default function Toronto() {
           }}
         >
           <Link href="https://hackclub.com">Hack Club</Link>{' '}
+          <span sx={{ transform: 'scale(2)' }}>・</span>{' '}
+          <Link href="https://discord.gg/eMzU6vuZwj">Discord</Link>{' '}
+          <span sx={{ transform: 'scale(2)' }}>・</span>{' '}
+          <Link href="https://www.instagram.com/scrapyard_toronto/">Instagram</Link>{' '}
           <span sx={{ transform: 'scale(2)' }}>・</span>{' '}
           <Link href="https://hackclub.com/slack">Slack</Link>{' '}
           <span sx={{ transform: 'scale(2)' }}>・</span>{' '}
