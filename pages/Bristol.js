@@ -643,8 +643,7 @@ export default function ExampleCity() {
             ),
             'What do I need?': (
               <>
-                Your laptop, chargers, and an open mind! If you're going to an
-                overnight event, bring toiletries and sleeping bagstoo.
+                Your laptop(Ideally(fully charged), chargers, and an open mind!.
                 Additionally, if you plan to work on a hardware project, bring
                 the tools you'll need.
               </>
