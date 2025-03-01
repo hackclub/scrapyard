@@ -612,10 +612,10 @@ export default function ExampleCity() {
             ),
             'All this, for free?': (
               <>
-                Yep! Food, swag and good vibes are all included. Plus, if you’re
+                Yep! Food, swag and good vibes are all included. Plus, if you're
                 joining us from afar,{' '}
                 <Link href="https://gas.hackclub.com/">
-                  we’ll cover the cost of gas or a bus / train ticket
+                  we'll cover the cost of gas or a bus / train ticket
                 </Link>
                 .
               </>
@@ -628,7 +628,7 @@ export default function ExampleCity() {
                 the tools you'll need.
               </>
             ),
-            'I’m not good at coding. Can I still participate?': (
+            "I'm not good at coding. Can I still participate?": (
               <>
                 This hackathon is for creatives of all skill levels! We'll have
                 workshops and other events so join us and let's learn together.
@@ -640,7 +640,7 @@ export default function ExampleCity() {
               <>
                 The scrappiest thing you can imagine –- jank is encouraged.
                 Games? Apps? Websites? Programming languages? <em>Hardware?</em>{' '}
-                You name it! We’ll have a bunch of resources and mentors to help
+                You name it! We'll have a bunch of resources and mentors to help
                 you out.
               </>
             ),
@@ -666,7 +666,7 @@ export default function ExampleCity() {
             ),
             'What if my parents are concerned?': (
               <>
-                We’re here to help! Our parents guide will be released soon, but
+                We're here to help! Our parents guide will be released soon, but
                 they can reach out to us at{' '}
                 {/* TODO: Change this email to your event's email */}
                 <Link href="nshah.kuwait@scrapyard.hackclub.com">
@@ -811,35 +811,52 @@ export default function ExampleCity() {
           <Link href="https://hackclub.com/clubs">Clubs</Link>{' '}
           <span sx={{ transform: 'scale(2)' }}>・</span>{' '}
           <Link href="https://hackclub.com/hackathons">Hackathons</Link>
-
-          document.addEventListener('DOMContentLoaded', function () {
-    const sponsorLogos = [
-        'KTech Logo.jpg',
-        'CNCF main-logo.jpg',
-        'LF_logo_NEW_Pantone.jpg'
-    ];
-
-    let sponsorContainer = document.getElementById('sponsor-logos');
-
-    if (!sponsorContainer) {
-        sponsorContainer = document.createElement('div');
-        sponsorContainer.id = 'sponsor-logos';
-        document.body.appendChild(sponsorContainer);
-    }
-
-    sponsorContainer.style.textAlign = 'center';
-    sponsorContainer.style.padding = '20px 0';
-
-    sponsorLogos.forEach(logo => {
-        const imgElement = document.createElement('img');
-        imgElement.src = `./images/sponsors/${logo}`;
-        imgElement.alt = logo.replace('.jpg', '').replace(/-/g, ' ');
-        imgElement.classList.add('sponsor-logo');
-        sponsorContainer.appendChild(imgElement);
-    });
-});
-
         </Text>
+
+        {/* Sponsor Logos Section */}
+        <Box
+          sx={{
+            textAlign: 'center',
+            padding: '20px 0',
+            mt: 4,
+            display: 'flex',
+            flexDirection: ['column', 'row'],
+            justifyContent: 'center',
+            alignItems: 'center',
+            gap: 4
+          }}
+        >
+          <Heading as="h3" sx={{ mb: 3, width: '100%' }}>
+            Our Sponsors
+          </Heading>
+          <Image
+            src="/images/sponsors/KTech Logo.jpg"
+            alt="KTech"
+            sx={{
+              maxHeight: '80px',
+              maxWidth: '200px',
+              objectFit: 'contain'
+            }}
+          />
+          <Image
+            src="/images/sponsors/CNCF main-logo.jpg"
+            alt="CNCF"
+            sx={{
+              maxHeight: '80px',
+              maxWidth: '200px',
+              objectFit: 'contain'
+            }}
+          />
+          <Image
+            src="/images/sponsors/LF_logo_NEW_Pantone.jpg"
+            alt="Linux Foundation"
+            sx={{
+              maxHeight: '80px',
+              maxWidth: '200px',
+              objectFit: 'contain'
+            }}
+          />
+        </Box>
       </Box>
     </Box>
   )
