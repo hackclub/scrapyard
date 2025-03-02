@@ -48,27 +48,27 @@ const sponsors = [
   {
     name: 'Hudson River Trading',
     link: 'https://www.hudsonrivertrading.com',
-    image: 'public/city/new-jersey/HRT.png'
+    image: 'city/new-jersey/HRT.png'
   },
     {
     name: 'Savvas Learning Company',
     link: 'https://www.savvas.com',
-    image: 'public/city/new-jersey/savvaslearning.jpg'
+    image: 'city/new-jersey/savvaslearning.jpg'
   },
     {
     name: '.xyz',
     link: 'https://gen.xyz',
-    image: 'public/city/new-jersey/xyz-logo-color.svg'
+    image: 'city/new-jersey/xyz-logo-color.svg'
   },
   {
     name: 'Interview Cake',
     link: 'https://www.interviewcake.com',
-    image: 'public/city/new-jersey/CAKE.svg'
+    image: 'city/new-jersey/CAKE.svg'
   },
   {
     name: 'Art of Problem Solving',
     link: 'https://artofproblemsolving.com',
-    image: 'public/city/new-jersey/AoPS.png'
+    image: 'city/new-jersey/AoPS.png'
   }
 ]
 
