@@ -10,11 +10,10 @@ const schedule = [
   { time: '8:30 AM', event: '¡Empieza a trabajar en tu projecto!' },
   { time: '12:00 PM', event: 'Almuerzo' },
   { time: '2:00 PM', event: 'Taller 1' },
-  { time: '4:00 PM', event: 'Actividad 1' },
-  { time: '4:00 PM', event: 'Taller 2' },
-  { time: '7:30 PM', event: 'Cena' },
-  { time: '8:30 PM', event: '¡Demos!' },
-  { time: '9:00 PM', event: 'Ceremonia de cierre' },
+  { time: '3:00 PM', event: 'Taller 2' },
+  { time: '4:30 PM', event: 'Snack' },
+  { time: '4:45 PM', event: '¡Demos!' },
+  { time: '5:00 PM', event: 'Ceremonia de cierre' },
 ]
 
 const Map = dynamic(() => import('../components/Map'), { ssr: false })
@@ -320,7 +319,7 @@ export default function ExampleCity() {
               {/* TODO: Change [EXAMPLECITY] to your event's city */}
               Scrapyard Bogotá es un hackathon para estudiantes de secundaria
               {/* TODO: Change [EXAMPLECITY] to your event's city */}
-              pasando en Bogotá, ¡donde puedes hacer las cosas más innecesarias
+               pasando en Bogotá, ¡donde puedes hacer las cosas más innecesarias
               que podrías pensar! Cualquier cosa desde una{' '}
               <Link href="https://www.youtube.com/watch?v=PnK4gzO6S3Q">
                 lámpara que parpadea más rápido entre más lento escribas
@@ -439,7 +438,7 @@ export default function ExampleCity() {
         >
           {/* TODO: Change [EXAMPLECITY] to your event's city */}
           {/* TODO: Change [DURATION] to your event's duration (12hour, 24hour, 2-day) */}
-          Scrapyard Bogotá es un evento de 12 horas - ¡AQUÍ ESTÁ EL HORARIO
+          Scrapyard Bogotá es un evento de 9 horas - ¡AQUÍ ESTÁ EL HORARIO
           APROXIMADO!
         </Heading>
         <Box

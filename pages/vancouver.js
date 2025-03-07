@@ -345,7 +345,7 @@ export default function Vancouver() {
                 lamp that flashes faster the slower you type
               </Link>
               , to those ideas that you wouldn't dare to consider to be useful,
-              goes at Scrapyard. No matter your experience, Scrapyard
+              goes at Scrapyard. No matter your experience, Scrapyard{' '}
               {/* TODO: Change [EXAMPLECITY] to your event's city */}
                Vancouver needs you and your scrappy ideas!
             </p>
@@ -419,6 +419,23 @@ export default function Vancouver() {
           flexDirection: 'column'
         }}
       >
+
+<Heading
+          as="h2"
+          sx={{
+            fontSize: '2.25em',
+            fontFamily: 'moonblossom',
+            fontWeight: 'bold',
+            color: 'white',
+            textAlign: 'center'
+          }}
+        >
+          {/* TODO: Change [EXAMPLECITY] to your event's city */}
+          {/* TODO: Change [DURATION] to your event's duration (12hour, 24hour, 2-day) */}
+          VANCOUVER INDEPENDENT SCHOOL FOR SCIENCE AND TECHNOLOGY <br></br>
+          1490 W BROADWAY, VANCOUVER
+        </Heading>
+
         <Box
           sx={{
             backgroundImage: 'url(/elements/ripped-paper-strip.svg)',

@@ -1,3 +1,5 @@
+// shuflduf - i screwed up the formatting, mb
+
 '======== READ ME BEFORE EDITING ========'
 /*
 Hello! This is the template for the city pages.
@@ -25,27 +27,27 @@ import dynamic from 'next/dynamic'
 
 // TODO: Change this schedule to your own!
 const schedule = [
-	{ time: '', event: 'March 15 - Day One' },
-	{ time: '8:30 AM - 9:00 AM', event: 'Check-in & Breakfast' },
-	{ time: '9:00 AM - 9:30 AM', event: 'Opening Ceremony' },
-	{ time: '9:30 AM - 10:00 AM', event: 'Team Formation & Idea Pitches' },
-	{ time: '10:00 AM - 12:30 PM', event: 'Hacking Begins!' },
-	{ time: '12:30 PM - 1:30 PM', event: 'Lunch Break' },
-	{ time: '1:30 PM - 3:00 PM', event: 'Workshop #1' },
-	{ time: '3:00 PM - 6:00 PM', event: 'Hacking Continues & Mentorship' },
-	{ time: '6:00 PM - 7:00 PM', event: 'Dinner Break' },
-	{ time: '7:00 PM - 9:00 PM', event: 'Mini Challenges & Games' },
-	{ time: '9:00 PM - 10:30 PM', event: 'Late-Night Hacking' },
+  { time: '', event: 'March 15 - Day One' },
+  { time: '8:30 AM - 9:00 AM', event: 'Check-in & Breakfast' },
+  { time: '9:00 AM - 9:30 AM', event: 'Opening Ceremony' },
+  { time: '9:30 AM - 10:00 AM', event: 'Team Formation & Idea Pitches' },
+  { time: '10:00 AM - 12:30 PM', event: 'Hacking Begins!' },
+  { time: '12:30 PM - 1:30 PM', event: 'Lunch Break' },
+  { time: '1:30 PM - 3:00 PM', event: 'Workshop #1' },
+  { time: '3:00 PM - 6:00 PM', event: 'Hacking Continues & Mentorship' },
+  { time: '6:00 PM - 7:00 PM', event: 'Dinner Break' },
+  { time: '7:00 PM - 9:00 PM', event: 'Mini Challenges & Games' },
+  { time: '9:00 PM - 10:30 PM', event: 'Late-Night Hacking' },
 
-	{ time: '', event: 'March 16 - Day Two' },
-	{ time: '8:30 AM - 9:00 AM', event: 'Breakfast & Check-in' },
-	{ time: '9:00 AM - 12:00 PM', event: 'Hacking Rekindled!' },
-	{ time: '12:00 PM - 1:00 AM', event: 'Lunch Break' },
-	{ time: '1:00 PM - 5:00 PM', event: 'More Hacking!' },
-	{ time: '5:00 PM - 6:00 PM', event: 'Dinner Break' },
-	{ time: '6:00 PM - 8:00 PM', event: 'Final Hacking Session!' },
-	{ time: '9:00 PM - 10:00 PM', event: 'Project Voting' },
-	{ time: '10:00 PM - 10:30 PM', event: 'Awards & Final Remarks' },
+  { time: '', event: 'March 16 - Day Two' },
+  { time: '8:30 AM - 9:00 AM', event: 'Breakfast & Check-in' },
+  { time: '9:00 AM - 12:00 PM', event: 'Hacking Rekindled!' },
+  { time: '12:00 PM - 1:00 AM', event: 'Lunch Break' },
+  { time: '1:00 PM - 5:00 PM', event: 'More Hacking!' },
+  { time: '5:00 PM - 6:00 PM', event: 'Dinner Break' },
+  { time: '6:00 PM - 8:00 PM', event: 'Final Hacking Session!' },
+  { time: '9:00 PM - 10:00 PM', event: 'Project Voting' },
+  { time: '10:00 PM - 10:30 PM', event: 'Awards & Final Remarks' }
 ]
 
 const Map = dynamic(() => import('../components/Map'), { ssr: false })
@@ -64,9 +66,7 @@ const Flag = () => (
         width: [120, 128, 180],
         transformOrigin: '0% 0%',
         transition: 'transform 0.1s',
-        ':hover': {
-          transform: 'rotate(0.03turn) scale(1.2) translateY(-4px)'
-        }
+        ':hover': { transform: 'rotate(0.03turn) scale(1.2) translateY(-4px)' }
       }}
     />
   </Link>
@@ -101,11 +101,7 @@ export default function Calgary() {
           gap: '20px'
         }}
       >
-        <Box
-          sx={{
-            position: 'relative'
-          }}
-        >
+        <Box sx={{ position: 'relative' }}>
           <Image
             sx={{
               width: '600px',
@@ -181,17 +177,11 @@ export default function Calgary() {
                 fontSize: ['1.2em', '1.4em']
               }}
             >
-              Calgary - March&nbsp;15-16
+              1315 73 Ave SE - March&nbsp;15-16
             </Heading>
           </Box>
         </Box>
-        <Box
-          sx={{
-            position: 'absolute',
-            width: '100%',
-            height: '100vw'
-          }}
-        >
+        <Box sx={{ position: 'absolute', width: '100%', height: '100vw' }}>
           <Image
             sx={{
               width: '10%',
@@ -244,9 +234,7 @@ export default function Calgary() {
               top: ['4%'],
               filter: 'drop-shadow(5px 5px 5px #000)',
               transition: 'transform 0.2s',
-              ':hover': {
-                transform: 'scale(1.1)'
-              },
+              ':hover': { transform: 'scale(1.1)' },
               zIndex: 30,
               minWidth: '8em',
               padding: '15px'
@@ -332,18 +320,10 @@ export default function Calgary() {
               filter: 'drop-shadow(5px 5px 5px #000000AA)'
             }}
           >
-            <Heading
-              sx={{
-                textDecoration: 'underline'
-              }}
-            >
+            <Heading sx={{ textDecoration: 'underline' }}>
               What's Scrapyard Calgary?
             </Heading>
-            <p
-              style={{
-                fontSize: '1.5em'
-              }}
-            >
+            <p style={{ fontSize: '1.5em' }}>
               Scrapyard Calgary is a hackathon for high schoolers happening in
               Calgary, where you can make the stupidest things you can think of!
               Anything, from a{' '}
@@ -444,11 +424,7 @@ export default function Calgary() {
         >
           <Heading
             as="h1"
-            sx={{
-              mx: '1vw',
-              fontWeight: 'lighter',
-              textAlign: 'center'
-            }}
+            sx={{ mx: '1vw', fontWeight: 'lighter', textAlign: 'center' }}
           >
             WHAT'S HAPPENING AT SCRAPYARD Calgary?
           </Heading>
@@ -483,11 +459,7 @@ export default function Calgary() {
         >
           {schedule.map((item, i) => (
             <div
-              style={{
-                display: 'flex',
-                width: '100%',
-                alignItems: 'center'
-              }}
+              style={{ display: 'flex', width: '100%', alignItems: 'center' }}
               key={i}
             >
               <Heading
@@ -547,11 +519,7 @@ export default function Calgary() {
         >
           <Heading
             as="h1"
-            sx={{
-              mx: '1vw',
-              fontWeight: 'lighter',
-              textAlign: 'center'
-            }}
+            sx={{ mx: '1vw', fontWeight: 'lighter', textAlign: 'center' }}
           >
             CAN'T MAKE IT TO Calgary?
           </Heading>
@@ -598,13 +566,7 @@ export default function Calgary() {
           position: 'relative'
         }}
       >
-        <Heading
-          as="h1"
-          sx={{
-            mb: 5,
-            position: 'relative'
-          }}
-        >
+        <Heading as="h1" sx={{ mb: 5, position: 'relative' }}>
           Frequently Asked Questions
           <Image
             src="/elements/doodles/blue-underline.svg"
@@ -616,13 +578,7 @@ export default function Calgary() {
             }}
           />
         </Heading>
-        <Grid
-          columns={[1, 1, 1, 2]}
-          gap={4}
-          sx={{
-            maxWidth: '1200px'
-          }}
-        >
+        <Grid columns={[1, 1, 1, 2]} gap={4} sx={{ maxWidth: '1200px' }}>
           {Object.entries({
             'Who can participate in Scrapyard?': (
               <>
@@ -699,10 +655,10 @@ export default function Calgary() {
               <>
                 Contact us! Feel free to reach out to us in the #scrapyard
                 channel on the Hack Club slack, our own{' '}
-		<Link href="https://discord.gg/4jGGcPBZbn">
-		  Discord server,
-		</Link>{' '}
-		or email us at{' '}
+                <Link href="https://discord.gg/4jGGcPBZbn">
+                  Discord server,
+                </Link>{' '}
+                or email us at{' '}
                 <Link href="mailto:scrapyardyyc@gmail.com">
                   scrapyardyyc@gmail.com
                 </Link>
@@ -725,13 +681,7 @@ export default function Calgary() {
                   border: ['2px solid black', 'none']
                 }}
               >
-                <Heading
-                  as="h2"
-                  mb={4}
-                  sx={{
-                    position: 'relative'
-                  }}
-                >
+                <Heading as="h2" mb={4} sx={{ position: 'relative' }}>
                   {question}
                   <Image
                     src="/elements/doodles/yellow-underline.svg"
@@ -743,14 +693,7 @@ export default function Calgary() {
                     }}
                   />
                 </Heading>
-                <Text
-                  sx={{
-                    fontSize: 3,
-                    fontWeight: 'bold'
-                  }}
-                >
-                  {answer}
-                </Text>
+                <Text sx={{ fontSize: 3, fontWeight: 'bold' }}>{answer}</Text>
               </Card>
             )
           })}
@@ -766,9 +709,7 @@ export default function Calgary() {
               backgroundSize: '100% 100%',
               filter: 'drop-shadow(5px 5px 5px #000)',
               transition: 'transform 0.2s',
-              ':hover': {
-                transform: 'scale(1.1)'
-              },
+              ':hover': { transform: 'scale(1.1)' },
               zIndex: 20,
               padding: 1,
               my: 3
@@ -789,13 +730,7 @@ export default function Calgary() {
             </Heading>
           </Box>
         </Link>
-        <Heading
-          as="h2"
-          sx={{
-            mt: 3,
-            position: 'relative'
-          }}
-        >
+        <Heading as="h2" sx={{ mt: 3, position: 'relative' }}>
           Scrapyard
           <Image
             src="/elements/doodles/pink-underline.svg"
@@ -807,22 +742,10 @@ export default function Calgary() {
             }}
           />
         </Heading>
-        <Text
-          sx={{
-            fontFamily: 'moonblossom',
-            mb: -2,
-            textAlign: 'center'
-          }}
-        >
+        <Text sx={{ fontFamily: 'moonblossom', mb: -2, textAlign: 'center' }}>
           Made with ♡ by teenagers, for teenagers at Hack Club
         </Text>
-        <Text
-          sx={{
-            fontFamily: 'moonblossom',
-            mt: 0,
-            textAlign: 'center'
-          }}
-        >
+        <Text sx={{ fontFamily: 'moonblossom', mt: 0, textAlign: 'center' }}>
           <Link href="https://hackclub.com">Hack Club</Link>{' '}
           <span sx={{ transform: 'scale(2)' }}>・</span>{' '}
           <Link href="https://hackclub.com/slack">Slack</Link>{' '}

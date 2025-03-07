@@ -16,23 +16,23 @@
     "@hackclub/theme": "^0.3.3",
     "@mdx-js/loader": "^3.1.0",
     "@mdx-js/react": "^3.1.0",
-    "@next/mdx": "^15.1.7",
+    "@next/mdx": "^15.2.0",
     "@tailwindcss/postcss": "^4.0.8",
     "airtable-plus": "^1.0.4",
     "fa": "^1.0.1",
     "leaflet": "^1.9.4",
-    "motion": "^12.4.7",
-    "next": "^15.1.7",
+    "motion": "^12.4.9",
+    "next": "^15.2.1",
     "postcss": "^8.5.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-icons": "^5.5.0",
     "react-infinite-logo-slider": "^1.1.4",
     "react-leaflet": "^4.0.0",
-    "tailwindcss": "^4.0.8",
+    "tailwindcss": "^4.0.9",
     "theme-ui": "0.17.2"
   },
   "devDependencies": {
-    "prettier": "^3.5.2"
+    "prettier": "^3.5.3"
   }
 }

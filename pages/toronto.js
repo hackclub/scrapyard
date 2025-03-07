@@ -3,9 +3,7 @@ import { Box, Card, Grid, Heading, Image, Link, Text } from 'theme-ui'
 import dynamic from 'next/dynamic'
 
 // TODO: Change this schedule to your own!
-const schedule = [
-  { time: 'To Be Announced!', event: 'Schedule' }
-]
+const schedule = [{ time: 'To Be Announced!', event: 'Schedule' }]
 
 const Map = dynamic(() => import('../components/Map'), { ssr: false })
 
@@ -35,7 +33,8 @@ export default function Toronto() {
   return (
     <Box
       sx={{
-        background: "url('/backgrounds/cutting-mat.png'), linear-gradient(#337D78, #337D78)",
+        background:
+          "url('/backgrounds/cutting-mat.png'), linear-gradient(#337D78, #337D78)",
         backgroundSize: ['1100px', '1100px', '1100px', 'contain'],
         backgroundPosition: 'top',
         backgroundRepeat: 'no-repeat',
@@ -44,7 +43,6 @@ export default function Toronto() {
       }}
     >
       <Head>
-
         <title>Scrapyard Toronto</title>
       </Head>
       <Flag />
@@ -74,7 +72,8 @@ export default function Toronto() {
               objectFit: 'contain'
             }}
             src="/city/toronto/Wordmark.svg"
-            alt="Scrapyard" />
+            alt="Scrapyard"
+          />
         </Box>
         <Box
           sx={{
@@ -139,120 +138,143 @@ export default function Toronto() {
                 fontSize: ['1.2em', '1.4em']
               }}
             >
-
-              Toronto - March&nbsp;15-16
+              Toronto - March&nbsp;15
             </Heading>
             <Text
               sx={{
+                fontFamily: 'p22-stanyan',
+                fontSize: ['0.9em', '1.1em'],
+                textAlign: 'center',
+                mt: 1
+              }}
+            >
+              Saturday, 9am to 9pm or Saturday to Sunday 2pm to 2pm! (Yet to be
+              finalzied) ^
+            </Text>
+            <Text
+              sx={{
+                fontFamily: 'p22-stanyan',
+                fontSize: ['0.8em', '1em'],
+                textAlign: 'center',
+                mt: 1
+              }}
+            >
+              TMU's DMZ, 10 Dundas St E, 6th Floor
+            </Text>
+            <Text
+              sx={{
                 fontFamily: 'moonblossom',
-                mt: 0,
+                mt: 2,
                 textAlign: 'center'
               }}
             >
               <Link href="https://discord.gg/eMzU6vuZwj">Discord</Link>{' '}
               <span sx={{ transform: 'scale(2)' }}>・</span>{' '}
-              <Link href="https://www.instagram.com/scrapyard_toronto/">Instagram</Link>{' '}
+              <Link href="https://www.instagram.com/scrapyard_toronto/">
+                Instagram
+              </Link>{' '}
               <span sx={{ transform: 'scale(2)' }}>・</span>{' '}
               <Link href="https://hackclub.com/slack">Slack</Link>{' '}
-              </Text>
+            </Text>
           </Box>
-        
-      </Box>
-
-      <Box
-        sx={{
-          position: 'absolute',
-          width: '100%',
-          height: '100vw'
-        }}
-      >
-        <Image
-          sx={{
-            width: '10%',
-            height: '10%',
-            zIndex: 2,
-            position: 'absolute',
-            top: '50%',
-            left: '10%'
-          }}
-          src="/elements/stars/blue.png"
-          alt="Blue paper star" />
-        <Image
-          sx={{
-            width: '10%',
-            height: '10%',
-            zIndex: 2,
-            position: 'absolute',
-            top: '55%',
-            right: '15%'
-          }}
-          src="/elements/stars/yellow.png"
-          alt="Yellow paper star" />
-        <Image
-          sx={{
-            width: '10%',
-            height: '10%',
-            zIndex: 2,
-            position: 'absolute',
-            top: '70%',
-            left: '20%',
-            transform: 'rotate(180deg)'
-          }}
-          src="/elements/stars/pink.png"
-          alt="Pink paper star" />
-      </Box>
-      <Link
-        // TODO: Change [SLUG] to your event's slug (lowercase, dashed version of your event name), such as san-francisco for Scrapyard San Francisco
-        href="https://forms.hackclub.com/scrapyard-signup?event=toronto"
-        target="_blank"
-      >
+        </Box>
         <Box
           sx={{
-            backgroundImage: "url('/elements/yellow-strip@stretch.svg')",
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: '100% 100%',
-            position: 'fixed',
-            right: ['2%'],
-            top: ['4%'],
-            filter: 'drop-shadow(5px 5px 5px #000)',
-            transition: 'transform 0.2s',
-            ':hover': {
-              transform: 'scale(1.1)'
-            },
-            zIndex: 30,
-            minWidth: '8em',
-            padding: '15px'
+            position: 'absolute',
+            width: '100%',
+            height: '100vw'
           }}
         >
-          <Heading
-            as="h2"
+          <Image
             sx={{
-              fontFamily: 'moonblossom',
-              textAlign: 'center',
-              padding: ['2%', '8%'],
-              fontSize: ['1.2em', '1.4em'],
-              textTransform: 'inherit!important',
-              width: '100%'
+              width: '10%',
+              height: '10%',
+              zIndex: 2,
+              position: 'absolute',
+              top: '50%',
+              left: '10%'
+            }}
+            src="/elements/stars/blue.png"
+            alt="Blue paper star"
+          />
+          <Image
+            sx={{
+              width: '10%',
+              height: '10%',
+              zIndex: 2,
+              position: 'absolute',
+              top: '55%',
+              right: '15%'
+            }}
+            src="/elements/stars/yellow.png"
+            alt="Yellow paper star"
+          />
+          <Image
+            sx={{
+              width: '10%',
+              height: '10%',
+              zIndex: 2,
+              position: 'absolute',
+              top: '70%',
+              left: '20%',
+              transform: 'rotate(180deg)'
+            }}
+            src="/elements/stars/pink.png"
+            alt="Pink paper star"
+          />
+        </Box>
+        <Link
+          href="https://forms.hackclub.com/scrapyard-signup?event=toronto"
+          target="_blank"
+        >
+          <Box
+            sx={{
+              backgroundImage: "url('/elements/yellow-strip@stretch.svg')",
+              backgroundRepeat: 'no-repeat',
+              backgroundSize: '100% 100%',
+              position: 'fixed',
+              right: ['2%'],
+              top: ['4%'],
+              filter: 'drop-shadow(5px 5px 5px #000)',
+              transition: 'transform 0.2s',
+              ':hover': {
+                transform: 'scale(1.1)'
+              },
+              zIndex: 30,
+              minWidth: '8em',
+              padding: '15px'
             }}
           >
-            SIGN&nbsp;UP
-          </Heading>
-        </Box>
-      </Link>
-    </Box><Box
-      sx={{
-        width: '100%',
-        background: "url('/elements/paper-top.png')",
-        backgroundSize: 'contain',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        flexDirection: 'column',
-        gap: '20px',
-        position: 'relative',
-        height: '23vw'
-      }}
-    >
+            <Heading
+              as="h2"
+              sx={{
+                fontFamily: 'moonblossom',
+                textAlign: 'center',
+                padding: ['2%', '8%'],
+                fontSize: ['1.2em', '1.4em'],
+                textTransform: 'inherit!important',
+                width: '100%'
+              }}
+            >
+              SIGN&nbsp;UP
+            </Heading>
+          </Box>
+        </Link>
+      </Box>
+      <Box
+        sx={{
+          width: '100%',
+          background: "url('/elements/paper-top.png')",
+          backgroundSize: 'contain',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          flexDirection: 'column',
+          gap: '20px',
+          position: 'relative',
+          height: '23vw'
+        }}
+      >
         <img
           src="/elements/trash-can.png"
           style={{
@@ -262,8 +284,10 @@ export default function Toronto() {
             width: '70vw',
             transform: 'translateY(-40%)',
             zIndex: 7
-          }} />
-      </Box><Box
+          }}
+        />
+      </Box>
+      <Box
         sx={{
           width: '100%',
           // background: "linear-gradient(#F5F5F5, #F2F2F2)",
@@ -305,7 +329,6 @@ export default function Toronto() {
                 textDecoration: 'underline'
               }}
             >
-              {/* TODO: Change [EXAMPLECITY] to your event's city */}
               What's Scrapyard Toronto?
             </Heading>
             <p
@@ -313,15 +336,15 @@ export default function Toronto() {
                 fontSize: '1.5em'
               }}
             >
-              Scrapyard Toronto is a hackathon for high schoolers
-              happening in Toronto, where you can make the stupidest
-              things you can think of! Anything, from a{' '}
+              Scrapyard Toronto is a hackathon for high schoolers happening in
+              Toronto, where you can make the stupidest things you can think of!
+              Anything, from a{' '}
               <Link href="https://www.youtube.com/watch?v=PnK4gzO6S3Q">
                 lamp that flashes faster the slower you type
               </Link>
               , to those ideas that you wouldn't dare to consider to be useful,
-              goes at Scrapyard. No matter your experience, Scrapyard
-              Toronto needs you and your scrappy ideas!
+              goes at Scrapyard. No matter your experience, Scrapyard Toronto
+              needs you and your scrappy ideas!
             </p>
           </Box>
         </Box>
@@ -336,30 +359,39 @@ export default function Toronto() {
         >
           <Image
             src="/elements/doodles/arrow.svg"
-            sx={{ position: 'absolute', left: '5%', top: '0%' }} />
+            sx={{ position: 'absolute', left: '5%', top: '0%' }}
+          />
           <Image
             src="/elements/doodles/pinkcircle.svg"
-            sx={{ position: 'absolute', left: '20%', top: '0%' }} />
+            sx={{ position: 'absolute', left: '20%', top: '0%' }}
+          />
           <Image
             src="/elements/doodles/yellowcircle.svg"
-            sx={{ position: 'absolute', left: '8%', top: '70%' }} />
+            sx={{ position: 'absolute', left: '8%', top: '70%' }}
+          />
           <Image
             src="/elements/doodles/bluesquiggle.svg"
-            sx={{ position: 'absolute', left: '8%', top: '84%' }} />
+            sx={{ position: 'absolute', left: '8%', top: '84%' }}
+          />
           <Image
             src="/elements/doodles/yellowlines.svg"
-            sx={{ position: 'absolute', left: '37%', top: '80%' }} />
+            sx={{ position: 'absolute', left: '37%', top: '80%' }}
+          />
           <Image
             src="/elements/doodles/bluecircle.svg"
-            sx={{ position: 'absolute', right: '30%', top: '78%' }} />
+            sx={{ position: 'absolute', right: '30%', top: '78%' }}
+          />
           <Image
             src="/elements/doodles/pinksquiggle.svg"
-            sx={{ position: 'absolute', right: '10%', top: '80%' }} />
+            sx={{ position: 'absolute', right: '10%', top: '80%' }}
+          />
           <Image
             src="/elements/doodles/bluedrops.svg"
-            sx={{ position: 'absolute', right: '10%', top: '0%' }} />
+            sx={{ position: 'absolute', right: '10%', top: '0%' }}
+          />
         </Box>
-      </Box><Box
+      </Box>
+      <Box
         sx={{
           width: '100vw',
           background: "url('/backgrounds/ripped-paper-bottom.png')",
@@ -373,7 +405,8 @@ export default function Toronto() {
           height: '17.03212647vw',
           position: 'relative'
         }}
-      ></Box><Box
+      ></Box>
+      <Box
         sx={{
           // backgroundImage: "url(/backgrounds/confetti.png)",
           alignItems: 'center',
@@ -419,7 +452,7 @@ export default function Toronto() {
             textAlign: 'center'
           }}
         >
-          Scrapyard Toronto is a 24 Hour event - HERE'S THE ROUGH
+          Scrapyard Toronto is a 12 or 24 Hour event - HERE'S THE ROUGH
           SCHEDULE!
         </Heading>
         <Box
@@ -475,7 +508,8 @@ export default function Toronto() {
             </div>
           ))}
         </Box>
-      </Box><Box
+      </Box>
+      <Box
         sx={{
           // backgroundImage: "url(/backgrounds/confetti.png)",
           alignItems: 'center',
@@ -537,7 +571,8 @@ export default function Toronto() {
         >
           <Map />
         </Box>
-      </Box><Box
+      </Box>
+      <Box
         sx={{
           width: '100%',
           background: "url('/backgrounds/lined-paper.png')",
@@ -567,7 +602,8 @@ export default function Toronto() {
               bottom: '0',
               left: '50%',
               transform: 'translateX(-50%) translateY(75%)'
-            }} />
+            }}
+          />
         </Heading>
         <Grid
           columns={[1, 1, 1, 2]}
@@ -613,9 +649,9 @@ export default function Toronto() {
             'What can I make at Scrapyard?': (
               <>
                 The scrappiest thing you can imagine –- jank is encouraged.
-                Games?Apps?Websites?Programming languages?<em>Hardware?</em>{' '}
-                You name it! We’ll have a bunch of resources and mentors to help
-                you out.
+                Games?Apps?Websites?Programming languages?<em>Hardware?</em> You
+                name it! We’ll have a bunch of resources and mentors to help you
+                out.
               </>
             ),
             'What has Hack Club done before?': (
@@ -652,8 +688,8 @@ export default function Toronto() {
             ),
             'What if I have more questions?': (
               <>
-                Contact us! Feel free to reach out to us in the #scrapyard-toronto
-                channel on the Hack Club slack or email us at{' '}
+                Contact us! Feel free to reach out to us in the
+                #scrapyard-toronto channel on the Hack Club slack or email us at{' '}
                 <Link href="mailto:toronto@scrapyard.hackclub.com">
                   toronto@scrapyard.hackclub.com
                 </Link>
@@ -691,7 +727,8 @@ export default function Toronto() {
                       bottom: '0',
                       left: '50%',
                       transform: 'translateX(-50%) translateY(75%)'
-                    }} />
+                    }}
+                  />
                 </Heading>
                 <Text
                   sx={{
@@ -705,6 +742,311 @@ export default function Toronto() {
             )
           })}
         </Grid>
+
+        <Box
+          sx={{
+            width: '90%',
+            maxWidth: '1200px',
+            mx: 'auto',
+            my: 6,
+            py: 4,
+            background: "url('/backgrounds/lined-paper.png')",
+            backgroundSize: 'cover',
+            borderRadius: 4,
+            boxShadow: '0 4px 12px rgba(0,0,0,0.15)'
+          }}
+        >
+          <Heading
+            as="h1"
+            sx={{
+              textAlign: 'center',
+              mb: 4,
+              fontSize: ['1.8em', '2.2em'],
+              position: 'relative',
+              pb: 2,
+              '&::after': {
+                content: '""',
+                position: 'absolute',
+                bottom: 0,
+                left: '50%',
+                transform: 'translateX(-50%)',
+                width: '80px',
+                height: '3px',
+                backgroundColor: 'primary'
+              }
+            }}
+          >
+            Meet the Team
+          </Heading>
+          <Grid columns={[1, 2, 3]} gap={4} sx={{ px: [2, 3, 4] }}>
+            {[
+              {
+                name: 'Hajrah',
+                grade: '12th Grade',
+                highSchool: 'Lynn Rose College',
+                message:
+                  'I’m so excited to see all of your excited faces when presenting your projects and to see the very many cool ideas even though we’d all be sleep deprived.',
+                quote: 'Sometimes doing nothing is the best thing to do!!',
+                img: 'https://cdn.hack.pet/U084RT5K678/Untitled%20design.png'
+              },
+              {
+                name: 'Itai',
+                grade: '12th Grade',
+                highSchool: 'Maple High School',
+                message:
+                  'Looking forward to hypnotizing everyone into being an engineer for a day.',
+                quote: 'There is a house in New Orleans.',
+                img: 'https://cdn.hack.pet/U084RT5K678/Screenshot%202025-03-05%20211234.png'
+              },
+              {
+                name: 'Ritvik',
+                grade: '11th Grade',
+                highSchool: 'Victoria Park Collegiate Institute',
+                message: 'Looking forward to making friends!!',
+                quote:
+                  'There are 10 types of people in the world: those who understand binary and those who don’t.',
+                img: 'https://cdn.hack.pet/U084RT5K678/Screenshot%202025-03-05%20211256.png'
+              },
+              {
+                name: 'Ayaan',
+                grade: '12th Grade',
+                highSchool: 'White Oaks S.S.',
+                message:
+                  'Looking forward to seeing the most random stuff made :)',
+                quote: 'i am speed.',
+                img: 'https://cdn.hack.pet/U084RT5K678/Screenshot%202025-03-05%20212225.png'
+              },
+              {
+                name: 'Sunni',
+                grade: '10th Grade',
+                highSchool: 'Anderson CVI',
+                message: 'Looking forward to stupid sh*t and stupid prizes',
+                quote: 'if two wrongs dont make a right, try three.',
+                img: 'https://cdn.hack.pet/U084RT5K678/Screenshot%202025-03-05%20212240.png'
+              },
+              {
+                name: 'Annie',
+                grade: '10th Grade',
+                highSchool: 'Oakville Trafalgar High School',
+                message:
+                  'So excited to learn new things at the workshops and see all your cool projects!',
+                quote:
+                  ' If every porkchop were perfect, we wouldn’t have hot dogs.',
+                img: 'https://cdn.hack.pet/U084RT5K678/download%20(4).png'
+              }
+            ].map((member, i) => (
+              <Card
+                key={i}
+                sx={{
+                  p: 3,
+                  textAlign: 'center',
+                  border: '2px solid #000',
+                  background: 'white',
+                  boxShadow: '0 3px 8px rgba(0,0,0,0.1)',
+                  transition: 'transform 0.2s ease',
+                  ':hover': {
+                    transform: 'translateY(-5px)'
+                  }
+                }}
+              >
+                <Image
+                  src={member.img}
+                  alt={member.name}
+                  sx={{
+                    width: '150px',
+                    height: '150px',
+                    objectFit: 'cover',
+                    objectPosition: 'center',
+                    borderRadius: '50%',
+                    mb: 3,
+                    border: '3px solid #000',
+                    mx: 'auto'
+                  }}
+                />
+                <Heading as="h3" sx={{ mt: 2, fontSize: '1.5em' }}>
+                  {member.name}
+                </Heading>
+                <Text sx={{ mt: 1, fontSize: '1.1em', color: '#555' }}>
+                  {member.grade} &bull; {member.highSchool}
+                </Text>
+                <br></br>
+                <Text sx={{ mt: 2, fontStyle: 'italic', fontSize: '1em' }}>
+                  "{member.quote}"
+                </Text>
+                <br></br>
+                <Text sx={{ mt: 2 }}>{member.message}</Text>
+              </Card>
+            ))}
+          </Grid>
+        </Box>
+
+        <Box
+          sx={{
+            width: '90%',
+            maxWidth: '1200px',
+            mx: 'auto',
+            my: 6,
+            py: 4,
+            background: "url('/backgrounds/lined-paper.png')",
+            backgroundSize: 'cover',
+            borderRadius: 4,
+            boxShadow: '0 4px 12px rgba(0,0,0,0.15)'
+          }}
+        >
+          <Heading
+            as="h1"
+            sx={{
+              textAlign: 'center',
+              mb: 4,
+              fontSize: ['1.8em', '2.2em'],
+              position: 'relative',
+              pb: 2,
+              '&::after': {
+                content: '""',
+                position: 'absolute',
+                bottom: 0,
+                left: '50%',
+                transform: 'translateX(-50%)',
+                width: '80px',
+                height: '3px',
+                backgroundColor: 'primary'
+              }
+            }}
+          >
+            Sponsors
+          </Heading>
+
+          <Box sx={{ mb: 4, px: [2, 3, 4] }}>
+            <Card
+              sx={{
+                p: 4,
+                textAlign: 'center',
+                border: '2px solid #000',
+                background: 'white',
+                boxShadow: '0 4px 10px rgba(0,0,0,0.12)',
+                maxWidth: '900px',
+                mx: 'auto'
+              }}
+            >
+              <Image
+                src="https://cdn.hack.pet/U084RT5K678/image%20(4).png"
+                alt="Arista Networks"
+                sx={{
+                  width: '70%',
+                  maxHeight: '160px',
+                  objectFit: 'contain',
+                  mx: 'auto',
+                  mb: 3
+                }}
+              />
+              <Heading as="h3" sx={{ fontSize: '1.7em', mb: 2 }}>
+                Arista Networks
+              </Heading>
+              <Text sx={{ fontSize: '1.1em' }}>
+                Arista Networks is an industry leader in data-driven, client to
+                cloud networking for large data center/AI, campus and routing
+                environments. Arista's award-winning platforms deliver
+                availability, agility, automation, analytics and security
+                through an advanced network operating stack.
+              </Text>
+            </Card>
+          </Box>
+
+          <Grid columns={[1, 1, 2]} gap={4} sx={{ px: [2, 3, 4] }}>
+            {[
+              {
+                name: 'DMZ',
+                description:
+                  'DMZ is a world-leading incubator for tech startups around the world. We help startups build great businesses by connecting them with customers, capital, experts and a community of entrepreneurs and influencers.',
+                logo: 'https://hc-cdn.hel1.your-objectstorage.com/s/v3/45a4c6b4f75031759d5c822e37630667dbb7db26_svgviewer-output__1_.svg'
+              },
+              {
+                name: 'System76',
+                description:
+                  'System76 builds powerful open source computers, keyboards, and software, empowering creators, makers, and builders to unleash their potential.',
+                logo: 'https://cdn.hack.pet/U084RT5K678/system76-logo-open-source-tagliner4_1730474034__00841.webp'
+              }
+            ].map((sponsor, i) => (
+              <Card
+                key={i}
+                sx={{
+                  p: 3,
+                  textAlign: 'center',
+                  border: '2px solid #000',
+                  background: 'white',
+                  boxShadow: '0 3px 8px rgba(0,0,0,0.1)',
+                  transition: 'transform 0.2s ease',
+                  ':hover': {
+                    transform: 'translateY(-3px)'
+                  }
+                }}
+              >
+                <Image
+                  src={sponsor.logo}
+                  alt={sponsor.name}
+                  sx={{
+                    width: '80%',
+                    height: '140px',
+                    objectFit: 'contain',
+                    mx: 'auto',
+                    mb: 3
+                  }}
+                />
+                <Heading as="h3" sx={{ fontSize: '1.5em', mb: 2 }}>
+                  {sponsor.name}
+                </Heading>
+                <Text sx={{ fontSize: '1.1em' }}>{sponsor.description}</Text>
+              </Card>
+            ))}
+          </Grid>
+
+          <Heading
+            as="h2"
+            sx={{
+              textAlign: 'center',
+              mt: 5,
+              mb: 3,
+              fontSize: ['1.4em', '1.6em']
+            }}
+          >
+            Our Partners
+          </Heading>
+          <Grid columns={[3, 4, 6]} gap={3} sx={{ px: [2, 3, 4] }}>
+            {[
+              'https://hc-cdn.hel1.your-objectstorage.com/s/v3/278694a1ea294828eef8af0f8d2bf149921b6f6c_vueschool_logo_two_lines_white_bg__1_.png',
+              'https://hc-cdn.hel1.your-objectstorage.com/s/v3/d7969da1d87bed74c9174d0a235307bd4f529ff5_image__5_.png',
+              'https://hc-cdn.hel1.your-objectstorage.com/s/v3/393d615a4bdd2b724f5607e3337c630b73e3e2be_image__9_.png',
+              'https://hc-cdn.hel1.your-objectstorage.com/s/v3/35d714f86028aea17dad967cc70887dfe0c5dad9_download__2___1_.png',
+              'https://hc-cdn.hel1.your-objectstorage.com/s/v3/c999a19e5fa1e98d34cb01a31c870c758b329524_download__3_.png',
+              'https://hc-cdn.hel1.your-objectstorage.com/s/v3/9d8b606916917690138ab77fc477400c1cfd1a89_image__8_.png',
+              'https://hc-cdn.hel1.your-objectstorage.com/s/v3/9153306113d018c87d206fa57557ea842b4549c7_hetzner-logo__2___1_.png',
+              'https://hc-cdn.hel1.your-objectstorage.com/s/v3/eccd6fe6bb17a69a954054518cb053a44369ce1b_xyz-logo-color.png',
+              'https://hc-cdn.hel1.your-objectstorage.com/s/v3/9d570f29ffe22aa71800cb981104a1bd37093296_white__1_.png',
+              'https://hc-cdn.hel1.your-objectstorage.com/s/v3/cc36a0d2d1d081b1a3bc4b534fad1bfde5d39be8_logo__1_.svg',
+              'https://cdn.hack.pet/U084RT5K678/Screenshot%202025-03-05%20214400.png'
+            ].map((logo, i) => (
+              <Box
+                key={i}
+                sx={{
+                  border: '1px solid #ccc',
+                  p: 2,
+                  borderRadius: 2,
+                  background: 'white',
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center'
+                }}
+              >
+                <Image
+                  src={logo}
+                  alt={`Sponsor ${i + 1}`}
+                  sx={{ width: '80%', height: 'auto' }}
+                />
+              </Box>
+            ))}
+          </Grid>
+        </Box>
+
         <Link
           href="https://forms.hackclub.com/scrapyard-signup?event=toronto"
           target="_blank"
@@ -755,7 +1097,8 @@ export default function Toronto() {
               bottom: '0',
               left: '50%',
               transform: 'translateX(-50%) translateY(75%)'
-            }} />
+            }}
+          />
         </Heading>
         <Text
           sx={{
@@ -777,7 +1120,9 @@ export default function Toronto() {
           <span sx={{ transform: 'scale(2)' }}>・</span>{' '}
           <Link href="https://discord.gg/eMzU6vuZwj">Discord</Link>{' '}
           <span sx={{ transform: 'scale(2)' }}>・</span>{' '}
-          <Link href="https://www.instagram.com/scrapyard_toronto/">Instagram</Link>{' '}
+          <Link href="https://www.instagram.com/scrapyard_toronto/">
+            Instagram
+          </Link>{' '}
           <span sx={{ transform: 'scale(2)' }}>・</span>{' '}
           <Link href="https://hackclub.com/slack">Slack</Link>{' '}
           <span sx={{ transform: 'scale(2)' }}>・</span>{' '}
