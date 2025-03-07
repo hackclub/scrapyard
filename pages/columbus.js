@@ -14,27 +14,26 @@ const schedinprog = [
 ]
 
 const schedule = [
-  { time: '10:00 AM', event: 'DOORS OPEN' },
+  { time: '10:00 AM', event: 'DOORS OPEN/BREAKFAST' },
   { time: '10:45 PM', event: 'OPENING CEREMONY' },
-  { time: '11:30 PM', event: 'TEAM FORMATION & CHALLENGE' },
+  { time: '11:30 PM', event: 'TEAM FORMATION' },
   { time: '12:15 PM', event: 'HACKING STARTS' },
   { time: '12:15 PM', event: 'STARTER WORKSHOP*' },
   { time: '1:00 PM', event: 'LUNCH!' },
   { time: '2:00 PM', event: 'STARTER WORKSHOP CONTINUES*' },
   { time: '3:00 PM', event: 'CYBERSECURITY WORKSHOP*' },
-  { time: '4:00 PM', event: 'SURPRISE EVENT' },
-  { time: '6:00 PM', event: 'DINNER!' },
-  { time: '7:00 PM', event: 'HACKING CONTINUES' },
-  { time: '9:00 PM', event: 'END OF DAY GAME*' },
-  { time: '9:30 PM', event: 'CLOSING FOR THE DAY' },
+  { time: '4:00 PM', event: 'SURPRISE EVENT & SNACKS' },
+  { time: '6:00 PM', event: 'CLOSING FOR THE DAY' },
 ]
 
 const scheduleday2 = [
-  { time: '11:00 AM', event: 'DOORS OPEN' },
+  { time: '11:00 AM', event: 'DOORS OPEN/BREAKFAST' },
   { time: '11:30 AM', event: 'FINAL HACKING BLOCK' },
-  { time: '1:00 PM', event: 'HACKING ENDS' },
-  { time: '1:30 PM', event: 'PROJECT EXPO AND VOTING' },
+  { time: '1:00 PM', event: 'LUNCH!' },
+  { time: '2:00 PM', event: 'PROJECT DUE & HACKING ENDS' },
+  { time: '2:15 PM', event: 'PROJECT EXPO AND VOTING' },
   { time: '3:00 PM', event: 'CLOSING CEREMONY & AWARDS' },
+  { time: '4:00 PM', event: 'SCRAPYARD ENDS' },
 ]
 
 //const Map = dynamic(() => import('../components/Map'), { ssr: false })
@@ -860,7 +859,9 @@ export default function Columbus() {
               <>
                 Your laptop, chargers, and an open mind!
                 Additionally, if you plan to work on a hardware project, bring
-                the tools you'll need. 3D printers will be at the event.
+                the tools you'll need. 3D printers will be at the event and we'll
+                have some Arduinos, breadboards, and sensors to help
+                you make an epic hardware project.
               </>
             ),
             'I dont know how to code. Can I still participate?': (
@@ -1218,6 +1219,7 @@ export default function Columbus() {
                   DIAMOND SPONSORS
                 </Heading>
               </Box>
+              
               <div
                 style={{
                   display: 'flex',
@@ -1272,8 +1274,12 @@ export default function Columbus() {
                     </Text>
                   </Link>
                 ))}
+
+
               </div>
             </div>
+
+
             <div>
               <Box
                 sx={{
