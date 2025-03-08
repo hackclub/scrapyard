@@ -1,32 +1,28 @@
-'======== READ ME BEFORE EDITING ========'
-/*
-Hello! This is the template for the city pages.
-
-To create a new page, make a copy of this file in the same directory (pages) and rename it for your city.
-E.g. if your city is Tampa, rename the copy of this file to tampa.js
-
-Replace all placeholder info, indicated by "TODO" comments (you can use Ctrl+F) in this file
-You do not need to use this template exactly, feel free to customize it as much as you see fit.
-
-If you want to include additional assets, please add them under public/city/your-city-name.
-
-Make a PR and we'll review it as soon as we can!
-
-If you have any questions, send a message to the #scrapyard channel on the Hack Club Slack and we'll try to help.
-
-P.S. Feel free to delete this comment block when you're done! 
-
-Note: To test your changes locally, use `yarn install` and `yarn dev`.
-*/
-
 import Head from 'next/head'
 import { Box, Card, Grid, Heading, Image, Link, Text } from 'theme-ui'
 import dynamic from 'next/dynamic'
 import React, { useEffect, useState } from 'react'
 
 // TODO: Change this schedule to your own!
-const schedule = [
-  { time: 'determined!', event: 'To be' },
+const scheduleDay1 = [
+  { time: '9:00 AM', event: 'Doors Open + Check-in' },
+  { time: '9:30 AM', event: 'Opening Ceremony' },
+  { time: '10:05 AM', event: 'Start Working' },
+  { time: '12:00 PM', event: 'Workshop 1' },
+  { time: '1:40 PM', event: 'Workshop 2' },
+  { time: '3:00 PM', event: 'Fun Activities + Networking' },
+  { time: '5:00 PM', event: 'End of Day 1' },
+]
+
+const scheduleDay2 = [
+  { time: '10:00 AM', event: 'Start of Day 2' },
+  { time: '11:30 PM', event: 'Workshop 3' },
+  { time: '2:50 PM', event: 'Project Presentations' },
+  { time: '4:45 PM', event: 'Peer Voting' },
+  { time: '5:05 PM', event: 'Fun Activities + Networking' },
+  { time: '6:40 PM', event: 'Iftar Break' },
+  { time: '8:00 PM', event: 'Closing Ceremony' },
+
 ]
 
 const Map = dynamic(() => import('../components/Map'), { ssr: false })
@@ -164,7 +160,7 @@ export default function Casablanca() {
 
               objectFit: 'contain'
             }}
-            src="/elements/wordmark.svg"
+            src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/eb6ae7a10e95d73f10f590bbfb8bb5d7de2257a6_wordmark.svg"
             alt="Scrapyard"
           />
         </Box>
@@ -208,7 +204,7 @@ export default function Casablanca() {
               backgroundImage: "url('/elements/yellow-strip@stretch.svg')",
               backgroundRepeat: 'no-repeat',
               backgroundSize: '100% 100%',
-              width: '82%',
+              width: '84%',
               position: 'relative',
               zIndex: 30,
               top: '-15%',
@@ -533,7 +529,16 @@ export default function Casablanca() {
             boxShadow: '10px 10px 5px rgba(0, 0, 0, 0.3)'
           }}
         >
-          {schedule.map((item, i) => (
+          <Heading
+                as="h1"
+                sx={{
+                  fontSize: '1.5em',
+                  fontFamily: 'moonblossom',
+                  color: 'black',
+                  textAlign: 'center',
+                }}
+              >Day 1</Heading>
+          {scheduleDay1.map((item, i) => (
             <div
               style={{
                 display: 'flex',
@@ -559,6 +564,70 @@ export default function Casablanca() {
                   transform: 'translateY(0.75rem)',
                   borderWidth: 0,
                   borderBottomWidth: '0.35rem',
+                  borderStyle: 'dotted',
+                  flexGrow: '1',
+                  display: 'inline',
+                  height: 1
+                }}
+              ></Box>
+              <p style={{ display: 'inline', margin: 0 }}>{item.time}</p>
+            </div>
+          ))}
+        </Box>
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            width: ['90%', '70%'],
+            fontSize: '2em',
+            gap: '0.2em',
+            color: 'black',
+            my: 5,
+            marginTop: 1,
+            background: "url('/backgrounds/lined-paper.png')",
+            backgroundSize: ['contain', 'contain', 'cover!important'],
+            p: 4,
+            borderRadius: 1,
+            boxShadow: '10px 10px 5px rgba(0, 0, 0, 0.3)'
+          }}
+        >
+          <Heading
+                as="h1"
+                sx={{
+                  fontSize: '1.5em',
+                  fontFamily: 'moonblossom',
+                  color: 'black',
+                  textAlign: 'center',
+                }}
+              >Day 2</Heading>
+          {scheduleDay2.map((item, i) => (
+            <div
+              style={{
+                display: 'flex',
+                width: '100%',
+                alignItems: 'center'
+              }}
+              key={i}
+            >
+              <Heading
+                as="p"
+                sx={{
+                  display: 'inline',
+                  width: ['min-content', 'max-content'],
+                  fontSize: '2rem',
+                  fontFamily: 'p22-stanyan'
+                }}
+              >
+                {item.event}
+              </Heading>
+              <Box
+                sx={{
+                  mx: 2,
+                  transform: 'translateY(0.75rem)',
+                  borderWidth: 0,
+                  borderBottomWidth: '0.35rem',
+                  marginTop: '0.1px',
                   borderStyle: 'dotted',
                   flexGrow: '1',
                   display: 'inline',
@@ -877,7 +946,6 @@ export default function Casablanca() {
                 display: 'flex',
                 flexWrap: 'wrap',
                 gap: '20px',
-                // height: '200px',
                 transform: 'scale(0.9)',
                 justifyContent: 'center'
               }}
@@ -1135,12 +1203,7 @@ export default function Casablanca() {
             ),
             'All this, for free?': (
               <>
-                Yep! Food, swag and good vibes are all included. Plus, if you’re
-                joining us from afar,{' '}
-                <Link href="https://gas.hackclub.com/">
-                  we’ll cover the cost of gas or a bus / train ticket
-                </Link>
-                .
+                Yep! Food, workshops, swag and good vibes are all included.
               </>
             ),
             'What do I need?': (

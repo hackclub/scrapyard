@@ -50,6 +50,49 @@ const schedule = [
   { time: '10:00 PM - 10:30 PM', event: 'Awards & Final Remarks' }
 ]
 
+const sponsors = [
+  {
+    name: 'Polymaker',
+    logo: '/city/calgary/sponsors/polymaker.webp',
+    link: 'https://polymaker.com/'
+  },
+  {
+    name: 'University of Alberta',
+    logo: '/city/calgary/sponsors/uofa.png',
+    link: 'https://www.ualberta.ca/en/index.html'
+  },
+  {
+    name: 'Sunlu',
+    logo: '/city/calgary/sponsors/sunlu.jpg',
+    link: 'https://www.sunlu.com/'
+  },
+  {
+    name: 'Era',
+    logo: '/city/calgary/sponsors/era.png',
+    link: 'https://www.era.ca/'
+  },
+  {
+    name: 'Inphic',
+    logo: '/city/calgary/sponsors/inphic.webp',
+    link: 'https://www.inphic.com/'
+  },
+  {
+    name: 'Galatea Technologies',
+    logo: '/city/calgary/sponsors/galatea.png',
+    link: 'https://galateatech.com/'
+  },
+  {
+    name: 'Scrum Works',
+    logo: '/city/calgary/sponsors/scrumworks.svg',
+    link: 'https://scrum.works/'
+  },
+  {
+    name: 'Western Mechatronics',
+    logo: '/city/calgary/sponsors/mechatronics.png',
+    link: 'https://www.westernmech.ca/'
+  }
+]
+
 const Map = dynamic(() => import('../components/Map'), { ssr: false })
 
 const Flag = () => (
@@ -395,6 +438,94 @@ export default function Calgary() {
           position: 'relative'
         }}
       ></Box>
+
+      <Box
+        sx={{
+          // backgroundImage: "url(/backgrounds/confetti.png)",
+          alignItems: 'center',
+          display: 'flex',
+          flexDirection: 'column'
+        }}
+      >
+        <Box
+          sx={{
+            backgroundImage: 'url(/elements/ripped-paper-strip.svg)',
+            // backgroundSize: "cover!important",
+            // display: "block",
+            // width: "30vw",
+            height: '30vh',
+            width: ['90vw', '70vw', '46.8vw'],
+            alignItems: 'center',
+            justifyContent: 'center',
+            margin: '0vh',
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center'
+          }}
+        >
+          <Heading
+            as="h1"
+            sx={{ mx: '1vw', fontWeight: 'lighter', textAlign: 'center' }}
+          >
+            Our Amazing Sponsors
+          </Heading>
+        </Box>
+        <Grid
+          columns={[1, 2, 3]}
+          gap={4}
+          sx={{
+            maxWidth: '1200px',
+            width: '100%',
+            px: [3, 4, 5],
+            py: 4
+          }}
+        >
+          {sponsors.map(sponsor => (
+            <Link
+              key={sponsor.name}
+              href={sponsor.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{
+                textDecoration: 'none',
+                color: 'inherit',
+                transition: 'transform 0.2s',
+                ':hover': { transform: 'scale(1.05)' }
+              }}
+            >
+              <Card
+                sx={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  gap: 3,
+                  p: 3,
+                  bg: 'white',
+                  borderRadius: '8px',
+                  boxShadow: 'card'
+                }}
+              >
+                <Image
+                  src={sponsor.logo}
+                  alt={`${sponsor.name} logo`}
+                  sx={{
+                    width: '100%',
+                    height: '120px',
+                    objectFit: 'contain'
+                  }}
+                />
+                {/* <Text
+                  sx={{ fontSize: 2, fontWeight: 'bold', textAlign: 'center' }}
+                >
+                  {sponsor.name}
+                </Text> */}
+              </Card>
+            </Link>
+          ))}
+        </Grid>
+      </Box>
 
       <Box
         sx={{

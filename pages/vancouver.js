@@ -413,40 +413,152 @@ export default function Vancouver() {
 
       <Box
         sx={{
-          // backgroundImage: "url(/backgrounds/confetti.png)",
+
           alignItems: 'center',
           display: 'flex',
           flexDirection: 'column'
         }}
       >
-
-<Heading
+        <Heading
           as="h2"
           sx={{
-            fontSize: '2.25em',
+            fontSize: '3em',  
             fontFamily: 'moonblossom',
             fontWeight: 'bold',
             color: 'white',
-            textAlign: 'center'
+            textAlign: 'center',
+            mb: 3
           }}
         >
-          {/* TODO: Change [EXAMPLECITY] to your event's city */}
-          {/* TODO: Change [DURATION] to your event's duration (12hour, 24hour, 2-day) */}
-          VANCOUVER INDEPENDENT SCHOOL FOR SCIENCE AND TECHNOLOGY <br></br>
-          1490 W BROADWAY, VANCOUVER
+          VENUE
         </Heading>
 
         <Box
           sx={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: 3,
+            mb: 4
+          }}
+        >
+          <Text sx={{ fontSize: '2em' }}>📍</Text>
+          <Link 
+            href="https://maps.app.goo.gl/5dp5ZR9grLQPXBkL9"
+            target="_blank"
+            sx={{
+              textDecoration: 'none',
+              display: 'flex',
+              alignItems: 'center',
+              background: 'rgba(255, 255, 255, 0.1)',
+              padding: '10px 20px',
+              borderRadius: '8px',
+              transition: 'transform 0.2s ease',
+              ':hover': {
+                transform: 'scale(1.05)'
+              }
+            }}
+          >
+            <Text
+              sx={{
+                color: '#ADD8E6',
+                fontWeight: 'bold',
+                fontSize: '1.8em',
+                mr: 2
+              }}
+            >
+              VISST
+            </Text>
+            <Text
+              sx={{
+                color: 'white',
+                fontSize: '1.5em',
+                fontFamily: 'moonblossom'
+              }}
+            >
+              1490 W BROADWAY, VANCOUVER
+            </Text>
+          </Link>
+        </Box>
+
+        <Text
+          sx={{
+            color: 'rgba(255, 255, 255, 0.7)',
+            fontSize: '0.8em',
+            fontFamily: 'monospace',
+            textAlign: 'center',
+            mb: 4
+          }}
+        >
+           <Image
+            src="/city/vancouver/visstdoor.png"
+            alt="Front of Venue"
+            sx={{
+              width: ['90%', '90%','80%'], 
+              borderRadius: '10px',
+              border: '1px solid black',
+              boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)'
+            }}
+          />
+
+        </Text>
+
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: ['column', 'column', 'row'],
+            gap: 4,
+            mt: 4,
+            alignItems: 'center',
+            justifyContent: 'center',
+            maxWidth: '1000px',
+            mx: 'auto'
+          }}
+        >
+          <Image
+            src="/city/vancouver/visstlocal.png"
+            alt="Transit map showing route to venue"
+            sx={{
+              width: ['90%', '90%', '35%'],
+              borderRadius: '10px',
+              border: '1px solid black',
+              boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)'
+            }}
+          />
+          <Box
+            sx={{
+              background: 'rgba(255, 255, 255, 0.1)',
+              padding: '20px',
+              borderRadius: '10px',
+              border: '4px solid white',
+              width: ['90%', '90%', '45%'],
+              boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)'
+            }}
+          >
+            <Text
+              sx={{
+                color: 'white',
+                fontSize: '1.5em',
+                fontFamily: 'moonblossom',
+                textAlign: 'center',
+                lineHeight: 1.4
+              }}
+            >
+              Take the <span style={{color: '#003DA5'}}>Expo Line</span> to <span style={{color: '#003DA5'}}>Commercial-Broadway Station</span> or the <span style={{color: '#00B4E5'}}>Canada Line</span> to <span style={{color: '#00B4E5'}}>Broadway-City Hall Station</span>.
+              
+              Then, take the <span style={{color: '#CC0000'}}>UBC B-Line</span> till <span style={{color: '#CC0000'}}>Broadway @ Granville</span>!
+            </Text>
+          </Box>
+        </Box>
+
+        <Box
+          sx={{
             backgroundImage: 'url(/elements/ripped-paper-strip.svg)',
-            // backgroundSize: "cover!important",
-            // display: "block",
-            // width: "30vw",
             height: '30vh',
             width: ['90vw', '70vw', '46.8vw'],
             alignItems: 'center',
             justifyContent: 'center',
-            margin: '0vh',
+            margin: '8vh auto 0', 
             backgroundRepeat: 'no-repeat',
             backgroundSize: 'cover',
             display: 'flex',
@@ -647,6 +759,18 @@ export default function Vancouver() {
                 to come!
               </>
             ),
+            'What is a hackathon?': (
+              <>
+                A hackathon is an event where people come together to collaborate & work on tech projects. 
+                A panel of judges will pick the winning teams & hand out prizes. However, the point of the hackathon 
+                itself is to work together, learn new things & have an amazing time doing so!
+              </>
+            ),
+            'What about the food?': (
+              <>
+                The hackathon will include 2 free meals! As well as tons of snacks :)
+              </>
+            ),
             'All this, for free?': (
               <>
                 Yep! Food, swag and good vibes are all included. Plus, if you’re
@@ -800,7 +924,6 @@ export default function Vancouver() {
                 paddingY: ['15px', '0px']
               }}
             >
-              {/* TODO: Change [EXAMPLECITY] to your event's city */}
               SIGN UP FOR SCRAPYARD Vancouver
             </Heading>
           </Box>
@@ -847,6 +970,99 @@ export default function Vancouver() {
           <span sx={{ transform: 'scale(2)' }}>・</span>{' '}
           <Link href="https://hackclub.com/hackathons">Hackathons</Link>
         </Text>
+      </Box>
+      <Box
+        sx={{
+          width: '100%',
+          background: "url('/backgrounds/cutting-mat.png'), linear-gradient(#337D78, #337D78)",
+          backgroundSize: '125%', 
+          backgroundPosition: 'center',  
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          flexDirection: 'column',
+          gap: '20px',
+          p: [4, 4, 5],
+          pt: 6,
+          position: 'relative'
+        }}
+      >
+        <Box
+          sx={{
+            background: 'rgba(0, 0, 0, 0.6)',
+            padding: '20px',
+            borderRadius: '10px',
+            mb: 3
+          }}
+        >
+          <Image
+            src="/city/vancouver/bcydc_logo.png"
+            alt="BCYDC Logo"
+            sx={{ 
+              width: '200px',
+              filter: 'drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.2))'
+            }}
+          />
+        </Box>
+        <Text
+          sx={{
+            fontFamily: 'moonblossom',
+            textAlign: 'center',
+            fontSize: '1.5em',
+            maxWidth: '800px',
+            color: 'white'
+          }}
+        >
+          Scrapyard Vancouver is organized by BCYDC. We are a collective of over 300 high school students with a shared passion for computer science, software development, robotics, and technology.
+        </Text>
+        <Box
+          sx={{
+            display: 'flex',
+            gap: '20px',
+            mt: 3
+          }}
+        >
+          <Link href="https://bcydc.ca/" target="_blank">
+            <Box
+              sx={{
+                background: '#285F5A',
+                color: 'white',
+                px: 4,
+                py: 2,
+                borderRadius: '5px',
+                textAlign: 'center',
+                cursor: 'pointer',
+                transition: 'transform 0.2s ease, background 0.2s ease',
+                ':hover': {
+                  background: '#1E4A46',
+                  transform: 'scale(1.05)'
+                }
+              }}
+            >
+              Visit Our Website
+            </Box>
+          </Link>
+          <Link href="https://discord.bcydc.ca" target="_blank">
+            <Box
+              sx={{
+                background: '#285F5A',
+                color: 'white',
+                px: 4,
+                py: 2,
+                borderRadius: '5px',
+                textAlign: 'center',
+                cursor: 'pointer',
+                transition: 'transform 0.2s ease, background 0.2s ease',
+                ':hover': {
+                  background: '#1E4A46',
+                  transform: 'scale(1.05)'
+                }
+              }}
+            >
+              Join Our Discord
+            </Box>
+          </Link>
+        </Box>
       </Box>
     </Box>
   )
