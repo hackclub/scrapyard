@@ -10,10 +10,10 @@ import { transform } from 'motion'
 
 const schedule = [
   { time: '10:00 AM', event: 'DOORS OPEN/BREAKFAST' },
-  { time: '10:45 PM', event: 'OPENING CEREMONY' },
+  { time: '10:30 PM', event: 'OPENING CEREMONY' },
   { time: '11:30 PM', event: 'TEAM FORMATION' },
-  { time: '12:15 PM', event: 'STARTER WORKSHOP*' },
-  { time: '12:15 PM', event: 'HACKING STARTS' },
+  { time: '11:45 PM', event: 'STARTER WORKSHOP*' },
+  { time: '11:45 PM', event: 'HACKING STARTS' },
   { time: '1:00 PM', event: 'LUNCH!' },
   { time: '2:00 PM', event: 'STARTER WORKSHOP CONTINUES*' },
   { time: '3:00 PM', event: 'CYBERSECURITY WORKSHOP*' },
@@ -25,6 +25,7 @@ const schedule = [
 const scheduleday2 = [
   { time: '10:00 AM', event: 'DOORS OPEN/BREAKFAST' },
   { time: '10:30 AM', event: 'FINAL HACKING BLOCK' },
+  { time: '12:00 PM', event: 'PROJECT SUBMISSION HOW-TO' },
   { time: '1:00 PM', event: 'LUNCH!' },
   { time: '2:00 PM', event: 'PROJECT DUE & HACKING ENDS' },
   { time: '2:15 PM', event: 'PROJECT EXPO AND VOTING' },
@@ -253,7 +254,7 @@ export default function Columbus() {
                 fontSize: ['1.2em', '1.4em']
               }}
             >
-              PAST Foundation - 1003 Kinnear Rd.
+              PAST Foundation - 1003 Kinnear Rd
             </Heading>
           </Box>
         </Box>
@@ -1097,7 +1098,7 @@ export default function Columbus() {
                       fontSize: '1.5em',
                       fontFamily: 'moonblossom',
                       color: 'white',
-                      mt: 2
+                      mt: 2,
                     }}
                   >
                     PARTNERS
@@ -1121,7 +1122,7 @@ export default function Columbus() {
                         backgroundColor: '#d4caa3',
                         display: 'flex',
                         flexDirection: 'column',
-                        width: '200px',
+                        width: '170px',
                         alignItems: 'center',
                         padding: '20px',
                         transform: `rotate(${(Math.random() - 0.5) * 10}deg)`,
@@ -1160,6 +1161,7 @@ export default function Columbus() {
                 </div>
               </div>
             </div>
+
             <div
               style={{
                 width: '100%',
@@ -1169,7 +1171,7 @@ export default function Columbus() {
                 alignItems: 'center',
                 justifyContent: 'center',
                 gap: '13rem',
-                marginTop: '10rem'
+                marginTop: '12rem'
               }}
             >
               <div
@@ -1210,10 +1212,9 @@ export default function Columbus() {
                     as="h2"
                     sx={{
                       textAlign: 'center',
-                      fontSize: '1.5em',
+                      fontSize: '1em',
                       fontFamily: 'moonblossom',
-                      color: 'white',
-                      mt: 2
+                      color: 'white'
                     }}
                   >
                     DIAMOND SPONSORS
@@ -1223,10 +1224,11 @@ export default function Columbus() {
                   style={{
                     display: 'flex',
                     flexWrap: 'wrap',
-                    gap: '20px',
+                    gap: '50px',
                     height: '200px',
-                    transform: 'scale(0.9)',
-                    justifyContent: 'center'
+                    transform: 'scale(0.7)',
+                    justifyContent: 'center',
+                    marginTop: -15
                   }}
                 >
                   {diamondSponsors.map((sponsor, i) => (
@@ -1237,7 +1239,7 @@ export default function Columbus() {
                         backgroundColor: '#86CEFA',
                         display: 'flex',
                         flexDirection: 'column',
-                        width: '15rem',
+                        width: '12.5rem',
                         alignItems: 'center',
                         padding: '20px',
                         transform: `rotate(${(Math.random() - 0.5) * 10}deg)`,
@@ -1331,7 +1333,8 @@ export default function Columbus() {
                     gap: '20px',
                     // height: '200px',
                     transform: 'scale(0.9)',
-                    justifyContent: 'center'
+                    justifyContent: 'center',
+                    marginTop: 10
                   }}
                 >
                   {goldSponsors.map((sponsor, i) => (
@@ -1437,7 +1440,8 @@ export default function Columbus() {
                     gap: '20px',
                     // height: '200px',
                     transform: 'scale(0.8)',
-                    justifyContent: 'center'
+                    justifyContent: 'center',
+                    marginTop: 5
                   }}
                 >
                   {silverSponsors.map((sponsor, i) => (
@@ -1448,7 +1452,7 @@ export default function Columbus() {
                         backgroundColor: '#c7c7c7',
                         display: 'flex',
                         flexDirection: 'column',
-                        width: '200px',
+                        width: 170,
                         alignItems: 'center',
                         padding: '20px',
                         transform: `rotate(${(Math.random() - 0.5) * 10}deg)`,
@@ -1541,11 +1545,11 @@ export default function Columbus() {
               }}
             />
             <Heading as="h3" mb={2}>
-              Meghana M.
+              Meghana M. (LEAD)
             </Heading>
             <Text sx={{ textAlign: 'center', fontSize: '2rem' }}>
-              Hey, I'm meghana. Love building awesome things with awesome
-              people. See you at scrapyard!
+              Hey, I'm Meghana. I love building awesome things with awesome
+              people. See you at Scrapyard!
             </Text>
           </Card>
 
@@ -1570,7 +1574,7 @@ export default function Columbus() {
               }}
             />
             <Heading as="h3" mb={2}>
-              Kristen O.
+              Kristen O. (CO-ORGANIZER)
             </Heading>
             <Text sx={{ textAlign: 'center', fontSize: '1.6rem' }}>
               Hello! I’m Kristen, I enjoy making fun websites and meeting new
