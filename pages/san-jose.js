@@ -16,28 +16,22 @@ If you have any questions, send a message to the #scrapyard channel on the Hack 
 
 P.S. Feel free to delete this comment block when you're done! 
 
-Note: To test your changes locally, use `yarn install` and `yarn dev`.
+Note: To test your changes locally, use `npm install` and `npm run dev`.
 */
 
 import Head from 'next/head'
 import { Box, Card, Grid, Heading, Image, Link, Text } from 'theme-ui'
 import dynamic from 'next/dynamic'
 
-// TODO: Change this schedule to your own!
 const schedule = [
-  { time: 'The schedule is', event: 'TBA!' }
-  /*{ time: '12:00 PM', event: 'Opening ceremony' },
-  { time: '12:30 PM', event: 'Lunch' },
-  { time: '1:00 PM', event: 'Start working on your project!' },
-  { time: '2:00 PM', event: 'Workshop 1' },
-  { time: '4:00 PM', event: 'Activity 1' },
-  { time: '4:00 PM', event: 'Workshop 2' },
+  { time: '8:00 AM', event: 'Doors open' },
+  { time: '8:30 AM', event: 'Opening ceremony' },
+  { time: '9:00 AM', event: 'Start Work on Project' },
+  { time: '10:00 AM', event: 'Workshop 1' },
+  { time: '12:00 PM', event: 'Lunch' },
+  { time: '2:00 PM', event: 'Workshop 2' },
   { time: '6:00 PM', event: 'Dinner' },
-  { time: '8:00 PM', event: 'Lightning talks' },
-  { time: '12:00 AM', event: 'Midnight surprise' },
-  { time: '8:00 AM', event: 'Breakfast' },
-  { time: '10:30 AM', event: 'Demos!' },
-  { time: '12:00 PM', event: 'Closing ceremony' }*/
+  { time: '7:00 PM', event: 'Demos, Submissions, Voting, and Winners' },
 ]
 
 const Map = dynamic(() => import('../components/Map'), { ssr: false })
@@ -78,7 +72,6 @@ export default function ExampleCity() {
       }}
     >
       <Head>
-        {/* TODO: Change [EXAMPLECITY] to your event's city */}
         <title>Scrapyard San Jose</title>
       </Head>
       <Flag />
@@ -174,9 +167,8 @@ export default function ExampleCity() {
                 fontSize: ['1.2em', '1.4em']
               }}
             >
-              {/* TODO: Change [EXAMPLECITY] to your event's city */}
               San Jose - March&nbsp;15-16
-            </Heading>
+            </Heading> 
           </Box>
         </Box>
         <Box
@@ -225,7 +217,6 @@ export default function ExampleCity() {
           />
         </Box>
         <Link
-          // TODO: Change [EVENTID] to your event's ID (see https://airtable.com/appigKiF7GbVISAlg/shrK3OiCJs4BRBIRG)
           href="https://forms.hackclub.com/scrapyard-signup?event=san-jose"
           target="_blank"
         >
@@ -332,7 +323,6 @@ export default function ExampleCity() {
                 textDecoration: 'underline'
               }}
             >
-              {/* TODO: Change [EXAMPLECITY] to your event's city */}
               What's Scrapyard San Jose?
             </Heading>
             <p
@@ -340,17 +330,14 @@ export default function ExampleCity() {
                 fontSize: '1.5em'
               }}
             >
-              {/* TODO: Change [EXAMPLECITY] to your event's city */}
               Scrapyard San Jose is a hackathon for high schoolers
-              {/* TODO: Change [EXAMPLECITY] to your event's city */}
-              happening in San Jose, where you can make the stupidest things you
-              can think of! Anything, from a{' '}
+              happening in San Jose, where you can make the stupidest
+              things you can think of! Anything, from a{' '}
               <Link href="https://www.youtube.com/watch?v=PnK4gzO6S3Q">
                 lamp that flashes faster the slower you type
               </Link>
               , to those ideas that you wouldn't dare to consider to be useful,
               goes at Scrapyard. No matter your experience, Scrapyard
-              {/* TODO: Change [EXAMPLECITY] to your event's city */}
               San Jose needs you and your scrappy ideas!
             </p>
           </Box>
@@ -449,8 +436,7 @@ export default function ExampleCity() {
               textAlign: 'center'
             }}
           >
-            {/* TODO: Change [EXAMPLECITY] to your event's city */}
-            WHAT'S HAPPENING AT SCRAPYARD San Jose?
+            WHAT'S HAPPENING AT SCRAPYARD SAN JOSE?
           </Heading>
         </Box>
         <Heading
@@ -462,9 +448,8 @@ export default function ExampleCity() {
             textAlign: 'center'
           }}
         >
-          {/* TODO: Change [EXAMPLECITY] to your event's city */}
-          {/* TODO: Change [DURATION] to your event's duration (12hour, 24hour, 2-day) */}
-          Scrapyard San Jose is a 1 day event - HERE'S THE ROUGH SCHEDULE!
+          Scrapyard San Jose is a 12hour event - HERE'S THE ROUGH
+          SCHEDULE!
         </Heading>
         <Box
           sx={{
@@ -555,7 +540,6 @@ export default function ExampleCity() {
               textAlign: 'center'
             }}
           >
-            {/* TODO: Change [EXAMPLECITY] to your event's city */}
             CAN'T MAKE IT TO SAN JOSE?
           </Heading>
         </Box>
@@ -692,9 +676,7 @@ export default function ExampleCity() {
               <>
                 We’re here to help! Our parents guide will be released soon, but
                 they can reach out to us at{' '}
-                {/* TODO: Change this email to your event's email */}
-                <Link href="mailto:san-jose@scrapyard.hackclub.com">
-                  {/* TODO: Change this email to your event's email */}
+                <Link href="mailto: san-jose@scrapyard.hackclub.com">
                   san-jose@scrapyard.hackclub.com
                 </Link>{' '}
                 for questions.
@@ -702,12 +684,9 @@ export default function ExampleCity() {
             ),
             'What if I have more questions?': (
               <>
-                {/* TODO: Change [SLACKCHANNEL] to the name of your event's Slack channel */}
-                Contact us! Feel free to reach out to us in the
-                #scrapyard-san-jose channel on the Hack Club slack or email us
-                at {/* TODO: Change this email to your event's email */}
-                <Link href="mailto:san-jose@scrapyard.hackclub.com">
-                  {/* TODO: Change this email to your event's email */}
+                Contact us! Feel free to reach out to us in the #scrapyard-san-jose
+                channel on the Hack Club slack or email us at{' '}
+                <Link href="mailto: san-jose@scrapyard.hackclub.com">
                   san-jose@scrapyard.hackclub.com
                 </Link>
                 .
@@ -760,7 +739,6 @@ export default function ExampleCity() {
           })}
         </Grid>
         <Link
-          // TODO: Change [EVENTID] to your event's ID (see https://airtable.com/appigKiF7GbVISAlg/shrK3OiCJs4BRBIRG)
           href="https://forms.hackclub.com/scrapyard-signup?event=san-jose"
           target="_blank"
         >
@@ -790,7 +768,6 @@ export default function ExampleCity() {
                 paddingY: ['15px', '0px']
               }}
             >
-              {/* TODO: Change [EXAMPLECITY] to your event's city */}
               SIGN UP FOR SCRAPYARD SAN JOSE
             </Heading>
           </Box>
