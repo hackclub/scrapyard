@@ -137,7 +137,6 @@ export default function SiliconValley() {
   }, [])
 
   useEffect(() => {
-    // Move all window-related code inside useEffect
     const urlParams = new URLSearchParams(window.location.search)
     const referParam = urlParams.get('refer')
 
@@ -149,7 +148,7 @@ export default function SiliconValley() {
       setRefer(storedRefer)
     }
     console.log('refer', refer)
-  }, []) // Empty dependency array means this runs once on mount
+  }, [])
 
   return (
     <Box
@@ -172,7 +171,7 @@ export default function SiliconValley() {
         />
         <meta
           property="og:image"
-          content="https://scrapyard.hackclub.com/city/silicon-valley/preview.png"
+          content="https://cdn.hack.ngo/slackcdn/4ce44c950950c1c2650508653f18505e.png"
         />
         <meta
           property="og:url"
@@ -285,7 +284,14 @@ export default function SiliconValley() {
             </Heading>
           </Box>
         </Box>
-        <a href="https://discord.gg/32BsffvEf4" target="_blank">
+        <a
+          href={
+            refer !== null && refer !== undefined
+              ? '#signup'
+              : 'https://forms.hackclub.com/scrapyard-signup?event=siliconvalley'
+          }
+          target="_blank"
+        >
           <Box
             sx={{
               backgroundImage: "url('/elements/yellow-strip@stretch.svg')",
@@ -293,7 +299,7 @@ export default function SiliconValley() {
               backgroundSize: '100% 100%',
               position: 'absolute',
               left: ['calc(50% - 10em)'],
-              top: ['calc(50% + 200px)'],
+              top: ['calc(50% + 150px)'],
               filter: 'drop-shadow(5px 5px 5px #000)',
               transition: 'transform 0.2s',
               ':hover': {
@@ -313,7 +319,44 @@ export default function SiliconValley() {
                 padding: ['2%', '8%'],
                 fontSize: ['1.2em', '1.4em'],
                 textTransform: 'inherit!important',
-                width: '100%'
+                width: '100%',
+                color: '#337D78' // Adding the green color here
+              }}
+            >
+              Sign Up!
+            </Heading>
+          </Box>
+        </a>
+        <a href="https://discord.gg/32BsffvEf4" target="_blank">
+          <Box
+            sx={{
+              backgroundImage: "url('/elements/yellow-strip@stretch.svg')",
+              backgroundRepeat: 'no-repeat',
+              backgroundSize: '100% 100%',
+              position: 'absolute',
+              left: ['calc(50% - 10em)'],
+              top: ['calc(50% + 240px)'],
+              filter: 'drop-shadow(5px 5px 5px #000)',
+              transition: 'transform 0.2s',
+              ':hover': {
+                transform: 'scale(1.1)'
+              },
+              zIndex: 30,
+              minWidth: '20em',
+              padding: '15px',
+              paddingY: '0'
+            }}
+          >
+            <Heading
+              as="h2"
+              sx={{
+                fontFamily: 'moonblossom',
+                textAlign: 'center',
+                padding: ['2%', '8%'],
+                fontSize: ['1.2em', '1.4em'],
+                textTransform: 'inherit!important',
+                width: '100%',
+                color: '#337D78' // Adding the green color here
               }}
             >
               Join our Discord!
@@ -601,8 +644,7 @@ export default function SiliconValley() {
             textAlign: 'center'
           }}
         >
-          Scrapyard Silicon Valley is a two-day event - HERE'S THE ROUGH
-          SCHEDULE!
+          Scrapyard Silicon Valley is a 12 hour event - Here's a rough schedule!
         </Heading>
         <Box
           sx={{
@@ -1480,7 +1522,8 @@ export default function SiliconValley() {
               marginBottom: '2%',
               fontSize: ['1.8em', '2.2em'],
               textTransform: 'inherit!important',
-              paddingY: ['15px', '0px']
+              paddingY: ['15px', '0px'],
+              color: '#337D78' // Adding the green color here
             }}
           >
             Sign Up for Scrapyard Silicon Valley
