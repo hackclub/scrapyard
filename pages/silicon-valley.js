@@ -1390,10 +1390,8 @@ export default function SiliconValley() {
             ),
             'What do I need?': (
               <>
-                Your laptop, chargers, and an open mind! If you're going to an
-                overnight event, bring toiletries and sleeping bagstoo.
-                Additionally, if you plan to work on a hardware project, bring
-                the tools you'll need.
+                Your laptop, chargers, and an open mind! Additionally, if you
+                plan to work on a hardware project, bring the tools you'll need.
               </>
             ),
             'I’m not good at coding. Can I still participate?': (
@@ -1570,7 +1568,11 @@ export default function SiliconValley() {
             </Link>
           ) : (
             <>
+              <p id="loading-indicator" style={{ display: 'none' }}>
+                Please wait while we redirect you to complete your sign up...
+              </p>
               <form
+                id="refer-form"
                 onSubmit={async e => {
                   e.preventDefault()
                   const email = document.getElementById('email').value
@@ -1584,6 +1586,10 @@ export default function SiliconValley() {
                   }
 
                   try {
+                    // hide the form and show a loading indicator
+                    document.getElementById('refer-form').style.display = 'none'
+                    document.getElementById('loading-indicator').style.display =
+                      'block'
                     const response = await fetch('/api/silicon-valley/refer', {
                       method: 'POST',
                       headers: {
