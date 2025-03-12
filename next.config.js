@@ -34,7 +34,12 @@ module.exports = withMDX({
     },
     {
       source: '/san-francisco',
-      destination: 'https://scrapyardsf.com',
+      destination: '/silicon-valley',
+      permanent: true
+    },
+    {
+      source: '/san-jose',
+      destination: '/silicon-valley',
       permanent: true
     },
     {
