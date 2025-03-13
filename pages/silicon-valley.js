@@ -167,7 +167,7 @@ export default function SiliconValley() {
         <meta property="og:title" content="Scrapyard Silicon Valley" />
         <meta
           property="og:description"
-          content="Join us March 15-16 at Hacker Dojo in Mountain View, CA for a weekend of engineering! Build projects and win prizes."
+          content="Join us March 15 at Hacker Dojo in Mountain View, CA for a weekend of engineering! Build projects and win prizes."
         />
         <meta
           property="og:image"
@@ -280,7 +280,7 @@ export default function SiliconValley() {
                 fontSize: ['1.2em', '1.4em']
               }}
             >
-              March&nbsp;15-16 • Hacker Dojo • Mountain View, CA
+              March&nbsp;15 • Hacker Dojo • Mountain View, CA
             </Heading>
           </Box>
         </Box>
