@@ -484,14 +484,14 @@ export default function Toronto() {
             boxShadow: '10px 10px 5px rgba(0, 0, 0, 0.3)'
           }}
         >
-          {schedule.map((item, i) => (
+          {schedule.map((item) => (
             <div
               style={{
                 display: 'flex',
                 width: '100%',
                 alignItems: 'center'
               }}
-              key={i}
+              key={item.event + item.time}
             >
               <Heading
                 as="p"
@@ -790,7 +790,7 @@ export default function Toronto() {
           >
             Meet the Team
           </Heading>
-          <Grid columns={[1, 2, 3]} gap={4} sx={{ px: [2, 3, 4] }}>
+          <Grid columns={[1, 1, 2, 3]} gap={4} sx={{ px: [2, 3, 4] }}>
             {[
               {
                 name: 'Samyat',
@@ -854,9 +854,9 @@ export default function Toronto() {
                   ' If every porkchop were perfect, we wouldn’t have hot dogs.',
                 img: 'https://cdn.hack.pet/U084RT5K678/download%20(4).png'
               }
-            ].map((member, i) => (
+            ].map((member) => (
               <Card
-                key={i}
+                key={member.name}
                 sx={{
                   p: 3,
                   textAlign: 'center',
@@ -1008,7 +1008,7 @@ export default function Toronto() {
               </Card>
             </Box>
           </Link>
-          <Grid columns={[1, 1, 2]} gap={4} sx={{ px: [2, 3, 4] }}>
+          <Grid columns={[1, 1, 2, 3]} gap={4} sx={{ px: [2, 3, 4] }}>
             {[
               {
                 name: 'System76',
@@ -1098,7 +1098,7 @@ export default function Toronto() {
               'https://community.aws/img/AWS_logo_light.svg',
             ].map((logo, i) => (
               <Box
-                key={i}
+                key={logo}
                 sx={{
                   border: '1px solid #ccc',
                   p: 2,
