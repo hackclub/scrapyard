@@ -16,7 +16,7 @@ If you have any questions, send a message to the #scrapyard channel on the Hack 
 
 P.S. Feel free to delete this comment block when you're done! 
 
-Note: To test your changes locally, use `yarn install` and `yarn dev`.
+Note: To test your changes locally, use `npm install` and `npm run dev`.
 */
 
 import Head from 'next/head'
@@ -25,16 +25,12 @@ import dynamic from 'next/dynamic'
 
 // TODO: Change this schedule to your own!
 const schedule = [
-  { time: '08:30 AM', event: 'Doors open' },
-  { time: '09:00 AM', event: 'Opening ceremony' },
-  { time: '09:35 AM', event: 'Workshop 1' },
-  { time: '11:30 AM', event: 'Workshop 2' },
-  { time: '01:50 PM', event: 'Workshop 3' },
-  { time: '03:25 PM', event: 'Team Formation' },
-  { time: '03:40 PM', event: 'Workshop 4' },
-  { time: '05:30 PM', event: 'Make Extraordinary Projects & Win Prizes and Certificates' },
-  { time: '07:45 PM', event: 'Announcement of Winners' },
-  { time: '07:55 PM', event: 'Closing ceremony' }
+  { time: '11:00 AM', event: 'Doors open' },
+  { time: '12:00 PM', event: 'Opening ceremony' },
+  { time: '1:00 PM', event: 'Start working on your project!' },
+  { time: '2:00 PM', event: 'Workshop 1' },
+  { time: '4:00 PM', event: 'Workshop 2' },
+  { time: '5:00 PM', event: 'Closing' },
 ]
 
 const Map = dynamic(() => import('../components/Map'), { ssr: false })
@@ -76,7 +72,7 @@ export default function ExampleCity() {
     >
       <Head>
         {/* TODO: Change [EXAMPLECITY] to your event's city */}
-        <title>Scrapyard Metro Manila</title>
+        <title>Scrapyard Srinagar</title>
       </Head>
       <Flag />
       <Box
@@ -104,7 +100,7 @@ export default function ExampleCity() {
 
               objectFit: 'contain'
             }}
-            src="\city\manila\scrapyard-mla.png"
+            src="/elements/wordmark.svg"
             alt="Scrapyard"
           />
         </Box>
@@ -172,7 +168,7 @@ export default function ExampleCity() {
               }}
             >
               {/* TODO: Change [EXAMPLECITY] to your event's city */}
-              The Globe Tower, BGC - March&nbsp;15,2025
+              Srinagar - March&nbsp;16
             </Heading>
           </Box>
         </Box>
@@ -221,99 +217,9 @@ export default function ExampleCity() {
             alt="Pink paper star"
           />
         </Box>
-
-         {/*Co-Presented by*/}
-          <Box
-            sx={{
-              background: "url('/elements/ripped-paper-strip.svg')",
-              backgroundSize: 'cover',
-              display: 'block',
-
-              width: 'min(550px, calc(100vw - 30px))',
-              filter: 'drop-shadow(5px 5px 5px #000000AA)',
-              position: 'relative',
-              zIndex: 20
-            }}
-          >
-            <Heading
-              as="h1"
-              sx={{
-                fontFamily: 'marykate',
-                textAlign: 'center',
-                marginBottom: '20px'
-              }}
-            >
-              Co-Presented By:
-            </Heading>
-
-          <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-            <Image src="\city\manila\globe.png" 
-              sx={{ maxWidth: '100%', 
-                    height:'auto' }}/>
-            </Box>
-          </Box>
-
-        {/*Social Media Nav Bar*/}
-
-        <Box
-          sx={{
-            backgroundImage: "url('/elements/yellow-strip@stretch.svg')",
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: '100% 100%',
-            position: 'fixed',
-            right: ['50%'],
-            top: ['4%'],
-            filter: 'drop-shadow(5px 5px 5px #000)',
-            transition: 'transform 0.2s',
-            ':hover': {
-              transform: 'scale(1.1)'
-            },
-            zIndex: 30,
-            minWidth: '8em',
-            padding: '15px',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            gap: '30px',
-            paddingRight: '30px'
-          }}
-        >
-          <Link href="https://www.facebook.com/profile.php?id=61568321672234">
-            <Heading
-              as="h2"
-              sx={{
-                fontFamily: 'moonblossom',
-                textAlign: 'center',
-                padding: ['2%', '8%'],
-                fontSize: ['1.2em', '1.4em'],
-                textTransform: 'inherit!important',
-                width: '100%'
-              }}
-            >
-              Facebook
-            </Heading>
-          </Link>
-
-          <Link href="https://www.instagram.com/hack_club_philippines?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
-            <Heading
-              as="h2"
-              sx={{
-                fontFamily: 'moonblossom',
-                textAlign: 'center',
-                padding: ['2%', '8%'],
-                fontSize: ['1.2em', '1.4em'],
-                textTransform: 'inherit!important',
-                width: '100%'
-              }}
-            >
-              Instagram
-            </Heading>
-          </Link>
-        </Box>
-
         <Link
           // TODO: Change [SLUG] to your event's slug (lowercase, dashed version of your event name), such as san-francisco for Scrapyard San Francisco
-          href="https://forms.hackclub.com/scrapyard-signup?event=metro-manila"
+          href="https://forms.hackclub.com/scrapyard-signup?event=srinagar"
           target="_blank"
         >
           <Box
@@ -350,7 +256,6 @@ export default function ExampleCity() {
           </Box>
         </Link>
       </Box>
-
 
       <Box
         sx={{
@@ -404,7 +309,7 @@ export default function ExampleCity() {
             height: '100%'
           }}
         >
-          <Image src="\city\manila\scrapyard-grp-pic.png" />
+          <Image src="/elements/orpheus-doodle.svg" />
           <Box
             sx={{
               maxWidth: ['80vw', '60vw', '40vw'],
@@ -421,7 +326,7 @@ export default function ExampleCity() {
               }}
             >
               {/* TODO: Change [EXAMPLECITY] to your event's city */}
-              What's Scrapyard Metro Manila?
+              What's Scrapyard Srinagar?
             </Heading>
             <p
               style={{
@@ -429,9 +334,9 @@ export default function ExampleCity() {
               }}
             >
               {/* TODO: Change [EXAMPLECITY] to your event's city */}
-              Scrapyard Metro Manila is a hackathon for high schoolers
+              Scrapyard Srinagar is a hackathon for high schoolers
               {/* TODO: Change [EXAMPLECITY] to your event's city */}
-              &nbsp;happening in Metro Manila, where you can make the stupidest
+              happening in Srinagar, where you can make the stupidest
               things you can think of! Anything, from a{' '}
               <Link href="https://www.youtube.com/watch?v=PnK4gzO6S3Q">
                 lamp that flashes faster the slower you type
@@ -439,7 +344,7 @@ export default function ExampleCity() {
               , to those ideas that you wouldn't dare to consider to be useful,
               goes at Scrapyard. No matter your experience, Scrapyard
               {/* TODO: Change [EXAMPLECITY] to your event's city */}
-              Metro Manila needs you and your scrappy ideas!
+              Srinagar needs you and your scrappy ideas!
             </p>
           </Box>
         </Box>
@@ -503,146 +408,6 @@ export default function ExampleCity() {
         }}
       ></Box>
 
-      {/* Sponsors and Partners */}
-      <Box
-        sx={{
-          alignItems: 'center',
-          display: 'flex',
-          flexDirection: 'column',
-        }}
-      >
-        {/* Sponsors Section */}
-        <Box
-          sx={{
-            backgroundImage: 'url(/elements/ripped-paper-strip.svg)',
-            height: '30vh',
-            width: ['90vw', '70vw', '46.8vw'],
-            alignItems: 'center',
-            justifyContent: 'center',
-            margin: 0,
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: 'cover',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-          }}
-        >
-          <Heading
-            as="h1"
-            sx={{
-              fontFamily: 'marykate',
-              color: 'rgb(238, 130, 128)',
-              textAlign: 'center',
-              marginBottom: '20px',
-            }}
-          >
-            SPONSOR
-          </Heading>
-          <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-            <Image
-              src="\city\manila\brainsparks.png"
-              sx={{ maxWidth: '100%', height: 'auto' }}
-            />
-          </Box>
-        </Box>
-
-        {/* Partners Section */}
-        <Box
-          sx={{
-            backgroundImage: 'url(/elements/ripped-paper-strip.svg)',
-            height: '30vh',
-            width: ['90vw', '70vw', '46.8vw'],
-            alignItems: 'center',
-            justifyContent: 'center',
-            margin: 0,
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: 'cover',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-          }}
-        >
-          <Heading
-            as="h1"
-            sx={{
-              fontFamily: 'marykate',
-              color: 'rgb(143, 196, 233)',
-              textAlign: 'center',
-              marginBottom: '20px',
-            }}
-          >
-            PARTNERS
-          </Heading>
-
-          {/* Partner Logos in a Single Row */}
-          <Box
-            sx={{
-              display: 'flex',
-              flexWrap: 'wrap', 
-              justifyContent: 'space-evenly', 
-              width: '100%',
-              gap: '10px', 
-            }}
-          >
-           
-            <Box sx={{ flexBasis: '12%' }}> 
-              <Image
-                src="/city/manila/devcon-mnl.png"
-                sx={{ maxWidth: '100%', height: 'auto' }}
-              />
-            </Box>
-            <Box sx={{ flexBasis: '12%' }}>
-              <Image
-                src="/city/manila/kakacomputerx.png"
-                sx={{ maxWidth: '100%', height: 'auto' }}
-              />
-            </Box>
-            <Box sx={{ flexBasis: '12%' }}>
-              <Image
-                src="/city/manila/acadarena.png"
-                sx={{ maxWidth: '100%', height: 'auto' }}
-              />
-            </Box>
-            <Box sx={{ flexBasis: '12%' }}>
-              <Image
-                src="/city/manila/pocky.png"
-                sx={{ maxWidth: '100%', height: 'auto' }}
-              />
-            </Box>
-            <Box sx={{ flexBasis: '12%' }}>
-              <Image
-                src="/city/manila/edukasyon.png"
-                sx={{ maxWidth: '100%', height: 'auto' }}
-              />
-            </Box>
-            <Box sx={{ flexBasis: '12%' }}>
-              <Image
-                src="/city/manila/siklab.png"
-                sx={{ maxWidth: '100%', height: 'auto' }}
-              />
-            </Box>
-            <Box sx={{ flexBasis: '12%' }}>
-              <Image
-                src="/city/manila/maia.png"
-                sx={{ maxWidth: '100%', height: 'auto' }}
-              />
-            </Box>
-            <Box sx={{ flexBasis: '12%' }}>
-              <Image
-                src="/city/manila/pintig.png"
-                sx={{ maxWidth: '100%', height: 'auto' }}
-              />
-            </Box>
-          </Box>
-        </Box>
-      </Box>
-
-           
-      
-
-        
-
-    {/*Schedule*/}
       <Box
         sx={{
           // backgroundImage: "url(/backgrounds/confetti.png)",
@@ -678,7 +443,7 @@ export default function ExampleCity() {
             }}
           >
             {/* TODO: Change [EXAMPLECITY] to your event's city */}
-            WHAT'S HAPPENING AT SCRAPYARD METRO MANILA?
+            WHAT'S HAPPENING AT SCRAPYARD Srinagar?
           </Heading>
         </Box>
         <Heading
@@ -692,7 +457,7 @@ export default function ExampleCity() {
         >
           {/* TODO: Change [EXAMPLECITY] to your event's city */}
           {/* TODO: Change [DURATION] to your event's duration (12hour, 24hour, 2-day) */}
-          Scrapyard Metro Manila is a 12 hour event - HERE'S THE ROUGH
+          Scrapyard Srinagar is a 12h event - HERE'S THE ROUGH
           SCHEDULE!
         </Heading>
         <Box
@@ -758,70 +523,6 @@ export default function ExampleCity() {
           flexDirection: 'column'
         }}
       >
-
-      {/* Venue */}
-        <Box
-          sx={{
-            height: '30vh',
-            width: ['90vw', '70vw', '46.8vw'],
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            margin: '0vh',
-            padding: '0 5vw',
-          }}
-        >
-          {/* Title and Address Section */}
-          <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '50%' }}>
-            <Heading
-              as="h1"
-              sx={{
-                fontSize: '1.5em',
-                fontFamily: 'moonblossom',
-                color: 'white',
-                textAlign: 'center',
-                mb: 2,
-              }}
-            >
-              VENUE
-            </Heading>
-
-            <Link
-              href="https://www.google.com.sg/maps/place/The+Globe+Tower,+32nd+St,+Taguig,+1634+Metro+Manila/@14.5537335,121.0499927,15z/data=!4m16!1m9!3m8!1s0x3397c8f14f959c5d:0xfec7f232b0da9cd9!2sThe+Globe+Tower,+32nd+St,+Taguig,+1634+Metro+Manila!3b1!8m2!3d14.5534542!4d121.0499036!10e5!16s%2Fg%2F1hhxrfg_l!3m5!1s0x3397c8f14f959c5d:0xfec7f232b0da9cd9!8m2!3d14.5534542!4d121.0499036!16s%2Fg%2F1hhxrfg_l?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D"
-              sx={{
-                textDecoration: 'none', 
-                fontSize: '1.1em',
-                fontFamily: 'moonblossom',
-                color: 'white',
-                textAlign: 'center',
-                backgroundColor: 'rgba(255, 255, 255, 0.2)',
-                backdropFilter: 'blur(10px)',
-                padding: '5px 10px',
-                borderRadius: '5px',
-                marginBottom: 2,
-                transition: 'background-color 0.3s',
-                ':hover': {
-                  backgroundColor: 'rgba(255, 255, 255, 0.4)', 
-                },
-              }}
-            >
-              The Globe Tower Radiate, 2F, The Globe Tower, BGC
-            </Link>
-          </Box>
-
-          {/* Venue Image Section */}
-          <Box
-            sx={{
-              width: '50%',
-              height: '100%',
-              backgroundImage: 'url(/city/manila/venue.png)', 
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              borderRadius: '10px', 
-            }}
-          />
-        </Box>
-
         <Box
           sx={{
             backgroundImage: 'url(/elements/ripped-paper-strip.svg)',
@@ -840,7 +541,6 @@ export default function ExampleCity() {
             alignItems: 'center'
           }}
         >
-          
           <Heading
             as="h1"
             sx={{
@@ -850,7 +550,7 @@ export default function ExampleCity() {
             }}
           >
             {/* TODO: Change [EXAMPLECITY] to your event's city */}
-            CAN'T MAKE IT TO METRO MANILA?
+            CAN'T MAKE IT TO Srinagar?
           </Heading>
         </Box>
         <Heading
@@ -987,9 +687,9 @@ export default function ExampleCity() {
                 We’re here to help! Our parents guide will be released soon, but
                 they can reach out to us at{' '}
                 {/* TODO: Change this email to your event's email */}
-                <Link href="mailto:hackclubphilippines@gmail.com">
+                <Link href="saad-admin.srinagar@scrapyard.hackclub.com">
                   {/* TODO: Change this email to your event's email */}
-                  hackclubphilippines@gmail.com
+                  saad-admin.srinagar@scrapyard.hackclub.com
                 </Link>{' '}
                 for questions.
               </>
@@ -997,12 +697,12 @@ export default function ExampleCity() {
             'What if I have more questions?': (
               <>
                 {/* TODO: Change [SLACKCHANNEL] to the name of your event's Slack channel */}
-                Contact us! Feel free to reach out to us in the scrapyard-metro-manila
+                Contact us! Feel free to reach out to us in the [scrapyard-srinagar]
                 channel on the Hack Club slack or email us at{' '}
                 {/* TODO: Change this email to your event's email */}
-                <Link href="hackclubphilippines@gmail.com">
+                <Link href="saad-admin.srinagar@scrapyard.hackclub.com">
                   {/* TODO: Change this email to your event's email */}
-                  hackclubphilippines@gmail.com
+                  saad-admin.srinagar@scrapyard.hackclub.com
                 </Link>
                 .
               </>
@@ -1055,7 +755,7 @@ export default function ExampleCity() {
         </Grid>
         <Link
           // TODO: Change [SLUG] to your event's slug (lowercase, dashed version of your event name), such as san-francisco for Scrapyard San Francisco
-          href="https://forms.hackclub.com/scrapyard-signup?event=metro-manila"
+          href="https://forms.hackclub.com/scrapyard-signup?event=[scrapyard-srinagar]"
           target="_blank"
         >
           <Box
@@ -1085,7 +785,7 @@ export default function ExampleCity() {
               }}
             >
               {/* TODO: Change [EXAMPLECITY] to your event's city */}
-              SIGN UP FOR SCRAPYARD METRO MANILA
+              SIGN UP FOR SCRAPYARD Srinagar
             </Heading>
           </Box>
         </Link>

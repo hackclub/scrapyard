@@ -3,7 +3,19 @@ import { Box, Card, Grid, Heading, Image, Link, Text } from 'theme-ui'
 import dynamic from 'next/dynamic'
 
 // TODO: Change this schedule to your own!
-const schedule = [{ time: 'To Be Announced!', event: 'Schedule' }]
+const schedule = [
+  { time: '7:00–8:30 AM', event: 'Organizers setup' },
+  { time: '8:30–9:00 AM', event: 'Arrival & settling in' },
+  { time: '9:00–9:30 AM', event: 'Opening ceremony' },
+  { time: '9:30 AM–8:30 PM', event: 'Programming' },
+  {
+    time: '8:30–9:20 PM',
+    event:
+      "Presentation (One person stays at a project's station while others circulate to vote on their favorite project)"
+  },
+  { time: '9:20–9:30 PM', event: 'Closing ceremony' },
+  { time: '9:30–10:00 PM', event: 'Clean up & departure' }
+]
 
 const Map = dynamic(() => import('../components/Map'), { ssr: false })
 
@@ -138,7 +150,7 @@ export default function Toronto() {
                 fontSize: ['1.2em', '1.4em']
               }}
             >
-              Toronto - March&nbsp;15
+              Toronto - March&nbsp;16
             </Heading>
             <Text
               sx={{
@@ -148,8 +160,7 @@ export default function Toronto() {
                 mt: 1
               }}
             >
-              Saturday, 9am to 9pm or Saturday to Sunday 2pm to 2pm! (Yet to be
-              finalzied) ^
+              Sunday 9am to 9:30pm!
             </Text>
             <Text
               sx={{
@@ -159,7 +170,8 @@ export default function Toronto() {
                 mt: 1
               }}
             >
-              TMU's DMZ, 10 Dundas St E, 6th Floor
+              TMU, 245 Church Street, Toronto, ON M5B 2K3, Room ENG-LG14 (Enter
+              through the central entrance doors facing Church Street)
             </Text>
             <Text
               sx={{
@@ -452,7 +464,7 @@ export default function Toronto() {
             textAlign: 'center'
           }}
         >
-          Scrapyard Toronto is a 12 or 24 Hour event - HERE'S THE ROUGH
+          Scrapyard Toronto is a 12 Hour event - HERE'S THE ROUGH
           SCHEDULE!
         </Heading>
         <Box
@@ -893,7 +905,7 @@ export default function Toronto() {
             width: '90%',
             maxWidth: '1200px',
             mx: 'auto',
-            my: 6,
+            my: 2,
             py: 4,
             background: "url('/backgrounds/lined-paper.png')",
             backgroundSize: 'cover',
@@ -923,7 +935,6 @@ export default function Toronto() {
           >
             Sponsors
           </Heading>
-
           <Link href="https://www.arista.com/en/" sx={{
             textDecoration: "none",
           }}>
@@ -997,7 +1008,6 @@ export default function Toronto() {
               </Card>
             </Box>
           </Link>
-
           <Grid columns={[1, 1, 2]} gap={4} sx={{ px: [2, 3, 4] }}>
             {[
               {
@@ -1057,7 +1067,6 @@ export default function Toronto() {
               </Link>
             ))}
           </Grid>
-
           <Heading
             as="h2"
             sx={{
@@ -1085,7 +1094,8 @@ export default function Toronto() {
               'https://cdn.hack.pet/U0871L04D0V/Saily.png',
               'https://cdn.hack.pet/U0871L04D0V/Incogni.png',
               'https://cdn.hack.pet/U0871L04D0V/Warp.png',
-              'https://cdn.hack.pet/U084RT5K678/Screenshot%202025-03-05%20214400.png'
+              'https://cdn.hack.pet/U084RT5K678/Screenshot%202025-03-05%20214400.png',
+              'https://community.aws/img/AWS_logo_light.svg',
             ].map((logo, i) => (
               <Box
                 key={i}

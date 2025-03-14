@@ -4,6 +4,8 @@
 import Head from 'next/head'
 import { Box, Card, Grid, Heading, Image, Link, Text } from 'theme-ui'
 import dynamic from 'next/dynamic'
+import Sponsors from '../components/city/cambridge/sponsors'
+import { SP } from 'next/dist/shared/lib/utils'
 
 
 const schedule = [
@@ -44,7 +46,7 @@ const Flag = () => (
   </Link>
 )
 
-export default function ExampleCity() {
+export default function Cambridge() {
   return (
     <Box
       sx={{
@@ -153,7 +155,7 @@ export default function ExampleCity() {
                 fontSize: ['1.2em', '1.4em']
               }}
             >
-              Raspberry Pi, Cambridge - March&nbsp;15
+              Raspberry Pi HQ, Cambridge - March&nbsp;15
             </Heading>
           </Box>
         </Box>
@@ -240,7 +242,7 @@ export default function ExampleCity() {
           </Box>
         </Link>
       </Box>
-
+      
       <Box
         sx={{
           width: '100%',
@@ -492,7 +494,7 @@ export default function ExampleCity() {
           ))}
         </Box>
       </Box>
-
+      <Sponsors />
       <Box
         sx={{
           // backgroundImage: "url(/backgrounds/confetti.png)",
