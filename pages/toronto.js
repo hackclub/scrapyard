@@ -484,14 +484,14 @@ export default function Toronto() {
             boxShadow: '10px 10px 5px rgba(0, 0, 0, 0.3)'
           }}
         >
-          {schedule.map((item, i) => (
+          {schedule.map((item) => (
             <div
               style={{
                 display: 'flex',
                 width: '100%',
                 alignItems: 'center'
               }}
-              key={i}
+              key={item.event + item.time}
             >
               <Heading
                 as="p"
@@ -790,8 +790,16 @@ export default function Toronto() {
           >
             Meet the Team
           </Heading>
-          <Grid columns={[1, 2, 3]} gap={4} sx={{ px: [2, 3, 4] }}>
+          <Grid columns={[1, 1, 2, 3]} gap={4} sx={{ px: [2, 3, 4] }}>
             {[
+              {
+                name: 'Samyat',
+                grade: '11th Grade',
+                highSchool: 'Chinguacousy Secondary School',
+                message: 'Looking forward.',
+                quote: "Whats wrong with knowing what you know now and not knowing what you don't know until later?",
+                img: 'https://cdn.hack.pet/U0871L04D0V/Samyat.png',
+              },
               {
                 name: 'Hajrah',
                 grade: '12th Grade',
@@ -846,9 +854,9 @@ export default function Toronto() {
                   ' If every porkchop were perfect, we wouldn’t have hot dogs.',
                 img: 'https://cdn.hack.pet/U084RT5K678/download%20(4).png'
               }
-            ].map((member, i) => (
+            ].map((member) => (
               <Card
-                key={i}
+                key={member.name}
                 sx={{
                   p: 3,
                   textAlign: 'center',
@@ -867,7 +875,7 @@ export default function Toronto() {
                   sx={{
                     width: '150px',
                     height: '150px',
-                    objectFit: 'cover',
+                    objectFit: member.name == "Samyat" ? "fill" : "cover",
                     objectPosition: 'center',
                     borderRadius: '50%',
                     mb: 3,
@@ -927,84 +935,138 @@ export default function Toronto() {
           >
             Sponsors
           </Heading>
-          <Grid
-            gap={4}
-            sx={{
-              px: [2, 3, 4],
-              // On small screens show a single column; on larger screens use 2 columns (2fr/1fr)
-              gridTemplateColumns: ['1fr', '2fr 1fr']
-            }}
-          >
-            <Card
-              sx={{
-                p: 4,
-                textAlign: 'center',
-                border: '2px solid #000',
-                background: 'white',
-                boxShadow: '0 3px 8px rgba(0,0,0,0.1)',
-                transition: 'transform 0.2s ease',
-                ':hover': {
-                  transform: 'translateY(-3px)'
-                }
-              }}
-            >
-              <Image
-                src="https://cdn.hack.pet/U084RT5K678/image%20(4).png"
-                alt="Arista Networks"
+          <Link href="https://www.arista.com/en/" sx={{
+            textDecoration: "none",
+          }}>
+            <Box sx={{ mb: 4, px: [2, 3, 4] }}>
+              <Card
                 sx={{
-                  width: '90%',
-                  height: 'auto',
-                  objectFit: 'contain',
-                  mx: 'auto',
-                  mb: 3
+                  p: 4,
+                  textAlign: 'center',
+                  border: '2px solid #000',
+                  background: 'white',
+                  boxShadow: '0 4px 10px rgba(0,0,0,0.12)',
+                  maxWidth: '900px',
+                  mx: 'auto'
                 }}
-              />
-              <Heading as="h3" sx={{ fontSize: '1.7em', mb: 2 }}>
-                Arista Networks
-              </Heading>
-              <Text sx={{ fontSize: '1.1em' }}>
-                Arista Networks is an industry leader in data-driven, client to
-                cloud networking for large data center/AI, campus and routing
-                environments. Their award-winning platforms deliver
-                availability, agility, automation, analytics and security
-                through an advanced network operating stack.
-              </Text>
-            </Card>
-            <Card
-              sx={{
-                p: 3,
-                textAlign: 'center',
-                border: '2px solid #000',
-                background: 'white',
-                boxShadow: '0 3px 8px rgba(0,0,0,0.1)',
-                transition: 'transform 0.2s ease',
-                ':hover': {
-                  transform: 'translateY(-3px)'
-                }
-              }}
-            >
-              <Image
-                src="https://cdn.hack.pet/U084RT5K678/system76-logo-open-source-tagliner4_1730474034__00841.webp"
-                alt="System76"
+              >
+                <Image
+                  src="https://cdn.hack.pet/U084RT5K678/image%20(4).png"
+                  alt="Arista Networks"
+                  sx={{
+                    maxHeight: '160px',
+                    objectFit: 'contain',
+                    mx: 'auto',
+                    mb: 3
+                  }}
+                />
+                <Heading as="h3" sx={{ fontSize: '1.7em', mb: 2 }}>
+                  Arista Networks
+                </Heading>
+                <Text sx={{ fontSize: '1.1em' }}>
+                  Arista Networks is an industry leader in data-driven, client to
+                  cloud networking for large data center/AI, campus and routing
+                  environments. Arista's award-winning platforms deliver
+                  availability, agility, automation, analytics and security
+                  through an advanced network operating stack.
+                </Text>
+              </Card>
+            </Box>
+          </Link>
+          
+          <Link href="https://www.techcomnet.com/" sx={{
+            textDecoration: "none",
+          }}>
+            <Box sx={{ mb: 4, px: [2, 3, 4] }}>
+              <Card
                 sx={{
-                  width: '70%',
-                  maxHeight: '140px',
-                  objectFit: 'contain',
-                  mx: 'auto',
-                  mb: 3
+                  p: 4,
+                  textAlign: 'center',
+                  border: '2px solid #000',
+                  background: 'white',
+                  boxShadow: '0 4px 10px rgba(0,0,0,0.12)',
+                  maxWidth: '800px',
+                  mx: 'auto'
                 }}
-              />
-              <Heading as="h3" sx={{ fontSize: '1.5em', mb: 2 }}>
-                System76
-              </Heading>
-              <Text sx={{ fontSize: '1em' }}>
-                System76 builds powerful open source computers, keyboards, and
-                software, empowering creators, makers, and builders to unleash
-                their potential.
-              </Text>
-            </Card>
+              >
+                  <Image
+                    src="https://cdn.hack.pet/U0871L04D0V/Techcom-Logo-1.png"
+                    alt="Techcom"
+                    sx={{
+                      maxHeight: '70px',
+                      objectFit: 'contain',
+                      mx: 'auto',
+                      mb: 3
+                    }}
+                  />
+                <Heading as="h3" sx={{ fontSize: '1.7em', mb: 2 }}>
+                  Techcom
+                </Heading>
+                <Text sx={{ fontSize: '1.1em' }}>
+                  Founded in 1994 and headquartered in Vaughan, Ontario Canada, TECHCOM™ continues to focus on building innovative data agnostic technology platforms containing functionality and capability that spans all stages of the customer account life cycle allowing organizations to effectively communicate, interact and collaborate across and outside the enterprise – enabling geographically dispersed business operations to efficiently operate while also having embedded capability that extends the platform to external partner suppliers who operate on the TECHCOM™ technology in real-time.
+                </Text>
+              </Card>
+            </Box>
+          </Link>
+          <Grid columns={[1, 1, 2, 3]} gap={4} sx={{ px: [2, 3, 4] }}>
+            {[
+              {
+                name: 'System76',
+                description:
+                  'System76 builds powerful open source computers, keyboards, and software, empowering creators, makers, and builders to unleash their potential.',
+                logo: 'https://cdn.hack.pet/U084RT5K678/system76-logo-open-source-tagliner4_1730474034__00841.webp',
+                link: 'https://system76.com/',
+              },
+              {
+                name: 'Fernandes orthodontics',
+                description: "At Fernandes Orthodontics, we believe every smile is unique and deserves personalized care. Our team is dedicated to transforming your smile with the latest in orthodontic technology and techniques.",
+                logo: 'https://cdn.hack.pet/U0871L04D0V/fernandesorthodontics.png',
+                link: 'https://www.fernandesorthodontics.com/',
+              },
+              {
+                name: 'DMZ',
+                description:
+                  'DMZ is a world-leading incubator for tech startups around the world. We help startups build great businesses by connecting them with customers, capital, experts and a community of entrepreneurs and influencers.',
+                logo: 'https://hc-cdn.hel1.your-objectstorage.com/s/v3/45a4c6b4f75031759d5c822e37630667dbb7db26_svgviewer-output__1_.svg',
+                link: 'https://dmz.torontomu.ca/',
+              },
+            ].map((sponsor, i) => (
+              <Link href={sponsor.link} target="_blank" sx={{
+                  textDecoration: "none",
+              }}>
+                <Card
+                  key={i}
+                  sx={{
+                    p: 3,
+                    textAlign: 'center',
+                    border: '2px solid #000',
+                    background: 'white',
+                    boxShadow: '0 3px 8px rgba(0,0,0,0.1)',
+                    transition: 'transform 0.2s ease',
+                    ':hover': {
+                      transform: 'translateY(-3px)'
+                    }
+                  }}
+                >
+                  <Image
+                    src={sponsor.logo}
+                    alt={sponsor.name}
+                    sx={{
+                      width: '80%',
+                      height: '140px',
+                      objectFit: 'contain',
+                      mx: 'auto',
+                      mb: 3
+                    }}
+                  />
+                  <Heading as="h3" sx={{ fontSize: '1.5em', mb: 2 }}>
+                    {sponsor.name}
+                  </Heading>
+                  <Text sx={{ fontSize: '1.1em' }}>{sponsor.description}</Text>
+                </Card>
+              </Link>
+            ))}
           </Grid>
-
           <Heading
             as="h2"
             sx={{
@@ -1028,11 +1090,15 @@ export default function Toronto() {
               'https://hc-cdn.hel1.your-objectstorage.com/s/v3/eccd6fe6bb17a69a954054518cb053a44369ce1b_xyz-logo-color.png',
               'https://hc-cdn.hel1.your-objectstorage.com/s/v3/9d570f29ffe22aa71800cb981104a1bd37093296_white__1_.png',
               'https://hc-cdn.hel1.your-objectstorage.com/s/v3/cc36a0d2d1d081b1a3bc4b534fad1bfde5d39be8_logo__1_.svg',
+              'https://cdn.hack.pet/U0871L04D0V/NordVPN_Bronze.png',
+              'https://cdn.hack.pet/U0871L04D0V/Saily.png',
+              'https://cdn.hack.pet/U0871L04D0V/Incogni.png',
+              'https://cdn.hack.pet/U0871L04D0V/Warp.png',
               'https://cdn.hack.pet/U084RT5K678/Screenshot%202025-03-05%20214400.png',
-              'https://community.aws/img/AWS_logo_light.svg'
+              'https://community.aws/img/AWS_logo_light.svg',
             ].map((logo, i) => (
               <Box
-                key={i}
+                key={logo}
                 sx={{
                   border: '1px solid #ccc',
                   p: 2,
