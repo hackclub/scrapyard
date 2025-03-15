@@ -49,7 +49,7 @@ const ourTeam = [
     email: 'dhruv.d.tiwari@gmail.com',
     linkedInUsername: '@dhruv-tiwari-dev',
     linkedInProfile: 'https://www.linkedin.com/in/dhruv-tiwari-dev/',
-    designation: 'Operations & Marketing',
+    designation: 'Technical & Marketing',
     imgSrc: '/city/bengaluru/organizers/dhruv.png'
   },
   // {
@@ -70,15 +70,15 @@ const ourTeam = [
   //   designation: 'Sponsors',
   //   imgSrc: ''
   // },
-  // {
-  //   name: 'Adarsh',
-  //   email: 'hvkatta@gmail.com',
-  //   linkedInUsername: '@hima-vamsi-katta',
-  //   linkedInProfile:
-  //     'https://files.slack.com/files-tmb/T0266FRGM-F08HNL2EN5U-3d1893d4f8/newpfp_720.jpg',
-  //   designation: 'Outreach',
-  //   imgSrc: ''
-  // }
+  {
+    name: 'Adarsh',
+    email: 'adarshvijaya22@gmail.com',
+    linkedInUsername: 'N/A',
+    linkedInProfile: '#',
+    designation: 'Outreach',
+    imgSrc:
+      '/city/bengaluru/organizers/adarsh.jpg'
+  }
 ]
 
 const Map = dynamic(() => import('../components/Map'), { ssr: false })
