@@ -52,33 +52,33 @@ const ourTeam = [
     designation: 'Operations & Marketing',
     imgSrc: '/city/bengaluru/organizers/dhruv.png'
   },
-  {
-    name: 'Aahem',
-    email: 'hvkatta@gmail.com',
-    linkedInUsername: '@hima-vamsi-katta',
-    linkedInProfile:
-      'https://files.slack.com/files-tmb/T0266FRGM-F08HNL2EN5U-3d1893d4f8/newpfp_720.jpg',
-    designation: 'Designs & ID cards',
-    imgSrc: ''
-  },
-  {
-    name: 'Arnav',
-    email: 'hvkatta@gmail.com',
-    linkedInUsername: '@hima-vamsi-katta',
-    linkedInProfile:
-      'https://files.slack.com/files-tmb/T0266FRGM-F08HNL2EN5U-3d1893d4f8/newpfp_720.jpg',
-    designation: 'Sponsors',
-    imgSrc: ''
-  },
-  {
-    name: 'Adarsh',
-    email: 'hvkatta@gmail.com',
-    linkedInUsername: '@hima-vamsi-katta',
-    linkedInProfile:
-      'https://files.slack.com/files-tmb/T0266FRGM-F08HNL2EN5U-3d1893d4f8/newpfp_720.jpg',
-    designation: 'Outreach',
-    imgSrc: ''
-  }
+  // {
+  //   name: 'Aahem',
+  //   email: 'hvkatta@gmail.com',
+  //   linkedInUsername: '@hima-vamsi-katta',
+  //   linkedInProfile:
+  //     'https://files.slack.com/files-tmb/T0266FRGM-F08HNL2EN5U-3d1893d4f8/newpfp_720.jpg',
+  //   designation: 'Designs & ID cards',
+  //   imgSrc: ''
+  // },
+  // {
+  //   name: 'Arnav',
+  //   email: 'hvkatta@gmail.com',
+  //   linkedInUsername: '@hima-vamsi-katta',
+  //   linkedInProfile:
+  //     'https://files.slack.com/files-tmb/T0266FRGM-F08HNL2EN5U-3d1893d4f8/newpfp_720.jpg',
+  //   designation: 'Sponsors',
+  //   imgSrc: ''
+  // },
+  // {
+  //   name: 'Adarsh',
+  //   email: 'hvkatta@gmail.com',
+  //   linkedInUsername: '@hima-vamsi-katta',
+  //   linkedInProfile:
+  //     'https://files.slack.com/files-tmb/T0266FRGM-F08HNL2EN5U-3d1893d4f8/newpfp_720.jpg',
+  //   designation: 'Outreach',
+  //   imgSrc: ''
+  // }
 ]
 
 const Map = dynamic(() => import('../components/Map'), { ssr: false })
