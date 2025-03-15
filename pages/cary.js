@@ -1,27 +1,40 @@
 import Head from 'next/head'
 import { Box, Card, Grid, Heading, Image, Link, Text } from 'theme-ui'
-import dynamic from 'next/dynamic'
+import { useState, useEffect } from "react";
+import dynamic from 'next/dynamic';
+import Slider from 'react-infinite-logo-slider'
 
 // TODO: Change this schedule to your own!
-const schedule = [
-  { time: '8:00 AM', event: 'Check-in & Breakfast' },
-  { time: '9:00 AM', event: 'Opening Speech by Professor #1' },
-  { time: '9:30 AM', event: 'Opening Ceremony' },
-  { time: '10:00 AM', event: 'Scrapyard Cary Begins!' },
-  { time: '12:30 PM', event: 'Workshop #1' },
-  { time: '1:00 PM', event: 'Lunch' },
-  { time: '2:00 PM', event: 'Hacking Continues!' },
-  { time: '5:00 PM', event: 'Workshop #2' },
-  { time: '6:00 PM', event: 'Hacking + Mentorship Rounds' },
-  { time: '7:00 PM', event: 'Day 1 Ends-Dinner + Game Night' },
-  { time: '8:00 AM', event: 'Day 2 Begins-Breakfast & Morning Enegizer' },
-  { time: '9:00 AM', event: 'Final Hacking Sprints!' },
-  { time: '1:00 PM', event: 'Lunch' },
-  { time: '4:30 PM', event: 'Project Submission & Pitches' },
-  { time: '5:30 PM', event: 'Judging & Deliberation' },
-  { time: '6:00 PM', event: 'Closing Speech by Professor #2' },
-  { time: '6:30 PM', event: 'Closing Ceremony & Awards' },
-  { time: '7:15 PM', event: 'Dinner + Cool Down' },
+const schedule1 = [
+  { time: '', event: 'DAY 1 SCHEDULE!!!' },
+  { time: '8:00 AM', event: 'Arrival' },
+  { time: '8:35 AM', event: 'Organizer Speech' },
+  { time: '9:00 AM', event: 'Opening Speech by Professor Alexandros Kapravelos' },
+  { time: '9:45 AM', event: 'Breakfast' },
+  { time: '10:15 AM', event: 'Workshop 1: AI/ML with Christopher Hazard' },
+  { time: '11:30 AM', event: 'Ideation + Snacks' },
+  { time: '12:00 PM', event: 'Workshop 2: Software Development with SoftPro' },
+  { time: '1:10 PM', event: 'Ice Breaker' },
+  { time: '1:30 PM', event: 'Workshop 3: Introduction to Mechanica with Ecovate' },
+  { time: '2:30 PM', event: 'Lunch: Costco Pizza' },
+  { time: '3:15 PM', event: 'Hacking begins!' },
+  { time: '5:15 PM', event: 'Snacks + Games' },
+  { time: '6:00 PM', event: 'Hacking #2' },
+  { time: '8:00 PM', event: 'Day 1 Ends' },
+]
+
+const schedule2 = [
+  { time: '', event: 'DAY 2 SCHEDULE!!!' },
+  { time: '8:00 AM', event: 'Arrival + Day 2 begins!' },
+  { time: '9:00 AM', event: 'Hacking begins!' },
+  { time: '10:30 AM', event: 'Breakfast' },
+  { time: '1:30 PM', event: 'Lunch: Taco Bell' },
+  { time: '2:20 PM', event: 'Hacking #2' },
+  { time: '4:20 PM', event: 'Snacks' },
+  { time: '5:00 PM', event: 'Project Presentations' },
+  { time: '6:15 PM', event: 'Ending Speech by Professor Timothy Menzies' },
+  { time: '7:00 PM', event: 'Ending Remarks + Award Distribution' },
+  { time: '8:00 PM', event: 'Day 2 Ends' }
 ]
 
 const Map = dynamic(() => import('../components/Map'), { ssr: false })
@@ -47,6 +60,139 @@ const Flag = () => (
     />
   </Link>
 )
+
+const SponsorshipCarousel = () => {
+  return (
+    <Slider
+      width="400px" 
+      duration={20}
+      pauseOnHover={true}
+      blurBorders={false}
+      blurBorderColor={'#fff'}
+    > 
+  <Slider.Slide>
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '300px', height: '150px' }}>
+      <img src="city/cary/scrapyard-cary_howso-sponsor.png" alt="any" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+    </div>
+  </Slider.Slide>
+  
+  <Slider.Slide>
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '300px', height: '150px' }}>
+      <img src="city/cary/bigpixel logo.png" alt="any2" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+    </div>
+  </Slider.Slide>
+  
+  <Slider.Slide>
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '300px', height: '150px' }}>
+      <img src="city/cary/SoftPro_nosubtext.png" alt="any3" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+    </div>
+  </Slider.Slide>
+  <Slider.Slide>
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '300px', height: '150px' }}>
+      <img src="city/cary/scrapyard_cary-blockchain.png" alt="any3" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+    </div>
+  </Slider.Slide>
+  <Slider.Slide>
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '300px', height: '150px' }}>
+      <img src="city/cary/scrapyard_cary-petronella.png" alt="any3" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+    </div>
+  </Slider.Slide>
+</Slider>
+  )
+}      
+
+const SponsorshipCarousel1 = () => {
+  return (
+    <Slider
+      width="400px" 
+      duration={10}
+      pauseOnHover={true}
+      blurBorders={false}
+      blurBorderColor={'#fff'}
+    > 
+  <Slider.Slide>
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '300px', height: '150px' }}>
+      <img src="city/cary/scrapyard_cary-spiralgraphics.png" alt="any" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+    </div>
+  </Slider.Slide>
+  
+  <Slider.Slide>
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '300px', height: '150px' }}>
+      <img src="city/cary/scrapyard_cary-ecovate.png" alt="any2" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+    </div>
+  </Slider.Slide>
+</Slider>
+  )
+}
+
+const MentorCards = () => {
+  const mentors = [
+    { name: "Professor Alexandros Kapravelos", img: "city/cary/scrapyard_cary-professor_alex.jpg", desc: "CS Associate Professor at NCSU" },
+    { name: "Professor Timothy Menzies", img: "city/cary/scrapyard_cary-professor_tim.jpg", desc: "CS Professor at NCSU" },
+    { name: "Beverly Tan", img: "city/cary/scrapyard_cary-beverly.jpeg", desc: "Co-founder of Ecovate 3D" },
+    { name: "Doctor Christopher Hazard", img: "city/cary/scrapyard_cary-doctor_hazard.jpeg", desc: "CTO at Howso" },
+    { name: "Farzeen Chaudhry", img: "city/cary/scrapyard_cary-blank_profile.jpg", desc: "Software Development Manager at SoftPro" },
+  ];
+
+  return (
+    <div 
+      style={{ 
+        display: "flex", 
+        flexWrap: "wrap", 
+        justifyContent: "center", 
+        gap: "30px", 
+        padding: "40px",
+        maxWidth: "100%"
+      }}
+    >
+      {mentors.map((mentor, index) => (
+        <div 
+          key={index} 
+          style={{
+            background: "white",
+            boxShadow: "0 6px 12px rgba(0, 0, 0, 0.15)",
+            borderRadius: "14px",
+            padding: "25px",
+            textAlign: "center",
+            transition: "transform 0.3s ease, box-shadow 0.3s ease",
+            backgroundImage: "url('/images/paper-texture.png')",
+            backgroundSize: "cover",
+            width: "250px", // Adjusted for better fit
+            border: "1px solid #ddd",
+            flex: "1 1 calc(20% - 30px)", // Ensures 5 in a row on larger screens
+            maxWidth: "250px" // Ensures they don’t grow too large
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.transform = "scale(1.08)";
+            e.currentTarget.style.boxShadow = "0 10px 20px rgba(0, 0, 0, 0.25)";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = "scale(1)";
+            e.currentTarget.style.boxShadow = "0 6px 12px rgba(0, 0, 0, 0.15)";
+          }}
+        >
+          <img 
+            src={mentor.img} 
+            alt={mentor.name} 
+            style={{
+              width: "110px", // Slightly smaller for balance
+              height: "110px",
+              borderRadius: "50%",
+              objectFit: "cover",
+              marginBottom: "14px",
+              border: "4px solid #ccc",
+              transition: "transform 0.3s ease"
+            }}
+            onMouseEnter={(e) => e.currentTarget.style.transform = "scale(1.15)"}
+            onMouseLeave={(e) => e.currentTarget.style.transform = "scale(1)"}
+          />
+          <h3 style={{ fontSize: "20px", fontWeight: "bold" }}>{mentor.name}</h3>
+          <p style={{ fontSize: "14px", color: "#555" }}>{mentor.desc}</p>
+        </div>
+      ))}
+    </div>
+  );
+};
 
 export default function ExampleCity() {
   return (
@@ -157,7 +303,7 @@ export default function ExampleCity() {
                 fontSize: ['1.2em', '1.4em']
               }}
             >
-              Cary - March&nbsp;15-16
+              Cary Chamber of Commerce, March&nbsp;15-16
             </Heading>
           </Box>
         </Box>
@@ -244,7 +390,6 @@ export default function ExampleCity() {
           </Box>
         </Link>
       </Box>
-
       <Box
         sx={{
           width: '100%',
@@ -458,12 +603,13 @@ export default function ExampleCity() {
             boxShadow: '10px 10px 5px rgba(0, 0, 0, 0.3)'
           }}
         >
-          {schedule.map((item, i) => (
+          {[...schedule1, ...schedule2].map((item, i) => (
             <div
               style={{
                 display: 'flex',
                 width: '100%',
-                alignItems: 'center'
+                alignItems: 'center',
+                marginBottom: i === schedule1.length - 1 ? '2rem' : '0', // Adds margin after the last item of schedule1
               }}
               key={i}
             >
@@ -472,8 +618,9 @@ export default function ExampleCity() {
                 sx={{
                   display: 'inline',
                   width: ['min-content', 'max-content'],
-                  fontSize: '2rem',
-                  fontFamily: 'p22-stanyan'
+                  fontSize: i === 0 || i === schedule1.length ? '2.5rem' : '2rem', // Makes the first item bigger
+                  fontWeight: i === 0 || i === schedule1.length ? 'bold' : 'normal', // Makes the first item bold
+                  fontFamily: 'p22-stanyan',
                 }}
               >
                 {item.event}
@@ -487,7 +634,7 @@ export default function ExampleCity() {
                   borderStyle: 'dotted',
                   flexGrow: '1',
                   display: 'inline',
-                  height: 1
+                  height: 1,
                 }}
               ></Box>
               <p style={{ display: 'inline', margin: 0 }}>{item.time}</p>
@@ -495,7 +642,6 @@ export default function ExampleCity() {
           ))}
         </Box>
       </Box>
-
       <Box
         sx={{
           // backgroundImage: "url(/backgrounds/confetti.png)",
@@ -504,6 +650,96 @@ export default function ExampleCity() {
           flexDirection: 'column'
         }}
       >
+      <Box
+          sx={{
+            backgroundImage: 'url(/elements/ripped-paper-strip.svg)',
+            // backgroundSize: "cover!important",
+            // display: "block",
+            // width: "30vw",
+            height: '30vh',
+            width: ['90vw', '70vw', '46.8vw'],
+            alignItems: 'center',
+            justifyContent: 'center',
+            margin: '0vh',
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center'
+          }}
+        >
+          <Heading
+            as="h1"
+            sx={{
+              mx: '1vw',
+              fontWeight: 'lighter',
+              textAlign: 'center'
+            }}
+          >
+            OUR SPONSORS
+          </Heading>
+        </Box>
+      <SponsorshipCarousel />
+      <Box
+          sx={{
+            backgroundImage: 'url(/elements/ripped-paper-strip.svg)',
+            // backgroundSize: "cover!important",
+            // display: "block",
+            // width: "30vw",
+            height: '30vh',
+            width: ['90vw', '70vw', '46.8vw'],
+            alignItems: 'center',
+            justifyContent: 'center',
+            margin: '0vh',
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center'
+          }}
+        >
+          <Heading
+            as="h1"
+            sx={{
+              mx: '1vw',
+              fontWeight: 'lighter',
+              textAlign: 'center'
+            }}
+          >
+            IN-KIND SPONSORS
+          </Heading>
+        </Box>
+        <SponsorshipCarousel1 />
+      <Box
+          sx={{
+            backgroundImage: 'url(/elements/ripped-paper-strip.svg)',
+            // backgroundSize: "cover!important",
+            // display: "block",
+            // width: "30vw",
+            height: '30vh',
+            width: ['90vw', '70vw', '46.8vw'],
+            alignItems: 'center',
+            justifyContent: 'center',
+            margin: '0vh',
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center'
+          }}
+        >
+          <Heading
+            as="h1"
+            sx={{
+              mx: '1vw',
+              fontWeight: 'lighter',
+              textAlign: 'center'
+            }}
+          >
+            MEET OUR MENTORS
+          </Heading>
+        </Box>
+        <MentorCards/>
         <Box
           sx={{
             backgroundImage: 'url(/elements/ripped-paper-strip.svg)',
@@ -559,7 +795,7 @@ export default function ExampleCity() {
           <Map />
         </Box>
       </Box>
-
+          
       <Box
         sx={{
           width: '100%',

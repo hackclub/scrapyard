@@ -25,17 +25,17 @@ import dynamic from 'next/dynamic'
 
 // TODO: Change this schedule to your own!
 const schedule = [
-  { time: '10:00 AM', event: 'Doors open' },
-  { time: '11:00 AM', event: 'Opening ceremony' },
+  { time: '9:00 AM', event: 'Doors open' },
+  { time: '10:00 AM', event: 'Opening ceremony' },
   { time: '12:30 PM', event: 'Lunch' },
   { time: '1:00 PM', event: 'Start working on your project!' },
   { time: '2:00 PM', event: 'Workshop 1' },
-  { time: '4:00 PM', event: 'Activity 1' },
+  { time: '3:00 PM', event: 'Activity 1' },
   { time: '4:00 PM', event: 'Workshop 2' },
   { time: '6:00 PM', event: 'Dinner' },
-  { time: '8:00 PM', event: 'Lightning talks' },
-  { time: '10:00 PM', event: 'Demos!' },
-  { time: '11:00 PM', event: 'Closing ceremony' }
+  { time: '7:00 PM', event: 'Lightning talks' },
+  { time: '8:00 PM', event: 'Demos!' },
+  { time: '9:00 PM', event: 'Closing ceremony' }
 ]
 
 const Map = dynamic(() => import('../components/Map'), { ssr: false })
@@ -179,20 +179,30 @@ export default function Victoria() {
           <Heading
               as="h3"
               sx={{
+                display: 'flex',
+                flexFlow: 'column',
                 fontFamily: 'p22-stanyan',
                 mx: '8%',
                 p: 0,
                 wordBreak: 'keep-all',
                 whiteSpace: 'nowrap',
-                width: 'max-content',
+                width: '100%',
                 fontSize: ['1.2em', '1.4em'],
                 color: 'white',
                 display: 'flex',
                 alignItems: 'center',
+                justifyContent: 'center',
                 gap: '20px'
               }}
             >
-              Powered by Viatech <img src="/city/victoria/viatech_logo.png" alt="Viatech Logo" width="85px" style={{ borderRadius: "10px" }}/>
+              Powered by VIATEC and Tiny
+              <div style={{display: 'flex', gap: "25px", flexWrap: "wrap", justifyContent: 'center'}}>
+                <img src="/city/victoria/viatech_logo.png" alt="VIATEC Logo" width="85px" style={{ borderRadius: "10px", height: "max-content" }}/>
+                <img src="/city/victoria/tiny_logo.png" alt="Tiny Logo" width="85px" style={{ borderRadius: "10px", height: "max-content" }}/>
+                <img src="/city/victoria/tenfold_logo.webp" alt="Tenfold logo" width="85px" style={{ borderRadius: "10px", height: "max-content" }}/>
+                <img src="/city/victoria/shreena_tutoring_logo.png" alt="Shreena tutoring logo" width="85px" style={{ borderRadius: "10px", height: "max-content" }}/>
+                <img src="/city/victoria/supabase_logo.png" alt="Supabase logo" width="85px" style={{ borderRadius: "10px", height: "max-content" }}/>
+              </div>
             </Heading>
         </Box>
         <Box

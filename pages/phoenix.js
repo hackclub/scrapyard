@@ -4,6 +4,14 @@ import dynamic from 'next/dynamic'
 
 const schedule = [{ time: 'TBD', event: 'Schedule to be determined' }]
 
+const sponsors = [
+  {
+    name: 'Hack Club',
+    link: 'https://hackclub.com/',
+    image: 'https://assets.hackclub.com/icon-rounded.svg'
+  }
+]
+
 const Map = dynamic(() => import('../components/Map'), { ssr: false })
 
 const Flag = () => (
@@ -371,6 +379,96 @@ export default function ExampleCity() {
           position: 'relative'
         }}
       ></Box>
+
+      {/* Sponsor Section */}
+      <Box
+        sx={{
+          width: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          mt: 4,
+          mb: 5
+        }}
+      >
+        <Box
+          sx={{
+            background: "url('/elements/stapled-paper.png')",
+            backgroundSize: 'contain',
+            backgroundRepeat: 'no-repeat',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            height: '100px',
+            width: '400px'
+          }}
+        >
+          <Heading
+            as="h2"
+            sx={{
+              textAlign: 'center',
+              fontSize: '1.5em',
+              fontFamily: 'moonblossom'
+            }}
+          >
+            SPONSORS
+          </Heading>
+        </Box>
+        <div
+          style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: '20px',
+            transform: 'scale(0.9)',
+            justifyContent: 'center'
+          }}
+        >
+          {sponsors.map((sponsor, i) => (
+            <Link
+              key={i}
+              href={sponsor.link || '#'}
+              target="_blank"
+              sx={{
+                backgroundColor: '#69c5f1',
+                display: 'flex',
+                flexDirection: 'column',
+                width: '200px',
+                alignItems: 'center',
+                padding: '20px',
+                transform: `rotate(${(Math.random() - 0.5) * 10}deg)`,
+                outline: 'solid 2px white',
+                transition: 'transform 0.2s',
+                ':hover': {
+                  transform: `rotate(${(Math.random() - 0.5) * 10}deg) scale(1.02)`,
+                  zIndex: 1
+                }
+              }}
+            >
+              <Image
+                src={sponsor.image}
+                alt={sponsor.name}
+                style={{
+                  width: '100px',
+                  height: '100px',
+                  objectFit: 'contain'
+                }}
+              />
+              <Text
+                sx={{
+                  textAlign: 'center',
+                  fontSize: '1.5em',
+                  fontFamily: 'moonblossom',
+                  color: 'white',
+                  mt: 2,
+                  wordWrap: 'break-word'
+                }}
+              >
+                {sponsor.name}
+              </Text>
+            </Link>
+          ))}
+        </div>
+      </Box>
 
       <Box
         sx={{

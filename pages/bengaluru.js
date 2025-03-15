@@ -2,21 +2,20 @@ import Head from 'next/head'
 import { Box, Card, Grid, Heading, Image, Link, Text } from 'theme-ui'
 import dynamic from 'next/dynamic'
 
-// TODO: not finalized yet!
+
 const schedule = [
-  { time: '11:00 AM', event: 'Doors open' },
-  { time: '12:00 PM', event: 'Opening ceremony' },
-  { time: '12:30 PM', event: 'Lunch' },
-  { time: '1:00 PM', event: 'Start working on your project!' },
-  { time: '2:00 PM', event: 'Workshop 1' },
-  { time: '4:00 PM', event: 'Activity 1' },
-  { time: '4:00 PM', event: 'Workshop 2' },
-  { time: '6:00 PM', event: 'Dinner' },
-  { time: '8:00 PM', event: 'Lightning talks' },
-  { time: '12:00 AM', event: 'Midnight surprise' },
-  { time: '8:00 AM', event: 'Breakfast' },
-  { time: '10:30 AM', event: 'Demos!' },
-  { time: '12:00 PM', event: 'Closing ceremony' }
+  { time: '07:00 AM', event: 'Doors open' },
+  { time: '08:00 AM', event: 'Opening ceremony' },
+  { time: '09:00 AM', event: 'Workshops' },
+  { time: '10:00 AM', event: 'Snacks' },
+  { time: '10:30 AM', event: 'Start working on your project!' },
+  { time: '01:00 PM', event: 'Lunch' },
+  { time: '01:30 PM', event: 'Continue Hacking!' },
+  { time: '04:00 PM', event: 'Snacks' },
+  { time: '04:30 PM', event: 'Final Coding and Debugging!' },
+  { time: '06:30 PM', event: 'Demos and Submission!' },
+  { time: '07:30 PM', event: 'Closing Ceremony' },
+  { time: '08:00 PM', event: 'Doors Close' },
 ]
 
 const Map = dynamic(() => import('../components/Map'), { ssr: false })
@@ -138,10 +137,13 @@ export default function ExampleCity() {
                 wordBreak: 'keep-all',
                 whiteSpace: 'nowrap',
                 width: 'max-content',
-                fontSize: ['1.2em', '1.4em']
+                fontSize: ['1.2em', '1.3em']
               }}
             >
-              Bengaluru - March&nbsp;15-16
+              Bengaluru - March&nbsp;16th @
+              <Link href="https://maps.app.goo.gl/G46eciLCZsvhhbKw8" target="_blank">
+    The Hub Bengaluru
+  </Link>
             </Heading>
           </Box>
         </Box>
@@ -598,7 +600,7 @@ export default function ExampleCity() {
             textAlign: 'center'
           }}
         >
-          Scrapyard BENGALURU is a 24-HOUR event - HERE'S THE ROUGH SCHEDULE!
+          Scrapyard BENGALURU is a 12-HOUR event - HERE'S THE ROUGH SCHEDULE!
         </Heading>
         <Box
           sx={{

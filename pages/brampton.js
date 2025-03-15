@@ -24,21 +24,21 @@ import { Box, Card, Grid, Heading, Image, Link, Text } from 'theme-ui'
 import dynamic from 'next/dynamic'
 
 // TODO: Change this schedule to your own!
-const schedule = [
-  { time: '11:00 AM', event: 'Doors open' },
-  { time: '12:00 PM', event: 'Opening ceremony' },
-  { time: '12:30 PM', event: 'Lunch' },
-  { time: '1:00 PM', event: 'Start working on your project!' },
-  { time: '2:00 PM', event: 'Workshop 1' },
-  { time: '4:00 PM', event: 'Activity 1' },
-  { time: '4:00 PM', event: 'Workshop 2' },
-  { time: '6:00 PM', event: 'Dinner' },
-  { time: '8:00 PM', event: 'Lightning talks' },
-  { time: '12:00 AM', event: 'Midnight surprise' },
-  { time: '8:00 AM', event: 'Breakfast' },
-  { time: '10:30 AM', event: 'Demos!' },
-  { time: '12:00 PM', event: 'Closing ceremony' }
-]
+//const schedule = [
+//  { time: '11:00 AM', event: 'Doors open' },
+//  { time: '12:00 PM', event: 'Opening ceremony' },
+//  { time: '12:30 PM', event: 'Lunch' },
+//  { time: '1:00 PM', event: 'Start working on your project!' },
+//  { time: '2:00 PM', event: 'Workshop 1' },
+//  { time: '4:00 PM', event: 'Activity 1' },
+//  { time: '4:00 PM', event: 'Workshop 2' },
+//  { time: '6:00 PM', event: 'Dinner' },
+//  { time: '8:00 PM', event: 'Lightning talks' },
+//  { time: '12:00 AM', event: 'Midnight surprise' },
+//  { time: '8:00 AM', event: 'Breakfast' },
+//  { time: '10:30 AM', event: 'Demos!' },
+//  { time: '12:00 PM', event: 'Closing ceremony' }
+//]
 
 const Map = dynamic(() => import('../components/Map'), { ssr: false })
 
@@ -77,6 +77,25 @@ export default function ExampleCity() {
         overflowX: 'hidden'
       }}
     >
+      <Box sx={{
+        position: "absolute",
+        padding: "1rem",
+        top: 0,
+        left: 0,
+        backgroundColor: "red",
+        width: "100%",
+        textAlign: "center",
+        fontWeight: "bold",
+        zIndex: 30,
+        fontSize: 20,
+      }}>
+        Scrapyard Brampton has merged with Scrapyard Toronto to make an even greater event!<br/>
+      <Link sx={{
+        color: "black",
+      }} href="/toronto">
+        ----{">"} Go to our new page {"<"}----
+      </Link>
+      </Box>
       <Head>
         {/* TODO: Change Brampton to your event's city */}
         <title>Scrapyard Brampton</title>
@@ -175,7 +194,7 @@ export default function ExampleCity() {
               }}
             >
               {/* TODO: Change Brampton to your event's city */}
-              Brampton - March&nbsp;15-16
+              [Combined with Toronto] - March&nbsp;15-16
             </Heading>
           </Box>
         </Box>
@@ -249,7 +268,7 @@ export default function ExampleCity() {
         </Box>
         <Link
           // TODO: Change [SLUG] to your event's slug (lowercase, dashed version of your event name), such as san-francisco for Scrapyard San Francisco
-          href="https://forms.hackclub.com/scrapyard-signup?event=brampton"
+          href="https://forms.hackclub.com/scrapyard-signup?event=toronto"
           target="_blank"
         >
           <Box
@@ -602,13 +621,100 @@ export default function ExampleCity() {
             alignItems: 'center',
             display: 'flex',
             flexDirection: 'column',
-            mb: '10vh',
+            mb: '5vh',
             mt: 5
           }}
         >
           <Map />
         </Box>
       </Box>
+
+       <Box
+         sx={{
+           // backgroundImage: "url(/backgrounds/confetti.png)",
+           alignItems: 'center',
+           display: 'flex',
+           flexDirection: 'column'
+         }}
+       >
+         <Box
+           sx={{
+             backgroundImage: 'url(/elements/ripped-paper-strip.svg)',
+             // backgroundSize: "cover!important",
+             // display: "block",
+             // width: "30vw",
+             height: '30vh',
+             width: ['90vw', '70vw', '46.8vw'],
+             alignItems: 'center',
+             justifyContent: 'center',
+             margin: '0vh',
+             backgroundRepeat: 'no-repeat',
+             backgroundSize: 'cover',
+             display: 'flex',
+             flexDirection: 'column',
+             alignItems: 'center'
+           }}
+         >
+           <Heading
+             as="h1"
+             sx={{
+               mx: '1vw',
+               fontWeight: 'lighter',
+               textAlign: 'center'
+             }}
+           >
+             {/* TODO: Change Brampton to your event's city */}
+            SPONSORS
+           </Heading>
+         </Box>
+         <Box
+           sx={{
+             display: 'flex',
+             flexDirection: 'column',
+             alignItems: 'center',
+             width: ['90%', '70%'],
+             fontSize: '2em',
+             gap: '32px',
+             color: 'black',
+             mt: 3,
+             mb: 5,
+             background: "url('/backgrounds/lined-paper.png')",
+             backgroundSize: ['contain', 'contain', 'cover!important'],
+             p: 4,
+             borderRadius: 1,
+             boxShadow: '10px 10px 5px rgba(0, 0, 0, 0.3)'
+           }}
+         >
+  {
+    // Generated Code Below
+    <>
+    {
+
+      //<h2 style={{
+      //  margin: '0'
+      //}}>🥉 Bronze Sponsorships</h2>
+    }
+      <Box sx={{
+        borderRadius: '10px',
+        backgroundColor: "white",
+        display: 'flex',
+        justifyContent: "center",
+        alignItems: "center",
+        gap: '1.5em',
+        padding: '1rem',
+      }}>
+          <Image src="/city/brampton/sponsors/Incogni_Bronze.png" alt="Incogni_Bronze.png" width={700} height={250} />
+          <Image src="/city/brampton/sponsors/XYZ_Bronze.png" alt="XYZ_Bronze.png" width={700} height={250} />
+          <Image src="/city/brampton/sponsors/NordVPN_Bronze.png" alt="NordVPN_Bronze.png" width={700} height={250} />
+          <Image src="/city/brampton/sponsors/Saily_Bronze.png" alt="Saily_Bronze.png" width={700} height={250} />
+          <Image src="/city/brampton/sponsors/1Password_Bronze.png" alt="1Password_Bronze.png" width={700} height={250} />
+          <Image src="/city/brampton/sponsors/Appwrite_Bronze.svg" alt="Appwrite_Bronze.png" width={700} height={250} />
+          <Image src="/city/brampton/sponsors/Warp_Bronze.png" alt="Warp_Bronze.png" width={700} height={250} />
+      </Box>
+    </>
+  }
+         </Box>
+       </Box>
 
       <Box
         sx={{
@@ -783,6 +889,116 @@ export default function ExampleCity() {
             )
           })}
         </Grid>
+  {
+
+        //<Heading
+        //  as="h1"
+        //  sx={{
+        //    my: 5,
+        //    position: 'relative'
+        //  }}
+        //>
+        //  Meet The Team
+        //  <Image
+        //    src="/elements/doodles/blue-underline.svg"
+        //    sx={{
+        //      position: 'absolute',
+        //      bottom: '0',
+        //      left: '50%',
+        //      transform: 'translateX(-50%) translateY(75%)'
+        //    }}
+        //  />
+        //</Heading>
+        //<Grid
+        //  columns={[1, 1, 1, 2]}
+        //  gap={4}
+        //  sx={{
+        //    maxWidth: '1200px'
+        //  }}
+        //>
+        //  {Object.entries({
+        //    "Sidak Singh - Founder|https://github.com/fadedbronze|Hi": (
+        //      <Image src="/city/brampton/team/SamyatGautam.png" width={80} height={30}/>
+        //    ),
+        //    "Samyat Gautam - Developer|https://github.com/fadedbronze|Hi, I'm Samyat": (
+        //      <Image src="/city/brampton/team/SamyatGautam.png" width={80} height={30}/>
+        //    ),
+        //    "Shivaansh Bedi - Finance & Venue Outreach|https://github.com/fadedbronze|Hi": (
+        //      <Image src="/city/brampton/team/SamyatGautam.png" width={80} height={30}/>
+        //    ),
+        //    "Anant Bhakar - Sponsorship Outreach|https://github.com/fadedbronze|Hi": (
+        //      <Image src="/city/brampton/team/SamyatGautam.png" width={80} height={30}/>
+        //    ),
+        //    "Japleen Singh - Social Media and Marketing|https://github.com/fadedbronze|Hi": (
+        //      <Image src="/city/brampton/team/SamyatGautam.png" width={80} height={30}/>
+        //    ),
+        //    "Rachit Bansal - Sponsorship Outreach|https://github.com/fadedbronze|Hi": (
+        //      <Image src="/city/brampton/team/SamyatGautam.png" width={80} height={30}/>
+        //    ),
+        //  }).map(([info, image], i) => {
+        //    const name = info.split('|')[0];
+        //    const github = info.split('|')[1];
+        //    const about = info.split('|')[2];
+        //    return (
+        //      <a target="_blank" href={github} style={{
+        //        textDecoration: "none",
+        //      }}>
+        //        <Card
+        //          key={name}
+        //          sx={{
+        //            background: [
+        //              'transparent',
+        //              `url('/elements/doodles/boxes/${(i % 6) + 1}.svg')`
+        //            ],
+        //            backgroundSize: [null, '100% 100%'],
+        //            backgroundRepeat: 'no-repeat',
+        //            boxShadow: 'none',
+        //            display: 'flex', 
+        //            justifyContent: "center",
+        //            gap: "1em",
+        //            alignItems: "center",
+        //            padding: '48px!important',
+        //            border: ['2px solid black', 'none']
+        //          }}
+        //        >
+        //          {image}
+        //          <Box>
+        //              <Box sx={{
+        //                position: "relative",
+        //                mb: 3,
+        //              }}>
+        //                <Heading
+        //                  as="h2"
+        //                  m={0}
+        //                  sx={{
+        //                    position: 'relative'
+        //                  }}
+        //                >
+        //                  {name}
+        //                </Heading>
+        //                <Image
+        //                  src="/elements/doodles/yellow-underline.svg"
+        //                  sx={{
+        //                    position: 'absolute',
+        //                    bottom: '0',
+        //                    left: '50%',
+        //                    transform: 'translateX(-50%) translateY(75%)'
+        //                  }}
+        //                />
+        //            </Box>
+        //            <Text 
+        //              sx={{
+        //                fontSize: 3,
+        //                fontWeight: 'bold'
+        //              }}
+        //            >{about}</Text>
+        //          </Box>
+        //        </Card>
+        //      </a>
+        //    )
+        //  })}
+        //</Grid>
+  }
         <Link
           // TODO: Change [SLUG] to your event's slug (lowercase, dashed version of your event name), such as san-francisco for Scrapyard San Francisco
           href="https://forms.hackclub.com/scrapyard-signup?event=brampton"

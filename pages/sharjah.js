@@ -3,6 +3,7 @@ import { Box, Card, Grid, Heading, Image, Link, Text } from 'theme-ui'
 import dynamic from 'next/dynamic'
 
 const schedule1 = [
+  { event: 'Day 1' },
   { time: '11:00 AM - 11:30 AM', event: 'Opening Ceremony' },
   { time: '11:30 AM - 2:30 PM', event: 'Coding & Development' },
   { time: '2:30 PM - 3:00 PM', event: 'Break' },
@@ -12,6 +13,7 @@ const schedule1 = [
   { time: '7:00 PM - 8:00 PM', event: 'Coding & Development' }
 ]
 const schedule2 = [
+  { event: 'Day 2' },
   { time: '11:00 AM - 11:15 AM', event: 'Morning Kickoff' },
   { time: '11:15 AM - 2:00 PM', event: ' Coding & Development' },
   { time: '2:00 PM - 2:30 PM', event: 'Break' },
@@ -444,8 +446,8 @@ export default function ExampleCity() {
             flexDirection: 'column',
             alignItems: 'center',
             width: ['90%', '70%'],
-            fontSize: '1.2em',
-            gap: '0.2em',
+            fontSize: '1.0em',
+            gap: '0.3em',
             color: 'black',
             my: 5,
             background: "url('/backgrounds/lined-paper.png')",

@@ -6,25 +6,6 @@ import SponsorSection from '../components/city/hyderabad/SponsorSection'
 import MemberSection from '../components/city/hyderabad/MemberSection'
 import Loading from '../components/city/hyderabad/Loading'
 
-const schedule = [
-  { time: '11:00 AM', event: 'Doors open' },
-  { time: '12:00 PM', event: 'Opening ceremony' },
-  { time: '12:30 PM', event: 'Team formation' },
-  { time: '1:30 PM', event: 'Lunch' },
-  { time: '2:15 PM', event: 'Work Session 1' },
-  { time: '3:15 PM', event: 'Workshop 1' },
-  { time: '4:15 PM', event: 'Work Session 2' },
-  { time: '7:30 PM', event: 'Workshop 2' },
-  { time: '8:30 PM', event: 'Dinner' },
-  { time: '9:15 PM', event: 'Workshop 3' },
-  { time: '10:15 PM', event: 'Work Session 3' },
-  { time: '12:00 AM', event: 'Midnight surprise' },
-  { time: '1:00 AM', event: 'Work Session 4' },
-  { time: '8:30 AM', event: 'Submission' },
-  { time: '9:30 AM', event: 'Judging' },
-  { time: '10:30 AM', event: 'Awards Ceremony & Closing Ceremony' }
-]
-
 const Map = dynamic(() => import('../components/Map'), { ssr: false })
 const VenueMap = dynamic(
   () => import('../components/city/hyderabad/VenueMap'),
@@ -131,41 +112,16 @@ export default function Hyderabad() {
 
   if (!data) return <Loading />
 
-  const {
-    goldSponsors,
-    silverSponsors,
-    bronzeSponsors,
-    inKindSponsors,
-    ourTeam,
-    volunteers
-  } = data
+  const { schedule, sponsors, ourTeam, volunteers } = data
 
-  const sponsorSections = [
-    {
-      title: 'Gold Sponsors',
-      sponsors: goldSponsors,
-      color: '#FFD700',
-      underlineSrc: '/elements/doodles/yellow-underline.svg'
-    },
-    {
-      title: 'Silver Sponsors',
-      sponsors: silverSponsors,
-      color: '#C0C0C0',
-      underlineSrc: '/city/hyderabad/elements/silver-underline.svg'
-    },
-    {
-      title: 'Bronze Sponsors',
-      sponsors: bronzeSponsors,
-      color: '#F98971',
-      underlineSrc: '/city/hyderabad/elements/bronze-underline.svg'
-    },
-    {
-      title: 'In-Kind Sponsors',
-      sponsors: inKindSponsors,
-      color: 'white',
-      underlineSrc: '/elements/doodles/blue-underline.svg'
-    }
-  ]
+  const sponsorSections = sponsors
+    ? Object.keys(sponsors).map(key => ({
+        title: sponsors[key].sectionName,
+        sponsors: sponsors[key].entries,
+        color: sponsors[key].color,
+        underlineSrc: sponsors[key].underlineSrc
+      }))
+    : []
 
   return (
     <Box
@@ -618,7 +574,7 @@ export default function Hyderabad() {
               textAlign: 'center'
             }}
           >
-            SPONSORS
+            PARTNERS AND SPONSORS
           </Heading>
         </Box>
         {sponsorSections.map((section, index) => (

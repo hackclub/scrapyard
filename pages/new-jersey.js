@@ -38,6 +38,40 @@ const schedule = [
   { time: '8:15 PM', event: 'Closing ceremony' }
 ]
 
+const colors = ['#ffadad', '#fdffb6', '#9bf6ff', '#ffd6a5', '#caffbf'];
+const sponsors = [
+  {
+    name: 'Hack Club',
+    link: 'https://hackclub.com/',
+    image: 'https://assets.hackclub.com/icon-rounded.svg'
+  },
+  {
+    name: 'Hudson River Trading',
+    link: 'https://www.hudsonrivertrading.com',
+    image: '/city/new-jersey/HRT.png'
+  },
+    {
+    name: 'Savvas Learning Company',
+    link: 'https://www.savvas.com',
+    image: '/city/new-jersey/savvaslearning.jpg'
+  },
+    {
+    name: '.xyz',
+    link: 'https://gen.xyz',
+    image: '/city/new-jersey/xyz-logo-color.svg'
+  },
+  {
+    name: 'Interview Cake',
+    link: 'https://www.interviewcake.com',
+    image: '/city/new-jersey/CAKE.svg'
+  },
+  {
+    name: 'Art of Problem Solving',
+    link: 'https://artofproblemsolving.com',
+    image: '/city/new-jersey/AoPS.png'
+  }
+]
+
 const Map = dynamic(() => import('../components/Map'), { ssr: false })
 
 const Flag = () => (
@@ -139,7 +173,8 @@ export default function ExampleCity() {
                 margin: '8%'
               }}
             >
-              Build weird stuff, get awesome prizes.
+              Happening at Visual Arts Center, Summit NJ
+          
             </Heading>
           </Box>
           <Box
@@ -339,10 +374,8 @@ export default function ExampleCity() {
               }}
             >
               {/* TODO: Change [EXAMPLECITY] to your event's city */}
-              Scrapyard New Jersey is a hackathon for high schoolers
-              {/* TODO: Change [EXAMPLECITY] to your event's city */}
-              happening in New Jersey, where you can make the stupidest
-              things you can think of! Anything, from a{' '}
+              Scrapyard New Jersey is a hackathon for high schoolers happening in New Jersey, where you can make the stupidest things
+              you can think of! Anything, from a{' '}
               <Link href="https://www.youtube.com/watch?v=PnK4gzO6S3Q">
                 lamp that flashes faster the slower you type
               </Link>
@@ -413,6 +446,96 @@ export default function ExampleCity() {
         }}
       ></Box>
 
+      {/* Sponsor Section */}
+      <Box
+        sx={{
+          width: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          mt: 4,
+          mb: 5
+        }}
+      >
+        <Box
+          sx={{
+            background: "url('/elements/stapled-paper.png')",
+            backgroundSize: 'contain',
+            backgroundRepeat: 'no-repeat',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            height: '100px',
+            width: '400px'
+          }}
+        >
+          <Heading
+            as="h2"
+            sx={{
+              textAlign: 'center',
+              fontSize: '1.5em',
+              fontFamily: 'moonblossom'
+            }}
+          >
+            SPONSORS
+          </Heading>
+        </Box>
+        <div
+          style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: '20px',
+            transform: 'scale(0.9)',
+            justifyContent: 'center'
+          }}
+        >
+          {sponsors.map((sponsor, i) => (
+            <Link
+              key={i}
+              href={sponsor.link || '#'}
+              target="_blank"
+              sx={{
+                backgroundColor: colors[i % colors.length],
+                display: 'flex',
+                flexDirection: 'column',
+                width: '200px',
+                alignItems: 'center',
+                padding: '20px',
+                transform: `rotate(${(Math.random() - 0.5) * 10}deg)`,
+                outline: 'solid 2px white',
+                transition: 'transform 0.2s',
+                ':hover': {
+                  transform: `rotate(${(Math.random() - 0.5) * 10}deg) scale(1.02)`,
+                  zIndex: 1
+                }
+              }}
+            >
+              <Image
+                src={sponsor.image}
+                alt={sponsor.name}
+                style={{
+                  width: '100px',
+                  height: '100px',
+                  objectFit: 'contain'
+                }}
+              />
+              <Text
+                sx={{
+                  textAlign: 'center',
+                  fontSize: '1.5em',
+                  fontFamily: 'moonblossom',
+                  color: 'white',
+                  mt: 2,
+                  wordWrap: 'break-word'
+                }}
+              >
+                {sponsor.name}
+              </Text>
+            </Link>
+          ))}
+        </div>
+      </Box>
+
       <Box
         sx={{
           // backgroundImage: "url(/backgrounds/confetti.png)",
@@ -462,8 +585,7 @@ export default function ExampleCity() {
         >
           {/* TODO: Change [EXAMPLECITY] to your event's city */}
           {/* TODO: Change [DURATION] to your event's duration (12hour, 24hour, 2-day) */}
-          Scrapyard New Jersey is a 12hour event - HERE'S THE ROUGH
-          SCHEDULE!
+          Scrapyard New Jersey is a 12hour event - HERE'S THE ROUGH SCHEDULE!
         </Heading>
         <Box
           sx={{
@@ -645,9 +767,8 @@ export default function ExampleCity() {
             ),
             'What do I need?': (
               <>
-                Your laptop, chargers, and an open mind! 
-                Additionally, if you plan to work on a hardware project, bring
-                the tools you'll need.
+                Your laptop, chargers, and an open mind! Additionally, if you
+                plan to work on a hardware project, bring the tools you'll need.
               </>
             ),
             'I’m not good at coding. Can I still participate?': (

@@ -27,15 +27,14 @@ import dynamic from 'next/dynamic'
 const schedule = [
   { time: '11:00 AM', event: 'Doors open' },
   { time: '12:00 PM', event: 'Opening ceremony' },
-  { time: '1:00 PM', event: 'Start Hacking!' },
-  { time: '2:00 PM', event: 'Lunch' },
-  { time: '3:00 PM', event: 'Workshop 1' },
-  { time: '4:00 PM', event: 'Activity 1' },
+  { time: '12:30 PM', event: 'Start Hacking!' },
+  { time: '1:00 PM', event: 'Lunch' },
+  { time: '2:00 PM', event: 'Workshop 1' },
   { time: '4:00 PM', event: 'Workshop 2' },
-  { time: '5:00 PM', event: 'Dinner' },
-  { time: '8:00 PM', event: 'Lightning talks' },
+  { time: '6:00 PM', event: 'Dinner' },
+  { time: '7:00 PM', event: 'Lightning talks' },
   { time: '12:00 AM', event: 'Midnight surprise' },
-  { time: '8:00 AM', event: 'Breakfast' },
+  { time: '7:00 AM', event: 'Breakfast' },
   { time: '10:30 AM', event: 'Demos!' },
   { time: '12:00 PM', event: 'Closing ceremony' }
 ]
@@ -179,6 +178,16 @@ export default function ExampleCity() {
               {/* TODO: Change [EXAMPLECITY] to your event's city */}
               Hamilton - March&nbsp;15-16
             </Heading>
+            <Text
+              sx={{
+                fontFamily: 'p22-stanyan',
+                fontSize: ['0.8em', '1em'],
+                textAlign: 'center',
+                mt: 1
+              }}
+            >
+              CoMotion On King, 115 King St E, 3rd Floor
+            </Text>
           </Box>
         </Box>
         <Box
@@ -560,13 +569,13 @@ export default function ExampleCity() {
       href="https://www.comotiongroup.ca/"
       target="_blank"
       aria-label="CoMotion On King"
-      sx={{ position: 'absolute', top: 230, left: 430, zIndex: 2}}
+      sx={{ position: 'absolute', top: 200, left: 270, zIndex: 2}}
   >
     <Image
       src="/city/hamilton/comotion-logo.png"
       alt="CoMotion On King"
       sx={{
-        width: [120, 128, 700],
+        width: [120, 128, 1000],
         transformOrigin: '% 0%',
         transition: 'transform 0.1s',
         ':hover': {
@@ -577,36 +586,16 @@ export default function ExampleCity() {
     </Link>
     <Link
       // Nord VPN
-      href="https://nordvpn.com/hackathons"
+      href="https://www.i2bglobal.com/"
       target="_blank"
-      aria-label="Nord VPN"
-      sx={{ position: 'absolute', top: 395, left: 20, zIndex: 2 }}
+      aria-label="I2B Global Inc."
+      sx={{ position: 'absolute', top: 460, left: 400, zIndex: 2 }}
   >
     <Image
-      src="/city/hamilton/nordvpn.png"
-      alt="Nord VPN"
+      src="/city/hamilton/I2bLogo-New-354x354.jpg"
+      alt="I2B Global Inc."
       sx={{
-        width: [120, 128, 450],
-        transformOrigin: '% 0%',
-        transition: 'transform 0.1s',
-        ':hover': {
-          transform: 'rotate(0.03turn) scale(1.2) translateY(-4px)'
-        }
-      }}
-    />
-    </Link>
-    <Link
-      // Incogni
-      href="https://incogni.com/"
-      target="_blank"
-      aria-label="Incogni"
-      sx={{ position: 'absolute', top: 460, left: 470, zIndex: 2 }}
-  >
-    <Image
-      src="/city/hamilton/incogni white (3).png"
-      alt="Incogni"
-      sx={{
-        width: [120, 128, 270],
+        width: [96, 102, 275],
         transformOrigin: '% 0%',
         transition: 'transform 0.1s',
         ':hover': {
@@ -617,16 +606,16 @@ export default function ExampleCity() {
     </Link>
     <Link
       // Nord Pass
-      href="https://nordpass.com/"
+      href="https://www.softwareandprocessdesign.ca/"
       target="_blank"
-      aria-label="Nord Pass"
-      sx={{ position: 'absolute', top: 460, left: 810, zIndex: 2 }}
+      aria-label="Software Process and Design"
+      sx={{ position: 'absolute', top: 450, left: 835, zIndex: 2 }}
   >
     <Image
-      src="/city/hamilton/nordpass.png"
-      alt="Nord Pass"
+      src="/city/hamilton/Software-and-Process-Design_Logo-BLUE.png"
+      alt="Software Process and Design"
       sx={{
-        width: [120, 128, 325],
+        width: [120, 128, 300],
         transformOrigin: '% 0%',
         transition: 'transform 0.1s',
         ':hover': {
@@ -635,26 +624,7 @@ export default function ExampleCity() {
       }}
     />
     </Link>
-    <Link
-      // Saily
-      href="https://saily.com/ "
-      target="_blank"
-      aria-label="Saily"
-      sx={{ position: 'absolute', top: 400, left: 1150, zIndex: 2 }}
-  >
-    <Image
-      src="/city/hamilton/saily.png"
-      alt="Saily"
-      sx={{
-        width: [120, 128, 325],
-        transformOrigin: '% 0%',
-        transition: 'transform 0.1s',
-        ':hover': {
-          transform: 'rotate(0.03turn) scale(1.2) translateY(-4px)'
-        }
-      }}
-    />
-    </Link>
+    
         </Box>
       <Box
         sx={{

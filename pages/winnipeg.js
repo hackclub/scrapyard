@@ -146,7 +146,7 @@ export default function ExampleCity() {
               backgroundImage: "url('/elements/yellow-strip@stretch.svg')",
               backgroundRepeat: 'no-repeat',
               backgroundSize: '100% 100%',
-              width: '75%',
+              width: '100%',
               position: 'relative',
               zIndex: 30,
               top: '-15%',
@@ -236,7 +236,7 @@ export default function ExampleCity() {
                 transform: 'scale(1.1)'
               },
               zIndex: 30,
-              minWidth: '8em',
+              minWidth: '13em',
               padding: '15px'
             }}
           >
@@ -251,51 +251,7 @@ export default function ExampleCity() {
                 width: '100%'
               }}
             >
-              SIGN&nbsp;UP
-            </Heading>
-          </Box>
-        </Link>
-        <Link
-          href=""
-          target="_self"
-          onClick={(e) => {
-            e.preventDefault()
-            document
-              .getElementById('sponsors')
-              .scrollIntoView({ behavior: 'smooth' })
-          }}
-        >
-          <Box
-            sx={{
-              backgroundImage: "url('/city/winnipeg/red-strip@stretch.svg')",
-              backgroundRepeat: 'no-repeat',
-              backgroundSize: '100% 100%',
-              position: 'fixed',
-              right: ['calc(2% + 150px)'],
-              top: ['calc(4% - 3px)'],
-              filter: 'drop-shadow(5px 5px 5px #000)',
-              transition: 'transform 0.2s',
-              ':hover': {
-                transform: 'scale(1.1)'
-              },
-              zIndex: 30,
-              minWidth: '12em',
-              padding: '15px'
-            }}
-          >
-            <Heading
-              as="h2"
-              sx={{
-                fontFamily: 'moonblossom',
-                textAlign: 'center',
-                padding: ['2%', '8%'],
-                fontSize: ['1.2em', '1.4em'],
-                textTransform: 'inherit',
-                color: '#1270b1',
-                width: '100%'
-              }}
-            >
-              SPONSOR&nbsp;US!
+              SIGN&nbsp;UP&nbsp;NOW!
             </Heading>
           </Box>
         </Link>
@@ -486,63 +442,132 @@ export default function ExampleCity() {
               textShadow: '0.06em 0.06em 0.02em rgba(70, 11, 28, 0.8)'
             }}
           >
-            SPONSORS
+            Sponsors
           </Heading>
-        </Box>
-        <Heading
-          as="h2"
-          sx={{
-            fontSize: '2em',
-            fontFamily: 'galindo',
-            letterSpacing: '0.05em',
-            color: 'white',
-            textAlign: 'center'
-          }}
-        >
-          Your company could be here! Sponsor Scrapyard Winnipeg today!
-        </Heading>
-        <br />
-        <Heading
-          as="p"
-          sx={{
-            fontSize: '1.5em',
-            fontFamily: 'moonblossom',
-            color: 'white',
-            textAlign: 'center'
-          }}
-        >
-          Have any questions about sponsoring? Email us at{' '}
-          <Link
-            href={"mailto:" + eventInfo.sponsor_email}
-            sx={{ color: 'white' }}
+          </Box>
+          <Heading
+            as="h2"
+            sx={{
+              fontSize: '3em',
+              fontFamily: 'galindo',
+              color: 'yellow',
+              textAlign: 'center',
+              margin: '0px',
+              padding: '0px 0px 0.5em'
+            }}
           >
-            {eventInfo.sponsor_email}
-          </Link>
-          !
-        </Heading>
-        <Box
-          sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            width: 'min(90vh / 11 * 8.5, 90vw)', // letter aspect ratio
-            height: 'min(90vh, 90vw / 8.5 * 11)', // letter aspect ratio
-            padding: '0.5vh !important',
-            color: 'black',
-            my: 5,
-            background: "url('/backgrounds/lined-paper.png')",
-            backgroundSize: ['contain', 'contain', 'cover!important'],
-            borderRadius: 1,
-            boxShadow: '10px 10px 5px rgba(0, 0, 0, 0.3)'
-          }}
-        >
-          <iframe
-            src="https://drive.google.com/file/d/1W2uHaRpAnMIi8JbQSzo6gH6rXbskfW8d/preview"
-            width="100%"
-            height="100%"
-          ></iframe>
+            Bronze Tier
+          </Heading>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+              justifyContent: 'center',
+              margin: '0px',
+              padding: '0px',
+              width: '90%',
+            }}
+          >
+            <a
+              id="winnipeg-sponsor-1"
+              href="https://northforge.ca/"
+              target="_blank"
+              onMouseEnter={() => {
+                document.getElementById('winnipeg-sponsor-1').style.transform = `scale(1.1) rotate(-2deg)`;
+                document.getElementById('winnipeg-sponsor-1').getElementsByTagName('P')[0].style.textDecoration = 'underline';
+              }}
+              onMouseLeave={() => {
+                document.getElementById('winnipeg-sponsor-1').style.transform = '';
+                document.getElementById('winnipeg-sponsor-1').getElementsByTagName('P')[0].style.textDecoration = 'none';
+              }}
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                margin: '0px',
+                padding: '1em',
+                margin: '1em',
+                width: '300px',
+                height: '207px',
+                backgroundImage: 'url(/elements/sticky-note.svg)',
+                backgroundSize: 'cover',
+                border: 'none',
+                textDecoration: 'none',
+              }}
+            >
+              <p
+                style={{
+                  fontSize: '2em',
+                  fontFamily: 'moonblossom',
+                  fontWeight: 'bold',
+                  color: 'black',
+                  textAlign: 'center',
+                  margin: '0px',
+                }}
+              >
+                NORTH FORGE
+              </p>
+              <img
+                src="https://raw.githubusercontent.com/CyrilSLi/scrapyard-data/refs/heads/main/northforge.png"
+                style={{
+                  width: '100%',
+                  flex: '1',
+                  objectFit: 'contain',
+                  margin: '0px',
+                  padding: '0px'
+                }}
+              />
+            </a>
+            <a
+              id="winnipeg-sponsor-2"
+              href="https://webgigg.com/"
+              target="_blank"
+              onMouseEnter={() => {
+                document.getElementById('winnipeg-sponsor-2').style.transform = `scale(1.1) rotate(2deg)`;
+                document.getElementById('winnipeg-sponsor-2').getElementsByTagName('P')[0].style.textDecoration = 'underline';
+              }}
+              onMouseLeave={() => {
+                document.getElementById('winnipeg-sponsor-2').style.transform = '';
+                document.getElementById('winnipeg-sponsor-2').getElementsByTagName('P')[0].style.textDecoration = 'none';
+              }}
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                margin: '0px',
+                padding: '1em',
+                margin: '1em',
+                width: '300px',
+                height: '207px',
+                backgroundImage: 'url(/elements/sticky-note.svg)',
+                backgroundSize: 'cover',
+                border: 'none',
+                textDecoration: 'none',
+              }}
+            >
+              <p
+                style={{
+                  fontSize: '2em',
+                  fontFamily: 'moonblossom',
+                  fontWeight: 'bold',
+                  color: 'black',
+                  textAlign: 'center',
+                  margin: '0px',
+                }}
+              >
+                Webgig Team
+              </p>
+              <img
+                src="https://raw.githubusercontent.com/CyrilSLi/scrapyard-data/refs/heads/main/webgig.png"
+                style={{
+                  width: '100%',
+                  flex: '1',
+                  objectFit: 'contain',
+                  margin: '0px',
+                  padding: '0px'
+                }}
+              />
+            </a>
+          </div>
         </Box>
-      </Box>
 
       <Box
         sx={{

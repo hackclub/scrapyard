@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: "Instrument Sans", sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-weight: 600;
+            color: white;
+            background: url("https://hc-cdn.hel1.your-objectstorage.com/s/v3/d4c4af21ff785dc9722e86a58e243299928199a1_upscaled-2x-cutting_mat_backgorund.png");
+            background-size: cover;
+            background-position: top;
+            margin: 0px;
+
+        }
+        .countdown {
+            font-size: min(26vh, 16vw);
+        }
+    </style>
+</head>
+<body>
+    <div class="countdown" id="countdown"></div>
+    <div class="stats" id="stats"></div>
+
+    <script>
+        let count = 0;
+        let total = 0;
+        setInterval(async () => {
+            fetch("/api/stats")
+                .then(response => response.json())
+                .then(data => {
+                    count = data.count;
+                    total = data.total;
+                    document.title = `Count: ${count} | Total: ${total}`;
+                });
+        }, 10_000)
+        function updateCountdown() {
+            const now = new Date();
+            const nextDay = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 12, 30, 0);
+            const remainingTime = nextDay - now;
+
+            if (remainingTime < 0) {
+                document.getElementById('countdown').innerHTML = "Projects due!";
+                return;
+            }
+
+            const hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
+
+            document.getElementById('countdown').innerHTML = 
+                `${hours}h ${minutes}m ${seconds}s`;
+
+            document.getElementById('stats').innerHTML = 
+                    `${count}/${total}`;
+
+            setTimeout(updateCountdown, 1000);
+        }
+
+        updateCountdown();
+    </script>
+</body>
+</html>

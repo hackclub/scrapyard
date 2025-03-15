@@ -1,0 +1,10 @@
+[
+  { "time": "8:00 - 8:30 AM", "event": "Doors open" },
+  { "time": "8:30 AM", "event": "Opening ceremony" },
+  { "time": "9:20 AM", "event": "Workshop 1 (TBD)" },
+  { "time": "10:30 AM", "event": "Workshop 2 (TBD)" },
+  { "time": "11:25 AM", "event": "Workshop 3 (TBD)" },
+  { "time": "12 AM", "event": "Lunch + Lightning Talks" },
+  { "time": "4:30 PM", "event": "Demos + Voting Begins" },
+  { "time": "5:30 PM", "event": "Closing Ceremony" }
+]

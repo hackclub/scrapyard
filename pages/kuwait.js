@@ -118,7 +118,7 @@ export default function ExampleCity() {
                 margin: '8%'
               }}
             >
-              Build stupid stuff, get stupid prizes.
+              Where Wacky Ideas become Wonderful Innovations!
             </Heading>
           </Box>
           <Box
@@ -152,7 +152,7 @@ export default function ExampleCity() {
               }}
             >
               {/* TODO: Change [EXAMPLECITY] to your event's city */}
-              KUWAIT - March&nbsp;15-16
+              KUWAIT - March&nbsp;14-15
             </Heading>
           </Box>
         </Box>

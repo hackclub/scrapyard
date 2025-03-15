@@ -1,46 +1,25 @@
 '======== READ ME BEFORE EDITING ========'
-/*
-Hello! This is the template for the city pages.
 
-To create a new page, make a copy of this file in the same directory (pages) and rename it for your city.
-E.g. if your city is Tampa, rename the copy of this file to tampa.js
-
-Replace all placeholder info, indicated by "TODO" comments (you can use Ctrl+F) in this file
-You do not need to use this template exactly, feel free to customize it as much as you see fit.
-
-If you want to include additional assets, please add them under public/city/your-city-name.
-
-Make a PR and we'll review it as soon as we can!
-
-If you have any questions, send a message to the #scrapyard channel on the Hack Club Slack and we'll try to help.
-
-P.S. Feel free to delete this comment block when you're done! 
-
-Note: To test your changes locally, use `yarn install` and `yarn dev`.
-*/
 
 import Head from 'next/head'
 import { Box, Card, Grid, Heading, Image, Link, Text } from 'theme-ui'
 import dynamic from 'next/dynamic'
+import Sponsors from '../components/city/cambridge/sponsors'
+import { SP } from 'next/dist/shared/lib/utils'
 
-// TODO: Change this schedule to your own!
+
 const schedule = [
-  /*
-  { time: '11:00 AM', event: 'Doors open' },
-  { time: '12:00 PM', event: 'Opening ceremony' },
-  { time: '12:30 PM', event: 'Lunch' },
-  { time: '1:00 PM', event: 'Start working on your project!' },
-  { time: '2:00 PM', event: 'Workshop 1' },
-  { time: '4:00 PM', event: 'Activity 1' },
-  { time: '4:00 PM', event: 'Workshop 2' },
-  { time: '6:00 PM', event: 'Dinner' },
-  { time: '8:00 PM', event: 'Lightning talks' },
-  { time: '12:00 AM', event: 'Midnight surprise' },
-  { time: '8:00 AM', event: 'Breakfast' },
-  { time: '10:30 AM', event: 'Demos!' },
-  { time: '12:00 PM', event: 'Closing ceremony' }
-  */
-  { time: 'tbc', event: 'tbc' }
+
+  { time: '8:45', event: 'Doors open-registration' },
+  { time: '9:00', event: 'Opening ceremony' },
+  { time: '9:30', event: 'Start working on projects!' },
+  { time: '12:00', event: 'Lunch' },
+  { time: '13:00', event: 'Continue working on the projects' },
+  { time: '17:00', event: 'Dinner' },
+  { time: '18:30', event: 'Game Demos' },
+  { time: '20:00', event: 'Closing Ceremony' },
+  { time: '20:30', event: 'Home!' }
+  
 ]
 
 const Map = dynamic(() => import('../components/Map'), { ssr: false })
@@ -67,7 +46,7 @@ const Flag = () => (
   </Link>
 )
 
-export default function ExampleCity() {
+export default function Cambridge() {
   return (
     <Box
       sx={{
@@ -176,7 +155,7 @@ export default function ExampleCity() {
                 fontSize: ['1.2em', '1.4em']
               }}
             >
-              Raspberry Pi, Cambridge - March&nbsp;15-16
+              Raspberry Pi HQ, Cambridge - March&nbsp;15
             </Heading>
           </Box>
         </Box>
@@ -263,7 +242,7 @@ export default function ExampleCity() {
           </Box>
         </Link>
       </Box>
-
+      
       <Box
         sx={{
           width: '100%',
@@ -515,7 +494,7 @@ export default function ExampleCity() {
           ))}
         </Box>
       </Box>
-
+      <Sponsors />
       <Box
         sx={{
           // backgroundImage: "url(/backgrounds/confetti.png)",
@@ -641,10 +620,9 @@ export default function ExampleCity() {
             ),
             'What do I need?': (
               <>
-                Your laptop, chargers, and an open mind! If you're going to an
-                overnight event, bring toiletries and sleeping bagstoo.
+                Your laptop, chargers, and an open mind!
                 Additionally, if you plan to work on a hardware project, bring
-                the tools you'll need.
+                the tools you'll need (except soldering irons and hot glue guns, which we'll provide).
               </>
             ),
             'I’m not good at coding. Can I still participate?': (
@@ -685,14 +663,23 @@ export default function ExampleCity() {
             ),
             'What if my parents are concerned?': (
               <>
-                We’re here to help! Our parents guide will be released soon, but
-                they can reach out to us at{' '}
+                We’re here to help! they can take a look at our <Link href="https://docs.google.com/document/d/179s8jCSdt1z2kLGslf5ShPb7VvDTsZ4I/edit?usp=sharing&ouid=103203442201930622890&rtpof=true&sd=true">
+                  parents guide
+                </Link>{' '}
+                or they can reach out to us at{' '}
                 {/* TODO: Change this email to your event's email */}
                 <Link href="cambridge@scrapyard.hackclub.com">
                   {/* TODO: Change this email to your event's email */}
                   cambridge@scrapyard.hackclub.com
                 </Link>{' '}
-                for questions.
+                for questions. Our adult volunteers are DBS checked and 
+                have completed Safeguarding training.
+                For more information, check out Raspberry Pi's{' '}
+                {}
+                <Link href="https://www.raspberrypi.org/safeguarding/">
+                  {}
+                  safeguarding page
+                </Link>.
               </>
             ),
             'What if I have more questions?': (

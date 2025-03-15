@@ -24,17 +24,17 @@ import { Box, Card, Grid, Heading, Image, Link, Text } from 'theme-ui'
 import dynamic from 'next/dynamic'
 
 // TODO: Change this schedule to your own!
-// const schedule = [
-//   { time: '11:00 AM', event: 'Doors open' },
-//   { time: '12:00 PM', event: 'Opening ceremony' },
-//   { time: '12:30 PM', event: 'Lunch' },
-//   { time: '1:00 PM', event: 'Start working on your project!' },
-//   { time: '2:00 PM', event: 'Workshop 1' },
-//   { time: '4:00 PM', event: 'Activity 1' },
-//   { time: '4:00 PM', event: 'Workshop 2' },
-//   { time: '5:30 PM', event: 'Demos!' },
-//   { time: '6:00 PM', event: 'Closing ceremony' }
-// ]
+const schedule = [
+  { time: '10:00 AM', event: 'Doors open & Check-in' },
+  { time: '10:30 AM', event: 'Opening ceremony' },
+  { time: '11:00 AM', event: 'Team formation & Brainstorming' },
+  { time: '11:15 AM', event: 'Start hacking!' },
+  { time: '12:30 PM', event: 'Lunch' },
+  { time: '2:30 PM', event: 'Snack Break' },
+  { time: '3:00 PM', event: 'Finish up projects' },
+  { time: '4:00 PM', event: 'Demos & Judging' },
+  { time: '4:30 PM', event: 'Prizes & Closing ceremony' }
+]
 
 const Map = dynamic(() => import('../components/Map'), { ssr: false })
 
@@ -393,31 +393,216 @@ export default function ExampleCity() {
           width: '100vw',
           background: "url('/backgrounds/ripped-paper-bottom.png')",
           backgroundSize: 'cover',
-
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
           flexDirection: 'column',
-
           height: '17.03212647vw',
           position: 'relative'
         }}
       ></Box>
 
-      {/* <Box
+      {/* Sponsors Section */}
+      <Box
         sx={{
-          // backgroundImage: "url(/backgrounds/confetti.png)",
-          alignItems: 'center',
+          width: '100%',
+          background: "url('/backgrounds/lined-paper.png')",
+          backgroundSize: ['contain', 'contain', 'cover!important'],
           display: 'flex',
-          flexDirection: 'column'
+          justifyContent: 'center',
+          alignItems: 'center',
+          flexDirection: 'column',
+          gap: '20px',
+          p: [4, 4, 5],
+          pt: 6,
+          position: 'relative'
+        }}
+      >
+        <Heading
+          as="h1"
+          sx={{
+            mb: 5,
+            position: 'relative'
+          }}
+        >
+          Our Sponsors
+          <Image
+            src="/elements/doodles/blue-underline.svg"
+            sx={{
+              position: 'absolute',
+              bottom: '0',
+              left: '50%',
+              transform: 'translateX(-50%) translateY(75%)'
+            }}
+          />
+        </Heading>
+        <Text
+          sx={{
+            fontSize: 3,
+            fontWeight: 'bold',
+            textAlign: 'center',
+            maxWidth: '800px',
+            mb: 4
+          }}
+        >
+          Scrapyard Albuquerque is made possible by these amazing sponsors. 
+          Interested in sponsoring? Email us at{' '}
+          <Link href="mailto:krishna@numeri.us">krishna@numeri.us</Link>
+        </Text>
+        
+        <Grid
+          columns={[1, 2, 2]}
+          gap={4}
+          sx={{
+            maxWidth: '1000px',
+            mb: 5
+          }}
+        >
+          {/* Hack Club */}
+          <Card
+            sx={{
+              background: 'white',
+              boxShadow: 'card',
+              p: 4,
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              minHeight: '200px',
+              transition: 'transform 0.2s',
+              ':hover': {
+                transform: 'scale(1.05)'
+              }
+            }}
+          >
+            <Link href="https://hackclub.com" target="_blank">
+              <Image 
+                src="https://assets.hackclub.com/flag-orpheus-top.svg" 
+                alt="Hack Club"
+                sx={{
+                  maxWidth: '180px',
+                  maxHeight: '120px',
+                  mb: 3
+                }}
+              />
+            </Link>
+            <Heading as="h3" mb={2}>Hack Club</Heading>
+          </Card>
+          
+          {/* Loial */}
+          <Card
+            sx={{
+              background: 'white',
+              boxShadow: 'card',
+              p: 4,
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              minHeight: '200px',
+              transition: 'transform 0.2s',
+              ':hover': {
+                transform: 'scale(1.05)'
+              }
+            }}
+          >
+            <Link href="https://www.loialinc.com/" target="_blank">
+              <Image 
+                src="https://cdn.hack.pet/slackcdn/c7ed792743837995247b5dc7f2814102.png" 
+                alt="Loial"
+                sx={{
+                  maxWidth: '180px',
+                  maxHeight: '120px',
+                  mb: 3
+                }}
+              />
+            </Link>
+            <Heading as="h3" mb={2}>Loial</Heading>
+          </Card>
+          
+          {/* Explora */}
+          <Card
+            sx={{
+              background: 'white',
+              boxShadow: 'card',
+              p: 4,
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              minHeight: '200px',
+              transition: 'transform 0.2s',
+              ':hover': {
+                transform: 'scale(1.05)'
+              }
+            }}
+          >
+            <Link href="https://www.explora.us/" target="_blank">
+              <Image 
+                src="https://cdn.hack.pet/slackcdn/bb45f6ea9fa2c451cbf8e8b8c691da9f.png" 
+                alt="Explora"
+                sx={{
+                  maxWidth: '180px',
+                  maxHeight: '120px',
+                  mb: 3
+                }}
+              />
+            </Link>
+            <Heading as="h3" mb={2}>Explora</Heading>
+          </Card>
+          
+          {/* NMM */}
+          <Card
+            sx={{
+              background: 'white',
+              boxShadow: 'card',
+              p: 4,
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              minHeight: '200px',
+              transition: 'transform 0.2s',
+              ':hover': {
+                transform: 'scale(1.05)'
+              }
+            }}
+          >
+            <Link href="https://www.newmexicomutual.com/" target="_blank">
+              <Image 
+                src="https://cdn.hack.pet/slackcdn/3d16061ea5f9aa0cedf09ce65c10bc6e.png" 
+                alt="NMM"
+                sx={{
+                  maxWidth: '180px',
+                  maxHeight: '120px',
+                  mb: 3
+                }}
+              />
+            </Link>
+            <Heading as="h3" mb={2}>NMM</Heading>
+          </Card>
+        </Grid>
+      </Box>
+
+      {/* Schedule Section */}
+      <Box
+        sx={{
+          width: '100%',
+          background: "url('/backgrounds/lined-paper.png')",
+          backgroundSize: ['contain', 'contain', 'cover!important'],
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          flexDirection: 'column',
+          gap: '20px',
+          p: [4, 4, 5],
+          pt: 6,
+          position: 'relative'
         }}
       >
         <Box
           sx={{
             backgroundImage: 'url(/elements/ripped-paper-strip.svg)',
-            // backgroundSize: "cover!important",
-            // display: "block",
-            // width: "30vw",
             height: '30vh',
             width: ['90vw', '70vw', '46.8vw'],
             alignItems: 'center',
@@ -438,7 +623,7 @@ export default function ExampleCity() {
               textAlign: 'center'
             }}
           >
-            WHAT'S HAPPENING AT SCRAPYARD Albuquerque?
+            WHAT'S HAPPENING AT SCRAPYARD ALBUQUERQUE?
           </Heading>
         </Box>
 
@@ -451,8 +636,7 @@ export default function ExampleCity() {
             textAlign: 'center'
           }}
         >
-          Scrapyard Albuquerque is a 10 hour event - HERE'S THE ROUGH
-          SCHEDULE!
+          Scrapyard Albuquerque is a 8-hour event - HERE'S THE SCHEDULE!
         </Heading>
         <Box
           sx={{
@@ -507,72 +691,9 @@ export default function ExampleCity() {
             </div>
           ))}
         </Box>
-      </Box> */}
-
-      <Box
-        sx={{
-          // backgroundImage: "url(/backgrounds/confetti.png)",
-          alignItems: 'center',
-          display: 'flex',
-          flexDirection: 'column'
-        }}
-      >
-        <Box
-          sx={{
-            backgroundImage: 'url(/elements/ripped-paper-strip.svg)',
-            // backgroundSize: "cover!important",
-            // display: "block",
-            // width: "30vw",
-            height: '30vh',
-            width: ['90vw', '70vw', '46.8vw'],
-            alignItems: 'center',
-            justifyContent: 'center',
-            margin: '0vh',
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: 'cover',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center'
-          }}
-        >
-          <Heading
-            as="h1"
-            sx={{
-              mx: '1vw',
-              fontWeight: 'lighter',
-              textAlign: 'center'
-            }}
-          >
-            CAN'T MAKE IT TO ALBUQUERQUE?
-          </Heading>
-        </Box>
-        <Heading
-          as="h2"
-          sx={{
-            fontSize: '1.5em',
-            fontFamily: 'moonblossom',
-            color: 'white',
-            textAlign: 'center',
-            mx: '5vw'
-          }}
-        >
-          THERE ARE 100+ OTHER SCRAPYARD EVENTS HAPPENING AROUND THE WORLD!
-        </Heading>
-        <Box
-          sx={{
-            width: ['100%', '80%'],
-            height: '75vh',
-            alignItems: 'center',
-            display: 'flex',
-            flexDirection: 'column',
-            mb: '10vh',
-            mt: 5
-          }}
-        >
-          <Map />
-        </Box>
       </Box>
 
+      {/* Sponsors Section */}
       <Box
         sx={{
           width: '100%',
@@ -588,6 +709,7 @@ export default function ExampleCity() {
           position: 'relative'
         }}
       >
+      
         <Heading
           as="h1"
           sx={{

@@ -172,7 +172,7 @@ export default function ExampleCity() {
               }}
             >
               {/* TODO: Change [EXAMPLECITY] to your event's city */}
-              Auckland - March&nbsp;15-16
+              Auckland - March&nbsp;16
             </Heading>
           </Box>
         </Box>
@@ -461,7 +461,7 @@ export default function ExampleCity() {
         >
           {/* TODO: Change [EXAMPLECITY] to your event's city */}
           {/* TODO: Change [DURATION] to your event's duration (12hour, 24hour, 2-day) */}
-          Scrapyard Auckland is a 2 day, 24 hour event - HERE'S THE ROUGH
+          Scrapyard Auckland is a 1 day, 12 hour event - HERE'S THE ROUGH
           SCHEDULE!
         </Heading>
         <Box
@@ -702,9 +702,9 @@ export default function ExampleCity() {
               <>
                 {/* TODO: Change [SLACKCHANNEL] to the name of your event's Slack channel */}
                 Contact us! Feel free to reach out to us in the #Scrapyard Auckland
-                channel on the Hack Club slack or email us at {'niko.auckland@scrapyard.hackclub.com'}
+                channel on the Hack Club slack or email us at {' '}
                 {/* TODO: Change this email to your event's email */}
-                <Link href="mailto:niko.auckland@scrapyard.hackclub.comm">
+                <Link href="mailto:niko.auckland@scrapyard.hackclub.com">
                   {/* TODO: Change this email to your event's email */}
                   niko.auckland@scrapyard.hackclub.com
                 </Link>

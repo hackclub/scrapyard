@@ -317,7 +317,7 @@ export default function Kathmandu() {
               }}
             >
               Scrapyard Kathmandu is a hackathon for high schoolers
-              happening in Kathmandu, where you can make the stupidest
+              happening in St. Joseph English Secondary School, where you can make the stupidest
               things you can think of! Anything, from a{' '}
               <Link href="https://www.youtube.com/watch?v=PnK4gzO6S3Q">
                 lamp that flashes faster the slower you type
