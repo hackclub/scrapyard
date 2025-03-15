@@ -253,7 +253,7 @@ export default function ExampleCity() {
               <Heading
                 as="h1"
                 sx={{
-                  fontFamily: 'marykate',
+                  fontFamily: 'moonblossom',
                   textAlign: 'center',
                   fontSize: '3.2em',
                 }}
