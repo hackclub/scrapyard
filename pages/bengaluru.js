@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { Box, Card, Grid, Heading, Image, Link, Text } from 'theme-ui'
 import dynamic from 'next/dynamic'
+import MemberSection from '../components/city/hyderabad/MemberSection'
 
 
 const schedule = [
@@ -16,6 +17,68 @@ const schedule = [
   { time: '06:30 PM', event: 'Demos and Submission!' },
   { time: '07:30 PM', event: 'Closing Ceremony' },
   { time: '08:00 PM', event: 'Doors Close' },
+]
+
+const ourTeam = [
+  {
+    name: 'Joel Joby',
+    email: 'joeljobyp@gmail.com',
+    linkedInUsername: '@joeljoby',
+    linkedInProfile: 'https://www.linkedin.com/in/joeljoby/',
+    designation: 'Head of Operations and Marketing',
+    imgSrc: 'https://ca.slack-edge.com/T0266FRGM-U07963V1L0Y-5787e0ac2390-192'
+  },
+  {
+    name: 'Shailesh Saravanan',
+    email: 'shaileshsaravanan385@gmail.com',
+    linkedInUsername: 'notshailesh',
+    linkedInProfile: 'linkedin.com/in/notshailesh',
+    designation: 'Outreach & Marketing',
+    imgSrc: 'https://ca.slack-edge.com/T0266FRGM-U078ML6LJ5C-2601b8c19bbf-512'
+  },
+  {
+    name: 'Milan Sampath',
+    email: 'milangs4606@gmail.com',
+    linkedInUsername: 'N/A',
+    linkedInProfile: '#',
+    designation: 'Design',
+    imgSrc: 'https://ca.slack-edge.com/T0266FRGM-U07NGDU5PPT-1b3527a11582-192'
+  },
+  {
+    name: 'Dhruv Tiwari',
+    email: 'dhruv.d.tiwari@gmail.com',
+    linkedInUsername: '@dhruv-tiwari-dev',
+    linkedInProfile: 'https://www.linkedin.com/in/dhruv-tiwari-dev/',
+    designation: 'Operations & Marketing',
+    imgSrc: '/city/bengaluru/organizers/dhruv.png'
+  },
+  {
+    name: 'Aahem',
+    email: 'hvkatta@gmail.com',
+    linkedInUsername: '@hima-vamsi-katta',
+    linkedInProfile:
+      'https://files.slack.com/files-tmb/T0266FRGM-F08HNL2EN5U-3d1893d4f8/newpfp_720.jpg',
+    designation: 'Designs & ID cards',
+    imgSrc: ''
+  },
+  {
+    name: 'Arnav',
+    email: 'hvkatta@gmail.com',
+    linkedInUsername: '@hima-vamsi-katta',
+    linkedInProfile:
+      'https://files.slack.com/files-tmb/T0266FRGM-F08HNL2EN5U-3d1893d4f8/newpfp_720.jpg',
+    designation: 'Sponsors',
+    imgSrc: ''
+  },
+  {
+    name: 'Adarsh',
+    email: 'hvkatta@gmail.com',
+    linkedInUsername: '@hima-vamsi-katta',
+    linkedInProfile:
+      'https://files.slack.com/files-tmb/T0266FRGM-F08HNL2EN5U-3d1893d4f8/newpfp_720.jpg',
+    designation: 'Outreach',
+    imgSrc: ''
+  }
 ]
 
 const Map = dynamic(() => import('../components/Map'), { ssr: false })
@@ -40,6 +103,49 @@ const Flag = () => (
       }}
     />
   </Link>
+)
+
+const TeamGrid = ({ title, members }) => (
+  <Box
+    sx={{
+      paddingBottom: '40px',
+      background: '#337D77',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      gap: '20px'
+    }}
+  >
+    <Box
+      sx={{
+        backgroundImage: 'url(/elements/ripped-paper-strip.svg)',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+        height: '30vh',
+        width: ['90vw', '70vw', '46.8vw'],
+        alignItems: 'center',
+        justifyContent: 'center',
+        display: 'flex',
+        flexDirection: 'column'
+      }}
+    >
+      <Heading
+        as="h1"
+        sx={{
+          mx: '1vw',
+          fontWeight: 'lighter',
+          textAlign: 'center'
+        }}
+      >
+        {title}
+      </Heading>
+    </Box>
+    <Grid columns={[1, 3]} gap="25px" sx={{ maxWidth: '1600px' }}>
+      {members.map((member, index) => (
+        <MemberSection key={index} member={member} />
+      ))}
+    </Grid>
+  </Box>
 )
 
 export default function ExampleCity() {
@@ -141,9 +247,12 @@ export default function ExampleCity() {
               }}
             >
               Bengaluru - March&nbsp;16th @
-              <Link href="https://maps.app.goo.gl/G46eciLCZsvhhbKw8" target="_blank">
-    The Hub Bengaluru
-  </Link>
+              <Link
+                href="https://maps.app.goo.gl/G46eciLCZsvhhbKw8"
+                target="_blank"
+              >
+                The Hub Bengaluru
+              </Link>
             </Heading>
           </Box>
         </Box>
@@ -331,7 +440,7 @@ export default function ExampleCity() {
           />
           <Image
             src="/elements/doodles/yellowlines.svg"
-            sx={{ position: 'absolute', left: '37%', top: '80%' }}
+            sx={{ position: 'absolute', left: '37%', top: '100%' }}
           />
           <Image
             src="/elements/doodles/bluecircle.svg"
@@ -564,7 +673,9 @@ export default function ExampleCity() {
         }}
       />
 
-      <Box sx={{ alignItems: 'center', display: 'flex', flexDirection: 'column' }}>
+      <Box
+        sx={{ alignItems: 'center', display: 'flex', flexDirection: 'column' }}
+      >
         <Box
           sx={{
             backgroundImage: 'url(/elements/ripped-paper-strip.svg)',
@@ -656,7 +767,7 @@ export default function ExampleCity() {
           ))}
         </Box>
       </Box>
-
+      <TeamGrid title="Our Team" members={ourTeam} />
       <Box
         sx={{
           alignItems: 'center',
@@ -690,6 +801,7 @@ export default function ExampleCity() {
             CAN'T MAKE IT TO BENGALURU?
           </Heading>
         </Box>
+
         <Heading
           as="h2"
           sx={{
@@ -760,11 +872,7 @@ export default function ExampleCity() {
             ),
             'All this, for free?': (
               <>
-                Yep! Food, swag and good vibes are all included. If you’re
-                joining us from afar,
-                <Link href="https://gas.hackclub.com/">
-                  &nbsp;we’ll cover travel costs
-                </Link>
+                Yep! Food, swag and good vibes are all included.
                 .
               </>
             ),
