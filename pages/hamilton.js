@@ -569,13 +569,13 @@ export default function ExampleCity() {
       href="https://www.comotiongroup.ca/"
       target="_blank"
       aria-label="CoMotion On King"
-      sx={{ position: 'absolute', top: 230, left: 430, zIndex: 2}}
+      sx={{ position: 'absolute', top: 200, left: 270, zIndex: 2}}
   >
     <Image
       src="/city/hamilton/comotion-logo.png"
       alt="CoMotion On King"
       sx={{
-        width: [120, 128, 700],
+        width: [120, 128, 1000],
         transformOrigin: '% 0%',
         transition: 'transform 0.1s',
         ':hover': {
@@ -586,36 +586,16 @@ export default function ExampleCity() {
     </Link>
     <Link
       // Nord VPN
-      href="https://nordvpn.com/hackathons"
+      href="https://www.i2bglobal.com/"
       target="_blank"
-      aria-label="Nord VPN"
-      sx={{ position: 'absolute', top: 395, left: 20, zIndex: 2 }}
+      aria-label="I2B Global Inc."
+      sx={{ position: 'absolute', top: 460, left: 400, zIndex: 2 }}
   >
     <Image
-      src="/city/hamilton/nordvpn.png"
-      alt="Nord VPN"
+      src="/city/hamilton/I2bLogo-New-354x354.jpg"
+      alt="I2B Global Inc."
       sx={{
-        width: [120, 128, 450],
-        transformOrigin: '% 0%',
-        transition: 'transform 0.1s',
-        ':hover': {
-          transform: 'rotate(0.03turn) scale(1.2) translateY(-4px)'
-        }
-      }}
-    />
-    </Link>
-    <Link
-      // Incogni
-      href="https://incogni.com/"
-      target="_blank"
-      aria-label="Incogni"
-      sx={{ position: 'absolute', top: 460, left: 470, zIndex: 2 }}
-  >
-    <Image
-      src="/city/hamilton/incogni white (3).png"
-      alt="Incogni"
-      sx={{
-        width: [120, 128, 270],
+        width: [96, 102, 275],
         transformOrigin: '% 0%',
         transition: 'transform 0.1s',
         ':hover': {
@@ -626,16 +606,16 @@ export default function ExampleCity() {
     </Link>
     <Link
       // Nord Pass
-      href="https://nordpass.com/"
+      href="https://www.softwareandprocessdesign.ca/"
       target="_blank"
-      aria-label="Nord Pass"
-      sx={{ position: 'absolute', top: 460, left: 810, zIndex: 2 }}
+      aria-label="Software Process and Design"
+      sx={{ position: 'absolute', top: 450, left: 835, zIndex: 2 }}
   >
     <Image
-      src="/city/hamilton/nordpass.png"
-      alt="Nord Pass"
+      src="/city/hamilton/Software-and-Process-Design_Logo-BLUE.png"
+      alt="Software Process and Design"
       sx={{
-        width: [120, 128, 325],
+        width: [120, 128, 300],
         transformOrigin: '% 0%',
         transition: 'transform 0.1s',
         ':hover': {
@@ -644,26 +624,7 @@ export default function ExampleCity() {
       }}
     />
     </Link>
-    <Link
-      // Saily
-      href="https://saily.com/ "
-      target="_blank"
-      aria-label="Saily"
-      sx={{ position: 'absolute', top: 400, left: 1150, zIndex: 2 }}
-  >
-    <Image
-      src="/city/hamilton/saily.png"
-      alt="Saily"
-      sx={{
-        width: [120, 128, 325],
-        transformOrigin: '% 0%',
-        transition: 'transform 0.1s',
-        ':hover': {
-          transform: 'rotate(0.03turn) scale(1.2) translateY(-4px)'
-        }
-      }}
-    />
-    </Link>
+    
         </Box>
       <Box
         sx={{

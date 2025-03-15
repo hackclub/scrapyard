@@ -79,7 +79,137 @@ export default function Vancouver() {
         {/* TODO: Change [EXAMPLECITY] to your event's city */}
         <title>Scrapyard Vancouver</title>
       </Head>
-      <Flag />
+      {/* <Flag /> */}
+      <Box
+        sx={{
+          width: '100%',
+          background: '#337D78',
+          padding: '15px',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
+          position: 'relative',
+          zIndex: 25
+        }}
+      >
+        <Box
+          sx={{
+            width: '100%',
+            maxWidth: '1200px',
+            display: 'flex',
+            flexDirection: ['column', 'column', 'row'],
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            gap: [3, 3, 0]
+          }}
+        >
+          <Box
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: 3
+            }}
+          >
+            <Box
+              sx={{
+                width: ['40px', '48px'],
+                height: ['40px', '48px'],
+                minWidth: ['40px', '48px'],
+                backgroundColor: 'rgba(255,255,255,0.2)',
+                borderRadius: '50%',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center'
+              }}
+            >
+              <Text sx={{ fontSize: [3, 4], color: 'white' }}>🎉</Text>
+            </Box>
+            <Text
+              sx={{
+                fontSize: [1, 2],
+                fontWeight: 'bold',
+                color: 'white',
+                fontFamily: 'p22-stanyan'
+              }}
+            >
+              Are you at Scrapyard Vancouver right now? Access the following
+              links:
+            </Text>
+          </Box>
+          <Box
+            sx={{
+              display: 'flex',
+              gap: 3,
+              width: ['100%', '100%', 'auto'],
+              justifyContent: 'center'
+            }}
+          >
+            <Link
+              href="https://discord.bcydc.ca"
+              target="_blank"
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: 2,
+                backgroundColor: 'rgba(255,255,255,0.2)',
+                padding: '10px 15px',
+                borderRadius: '8px',
+                textDecoration: 'none',
+                transition: 'transform 0.2s ease, background-color 0.2s ease',
+                ':hover': {
+                  transform: 'scale(1.05)',
+                  backgroundColor: 'rgba(255,255,255,0.3)'
+                },
+                flex: [1, 1, 'auto']
+              }}
+            >
+              <Text
+                sx={{
+                  fontSize: [1, 2],
+                  fontWeight: 'bold',
+                  color: 'white',
+                  fontFamily: 'p22-stanyan'
+                }}
+              >
+                Discord Server
+              </Text>
+              <Text sx={{ fontSize: 1, color: 'white' }}>↗</Text>
+            </Link>
+            <Link
+              href="https://scrapyard.bcydc.ca/handbook"
+              target="_blank"
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: 2,
+                backgroundColor: 'rgba(255,255,255,0.2)',
+                padding: '10px 15px',
+                borderRadius: '8px',
+                textDecoration: 'none',
+                transition: 'transform 0.2s ease, background-color 0.2s ease',
+                ':hover': {
+                  transform: 'scale(1.05)',
+                  backgroundColor: 'rgba(255,255,255,0.3)'
+                },
+                flex: [1, 1, 'auto']
+              }}
+            >
+              <Text
+                sx={{
+                  fontSize: [1, 2],
+                  fontWeight: 'bold',
+                  color: 'white',
+                  fontFamily: 'p22-stanyan'
+                }}
+              >
+                Hacker Handbook
+              </Text>
+              <Text sx={{ fontSize: 1, color: 'white' }}>↗</Text>
+            </Link>
+          </Box>
+        </Box>
+      </Box>
       <Box
         sx={{
           width: '100%',
@@ -254,7 +384,6 @@ export default function Vancouver() {
           />
         </Box>
         <Link
-          // TODO: Change [EVENTID] to your event's ID (see https://airtable.com/appigKiF7GbVISAlg/shrK3OiCJs4BRBIRG)
           href="https://forms.hackclub.com/scrapyard-signup?event_id=recMCJhSzLBLhBitT"
           target="_blank"
         >
@@ -265,7 +394,7 @@ export default function Vancouver() {
               backgroundSize: '100% 100%',
               position: 'fixed',
               right: ['2%'],
-              top: ['4%'],
+              top: ['12%'],
               filter: 'drop-shadow(5px 5px 5px #000)',
               transition: 'transform 0.2s',
               ':hover': {

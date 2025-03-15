@@ -120,7 +120,12 @@ const sponsors = [
   //   name: 'Shuflduf',
   //   logo: '/city/calgary/sponsors/shuflduf.svg',
   //   link: 'https://bsky.app/profile/shuflduf.xyz'
-  // }
+  // },
+  {
+    name: 'Beagleboard',
+    logo: '/city/calgary/sponsors/beagleboard.svg',
+    link: 'https://www.beagleboard.org/'
+  }
 ]
 
 const Map = dynamic(() => import('../components/Map'), { ssr: false })
