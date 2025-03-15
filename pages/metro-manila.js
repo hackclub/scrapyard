@@ -97,7 +97,7 @@ export default function ExampleCity() {
             justifyContent: 'center',
             alignItems: 'center', 
             position: 'relative',
-            marginTop: '190px', 
+            marginTop: '200px', 
           }}
         >
           <Image
@@ -255,7 +255,7 @@ export default function ExampleCity() {
                 sx={{
                   fontFamily: 'moonblossom',
                   textAlign: 'center',
-                  fontSize: '3.2em',
+                  fontSize: '2.5em',
                 }}
               >
                 Co-Presented By:
