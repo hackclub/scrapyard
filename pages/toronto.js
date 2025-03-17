@@ -60,6 +60,64 @@ export default function Toronto() {
       <Flag />
       <Box
         sx={{
+          width: '70%',
+          py: 3,
+          background: "url('/elements/yellow-strip@stretch.svg')",
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: '100% 100%',
+          filter: 'drop-shadow(5px 5px 5px #000)',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+          position: 'relative',
+          zIndex: 20,
+          mx: 'auto',
+          maxWidth: '90%',
+          my: 3,
+          textAlign: 'center'
+        }}
+      >
+        <Heading
+          as="h2"
+          sx={{
+            fontFamily: 'moonblossom',
+            fontSize: ['1.2em', '1.6em'],
+            mb: 2
+          }}
+        >
+          THIS EVENT IS OVER - THANKS FOR COMING!
+        </Heading>
+        <Text sx={{ fontSize: ['1em', '1.2em'], mb: 3 }}>
+          Check out all the amazing projects created at Scrapyard Toronto
+        </Text>
+        <Link
+          href="https://podium.hackclub.com/events/recXBNuSq2tLn8w7T/leaderboard"
+          target="_blank"
+        >
+          <Box
+            sx={{
+              backgroundColor: '#337D78',
+              color: 'white',
+              px: 4,
+              py: 2,
+              borderRadius: 2,
+              fontFamily: 'moonblossom',
+              fontWeight: 'bold',
+              fontSize: '1.1em',
+              transition: 'transform 0.2s',
+              border: '2px solid black',
+              ':hover': {
+                transform: 'scale(1.05)'
+              }
+            }}
+          >
+            VIEW PROJECTS
+          </Box>
+        </Link>
+      </Box>
+      <Box
+        sx={{
           width: '100%',
           height: ['80vh', '80vh', '90vh'],
           bg: 'transparent',
@@ -464,8 +522,7 @@ export default function Toronto() {
             textAlign: 'center'
           }}
         >
-          Scrapyard Toronto is a 12 Hour event - HERE'S THE ROUGH
-          SCHEDULE!
+          Scrapyard Toronto is a 12 Hour event - HERE'S THE ROUGH SCHEDULE!
         </Heading>
         <Box
           sx={{
@@ -845,6 +902,32 @@ export default function Toronto() {
                 quote:
                   ' If every porkchop were perfect, we wouldn’t have hot dogs.',
                 img: 'https://cdn.hack.pet/U084RT5K678/download%20(4).png'
+              },
+              {
+                name: 'Edward',
+                grade: '12th Grade',
+                highSchool: 'Alexander Mackenzie High School',
+                message: "Can't wait to see all the innovations created",
+                quote: " Sleep is just a bug I haven't fixed yet",
+                img: 'https://cdn.hack.pet/U084RT5K678/1000030809.jpg'
+              },
+              {
+                name: 'Sidak',
+                grade: '11th Grade',
+                highSchool: 'Chinguacousy Secondary School',
+                message:
+                  "Lol, I want to see you all; Please don't burn the building down.",
+                quote: "Quit, Don't Quit, Noodles",
+                img: 'https://cdn.hack.pet/U084RT5K678/Screenshot 2025-03-17 120005.png'
+              },
+              {
+                name: 'Samyat',
+                grade: '11th Grade',
+                highSchool: 'Chinguacousy Secondary School',
+                message: 'Looking forward.',
+                quote:
+                  "Whats wrong with knowing what you know now and not knowing what you don't know until later?",
+                img: 'https://cdn.hack.pet/U0871L04D0V/Samyat.png'
               }
             ].map((member, i) => (
               <Card
@@ -927,14 +1010,9 @@ export default function Toronto() {
           >
             Sponsors
           </Heading>
-          <Grid
-            gap={4}
-            sx={{
-              px: [2, 3, 4],
-              // On small screens show a single column; on larger screens use 2 columns (2fr/1fr)
-              gridTemplateColumns: ['1fr', '2fr 1fr']
-            }}
-          >
+
+          {/* Arista Networks - Full Width Row */}
+          <Box sx={{ px: [2, 3, 4], mb: 4 }}>
             <Card
               sx={{
                 p: 4,
@@ -943,6 +1021,11 @@ export default function Toronto() {
                 background: 'white',
                 boxShadow: '0 3px 8px rgba(0,0,0,0.1)',
                 transition: 'transform 0.2s ease',
+                display: 'flex',
+                flexDirection: 'column',
+                height: '100%',
+                maxWidth: '900px',
+                mx: 'auto',
                 ':hover': {
                   transform: 'translateY(-3px)'
                 }
@@ -952,7 +1035,7 @@ export default function Toronto() {
                 src="https://cdn.hack.pet/U084RT5K678/image%20(4).png"
                 alt="Arista Networks"
                 sx={{
-                  width: '90%',
+                  width: ['80%', '70%', '50%'],
                   height: 'auto',
                   objectFit: 'contain',
                   mx: 'auto',
@@ -962,7 +1045,7 @@ export default function Toronto() {
               <Heading as="h3" sx={{ fontSize: '1.7em', mb: 2 }}>
                 Arista Networks
               </Heading>
-              <Text sx={{ fontSize: '1.1em' }}>
+              <Text sx={{ fontSize: '1.1em', flexGrow: 1 }}>
                 Arista Networks is an industry leader in data-driven, client to
                 cloud networking for large data center/AI, campus and routing
                 environments. Their award-winning platforms deliver
@@ -970,6 +1053,17 @@ export default function Toronto() {
                 through an advanced network operating stack.
               </Text>
             </Card>
+          </Box>
+
+          {/* System76 and Techcom - Two Column Row */}
+          <Grid
+            gap={4}
+            sx={{
+              px: [2, 3, 4],
+              gridTemplateColumns: ['1fr', '1fr', '1fr 1fr'],
+              alignItems: 'stretch'
+            }}
+          >
             <Card
               sx={{
                 p: 3,
@@ -978,6 +1072,9 @@ export default function Toronto() {
                 background: 'white',
                 boxShadow: '0 3px 8px rgba(0,0,0,0.1)',
                 transition: 'transform 0.2s ease',
+                display: 'flex',
+                flexDirection: 'column',
+                height: '100%',
                 ':hover': {
                   transform: 'translateY(-3px)'
                 }
@@ -997,146 +1094,160 @@ export default function Toronto() {
               <Heading as="h3" sx={{ fontSize: '1.5em', mb: 2 }}>
                 System76
               </Heading>
-              <Text sx={{ fontSize: '1em' }}>
+              <Text sx={{ fontSize: '1em', flexGrow: 1 }}>
                 System76 builds powerful open source computers, keyboards, and
                 software, empowering creators, makers, and builders to unleash
                 their potential.
               </Text>
             </Card>
-          </Grid>
 
-          <Heading
-            as="h2"
-            sx={{
-              textAlign: 'center',
-              mt: 5,
-              mb: 3,
-              fontSize: ['1.4em', '1.6em']
-            }}
-          >
-            Our Partners
-          </Heading>
-          <Grid columns={[3, 4, 6]} gap={3} sx={{ px: [2, 3, 4] }}>
-            {[
-              'https://hc-cdn.hel1.your-objectstorage.com/s/v3/278694a1ea294828eef8af0f8d2bf149921b6f6c_vueschool_logo_two_lines_white_bg__1_.png',
-              'https://hc-cdn.hel1.your-objectstorage.com/s/v3/d7969da1d87bed74c9174d0a235307bd4f529ff5_image__5_.png',
-              'https://hc-cdn.hel1.your-objectstorage.com/s/v3/393d615a4bdd2b724f5607e3337c630b73e3e2be_image__9_.png',
-              'https://hc-cdn.hel1.your-objectstorage.com/s/v3/35d714f86028aea17dad967cc70887dfe0c5dad9_download__2___1_.png',
-              'https://hc-cdn.hel1.your-objectstorage.com/s/v3/c999a19e5fa1e98d34cb01a31c870c758b329524_download__3_.png',
-              'https://hc-cdn.hel1.your-objectstorage.com/s/v3/9d8b606916917690138ab77fc477400c1cfd1a89_image__8_.png',
-              'https://hc-cdn.hel1.your-objectstorage.com/s/v3/9153306113d018c87d206fa57557ea842b4549c7_hetzner-logo__2___1_.png',
-              'https://hc-cdn.hel1.your-objectstorage.com/s/v3/eccd6fe6bb17a69a954054518cb053a44369ce1b_xyz-logo-color.png',
-              'https://hc-cdn.hel1.your-objectstorage.com/s/v3/9d570f29ffe22aa71800cb981104a1bd37093296_white__1_.png',
-              'https://hc-cdn.hel1.your-objectstorage.com/s/v3/cc36a0d2d1d081b1a3bc4b534fad1bfde5d39be8_logo__1_.svg',
-              'https://cdn.hack.pet/U084RT5K678/Screenshot%202025-03-05%20214400.png',
-              'https://community.aws/img/AWS_logo_light.svg'
-            ].map((logo, i) => (
+            <Card
+              sx={{
+                p: 3,
+                textAlign: 'center',
+                border: '2px solid #000',
+                background: 'white',
+                boxShadow: '0 3px 8px rgba(0,0,0,0.1)',
+                transition: 'transform 0.2s ease',
+                display: 'flex',
+                flexDirection: 'column',
+                height: '100%',
+                ':hover': {
+                  transform: 'translateY(-3px)'
+                }
+              }}
+            >
               <Box
-                key={i}
                 sx={{
-                  border: '1px solid #ccc',
-                  p: 2,
-                  borderRadius: 2,
-                  background: 'white',
+                  height: '140px',
                   display: 'flex',
+                  alignItems: 'center',
                   justifyContent: 'center',
-                  alignItems: 'center'
+                  mb: 3
                 }}
               >
-                <Image
-                  src={logo}
-                  alt={`Sponsor ${i + 1}`}
-                  sx={{ width: '80%', height: 'auto' }}
-                />
+                <Heading as="h3" sx={{ fontSize: '1.8em' }}>
+                  TECHCOM™
+                </Heading>
               </Box>
-            ))}
+              <Heading as="h3" sx={{ fontSize: '1.5em', mb: 2 }}>
+                Techcom
+              </Heading>
+              <Text sx={{ fontSize: '1em', flexGrow: 1 }}>
+                Founded in 1994 and headquartered in Vaughan, Ontario Canada,
+                TECHCOM™ continues to focus on building innovative data
+                agnostic technology platforms containing functionality and
+                capability that spans all stages of the customer account life
+                cycle allowing organizations to effectively communicate,
+                interact and collaborate across and outside the enterprise –
+                enabling geographically dispersed business operations to
+                efficiently operate while also having embedded capability that
+                extends the platform to external partner suppliers who operate
+                on the TECHCOM™ technology in real-time.
+              </Text>
+            </Card>
           </Grid>
         </Box>
 
-        <Link
-          href="https://forms.hackclub.com/scrapyard-signup?event=toronto"
-          target="_blank"
-        >
-          <Box
-            sx={{
-              backgroundImage: "url('/elements/yellow-strip@stretch.svg')",
-              backgroundRepeat: 'no-repeat',
-              backgroundSize: '100% 100%',
-              filter: 'drop-shadow(5px 5px 5px #000)',
-              transition: 'transform 0.2s',
-              ':hover': {
-                transform: 'scale(1.1)'
-              },
-              zIndex: 20,
-              padding: 1,
-              my: 3
-            }}
-          >
-            <Heading
-              as="h2"
-              sx={{
-                fontFamily: 'moonblossom',
-                textAlign: 'center',
-                margin: '8%',
-                fontSize: ['1.2em', '1.4em'],
-                textTransform: 'inherit!important',
-                paddingY: ['15px', '0px'],
-                lineHeight: 1.5
-              }}
-            >
-              SIGN UP FOR SCRAPYARD TORONTO
-            </Heading>
-          </Box>
-        </Link>
         <Heading
           as="h2"
           sx={{
-            mt: 3,
-            position: 'relative'
+            textAlign: 'center',
+            mt: 5,
+            mb: 3,
+            fontSize: ['1.4em', '1.6em']
           }}
         >
-          Scrapyard
-          <Image
-            src="/elements/doodles/pink-underline.svg"
-            sx={{
-              position: 'absolute',
-              bottom: '0',
-              left: '50%',
-              transform: 'translateX(-50%) translateY(75%)'
-            }}
-          />
+          Our Partners
         </Heading>
-        <Text
-          sx={{
-            fontFamily: 'moonblossom',
-            mb: -2,
-            textAlign: 'center'
-          }}
-        >
-          Made with ♡ by teenagers, for teenagers at Hack Club
-        </Text>
-        <Text
-          sx={{
-            fontFamily: 'moonblossom',
-            mt: 0,
-            textAlign: 'center'
-          }}
-        >
-          <Link href="https://hackclub.com">Hack Club</Link>{' '}
-          <span sx={{ transform: 'scale(2)' }}>・</span>{' '}
-          <Link href="https://discord.gg/eMzU6vuZwj">Discord</Link>{' '}
-          <span sx={{ transform: 'scale(2)' }}>・</span>{' '}
-          <Link href="https://www.instagram.com/scrapyard_toronto/">
-            Instagram
-          </Link>{' '}
-          <span sx={{ transform: 'scale(2)' }}>・</span>{' '}
-          <Link href="https://hackclub.com/slack">Slack</Link>{' '}
-          <span sx={{ transform: 'scale(2)' }}>・</span>{' '}
-          <Link href="https://hackclub.com/clubs">Clubs</Link>{' '}
-          <span sx={{ transform: 'scale(2)' }}>・</span>{' '}
-          <Link href="https://hackclub.com/hackathons">Hackathons</Link>
-        </Text>
+        <Grid columns={[3, 4, 6]} gap={3} sx={{ px: [2, 3, 4] }}>
+          {[
+            'https://hc-cdn.hel1.your-objectstorage.com/s/v3/278694a1ea294828eef8af0f8d2bf149921b6f6c_vueschool_logo_two_lines_white_bg__1_.png',
+            'https://hc-cdn.hel1.your-objectstorage.com/s/v3/d7969da1d87bed74c9174d0a235307bd4f529ff5_image__5_.png',
+            'https://hc-cdn.hel1.your-objectstorage.com/s/v3/393d615a4bdd2b724f5607e3337c630b73e3e2be_image__9_.png',
+            'https://hc-cdn.hel1.your-objectstorage.com/s/v3/35d714f86028aea17dad967cc70887dfe0c5dad9_download__2___1_.png',
+            'https://hc-cdn.hel1.your-objectstorage.com/s/v3/c999a19e5fa1e98d34cb01a31c870c758b329524_download__3_.png',
+            'https://hc-cdn.hel1.your-objectstorage.com/s/v3/9d8b606916917690138ab77fc477400c1cfd1a89_image__8_.png',
+            'https://hc-cdn.hel1.your-objectstorage.com/s/v3/9153306113d018c87d206fa57557ea842b4549c7_hetzner-logo__2___1_.png',
+            'https://hc-cdn.hel1.your-objectstorage.com/s/v3/eccd6fe6bb17a69a954054518cb053a44369ce1b_xyz-logo-color.png',
+            'https://hc-cdn.hel1.your-objectstorage.com/s/v3/9d570f29ffe22aa71800cb981104a1bd37093296_white__1_.png',
+            'https://hc-cdn.hel1.your-objectstorage.com/s/v3/cc36a0d2d1d081b1a3bc4b534fad1bfde5d39be8_logo__1_.svg',
+            'https://cdn.hack.pet/U084RT5K678/Screenshot%202025-03-05%20214400.png',
+            'https://community.aws/img/AWS_logo_light.svg',
+            'https://cdn.hack.pet/U0871L04D0V/NordVPN_Bronze.png',
+            'https://cdn.hack.pet/U0871L04D0V/Saily.png',
+            'https://cdn.hack.pet/U0871L04D0V/Incogni.png',
+            'https://cdn.hack.pet/U0871L04D0V/Warp.png'
+          ].map((logo, i) => (
+            <Box
+              key={i}
+              sx={{
+                border: '1px solid #ccc',
+                p: 2,
+                borderRadius: 2,
+                background: 'white',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center'
+              }}
+            >
+              <Image
+                src={logo}
+                alt={`Sponsor ${i + 1}`}
+                sx={{ width: '80%', height: 'auto' }}
+              />
+            </Box>
+          ))}
+        </Grid>
       </Box>
+
+      <Heading
+        as="h2"
+        sx={{
+          mt: 3,
+          position: 'relative'
+        }}
+      >
+        Scrapyard
+        <Image
+          sx={{
+            position: 'absolute',
+            bottom: '0',
+            left: '50%',
+            transform: 'translateX(-50%) translateY(75%)'
+          }}
+        />
+      </Heading>
+      <Text
+        sx={{
+          fontFamily: 'moonblossom',
+          mb: -2,
+          textAlign: 'center'
+        }}
+      >
+        Made with ♡ by teenagers, for teenagers at Hack Club
+      </Text>
+      <Text
+        sx={{
+          fontFamily: 'moonblossom',
+          mt: 0,
+          textAlign: 'center'
+        }}
+      >
+        <Link href="https://hackclub.com">Hack Club</Link>{' '}
+        <span sx={{ transform: 'scale(2)' }}>・</span>{' '}
+        <Link href="https://discord.gg/eMzU6vuZwj">Discord</Link>{' '}
+        <span sx={{ transform: 'scale(2)' }}>・</span>{' '}
+        <Link href="https://www.instagram.com/scrapyard_toronto/">
+          Instagram
+        </Link>{' '}
+        <span sx={{ transform: 'scale(2)' }}>・</span>{' '}
+        <Link href="https://hackclub.com/slack">Slack</Link>{' '}
+        <span sx={{ transform: 'scale(2)' }}>・</span>{' '}
+        <Link href="https://hackclub.com/clubs">Clubs</Link>{' '}
+        <span sx={{ transform: 'scale(2)' }}>・</span>{' '}
+        <Link href="https://hackclub.com/hackathons">Hackathons</Link>
+      </Text>
     </Box>
   )
 }
