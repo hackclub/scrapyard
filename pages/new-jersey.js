@@ -38,7 +38,7 @@ const schedule = [
   { time: '8:15 PM', event: 'Closing ceremony' }
 ]
 
-const colors = ['#ffadad', '#fdffb6', '#9bf6ff', '#ffd6a5', '#caffbf'];
+const colors = ['#69c5f1', '#8e6af2', '#9bf6ff', '#ffd6a5', '#caffbf'];
 const sponsors = [
   {
     name: 'Hack Club',
@@ -67,8 +67,13 @@ const sponsors = [
   },
   {
     name: 'Art of Problem Solving',
-    link: 'https://artofproblemsolving.com',
+    link: 'https://aopsacademy.org/campus/millburn',
     image: '/city/new-jersey/AoPS.png'
+  }
+    {
+    name: 'Cards Against Humanity',
+    link: 'https://www.cardsagainsthumanity.com',
+    image: '/city/new-jersey/CAH_Logo.png'
   }
 ]
 
