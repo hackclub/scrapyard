@@ -207,6 +207,37 @@ export default function Vancouver() {
               </Text>
               <Text sx={{ fontSize: 1, color: 'white' }}>↗</Text>
             </Link>
+            <Link
+              href="https://github.com/TuanTTranCS/setup-coding-assistants"
+              target="_blank"
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: 2,
+                backgroundColor: 'rgba(255,255,255,0.2)',
+                padding: '10px 15px',
+                borderRadius: '8px',
+                textDecoration: 'none',
+                transition: 'transform 0.2s ease, background-color 0.2s ease',
+                ':hover': {
+                  transform: 'scale(1.05)',
+                  backgroundColor: 'rgba(255,255,255,0.3)'
+                },
+                flex: [1, 1, 'auto']
+              }}
+            >
+              <Text
+                sx={{
+                  fontSize: [1, 2],
+                  fontWeight: 'bold',
+                  color: 'white',
+                  fontFamily: 'p22-stanyan'
+                }}
+              >
+                AI Set Up Guide
+              </Text>
+              <Text sx={{ fontSize: 1, color: 'white' }}>↗</Text>
+            </Link>
           </Box>
         </Box>
       </Box>
@@ -1278,9 +1309,17 @@ export default function Vancouver() {
             alt="BCYDC Logo"
             sx={{
               width: '200px',
-              filter: 'drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.2))'
+              filter: 'drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.2))',
+              marginRight: '20px'
             }}
-          />
+          /><Image
+          src="/city/vancouver/sgs_logo.png"
+          alt="SGS Logo"
+          sx={{
+            width: '180px',
+            filter: 'drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.2))'
+          }}
+        />
         </Box>
         <Text
           sx={{
@@ -1291,7 +1330,7 @@ export default function Vancouver() {
             color: 'white'
           }}
         >
-          Scrapyard Vancouver is being organized by BCYDC. We are a collective
+          Scrapyard Vancouver is being organized by the SGS CS Club and BCYDC. BCYDC is a collective
           of over 300 high school students with a shared passion for computer
           science, software development, robotics, and technology.
         </Text>

@@ -9,7 +9,7 @@ const scheduleDay1 = [
     icon: 'https://img.icons8.com/ios-filled/50/door.png',
   },
   {
-    time: '10:15 AM',
+    time: '10:00 AM',
     event: 'Opening Ceremony',
     icon: 'https://img.icons8.com/emoji/48/partying-face.png',
   },
@@ -20,34 +20,34 @@ const scheduleDay1 = [
   },
   {
     time: '12:00 PM',
-    event: 'Lunch',
+    event: 'Lunch and Q/A',
     icon: 'https://img.icons8.com/ios-filled/50/meal.png',
   },
   {
-    time: '2:00 PM',
-    event: 'Workshop 1',
-    icon: 'https://img.icons8.com/ios-filled/50/training.png', // Updated icon URL
+    time: '1:00 PM',
+    event: 'Work Time',
+    icon: 'https://img.icons8.com/?size=100&id=EoGnNFc1x3w8&format=png&color=000000',
+  },
+  {
+    time: '3:00 PM',
+    event: 'Fun Time',
+    icon: 'https://img.icons8.com/?size=100&id=QV5JEtrTP6nH&format=png&color=000000',
   },
   {
     time: '4:00 PM',
-    event: 'Fun Activity',
-    icon: 'https://img.icons8.com/emoji/48/smiling-face-with-sunglasses.png',
-  },
-  {
-    time: '5:00 PM',
     event: 'End of Day 1',
-    icon: 'https://img.icons8.com/emoji/48/waving-hand-medium-dark-skin-tone.png',
-  },
+    icon: 'https://img.icons8.com/emoji/48/waving-hand-light-skin-tone.png',
+  } 
 ];
 
 const scheduleDay2 = [
   {
-    time: '9:00 AM',
+    time: '10:00 AM',
     event: 'Doors Open & Check-In',
     icon: 'https://img.icons8.com/ios-filled/50/door.png',
   },
   {
-    time: '9:30 AM',
+    time: '10:30 AM',
     event: 'Begin Hacking!',
     icon: 'https://img.icons8.com/emoji/48/hammer-and-wrench.png',
   },
@@ -57,22 +57,17 @@ const scheduleDay2 = [
     icon: 'https://img.icons8.com/?size=100&id=CYgFsQyxgTod&format=png&color=000000',
   },
   {
+    time: '12:30 PM',
+    event: 'UW lecturer talk',
+    icon: 'https://img.icons8.com/?size=100&id=13210&format=png&color=000000',
+  },
+  {
     time: '2:00 PM',
-    event: 'Submission Deadline',
-    icon: 'https://img.icons8.com/?size=100&id=A90XZgNDIsOE&format=png&color=000000',
+    event: 'Ships due',
+    icon: 'https://img.icons8.com/?size=100&id=15615&format=png&color=000000',
   },
   {
-    time: '3:00 PM',
-    event: 'Workshop 2',
-    icon: 'https://img.icons8.com/?size=100&id=MmkqIRv7P6Xy&format=png&color=000000',
-  },
-  {
-    time: '5:00 PM',
-    event: 'Closing Ceremony',
-    icon: 'https://img.icons8.com/emoji/48/partying-face.png',
-  },
-  {
-    time: '6:00 PM',
+    time: '4:00 PM',
     event: 'End of Scrapyard Seattle',
     icon: 'https://img.icons8.com/emoji/48/waving-hand-medium-dark-skin-tone.png',
   } 

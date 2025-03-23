@@ -38,7 +38,7 @@ const schedule = [
   { time: '8:15 PM', event: 'Closing ceremony' }
 ]
 
-const colors = ['#ffadad', '#fdffb6', '#9bf6ff', '#ffd6a5', '#caffbf'];
+const colors = ['#69c5f1', '#8e6af2', '#9bf6ff', '#ffd6a5', '#caffbf']
 const sponsors = [
   {
     name: 'Hack Club',
@@ -50,12 +50,12 @@ const sponsors = [
     link: 'https://www.hudsonrivertrading.com',
     image: '/city/new-jersey/HRT.png'
   },
-    {
+  {
     name: 'Savvas Learning Company',
     link: 'https://www.savvas.com',
     image: '/city/new-jersey/savvaslearning.jpg'
   },
-    {
+  {
     name: '.xyz',
     link: 'https://gen.xyz',
     image: '/city/new-jersey/xyz-logo-color.svg'
@@ -67,8 +67,13 @@ const sponsors = [
   },
   {
     name: 'Art of Problem Solving',
-    link: 'https://artofproblemsolving.com',
+    link: 'https://aopsacademy.org/campus/millburn',
     image: '/city/new-jersey/AoPS.png'
+  },
+  {
+    name: 'Cards Against Humanity',
+    link: 'https://www.cardsagainsthumanity.com',
+    image: '/city/new-jersey/CAH_Logo.png'
   }
 ]
 
@@ -174,7 +179,6 @@ export default function ExampleCity() {
               }}
             >
               Happening at Visual Arts Center, Summit NJ
-          
             </Heading>
           </Box>
           <Box
@@ -374,8 +378,9 @@ export default function ExampleCity() {
               }}
             >
               {/* TODO: Change [EXAMPLECITY] to your event's city */}
-              Scrapyard New Jersey is a hackathon for high schoolers happening in New Jersey, where you can make the stupidest things
-              you can think of! Anything, from a{' '}
+              Scrapyard New Jersey is a hackathon for high schoolers happening
+              in New Jersey, where you can make the stupidest things you can
+              think of! Anything, from a{' '}
               <Link href="https://www.youtube.com/watch?v=PnK4gzO6S3Q">
                 lamp that flashes faster the slower you type
               </Link>
