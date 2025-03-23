@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { Box, Card, Grid, Heading, Image, Link, Text } from 'theme-ui'
+import { Box, Card, Grid, Heading, Image, Link, Text, Embed } from 'theme-ui'
 import dynamic from 'next/dynamic'
 
 // TODO: Change this schedule to your own!
@@ -599,161 +599,192 @@ export default function Toronto() {
           position: 'relative'
         }}
       >
-        <Heading
-          as="h1"
+
+        <Box
           sx={{
-            mb: 5,
-            position: 'relative'
+            width: '90%',
+            maxWidth: '1200px',
+            mx: 'auto',
+            my: 2,
+            py: 4,
+            background: "url('/backgrounds/lined-paper.png')",
+            backgroundSize: 'cover',
+            borderRadius: 4,
+            boxShadow: '0 4px 12px rgba(0,0,0,0.15)'
           }}
         >
-          Frequently Asked Questions
-          <Image
-            src="/elements/doodles/blue-underline.svg"
+          <Heading
+            as="h1"
             sx={{
-              position: 'absolute',
-              bottom: '0',
-              left: '50%',
-              transform: 'translateX(-50%) translateY(75%)'
+              textAlign: 'center',
+              mb: 4,
+              fontSize: ['1.8em', '2.2em'],
+              position: 'relative',
+              pb: 2,
+              '&::after': {
+                content: '""',
+                position: 'absolute',
+                bottom: 0,
+                left: '50%',
+                transform: 'translateX(-50%)',
+                width: '80px',
+                height: '3px',
+                backgroundColor: 'primary'
+              }
             }}
-          />
-        </Heading>
-        <Grid
-          columns={[1, 1, 1, 2]}
-          gap={4}
+          >
+            Winners
+          </Heading>
+          
+          <Grid columns={[1, 1]} gap={4} sx={{ px: [2, 3, 4] }}>
+            {[ { 
+              teamName: "Hyper Chess",
+              description: "Hand tracking multiplayer chess made using python and mediapipe, utilizing arduino to transfer signals.",
+              memberNames: ["Edwin Yun Wen", "Jayden Wang", "Rayhan Jamasi"],
+              ranking: "🥇",
+              rankColor: "yellow",
+              videoURL: "https://www.youtube.com/embed/kon1goljfLI",
+            },{ 
+              teamName: "Twitch Chats Taser",
+              description: "Two wheeled robot with attached taser: can drive and of course tase. Made using websockets, nextjs, and the twich bot API.",
+              memberNames: ["Evan Yu", "Aaron Huang", "Bernice Qiu"],
+              ranking: "🥈",
+              rankColor: "rgb(188, 188, 188)",
+              videoURL: "https://www.youtube.com/embed/74rYBLfw3aY",
+            },{ 
+              teamName: "Infinte Dual",
+              description: "Multiplayer game made using arduino to transfer signals and c++.", 
+              memberNames: ["Sze Long Lam", "Chi Kin Hu", "Zixuan Cheng"],
+              ranking: "🥉",
+              rankColor: "rgb(178, 108, 88)",
+              videoURL: "https://www.youtube.com/embed/yTV3SsIPFh0",
+            },].map((winner) => (
+              <Card sx={{ position: "relative" }}>
+                <Grid columns={[1, 1, 1, 1, 2]} gap={4} sx={{ px: [2, 3, 4] }}>
+                  <Box sx={{ 
+                    position: "absolute",
+                    width: "100%",
+                    height: "70px",
+                    top: 0,
+                    left: "-600px",
+                    transform: "rotate(-35deg)",
+                    backgroundColor: winner.rankColor,
+                  }}></Box>
+                  <Box>
+                    <Heading>{winner.ranking} {winner.teamName}</Heading>
+                    <br/>
+                    <Embed src={winner.videoURL}></Embed>
+                  </Box>
+                  <Box>
+                    <Box>
+                      <Heading sx={{pb: 2}}>Description</Heading>
+                      <Text sx={{ fontSize: ['1.6em'] }}>{winner.description}</Text>
+                    </Box>
+                    <br/>
+                    <Box>
+                      <Heading sx={{pb: 2}}>Chefs</Heading>
+                      <Text sx={{ fontSize: ['1.6em'] }}>{winner.memberNames.map((member) => <>{member}<br/></>)}</Text>
+                    </Box>
+                  </Box>
+                </Grid>
+              </Card>
+            ))} 
+          </Grid>
+        </Box>
+        
+        <Box
           sx={{
-            maxWidth: '1200px'
+            width: '90%',
+            maxWidth: '1200px',
+            mx: 'auto',
+            my: 2,
+            py: 4,
+            background: "url('/backgrounds/lined-paper.png')",
+            backgroundSize: 'cover',
+            borderRadius: 4,
+            boxShadow: '0 4px 12px rgba(0,0,0,0.15)'
           }}
         >
-          {Object.entries({
-            'Who can participate in Scrapyard?': (
-              <>
-                All high-school & upper-middle-school aged students are welcome
-                to come! You don't have to be a member of the Hack Club
-                community or be a Hack Club leader.
-              </>
-            ),
-            'All this, for free?': (
-              <>
-                Yep! Food, swag and good vibes are all included. Plus, if you’re
-                joining us from afar,{' '}
-                <Link href="https://gas.hackclub.com/">
-                  we’ll cover the cost of gas or a bus / train ticket
-                </Link>
-                .
-              </>
-            ),
-            'What do I need?': (
-              <>
-                Your laptop, chargers, and an open mind! If you're going to an
-                overnight event, bring toiletries and sleeping bagstoo.
-                Additionally, if you plan to work on a hardware project, bring
-                the tools you'll need.
-              </>
-            ),
-            'I’m not good at coding. Can I still participate?': (
-              <>
-                This hackathon is for creatives of all skill levels! We'll have
-                workshops and other events so join us and let's learn together.
-                If you'd like to start exploring some introductory projects,
-                check out Hack Club Workshops.
-              </>
-            ),
-            'What can I make at Scrapyard?': (
-              <>
-                The scrappiest thing you can imagine –- jank is encouraged.
-                Games?Apps?Websites?Programming languages?<em>Hardware?</em> You
-                name it! We’ll have a bunch of resources and mentors to help you
-                out.
-              </>
-            ),
-            'What has Hack Club done before?': (
-              <>
-                Hack Club has run an{' '}
-                <Link href="https://youtu.be/PnK4gzO6S3Q" target="_blank">
-                  overnight hackathon
-                </Link>{' '}
-                in San Francisco, a{' '}
-                <Link
-                  href="https://www.youtube.com/watch?v=H5RPsCMl3uM"
-                  target="_blank"
-                >
-                  Game Jam
-                </Link>{' '}
-                across 50 cities, a hackathon on a{' '}
-                <Link href="https://youtu.be/2BID8_pGuqA" target="_blank">
-                  Train
-                </Link>{' '}
-                from Vermont to Los Angeles, and much more!
-              </>
-            ),
-            'What if my parents are concerned?': (
-              <>
-                We’re here to help! Our parents guide will be released soon, but
-                they can reach out to us at{' '}
-                {/* TODO: Change this email to your event's email */}
-                <Link href="mailto:toronto@scrapyard.hackclub.com">
-                  {/* TODO: Change this email to your event's email */}
-                  toronto@scrapyard.hackclub.com
-                </Link>{' '}
-                for questions.
-              </>
-            ),
-            'What if I have more questions?': (
-              <>
-                Contact us! Feel free to reach out to us in the
-                #scrapyard-toronto channel on the Hack Club slack or email us at{' '}
-                <Link href="mailto:toronto@scrapyard.hackclub.com">
-                  toronto@scrapyard.hackclub.com
-                </Link>
-                .
-              </>
-            )
-          }).map(([question, answer], i) => {
-            return (
-              <Card
-                key={question}
-                sx={{
-                  background: [
-                    'transparent',
-                    `url('/elements/doodles/boxes/${(i % 6) + 1}.svg')`
-                  ],
-                  backgroundSize: [null, '100% 100%'],
-                  backgroundRepeat: 'no-repeat',
-                  boxShadow: 'none',
-                  padding: '48px!important',
-                  border: ['2px solid black', 'none']
-                }}
-              >
-                <Heading
-                  as="h2"
-                  mb={4}
-                  sx={{
-                    position: 'relative'
-                  }}
-                >
-                  {question}
-                  <Image
-                    src="/elements/doodles/yellow-underline.svg"
-                    sx={{
-                      position: 'absolute',
-                      bottom: '0',
-                      left: '50%',
-                      transform: 'translateX(-50%) translateY(75%)'
-                    }}
-                  />
-                </Heading>
-                <Text
-                  sx={{
-                    fontSize: 3,
-                    fontWeight: 'bold'
-                  }}
-                >
-                  {answer}
-                </Text>
-              </Card>
-            )
-          })}
-        </Grid>
+          <Heading
+            as="h1"
+            sx={{
+              textAlign: 'center',
+              mb: 4,
+              fontSize: ['1.8em', '2.2em'],
+              position: 'relative',
+              pb: 2,
+              '&::after': {
+                content: '""',
+                position: 'absolute',
+                bottom: 0,
+                left: '50%',
+                transform: 'translateX(-50%)',
+                width: '80px',
+                height: '3px',
+                backgroundColor: 'primary'
+              }
+            }}
+          >
+            Highlights
+          </Heading>
+          
+          <Grid columns={[1, 1]} gap={4} sx={{ px: [2, 3, 4] }}>
+            {[{ 
+              highlightName: "Group Photo",
+              caption: "Group photo with participants and organizers",
+              imageURL: "https://cdn.hack.pet/U0871L04D0V/ScrapyardOrganizers.JPG",
+            },{ 
+              highlightName: "Leaderboard",
+              caption: "We got the most Hakatime usage of all scrapyard events!",
+              imageURL: "https://cdn.hack.pet/U0871L04D0V/LeaderBoard.png",
+            },{ 
+              highlightName: "Demo Time",
+              caption: "Everyones exploring eachothers' projects!",
+              imageURL: "https://cdn.hack.pet/U0871L04D0V/Demo.JPG",
+            }].map((winner) => (
+              <Box sx={{
+                position: "relative",
+              }}>
+                <Card>
+                  <Image sx={{
+                    position: "absolute",
+                    right: "-150px",
+                    top: 0,
+                    display: ["none", "none", "block"],
+                    transform: "scale(0.2) rotate(15deg)"
+                  }} src="/elements/stars/blue.png"/>
+                  <Image sx={{
+                    position: "absolute",
+                    transform: "scale(0.4) rotate(85deg) translate(-50%, 0)",
+                    display: ["none", "none", "block"],
+                    bottom: "-150px",
+                    right: "50%",
+                  }} src="/elements/stars/pink.png"/>
+                  <Image sx={{
+                    transform: "scale(0.3) rotate(45deg)",
+                    top: "-150px",
+                    left: 0,
+                    display: ["none", "none", "block"],
+                    position: "absolute",
+                  }} src="/elements/stars/yellow.png"/>
+                  <Box>
+                    <Box>
+                      <Heading sx={{
+                        textAlign: "center",
+                      }}>{winner.highlightName}</Heading>
+                      <br/>
+                      <Image src={winner.imageURL}></Image>
+                    </Box>
+                    <Box>
+                      <br/>
+                      <Text sx={{ fontSize: ['1.6em'] }}>{winner.caption}</Text>
+                    </Box>
+                  </Box>
+                </Card>
+              </Box>
+            ))} 
+          </Grid>
+        </Box>
 
         <Box
           sx={{
@@ -796,9 +827,17 @@ export default function Toronto() {
                 name: 'Samyat',
                 grade: '11th Grade',
                 highSchool: 'Chinguacousy Secondary School',
-                message: 'Looking forward.',
+                message: '',
                 quote: "Whats wrong with knowing what you know now and not knowing what you don't know until later?",
                 img: 'https://cdn.hack.pet/U0871L04D0V/Samyat.png',
+              },
+              {
+                name: 'Shivaansh',
+                grade: '11th Grade',
+                highSchool: 'Chinguacousy Secondary School',
+                message: 'We let you all cook, (please don’t burn)',
+                quote: "if you look for darkness, that is all you will ever find, but if you look for the light you will often find it to light up the path",
+                img: 'https://cdn.hack.pet/U0871L04D0V/ShivaanshWebsite.jpg',
               },
               {
                 name: 'Hajrah',
@@ -808,6 +847,14 @@ export default function Toronto() {
                   'I’m so excited to see all of your excited faces when presenting your projects and to see the very many cool ideas even though we’d all be sleep deprived.',
                 quote: 'Sometimes doing nothing is the best thing to do!!',
                 img: 'https://cdn.hack.pet/U084RT5K678/Untitled%20design.png'
+              },
+              {
+                name: 'Sidak',
+                grade: '11th Grade',
+                highSchool: 'Chinguacousy Secondary School',
+                message: "Lol, I want to see you all; Please don't burn the building down.",
+                quote: "Quit, Don't Quit, Noodles",
+                img: 'https://cdn.hack.pet/U0871L04D0V/SidakWebsite.jpg',
               },
               {
                 name: 'Itai',
@@ -827,6 +874,14 @@ export default function Toronto() {
                   'There are 10 types of people in the world: those who understand binary and those who don’t.',
                 img: 'https://cdn.hack.pet/U084RT5K678/Screenshot%202025-03-05%20211256.png'
               },
+               {
+                name: 'Edward',
+                grade: '12th Grade',
+                highSchool: 'Alexander Mackenzie High School',
+                message: "Can't wait to see all the innovations created",
+                quote: " Sleep is just a bug I haven't fixed yet",
+                img: 'https://cdn.hack.pet/U084RT5K678/1000030809.jpg'
+              },
               {
                 name: 'Ayaan',
                 grade: '12th Grade',
@@ -843,6 +898,22 @@ export default function Toronto() {
                 message: 'Looking forward to stupid sh*t and stupid prizes',
                 quote: 'if two wrongs dont make a right, try three.',
                 img: 'https://cdn.hack.pet/U084RT5K678/Screenshot%202025-03-05%20212240.png'
+              },
+              {
+                name: 'Anant',
+                grade: '11th Grade',
+                highSchool: 'Chinguacousy Secondary School',
+                message: '',
+                quote: "U miss 100% of the shots u dont take",
+                img: 'https://cdn.hack.pet/U0871L04D0V/AnantWebsite.png',
+              },
+              {
+                name: 'Rachit',
+                grade: '11th Grade',
+                highSchool: 'Chinguacousy Secondary School',
+                message: '',
+                quote: "True intelligence isn’t measured by what you know, but by the questions, you’re brave enough to ask.",
+                img: 'https://cdn.hack.pet/U0871L04D0V/RachitWebsite.jpg',
               },
               {
                 name: 'Annie',
@@ -873,10 +944,10 @@ export default function Toronto() {
                   src={member.img}
                   alt={member.name}
                   sx={{
+                    objectPosition: member.name == "Shivaansh" ? "center" : "top",
                     width: '150px',
                     height: '150px',
                     objectFit: member.name == "Samyat" ? "fill" : "cover",
-                    objectPosition: 'center',
                     borderRadius: '50%',
                     mb: 3,
                     border: '3px solid #000',
@@ -1118,6 +1189,162 @@ export default function Toronto() {
             ))}
           </Grid>
         </Box>
+
+        <Heading
+          as="h1"
+          sx={{
+            mb: 5,
+            position: 'relative'
+          }}
+        >
+          Frequently Asked Questions
+          <Image
+            src="/elements/doodles/blue-underline.svg"
+            sx={{
+              position: 'absolute',
+              bottom: '0',
+              left: '50%',
+              transform: 'translateX(-50%) translateY(75%)'
+            }}
+          />
+        </Heading>
+        <Grid
+          columns={[1, 1, 1, 2]}
+          gap={4}
+          sx={{
+            maxWidth: '1200px'
+          }}
+        >
+          {Object.entries({
+            'Who can participate in Scrapyard?': (
+              <>
+                All high-school & upper-middle-school aged students are welcome
+                to come! You don't have to be a member of the Hack Club
+                community or be a Hack Club leader.
+              </>
+            ),
+            'All this, for free?': (
+              <>
+                Yep! Food, swag and good vibes are all included. Plus, if you’re
+                joining us from afar,{' '}
+                <Link href="https://gas.hackclub.com/">
+                  we’ll cover the cost of gas or a bus / train ticket
+                </Link>
+                .
+              </>
+            ),
+            'What do I need?': (
+              <>
+                Your laptop, chargers, and an open mind! If you're going to an
+                overnight event, bring toiletries and sleeping bagstoo.
+                Additionally, if you plan to work on a hardware project, bring
+                the tools you'll need.
+              </>
+            ),
+            'I’m not good at coding. Can I still participate?': (
+              <>
+                This hackathon is for creatives of all skill levels! We'll have
+                workshops and other events so join us and let's learn together.
+                If you'd like to start exploring some introductory projects,
+                check out Hack Club Workshops.
+              </>
+            ),
+            'What can I make at Scrapyard?': (
+              <>
+                The scrappiest thing you can imagine –- jank is encouraged.
+                Games?Apps?Websites?Programming languages?<em>Hardware?</em> You
+                name it! We’ll have a bunch of resources and mentors to help you
+                out.
+              </>
+            ),
+            'What has Hack Club done before?': (
+              <>
+                Hack Club has run an{' '}
+                <Link href="https://youtu.be/PnK4gzO6S3Q" target="_blank">
+                  overnight hackathon
+                </Link>{' '}
+                in San Francisco, a{' '}
+                <Link
+                  href="https://www.youtube.com/watch?v=H5RPsCMl3uM"
+                  target="_blank"
+                >
+                  Game Jam
+                </Link>{' '}
+                across 50 cities, a hackathon on a{' '}
+                <Link href="https://youtu.be/2BID8_pGuqA" target="_blank">
+                  Train
+                </Link>{' '}
+                from Vermont to Los Angeles, and much more!
+              </>
+            ),
+            'What if my parents are concerned?': (
+              <>
+                We’re here to help! Our parents guide will be released soon, but
+                they can reach out to us at{' '}
+                {/* TODO: Change this email to your event's email */}
+                <Link href="mailto:toronto@scrapyard.hackclub.com">
+                  {/* TODO: Change this email to your event's email */}
+                  toronto@scrapyard.hackclub.com
+                </Link>{' '}
+                for questions.
+              </>
+            ),
+            'What if I have more questions?': (
+              <>
+                Contact us! Feel free to reach out to us in the
+                #scrapyard-toronto channel on the Hack Club slack or email us at{' '}
+                <Link href="mailto:toronto@scrapyard.hackclub.com">
+                  toronto@scrapyard.hackclub.com
+                </Link>
+                .
+              </>
+            )
+          }).map(([question, answer], i) => {
+            return (
+              <Card
+                key={question}
+                sx={{
+                  background: [
+                    'transparent',
+                    `url('/elements/doodles/boxes/${(i % 6) + 1}.svg')`
+                  ],
+                  backgroundSize: [null, '100% 100%'],
+                  backgroundRepeat: 'no-repeat',
+                  boxShadow: 'none',
+                  padding: '48px!important',
+                  border: ['2px solid black', 'none']
+                }}
+              >
+                <Heading
+                  as="h2"
+                  mb={4}
+                  sx={{
+                    position: 'relative'
+                  }}
+                >
+                  {question}
+                  <Image
+                    src="/elements/doodles/yellow-underline.svg"
+                    sx={{
+                      position: 'absolute',
+                      bottom: '0',
+                      left: '50%',
+                      transform: 'translateX(-50%) translateY(75%)'
+                    }}
+                  />
+                </Heading>
+                <Text
+                  sx={{
+                    fontSize: 3,
+                    fontWeight: 'bold'
+                  }}
+                >
+                  {answer}
+                </Text>
+              </Card>
+            )
+          })}
+        </Grid>
 
         <Link
           href="https://forms.hackclub.com/scrapyard-signup?event=toronto"
