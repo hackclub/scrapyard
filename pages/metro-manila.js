@@ -82,7 +82,7 @@ export default function ExampleCity() {
       <Box
         sx={{
           width: '100%',
-          height: ['80vh', '80vh', '90vh'],
+          height: ['90vh', '90vh', '100vh'],
           bg: 'transparent',
           display: 'flex',
           justifyContent: 'center',
@@ -93,21 +93,24 @@ export default function ExampleCity() {
       >
         <Box
           sx={{
-            position: 'relative'
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center', 
+            position: 'relative',
+            marginTop: '200px', 
           }}
         >
           <Image
             sx={{
-              width: '600px',
-
-              maxWidth: '70vw',
-
+              width: '800px',
+              maxWidth: '90vw',
               objectFit: 'contain'
             }}
             src="\city\manila\scrapyard-mla.png"
             alt="Scrapyard"
           />
         </Box>
+
         <Box
           sx={{
             display: 'flex',
@@ -227,31 +230,45 @@ export default function ExampleCity() {
             sx={{
               background: "url('/elements/ripped-paper-strip.svg')",
               backgroundSize: 'cover',
+              backgroundRepeat: 'no-repeat',
               display: 'block',
-
-              width: 'min(550px, calc(100vw - 30px))',
+              width: 'min(350px, calc(80vw - 30px))',
+              height:'500px',
               filter: 'drop-shadow(5px 5px 5px #000000AA)',
               position: 'relative',
-              zIndex: 20
+              textAlign:'center',
+              zIndex: 1,
+              backgroundSize: '100% 100%',
+              position: 'relative',
+              top: '-10%',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              py: '3%',
+              zIndex: 30,
+              filter: 'drop-shadow(5px 5px 5px #00000099)'
             }}
           >
-            <Heading
-              as="h1"
-              sx={{
-                fontFamily: 'marykate',
-                textAlign: 'center',
-                marginBottom: '20px'
-              }}
-            >
-              Co-Presented By:
-            </Heading>
-
-          <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-            <Image src="\city\manila\globe.png" 
-              sx={{ maxWidth: '100%', 
-                    height:'auto' }}/>
+            <Box sx={{ paddingTop: '120px' }}> 
+              <Heading
+                as="h1"
+                sx={{
+                  fontFamily: 'moonblossom',
+                  textAlign: 'center',
+                  fontSize: '2.5em',
+                }}
+              >
+                Co-Presented By:
+              </Heading>
             </Box>
+            <Image src="\city\manila\globe.png" 
+              sx={{ maxWidth: '70%', paddingTop:'10%', 
+                     }}/>
+
           </Box>
+
+          
+         
 
         {/*Social Media Nav Bar*/}
 
@@ -261,7 +278,7 @@ export default function ExampleCity() {
             backgroundRepeat: 'no-repeat',
             backgroundSize: '100% 100%',
             position: 'fixed',
-            right: ['50%'],
+            right: ['42%'],
             top: ['4%'],
             filter: 'drop-shadow(5px 5px 5px #000)',
             transition: 'transform 0.2s',
@@ -511,136 +528,124 @@ export default function ExampleCity() {
           flexDirection: 'column',
         }}
       >
-        {/* Sponsors Section */}
-        <Box
-          sx={{
-            backgroundImage: 'url(/elements/ripped-paper-strip.svg)',
-            height: '30vh',
-            width: ['90vw', '70vw', '46.8vw'],
-            alignItems: 'center',
-            justifyContent: 'center',
-            margin: 0,
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: 'cover',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-          }}
-        >
-          <Heading
-            as="h1"
+       {/* Sponsors Section */}
+       
+       <Box
             sx={{
-              fontFamily: 'marykate',
-              color: 'rgb(238, 130, 128)',
-              textAlign: 'center',
-              marginBottom: '20px',
+              position: 'relative',
+              textAlign:'center',
+              zIndex: 1,
+              backgroundSize: '100% 100%',
+              position: 'relative',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              py: '3%',
+              zIndex: 30,
+              filter: 'drop-shadow(5px 5px 5px #00000099)'
             }}
           >
-            SPONSOR
-          </Heading>
-          <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-            <Image
-              src="\city\manila\brainsparks.png"
-              sx={{ maxWidth: '100%', height: 'auto' }}
-            />
+            <Box sx={{ 
+              paddingTop: '0px', 
+              background: "url('/elements/ripped-paper-strip.svg')",
+              backgroundSize: 'cover',
+              backgroundRepeat: 'no-repeat',
+              display: 'block',
+              width: 'min(550px, calc(80vw - 30px))',
+              height: '120px',
+              filter: 'drop-shadow(5px 5px 5px #000000AA)', }}> 
+              <Heading
+                as="h1"
+                sx={{
+                  
+                  fontFamily: 'moonblossom',
+                  textAlign: 'center',
+                  fontSize: '3.2em',
+                  color:'rgb(238, 129, 128)',
+                  paddingTop:'55px',
+                }}
+              >
+                Sponsored by:
+              </Heading>
+            </Box>
+            <Image src="\city\manila\brainsparks.png" 
+              sx={{ maxWidth: '80%', 
+                    paddingTop:'60px', 
+                 }}/>
+
           </Box>
-        </Box>
+            
 
         {/* Partners Section */}
         <Box
-          sx={{
-            backgroundImage: 'url(/elements/ripped-paper-strip.svg)',
-            height: '30vh',
-            width: ['90vw', '70vw', '46.8vw'],
-            alignItems: 'center',
-            justifyContent: 'center',
-            margin: 0,
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: 'cover',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-          }}
-        >
-          <Heading
-            as="h1"
             sx={{
-              fontFamily: 'marykate',
-              color: 'rgb(143, 196, 233)',
-              textAlign: 'center',
-              marginBottom: '20px',
+              position: 'relative',
+              textAlign:'center',
+              zIndex: 1,
+              backgroundSize: '100% 100%',
+              position: 'relative',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              py: '3%',
+              zIndex: 30,
+              filter: 'drop-shadow(5px 5px 5px #00000099)'
             }}
           >
-            PARTNERS
-          </Heading>
+            <Box sx={{ 
+              background: "url('/elements/ripped-paper-strip.svg')",
+              backgroundSize: 'cover',
+              backgroundRepeat: 'no-repeat',
+              display: 'block',
+              width: 'min(550px, calc(80vw - 30px))',
+              height: '120px',
+              filter: 'drop-shadow(5px 5px 5px #000000AA)', }}> 
+              <Heading
+                as="h1"
+                sx={{
+                  
+                  fontFamily: 'moonblossom',
+                  textAlign: 'center',
+                  fontSize: '3.2em',
+                  color:'rgb(143, 196, 233)',
+                  paddingTop:'55px',
+                }}
+              >
+                Partners
+              </Heading>
+            </Box>
+          </Box>
 
-          {/* Partner Logos in a Single Row */}
+        {/* Partner Logos in a Single Row */}
           <Box
             sx={{
               display: 'flex',
               flexWrap: 'wrap', 
-              justifyContent: 'space-evenly', 
+              justifyContent: 'center', 
+              alignItems: 'center', 
               width: '100%',
-              gap: '10px', 
+              gap: '20px', 
+              mb:5,
             }}
           >
-           
-            <Box sx={{ flexBasis: '12%' }}> 
-              <Image
-                src="/city/manila/devcon-mnl.png"
-                sx={{ maxWidth: '100%', height: 'auto' }}
-              />
-            </Box>
-            <Box sx={{ flexBasis: '12%' }}>
-              <Image
-                src="/city/manila/kakacomputerx.png"
-                sx={{ maxWidth: '100%', height: 'auto' }}
-              />
-            </Box>
-            <Box sx={{ flexBasis: '12%' }}>
-              <Image
-                src="/city/manila/acadarena.png"
-                sx={{ maxWidth: '100%', height: 'auto' }}
-              />
-            </Box>
-            <Box sx={{ flexBasis: '12%' }}>
-              <Image
-                src="/city/manila/pocky.png"
-                sx={{ maxWidth: '100%', height: 'auto' }}
-              />
-            </Box>
-            <Box sx={{ flexBasis: '12%' }}>
-              <Image
-                src="/city/manila/edukasyon.png"
-                sx={{ maxWidth: '100%', height: 'auto' }}
-              />
-            </Box>
-            <Box sx={{ flexBasis: '12%' }}>
-              <Image
-                src="/city/manila/siklab.png"
-                sx={{ maxWidth: '100%', height: 'auto' }}
-              />
-            </Box>
-            <Box sx={{ flexBasis: '12%' }}>
-              <Image
-                src="/city/manila/maia.png"
-                sx={{ maxWidth: '100%', height: 'auto' }}
-              />
-            </Box>
-            <Box sx={{ flexBasis: '12%' }}>
-              <Image
-                src="/city/manila/pintig.png"
-                sx={{ maxWidth: '100%', height: 'auto' }}
-              />
-            </Box>
+            {[
+              "/city/manila/devcon-mnl.png",
+              "/city/manila/kakacomputerx.png",
+              "/city/manila/acadarena.png",
+              "/city/manila/maia.png",
+              "/city/manila/edukasyon-ph.png",
+              "/city/manila/awsiklab.png",
+              "/city/manila/pocky.png",
+              "/city/manila/pintig.png",
+            ].map((src, index) => (
+              <Box key={index} sx={{ flexBasis: ['40%', '25%', '20%'], display: 'flex', justifyContent: 'center' }}>
+                <Image src={src} sx={{ maxWidth: '100%', height: 'auto' }} />
+              </Box>
+            ))}
           </Box>
+
         </Box>
-      </Box>
 
-           
-      
-
-        
 
     {/*Schedule*/}
       <Box
@@ -684,7 +689,7 @@ export default function ExampleCity() {
         <Heading
           as="h2"
           sx={{
-            fontSize: '1.5em',
+            fontSize: '1.9em',
             fontFamily: 'moonblossom',
             color: 'white',
             textAlign: 'center'
@@ -759,68 +764,93 @@ export default function ExampleCity() {
         }}
       >
 
-      {/* Venue */}
-        <Box
+     {/* Venue Section */}
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          textAlign: 'center',
+          width: ['90vw', '70vw', '46.8vw'],
+          margin: '0 auto',
+          padding: '2vh 5vw',
+        }}
+      >
+        {/* Venue Title */}
+        <Heading
+          as="h1"
           sx={{
-            height: '30vh',
-            width: ['90vw', '70vw', '46.8vw'],
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            margin: '0vh',
-            padding: '0 5vw',
+            fontSize: '3.5em',
+            fontFamily: 'moonblossom',
+            color: 'white',
+            marginBottom: '20px',
           }}
         >
-          {/* Title and Address Section */}
-          <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '50%' }}>
-            <Heading
-              as="h1"
-              sx={{
-                fontSize: '1.5em',
-                fontFamily: 'moonblossom',
-                color: 'white',
-                textAlign: 'center',
-                mb: 2,
-              }}
-            >
-              VENUE
-            </Heading>
+          VENUE
+        </Heading>
 
-            <Link
-              href="https://www.google.com.sg/maps/place/The+Globe+Tower,+32nd+St,+Taguig,+1634+Metro+Manila/@14.5537335,121.0499927,15z/data=!4m16!1m9!3m8!1s0x3397c8f14f959c5d:0xfec7f232b0da9cd9!2sThe+Globe+Tower,+32nd+St,+Taguig,+1634+Metro+Manila!3b1!8m2!3d14.5534542!4d121.0499036!10e5!16s%2Fg%2F1hhxrfg_l!3m5!1s0x3397c8f14f959c5d:0xfec7f232b0da9cd9!8m2!3d14.5534542!4d121.0499036!16s%2Fg%2F1hhxrfg_l?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D"
-              sx={{
-                textDecoration: 'none', 
-                fontSize: '1.1em',
-                fontFamily: 'moonblossom',
-                color: 'white',
-                textAlign: 'center',
-                backgroundColor: 'rgba(255, 255, 255, 0.2)',
-                backdropFilter: 'blur(10px)',
-                padding: '5px 10px',
-                borderRadius: '5px',
-                marginBottom: 2,
-                transition: 'background-color 0.3s',
-                ':hover': {
-                  backgroundColor: 'rgba(255, 255, 255, 0.4)', 
-                },
-              }}
-            >
-              The Globe Tower Radiate, 2F, The Globe Tower, BGC
-            </Link>
-          </Box>
-
-          {/* Venue Image Section */}
-          <Box
+        {/* Venue Content: Address and Image Side by Side */}
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'row', 
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            width: '100%',
+            maxWidth: '800px',
+          }}
+        >
+          {/* Address Button */}
+        <Box
+          sx={{
+            width: '50%',
+            textAlign: 'center',
+            backgroundColor: 'rgba(255, 255, 255, 0.2)', 
+            padding: '20px',
+            borderRadius: '10px', 
+            backdropFilter: 'blur(10px)',
+          }}
+        >
+          <Link
+            href="https://www.google.com.sg/maps/place/The+Globe+Tower,+32nd+St,+Taguig,+1634+Metro+Manila"
             sx={{
-              width: '50%',
-              height: '100%',
-              backgroundImage: 'url(/city/manila/venue.png)', 
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              borderRadius: '10px', 
+              textDecoration: 'none',
+              fontSize: '1.7em', 
+              fontFamily: 'moonblossom',
+              color: 'white',
+              textAlign: 'center',
+              display: 'block', 
+              padding: '10px 15px',
+              borderRadius: '5px',
+              transition: 'background-color 0.3s',
+              ':hover': {
+                backgroundColor: 'rgba(255, 255, 255, 0.4)',
+              },
             }}
-          />
+          >
+           📍 The Globe Tower Radiate, 2F, The Globe Tower, BGC
+          </Link>
         </Box>
+
+
+          {/* Venue Image */}
+          <Box sx={{ 
+            width: '80%', 
+            display: 'flex', 
+            justifyContent: 'center',
+          }}>
+            <Image
+              src="/city/manila/venue.png"
+              sx={{
+                maxWidth: '100%', 
+                height: 'auto',
+                borderRadius: '10px', 
+              }}
+            />
+          </Box>
+        </Box>
+      </Box>
+
 
         <Box
           sx={{
