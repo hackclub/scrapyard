@@ -17,7 +17,7 @@
     "@mdx-js/loader": "^3.1.0",
     "@mdx-js/react": "^3.1.0",
     "@next/mdx": "^15.2.2",
-    "@tailwindcss/postcss": "^4.0.12",
+    "@tailwindcss/postcss": "^4.1.4",
     "airtable-plus": "^1.0.4",
     "fa": "^1.0.1",
     "leaflet": "^1.9.4",
