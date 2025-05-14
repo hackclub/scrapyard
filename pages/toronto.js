@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { Box, Card, Grid, Heading, Image, Link, Text } from 'theme-ui'
+import { Box, Card, Grid, Heading, Image, Link, Text, Embed } from 'theme-ui'
 import dynamic from 'next/dynamic'
 
 // TODO: Change this schedule to your own!
@@ -484,14 +484,14 @@ export default function Toronto() {
             boxShadow: '10px 10px 5px rgba(0, 0, 0, 0.3)'
           }}
         >
-          {schedule.map((item, i) => (
+          {schedule.map((item) => (
             <div
               style={{
                 display: 'flex',
                 width: '100%',
                 alignItems: 'center'
               }}
-              key={i}
+              key={item.event + item.time}
             >
               <Heading
                 as="p"
@@ -599,6 +599,597 @@ export default function Toronto() {
           position: 'relative'
         }}
       >
+
+        <Box
+          sx={{
+            width: '90%',
+            maxWidth: '1200px',
+            mx: 'auto',
+            my: 2,
+            py: 4,
+            background: "url('/backgrounds/lined-paper.png')",
+            backgroundSize: 'cover',
+            borderRadius: 4,
+            boxShadow: '0 4px 12px rgba(0,0,0,0.15)'
+          }}
+        >
+          <Heading
+            as="h1"
+            sx={{
+              textAlign: 'center',
+              mb: 4,
+              fontSize: ['1.8em', '2.2em'],
+              position: 'relative',
+              pb: 2,
+              '&::after': {
+                content: '""',
+                position: 'absolute',
+                bottom: 0,
+                left: '50%',
+                transform: 'translateX(-50%)',
+                width: '80px',
+                height: '3px',
+                backgroundColor: 'primary'
+              }
+            }}
+          >
+            Winners
+          </Heading>
+          
+          <Grid columns={[1, 1]} gap={4} sx={{ px: [2, 3, 4] }}>
+            {[ { 
+              teamName: "Hyper Chess",
+              description: "Hand tracking multiplayer chess made using python and mediapipe, utilizing arduino to transfer signals.",
+              memberNames: ["Edwin Yun Wen", "Jayden Wang", "Rayhan Jamasi"],
+              ranking: "🥇",
+              rankColor: "yellow",
+              videoURL: "https://www.youtube.com/embed/kon1goljfLI",
+            },{ 
+              teamName: "Twitch Chats Taser",
+              description: "Two wheeled robot with attached taser: can drive and of course tase. Made using websockets, nextjs, and the twich bot API.",
+              memberNames: ["Evan Yu", "Aaron Huang", "Bernice Qiu"],
+              ranking: "🥈",
+              rankColor: "rgb(188, 188, 188)",
+              videoURL: "https://www.youtube.com/embed/74rYBLfw3aY",
+            },{ 
+              teamName: "Infinte Dual",
+              description: "Multiplayer game made using arduino to transfer signals and c++.", 
+              memberNames: ["Sze Long Lam", "Chi Kin Hu", "Zixuan Cheng"],
+              ranking: "🥉",
+              rankColor: "rgb(178, 108, 88)",
+              videoURL: "https://www.youtube.com/embed/yTV3SsIPFh0",
+            },].map((winner) => (
+              <Card sx={{ position: "relative" }}>
+                <Grid columns={[1, 1, 1, 1, 2]} gap={4} sx={{ px: [2, 3, 4] }}>
+                  <Box sx={{ 
+                    position: "absolute",
+                    width: "100%",
+                    height: "70px",
+                    top: 0,
+                    left: "-600px",
+                    transform: "rotate(-35deg)",
+                    backgroundColor: winner.rankColor,
+                  }}></Box>
+                  <Box>
+                    <Heading>{winner.ranking} {winner.teamName}</Heading>
+                    <br/>
+                    <Embed src={winner.videoURL}></Embed>
+                  </Box>
+                  <Box>
+                    <Box>
+                      <Heading sx={{pb: 2}}>Description</Heading>
+                      <Text sx={{ fontSize: ['1.6em'] }}>{winner.description}</Text>
+                    </Box>
+                    <br/>
+                    <Box>
+                      <Heading sx={{pb: 2}}>Chefs</Heading>
+                      <Text sx={{ fontSize: ['1.6em'] }}>{winner.memberNames.map((member) => <>{member}<br/></>)}</Text>
+                    </Box>
+                  </Box>
+                </Grid>
+              </Card>
+            ))} 
+          </Grid>
+        </Box>
+        
+        <Box
+          sx={{
+            width: '90%',
+            maxWidth: '1200px',
+            mx: 'auto',
+            my: 2,
+            py: 4,
+            background: "url('/backgrounds/lined-paper.png')",
+            backgroundSize: 'cover',
+            borderRadius: 4,
+            boxShadow: '0 4px 12px rgba(0,0,0,0.15)'
+          }}
+        >
+          <Heading
+            as="h1"
+            sx={{
+              textAlign: 'center',
+              mb: 4,
+              fontSize: ['1.8em', '2.2em'],
+              position: 'relative',
+              pb: 2,
+              '&::after': {
+                content: '""',
+                position: 'absolute',
+                bottom: 0,
+                left: '50%',
+                transform: 'translateX(-50%)',
+                width: '80px',
+                height: '3px',
+                backgroundColor: 'primary'
+              }
+            }}
+          >
+            Highlights
+          </Heading>
+          
+          <Grid columns={[1, 1]} gap={4} sx={{ px: [2, 3, 4] }}>
+            {[{ 
+              highlightName: "Group Photo",
+              caption: "Group photo with participants and organizers",
+              imageURL: "https://cdn.hack.pet/U0871L04D0V/ScrapyardOrganizers.JPG",
+            },{ 
+              highlightName: "Leaderboard",
+              caption: "We got the most Hakatime usage of all scrapyard events!",
+              imageURL: "https://cdn.hack.pet/U0871L04D0V/LeaderBoard.png",
+            },{ 
+              highlightName: "Demo Time",
+              caption: "Everyones exploring eachothers' projects!",
+              imageURL: "https://cdn.hack.pet/U0871L04D0V/Demo.JPG",
+            }].map((winner) => (
+              <Box sx={{
+                position: "relative",
+              }}>
+                <Card>
+                  <Image sx={{
+                    position: "absolute",
+                    right: "-150px",
+                    top: 0,
+                    display: ["none", "none", "block"],
+                    transform: "scale(0.2) rotate(15deg)"
+                  }} src="/elements/stars/blue.png"/>
+                  <Image sx={{
+                    position: "absolute",
+                    transform: "scale(0.4) rotate(85deg) translate(-50%, 0)",
+                    display: ["none", "none", "block"],
+                    bottom: "-150px",
+                    right: "50%",
+                  }} src="/elements/stars/pink.png"/>
+                  <Image sx={{
+                    transform: "scale(0.3) rotate(45deg)",
+                    top: "-150px",
+                    left: 0,
+                    display: ["none", "none", "block"],
+                    position: "absolute",
+                  }} src="/elements/stars/yellow.png"/>
+                  <Box>
+                    <Box>
+                      <Heading sx={{
+                        textAlign: "center",
+                      }}>{winner.highlightName}</Heading>
+                      <br/>
+                      <Image src={winner.imageURL}></Image>
+                    </Box>
+                    <Box>
+                      <br/>
+                      <Text sx={{ fontSize: ['1.6em'] }}>{winner.caption}</Text>
+                    </Box>
+                  </Box>
+                </Card>
+              </Box>
+            ))} 
+          </Grid>
+        </Box>
+
+        <Box
+          sx={{
+            width: '90%',
+            maxWidth: '1200px',
+            mx: 'auto',
+            my: 6,
+            py: 4,
+            background: "url('/backgrounds/lined-paper.png')",
+            backgroundSize: 'cover',
+            borderRadius: 4,
+            boxShadow: '0 4px 12px rgba(0,0,0,0.15)'
+          }}
+        >
+          <Heading
+            as="h1"
+            sx={{
+              textAlign: 'center',
+              mb: 4,
+              fontSize: ['1.8em', '2.2em'],
+              position: 'relative',
+              pb: 2,
+              '&::after': {
+                content: '""',
+                position: 'absolute',
+                bottom: 0,
+                left: '50%',
+                transform: 'translateX(-50%)',
+                width: '80px',
+                height: '3px',
+                backgroundColor: 'primary'
+              }
+            }}
+          >
+            Meet the Team
+          </Heading>
+          <Grid columns={[1, 1, 2, 3]} gap={4} sx={{ px: [2, 3, 4] }}>
+            {[
+              {
+                name: 'Samyat',
+                grade: '11th Grade',
+                highSchool: 'Chinguacousy Secondary School',
+                message: '',
+                quote: "Whats wrong with knowing what you know now and not knowing what you don't know until later?",
+                img: 'https://cdn.hack.pet/U0871L04D0V/Samyat.png',
+              },
+              {
+                name: 'Shivaansh',
+                grade: '11th Grade',
+                highSchool: 'Chinguacousy Secondary School',
+                message: 'We let you all cook, (please don’t burn)',
+                quote: "if you look for darkness, that is all you will ever find, but if you look for the light you will often find it to light up the path",
+                img: 'https://cdn.hack.pet/U0871L04D0V/ShivaanshWebsite.jpg',
+              },
+              {
+                name: 'Hajrah',
+                grade: '12th Grade',
+                highSchool: 'Lynn Rose College',
+                message:
+                  'I’m so excited to see all of your excited faces when presenting your projects and to see the very many cool ideas even though we’d all be sleep deprived.',
+                quote: 'Sometimes doing nothing is the best thing to do!!',
+                img: 'https://cdn.hack.pet/U084RT5K678/Untitled%20design.png'
+              },
+              {
+                name: 'Sidak',
+                grade: '11th Grade',
+                highSchool: 'Chinguacousy Secondary School',
+                message: "Lol, I want to see you all; Please don't burn the building down.",
+                quote: "Quit, Don't Quit, Noodles",
+                img: 'https://cdn.hack.pet/U0871L04D0V/SidakWebsite.jpg',
+              },
+              {
+                name: 'Itai',
+                grade: '12th Grade',
+                highSchool: 'Maple High School',
+                message:
+                  'Looking forward to hypnotizing everyone into being an engineer for a day.',
+                quote: 'There is a house in New Orleans.',
+                img: 'https://cdn.hack.pet/U084RT5K678/Screenshot%202025-03-05%20211234.png'
+              },
+              {
+                name: 'Ritvik',
+                grade: '11th Grade',
+                highSchool: 'Victoria Park Collegiate Institute',
+                message: 'Looking forward to making friends!!',
+                quote:
+                  'There are 10 types of people in the world: those who understand binary and those who don’t.',
+                img: 'https://cdn.hack.pet/U084RT5K678/Screenshot%202025-03-05%20211256.png'
+              },
+               {
+                name: 'Edward',
+                grade: '12th Grade',
+                highSchool: 'Alexander Mackenzie High School',
+                message: "Can't wait to see all the innovations created",
+                quote: " Sleep is just a bug I haven't fixed yet",
+                img: 'https://cdn.hack.pet/U084RT5K678/1000030809.jpg'
+              },
+              {
+                name: 'Ayaan',
+                grade: '12th Grade',
+                highSchool: 'White Oaks S.S.',
+                message:
+                  'Looking forward to seeing the most random stuff made :)',
+                quote: 'i am speed.',
+                img: 'https://cdn.hack.pet/U084RT5K678/Screenshot%202025-03-05%20212225.png'
+              },
+              {
+                name: 'Sunni',
+                grade: '10th Grade',
+                highSchool: 'Anderson CVI',
+                message: 'Looking forward to stupid sh*t and stupid prizes',
+                quote: 'if two wrongs dont make a right, try three.',
+                img: 'https://cdn.hack.pet/U084RT5K678/Screenshot%202025-03-05%20212240.png'
+              },
+              {
+                name: 'Anant',
+                grade: '11th Grade',
+                highSchool: 'Chinguacousy Secondary School',
+                message: '',
+                quote: "U miss 100% of the shots u dont take",
+                img: 'https://cdn.hack.pet/U0871L04D0V/AnantWebsite.png',
+              },
+              {
+                name: 'Rachit',
+                grade: '11th Grade',
+                highSchool: 'Chinguacousy Secondary School',
+                message: '',
+                quote: "True intelligence isn’t measured by what you know, but by the questions, you’re brave enough to ask.",
+                img: 'https://cdn.hack.pet/U0871L04D0V/RachitWebsite.jpg',
+              },
+              {
+                name: 'Annie',
+                grade: '10th Grade',
+                highSchool: 'Oakville Trafalgar High School',
+                message:
+                  'So excited to learn new things at the workshops and see all your cool projects!',
+                quote:
+                  ' If every porkchop were perfect, we wouldn’t have hot dogs.',
+                img: 'https://cdn.hack.pet/U084RT5K678/download%20(4).png'
+              }
+            ].map((member) => (
+              <Card
+                key={member.name}
+                sx={{
+                  p: 3,
+                  textAlign: 'center',
+                  border: '2px solid #000',
+                  background: 'white',
+                  boxShadow: '0 3px 8px rgba(0,0,0,0.1)',
+                  transition: 'transform 0.2s ease',
+                  ':hover': {
+                    transform: 'translateY(-5px)'
+                  }
+                }}
+              >
+                <Image
+                  src={member.img}
+                  alt={member.name}
+                  sx={{
+                    objectPosition: member.name == "Shivaansh" ? "center" : "top",
+                    width: '150px',
+                    height: '150px',
+                    objectFit: member.name == "Samyat" ? "fill" : "cover",
+                    borderRadius: '50%',
+                    mb: 3,
+                    border: '3px solid #000',
+                    mx: 'auto'
+                  }}
+                />
+                <Heading as="h3" sx={{ mt: 2, fontSize: '1.5em' }}>
+                  {member.name}
+                </Heading>
+                <Text sx={{ mt: 1, fontSize: '1.1em', color: '#555' }}>
+                  {member.grade} &bull; {member.highSchool}
+                </Text>
+                <br></br>
+                <Text sx={{ mt: 2, fontStyle: 'italic', fontSize: '1em' }}>
+                  "{member.quote}"
+                </Text>
+                <br></br>
+                <Text sx={{ mt: 2 }}>{member.message}</Text>
+              </Card>
+            ))}
+          </Grid>
+        </Box>
+
+        <Box
+          sx={{
+            width: '90%',
+            maxWidth: '1200px',
+            mx: 'auto',
+            my: 2,
+            py: 4,
+            background: "url('/backgrounds/lined-paper.png')",
+            backgroundSize: 'cover',
+            borderRadius: 4,
+            boxShadow: '0 4px 12px rgba(0,0,0,0.15)'
+          }}
+        >
+          <Heading
+            as="h1"
+            sx={{
+              textAlign: 'center',
+              mb: 4,
+              fontSize: ['1.8em', '2.2em'],
+              position: 'relative',
+              pb: 2,
+              '&::after': {
+                content: '""',
+                position: 'absolute',
+                bottom: 0,
+                left: '50%',
+                transform: 'translateX(-50%)',
+                width: '80px',
+                height: '3px',
+                backgroundColor: 'primary'
+              }
+            }}
+          >
+            Sponsors
+          </Heading>
+          <Link href="https://www.arista.com/en/" sx={{
+            textDecoration: "none",
+          }}>
+            <Box sx={{ mb: 4, px: [2, 3, 4] }}>
+              <Card
+                sx={{
+                  p: 4,
+                  textAlign: 'center',
+                  border: '2px solid #000',
+                  background: 'white',
+                  boxShadow: '0 4px 10px rgba(0,0,0,0.12)',
+                  maxWidth: '900px',
+                  mx: 'auto'
+                }}
+              >
+                <Image
+                  src="https://cdn.hack.pet/U084RT5K678/image%20(4).png"
+                  alt="Arista Networks"
+                  sx={{
+                    maxHeight: '160px',
+                    objectFit: 'contain',
+                    mx: 'auto',
+                    mb: 3
+                  }}
+                />
+                <Heading as="h3" sx={{ fontSize: '1.7em', mb: 2 }}>
+                  Arista Networks
+                </Heading>
+                <Text sx={{ fontSize: '1.1em' }}>
+                  Arista Networks is an industry leader in data-driven, client to
+                  cloud networking for large data center/AI, campus and routing
+                  environments. Arista's award-winning platforms deliver
+                  availability, agility, automation, analytics and security
+                  through an advanced network operating stack.
+                </Text>
+              </Card>
+            </Box>
+          </Link>
+          
+          <Link href="https://www.techcomnet.com/" sx={{
+            textDecoration: "none",
+          }}>
+            <Box sx={{ mb: 4, px: [2, 3, 4] }}>
+              <Card
+                sx={{
+                  p: 4,
+                  textAlign: 'center',
+                  border: '2px solid #000',
+                  background: 'white',
+                  boxShadow: '0 4px 10px rgba(0,0,0,0.12)',
+                  maxWidth: '800px',
+                  mx: 'auto'
+                }}
+              >
+                  <Image
+                    src="https://cdn.hack.pet/U0871L04D0V/Techcom-Logo-1.png"
+                    alt="Techcom"
+                    sx={{
+                      maxHeight: '70px',
+                      objectFit: 'contain',
+                      mx: 'auto',
+                      mb: 3
+                    }}
+                  />
+                <Heading as="h3" sx={{ fontSize: '1.7em', mb: 2 }}>
+                  Techcom
+                </Heading>
+                <Text sx={{ fontSize: '1.1em' }}>
+                  Founded in 1994 and headquartered in Vaughan, Ontario Canada, TECHCOM™ continues to focus on building innovative data agnostic technology platforms containing functionality and capability that spans all stages of the customer account life cycle allowing organizations to effectively communicate, interact and collaborate across and outside the enterprise – enabling geographically dispersed business operations to efficiently operate while also having embedded capability that extends the platform to external partner suppliers who operate on the TECHCOM™ technology in real-time.
+                </Text>
+              </Card>
+            </Box>
+          </Link>
+          <Grid columns={[1, 1, 2, 3]} gap={4} sx={{ px: [2, 3, 4] }}>
+            {[
+              {
+                name: 'System76',
+                description:
+                  'System76 builds powerful open source computers, keyboards, and software, empowering creators, makers, and builders to unleash their potential.',
+                logo: 'https://cdn.hack.pet/U084RT5K678/system76-logo-open-source-tagliner4_1730474034__00841.webp',
+                link: 'https://system76.com/',
+              },
+              {
+                name: 'Fernandes orthodontics',
+                description: "At Fernandes Orthodontics, we believe every smile is unique and deserves personalized care. Our team is dedicated to transforming your smile with the latest in orthodontic technology and techniques.",
+                logo: 'https://cdn.hack.pet/U0871L04D0V/fernandesorthodontics.png',
+                link: 'https://www.fernandesorthodontics.com/',
+              },
+              {
+                name: 'DMZ',
+                description:
+                  'DMZ is a world-leading incubator for tech startups around the world. We help startups build great businesses by connecting them with customers, capital, experts and a community of entrepreneurs and influencers.',
+                logo: 'https://hc-cdn.hel1.your-objectstorage.com/s/v3/45a4c6b4f75031759d5c822e37630667dbb7db26_svgviewer-output__1_.svg',
+                link: 'https://dmz.torontomu.ca/',
+              },
+            ].map((sponsor, i) => (
+              <Link href={sponsor.link} target="_blank" sx={{
+                  textDecoration: "none",
+              }}>
+                <Card
+                  key={i}
+                  sx={{
+                    p: 3,
+                    textAlign: 'center',
+                    border: '2px solid #000',
+                    background: 'white',
+                    boxShadow: '0 3px 8px rgba(0,0,0,0.1)',
+                    transition: 'transform 0.2s ease',
+                    ':hover': {
+                      transform: 'translateY(-3px)'
+                    }
+                  }}
+                >
+                  <Image
+                    src={sponsor.logo}
+                    alt={sponsor.name}
+                    sx={{
+                      width: '80%',
+                      height: '140px',
+                      objectFit: 'contain',
+                      mx: 'auto',
+                      mb: 3
+                    }}
+                  />
+                  <Heading as="h3" sx={{ fontSize: '1.5em', mb: 2 }}>
+                    {sponsor.name}
+                  </Heading>
+                  <Text sx={{ fontSize: '1.1em' }}>{sponsor.description}</Text>
+                </Card>
+              </Link>
+            ))}
+          </Grid>
+          <Heading
+            as="h2"
+            sx={{
+              textAlign: 'center',
+              mt: 5,
+              mb: 3,
+              fontSize: ['1.4em', '1.6em']
+            }}
+          >
+            Our Partners
+          </Heading>
+          <Grid columns={[3, 4, 6]} gap={3} sx={{ px: [2, 3, 4] }}>
+            {[
+              'https://hc-cdn.hel1.your-objectstorage.com/s/v3/278694a1ea294828eef8af0f8d2bf149921b6f6c_vueschool_logo_two_lines_white_bg__1_.png',
+              'https://hc-cdn.hel1.your-objectstorage.com/s/v3/d7969da1d87bed74c9174d0a235307bd4f529ff5_image__5_.png',
+              'https://hc-cdn.hel1.your-objectstorage.com/s/v3/393d615a4bdd2b724f5607e3337c630b73e3e2be_image__9_.png',
+              'https://hc-cdn.hel1.your-objectstorage.com/s/v3/35d714f86028aea17dad967cc70887dfe0c5dad9_download__2___1_.png',
+              'https://hc-cdn.hel1.your-objectstorage.com/s/v3/c999a19e5fa1e98d34cb01a31c870c758b329524_download__3_.png',
+              'https://hc-cdn.hel1.your-objectstorage.com/s/v3/9d8b606916917690138ab77fc477400c1cfd1a89_image__8_.png',
+              'https://hc-cdn.hel1.your-objectstorage.com/s/v3/9153306113d018c87d206fa57557ea842b4549c7_hetzner-logo__2___1_.png',
+              'https://hc-cdn.hel1.your-objectstorage.com/s/v3/eccd6fe6bb17a69a954054518cb053a44369ce1b_xyz-logo-color.png',
+              'https://hc-cdn.hel1.your-objectstorage.com/s/v3/9d570f29ffe22aa71800cb981104a1bd37093296_white__1_.png',
+              'https://hc-cdn.hel1.your-objectstorage.com/s/v3/cc36a0d2d1d081b1a3bc4b534fad1bfde5d39be8_logo__1_.svg',
+              'https://cdn.hack.pet/U0871L04D0V/NordVPN_Bronze.png',
+              'https://cdn.hack.pet/U0871L04D0V/Saily.png',
+              'https://cdn.hack.pet/U0871L04D0V/Incogni.png',
+              'https://cdn.hack.pet/U0871L04D0V/Warp.png',
+              'https://cdn.hack.pet/U084RT5K678/Screenshot%202025-03-05%20214400.png',
+              'https://community.aws/img/AWS_logo_light.svg',
+            ].map((logo, i) => (
+              <Box
+                key={logo}
+                sx={{
+                  border: '1px solid #ccc',
+                  p: 2,
+                  borderRadius: 2,
+                  background: 'white',
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center'
+                }}
+              >
+                <Image
+                  src={logo}
+                  alt={`Sponsor ${i + 1}`}
+                  sx={{ width: '80%', height: 'auto' }}
+                />
+              </Box>
+            ))}
+          </Grid>
+        </Box>
+
         <Heading
           as="h1"
           sx={{
@@ -754,304 +1345,6 @@ export default function Toronto() {
             )
           })}
         </Grid>
-
-        <Box
-          sx={{
-            width: '90%',
-            maxWidth: '1200px',
-            mx: 'auto',
-            my: 6,
-            py: 4,
-            background: "url('/backgrounds/lined-paper.png')",
-            backgroundSize: 'cover',
-            borderRadius: 4,
-            boxShadow: '0 4px 12px rgba(0,0,0,0.15)'
-          }}
-        >
-          <Heading
-            as="h1"
-            sx={{
-              textAlign: 'center',
-              mb: 4,
-              fontSize: ['1.8em', '2.2em'],
-              position: 'relative',
-              pb: 2,
-              '&::after': {
-                content: '""',
-                position: 'absolute',
-                bottom: 0,
-                left: '50%',
-                transform: 'translateX(-50%)',
-                width: '80px',
-                height: '3px',
-                backgroundColor: 'primary'
-              }
-            }}
-          >
-            Meet the Team
-          </Heading>
-          <Grid columns={[1, 2, 3]} gap={4} sx={{ px: [2, 3, 4] }}>
-            {[
-              {
-                name: 'Hajrah',
-                grade: '12th Grade',
-                highSchool: 'Lynn Rose College',
-                message:
-                  'I’m so excited to see all of your excited faces when presenting your projects and to see the very many cool ideas even though we’d all be sleep deprived.',
-                quote: 'Sometimes doing nothing is the best thing to do!!',
-                img: 'https://cdn.hack.pet/U084RT5K678/Untitled%20design.png'
-              },
-              {
-                name: 'Itai',
-                grade: '12th Grade',
-                highSchool: 'Maple High School',
-                message:
-                  'Looking forward to hypnotizing everyone into being an engineer for a day.',
-                quote: 'There is a house in New Orleans.',
-                img: 'https://cdn.hack.pet/U084RT5K678/Screenshot%202025-03-05%20211234.png'
-              },
-              {
-                name: 'Ritvik',
-                grade: '11th Grade',
-                highSchool: 'Victoria Park Collegiate Institute',
-                message: 'Looking forward to making friends!!',
-                quote:
-                  'There are 10 types of people in the world: those who understand binary and those who don’t.',
-                img: 'https://cdn.hack.pet/U084RT5K678/Screenshot%202025-03-05%20211256.png'
-              },
-              {
-                name: 'Ayaan',
-                grade: '12th Grade',
-                highSchool: 'White Oaks S.S.',
-                message:
-                  'Looking forward to seeing the most random stuff made :)',
-                quote: 'i am speed.',
-                img: 'https://cdn.hack.pet/U084RT5K678/Screenshot%202025-03-05%20212225.png'
-              },
-              {
-                name: 'Sunni',
-                grade: '10th Grade',
-                highSchool: 'Anderson CVI',
-                message: 'Looking forward to stupid sh*t and stupid prizes',
-                quote: 'if two wrongs dont make a right, try three.',
-                img: 'https://cdn.hack.pet/U084RT5K678/Screenshot%202025-03-05%20212240.png'
-              },
-              {
-                name: 'Annie',
-                grade: '10th Grade',
-                highSchool: 'Oakville Trafalgar High School',
-                message:
-                  'So excited to learn new things at the workshops and see all your cool projects!',
-                quote:
-                  ' If every porkchop were perfect, we wouldn’t have hot dogs.',
-                img: 'https://cdn.hack.pet/U084RT5K678/download%20(4).png'
-              }
-            ].map((member, i) => (
-              <Card
-                key={i}
-                sx={{
-                  p: 3,
-                  textAlign: 'center',
-                  border: '2px solid #000',
-                  background: 'white',
-                  boxShadow: '0 3px 8px rgba(0,0,0,0.1)',
-                  transition: 'transform 0.2s ease',
-                  ':hover': {
-                    transform: 'translateY(-5px)'
-                  }
-                }}
-              >
-                <Image
-                  src={member.img}
-                  alt={member.name}
-                  sx={{
-                    width: '150px',
-                    height: '150px',
-                    objectFit: 'cover',
-                    objectPosition: 'center',
-                    borderRadius: '50%',
-                    mb: 3,
-                    border: '3px solid #000',
-                    mx: 'auto'
-                  }}
-                />
-                <Heading as="h3" sx={{ mt: 2, fontSize: '1.5em' }}>
-                  {member.name}
-                </Heading>
-                <Text sx={{ mt: 1, fontSize: '1.1em', color: '#555' }}>
-                  {member.grade} &bull; {member.highSchool}
-                </Text>
-                <br></br>
-                <Text sx={{ mt: 2, fontStyle: 'italic', fontSize: '1em' }}>
-                  "{member.quote}"
-                </Text>
-                <br></br>
-                <Text sx={{ mt: 2 }}>{member.message}</Text>
-              </Card>
-            ))}
-          </Grid>
-        </Box>
-
-        <Box
-          sx={{
-            width: '90%',
-            maxWidth: '1200px',
-            mx: 'auto',
-            my: 2,
-            py: 4,
-            background: "url('/backgrounds/lined-paper.png')",
-            backgroundSize: 'cover',
-            borderRadius: 4,
-            boxShadow: '0 4px 12px rgba(0,0,0,0.15)'
-          }}
-        >
-          <Heading
-            as="h1"
-            sx={{
-              textAlign: 'center',
-              mb: 4,
-              fontSize: ['1.8em', '2.2em'],
-              position: 'relative',
-              pb: 2,
-              '&::after': {
-                content: '""',
-                position: 'absolute',
-                bottom: 0,
-                left: '50%',
-                transform: 'translateX(-50%)',
-                width: '80px',
-                height: '3px',
-                backgroundColor: 'primary'
-              }
-            }}
-          >
-            Sponsors
-          </Heading>
-          <Grid
-            gap={4}
-            sx={{
-              px: [2, 3, 4],
-              // On small screens show a single column; on larger screens use 2 columns (2fr/1fr)
-              gridTemplateColumns: ['1fr', '2fr 1fr']
-            }}
-          >
-            <Card
-              sx={{
-                p: 4,
-                textAlign: 'center',
-                border: '2px solid #000',
-                background: 'white',
-                boxShadow: '0 3px 8px rgba(0,0,0,0.1)',
-                transition: 'transform 0.2s ease',
-                ':hover': {
-                  transform: 'translateY(-3px)'
-                }
-              }}
-            >
-              <Image
-                src="https://cdn.hack.pet/U084RT5K678/image%20(4).png"
-                alt="Arista Networks"
-                sx={{
-                  width: '90%',
-                  height: 'auto',
-                  objectFit: 'contain',
-                  mx: 'auto',
-                  mb: 3
-                }}
-              />
-              <Heading as="h3" sx={{ fontSize: '1.7em', mb: 2 }}>
-                Arista Networks
-              </Heading>
-              <Text sx={{ fontSize: '1.1em' }}>
-                Arista Networks is an industry leader in data-driven, client to
-                cloud networking for large data center/AI, campus and routing
-                environments. Their award-winning platforms deliver
-                availability, agility, automation, analytics and security
-                through an advanced network operating stack.
-              </Text>
-            </Card>
-            <Card
-              sx={{
-                p: 3,
-                textAlign: 'center',
-                border: '2px solid #000',
-                background: 'white',
-                boxShadow: '0 3px 8px rgba(0,0,0,0.1)',
-                transition: 'transform 0.2s ease',
-                ':hover': {
-                  transform: 'translateY(-3px)'
-                }
-              }}
-            >
-              <Image
-                src="https://cdn.hack.pet/U084RT5K678/system76-logo-open-source-tagliner4_1730474034__00841.webp"
-                alt="System76"
-                sx={{
-                  width: '70%',
-                  maxHeight: '140px',
-                  objectFit: 'contain',
-                  mx: 'auto',
-                  mb: 3
-                }}
-              />
-              <Heading as="h3" sx={{ fontSize: '1.5em', mb: 2 }}>
-                System76
-              </Heading>
-              <Text sx={{ fontSize: '1em' }}>
-                System76 builds powerful open source computers, keyboards, and
-                software, empowering creators, makers, and builders to unleash
-                their potential.
-              </Text>
-            </Card>
-          </Grid>
-
-          <Heading
-            as="h2"
-            sx={{
-              textAlign: 'center',
-              mt: 5,
-              mb: 3,
-              fontSize: ['1.4em', '1.6em']
-            }}
-          >
-            Our Partners
-          </Heading>
-          <Grid columns={[3, 4, 6]} gap={3} sx={{ px: [2, 3, 4] }}>
-            {[
-              'https://hc-cdn.hel1.your-objectstorage.com/s/v3/278694a1ea294828eef8af0f8d2bf149921b6f6c_vueschool_logo_two_lines_white_bg__1_.png',
-              'https://hc-cdn.hel1.your-objectstorage.com/s/v3/d7969da1d87bed74c9174d0a235307bd4f529ff5_image__5_.png',
-              'https://hc-cdn.hel1.your-objectstorage.com/s/v3/393d615a4bdd2b724f5607e3337c630b73e3e2be_image__9_.png',
-              'https://hc-cdn.hel1.your-objectstorage.com/s/v3/35d714f86028aea17dad967cc70887dfe0c5dad9_download__2___1_.png',
-              'https://hc-cdn.hel1.your-objectstorage.com/s/v3/c999a19e5fa1e98d34cb01a31c870c758b329524_download__3_.png',
-              'https://hc-cdn.hel1.your-objectstorage.com/s/v3/9d8b606916917690138ab77fc477400c1cfd1a89_image__8_.png',
-              'https://hc-cdn.hel1.your-objectstorage.com/s/v3/9153306113d018c87d206fa57557ea842b4549c7_hetzner-logo__2___1_.png',
-              'https://hc-cdn.hel1.your-objectstorage.com/s/v3/eccd6fe6bb17a69a954054518cb053a44369ce1b_xyz-logo-color.png',
-              'https://hc-cdn.hel1.your-objectstorage.com/s/v3/9d570f29ffe22aa71800cb981104a1bd37093296_white__1_.png',
-              'https://hc-cdn.hel1.your-objectstorage.com/s/v3/cc36a0d2d1d081b1a3bc4b534fad1bfde5d39be8_logo__1_.svg',
-              'https://cdn.hack.pet/U084RT5K678/Screenshot%202025-03-05%20214400.png',
-              'https://community.aws/img/AWS_logo_light.svg'
-            ].map((logo, i) => (
-              <Box
-                key={i}
-                sx={{
-                  border: '1px solid #ccc',
-                  p: 2,
-                  borderRadius: 2,
-                  background: 'white',
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center'
-                }}
-              >
-                <Image
-                  src={logo}
-                  alt={`Sponsor ${i + 1}`}
-                  sx={{ width: '80%', height: 'auto' }}
-                />
-              </Box>
-            ))}
-          </Grid>
-        </Box>
 
         <Link
           href="https://forms.hackclub.com/scrapyard-signup?event=toronto"
