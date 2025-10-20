@@ -29,7 +29,7 @@
     "react-icons": "^5.5.0",
     "react-infinite-logo-slider": "^1.1.4",
     "react-leaflet": "^4.0.0",
-    "tailwindcss": "^4.0.12",
+    "tailwindcss": "^4.1.15",
     "theme-ui": "0.17.2"
   },
   "devDependencies": {
