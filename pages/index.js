@@ -145,7 +145,7 @@ export default function Home() {
                 fontSize: ['1.2em', '1.4em']
               }}
             >
-              100+&nbsp;Cities&nbsp;worldwide&nbsp;–&nbsp;March&nbsp;15-16
+              100+&nbsp;Cities&nbsp;worldwide&nbsp;–&nbsp;March&nbsp;15-16,&nbsp;2025
             </Heading>
           </Box>
 
@@ -382,12 +382,12 @@ export default function Home() {
                 fontSize: '1.5em'
               }}
             >
-              Scrapyard is a global hackathon organized by high schoolers. Our
-              flagship (the largest Scrapyard event) will run in Austin, Texas
-              on March 1st-2nd. Following the flagship, our distributed events
-              will run in 100+ cities worldwide on the weekend of March 15th.
-              Scrapyard is a hackathon with a "scrappy" theme of stupid
-              inventions! It's organized by Hack Club, a <Nonprofit501c3 />{' '}
+              Scrapyard was a global hackathon organized by high schoolers. Our
+              flagship (the largest Scrapyard event) ran in Austin, Texas
+              on March 1st-2nd, 2025. Following the flagship, our distributed events
+              ran in 100+ cities worldwide on the weekend of March 15th, 2025.
+              Scrapyard was a hackathon with a "scrappy" theme of stupid
+              inventions! It was organized by Hack Club, a <Nonprofit501c3 />{' '}
               nonprofit that supports a global community of over 50,000 high
               school makers.
             </p>
@@ -688,16 +688,16 @@ export default function Home() {
           {Object.entries({
             'What is Scrapyard?': (
               <>
-                Scrapyard is a global{' '}
+                Scrapyard was a global{' '}
                 <Link href="https://hackclub.com/hackathons/" target="_blank">
                   hackathon
                 </Link>{' '}
-                running in Austin, Texas and 100+ other cities by high schoolers
+                that ran in Austin, Texas and 100+ other cities by high schoolers
                 (like{' '}
                 <Link href="https://counterspell.hackclub.com/" target="_blank">
                   Counterspell
                 </Link>
-                ) with a “scrappy” theme of stupid inventions! It's organized by{' '}
+                ) with a “scrappy” theme of stupid inventions! It was organized by{' '}
                 <Link href="https://hackclub.com/" target="_blank">
                   Hack Club
                 </Link>
@@ -706,11 +706,11 @@ export default function Home() {
               </>
             ),
 
-            'When & where is Scrapyard hosted?': (
+            'When & where was Scrapyard hosted?': (
               <>
-                The Scrapyard flagship will be hosted in Austin, Texas from 12pm
-                on March 1st to 3pm on March 2nd. Find the closest distributed
-                event to you on March 15-16!
+                The Scrapyard flagship was hosted in Austin, Texas from 12pm
+                on March 1st to 3pm on March 2nd, 2025. Distributed events
+                took place in 100+ cities on March 15-16, 2025!
               </>
             ),
             'Who can participate in Scrapyard?': (
