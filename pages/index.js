@@ -383,7 +383,7 @@ export default function Home() {
               }}
             >
               Scrapyard was a global hackathon organized by high schoolers. Our
-              flagship (the largest Scrapyard event) ran in Austin, Texas
+              flagship ran in Austin, Texas
               on March 1st-2nd, 2025. Following the flagship, our distributed events
               ran in 100+ cities worldwide on the weekend of March 15th, 2025.
               Scrapyard was a hackathon with a "scrappy" theme of stupid
