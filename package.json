@@ -11,28 +11,28 @@
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.0",
-    "@hackclub/meta": "^1.1.33",
+    "@emotion/styled": "^11.14.1",
+    "@hackclub/meta": "^1.2.1",
     "@hackclub/theme": "^0.3.3",
-    "@mdx-js/loader": "^3.1.0",
-    "@mdx-js/react": "^3.1.0",
-    "@next/mdx": "^15.2.2",
-    "@tailwindcss/postcss": "^4.0.12",
+    "@mdx-js/loader": "^3.1.1",
+    "@mdx-js/react": "^3.1.1",
+    "@next/mdx": "^15.5.14",
+    "@tailwindcss/postcss": "^4.2.2",
     "airtable-plus": "^1.0.4",
     "fa": "^1.0.1",
     "leaflet": "^1.9.4",
-    "motion": "^12.4.11",
+    "motion": "^12.38.0",
     "next": "15.2.8",
-    "postcss": "^8.5.2",
+    "postcss": "^8.5.8",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-icons": "^5.5.0",
+    "react-icons": "^5.6.0",
     "react-infinite-logo-slider": "^1.1.4",
-    "react-leaflet": "^4.0.0",
-    "tailwindcss": "^4.0.12",
+    "react-leaflet": "^4.2.1",
+    "tailwindcss": "^4.2.2",
     "theme-ui": "0.17.2"
   },
   "devDependencies": {
-    "prettier": "^3.5.3"
+    "prettier": "^3.8.1"
   }
 }
